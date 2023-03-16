@@ -1,7 +1,7 @@
 -- EMP 테이블의 구조
 
 -- emp_no: 직원 번호: 정수
--- birth_dat: 생일: 날짜
+-- birth_date: 생일: 날짜
 -- first_name: 성: 문자열
 -- last_name: 이름: 문자열
 -- gender: 성별: 문자열
@@ -46,6 +46,7 @@ WHERE first_name = 'Lee' AND gender = 'F';
 SELECT *
 FROM EMP
 WHERE (salary >= 2000) and (salary <= 3000);
+
 SELECT *
 FROM EMP
 WHERE salary BETWEEN 2000 AND 3000;
