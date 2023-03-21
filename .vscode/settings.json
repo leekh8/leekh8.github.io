@@ -1,0 +1,10 @@
+{
+  "dataworkspace.excludedProjects": [
+    "localhost/localhost.sqlproj",
+    "local/local.sqlproj",
+    "EMP/EMP.sqlproj"
+  ],
+  "cSpell.words": [
+    "CHOI"
+  ]
+}
