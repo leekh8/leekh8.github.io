@@ -129,4 +129,9 @@ fruit.shift(); // 배열 앞의 데이터 제거: lemon 제거
 Math.abs(-3); // 절대값: 3
 Math.ceil(0.3); // 올림: 1
 Math.floor(10.9); // 내림: 10
-Math.random();
+Math.random(); // 임의의 숫자 출력
+
+// ----------------
+// 문자를 숫자로 변환하는 메서드
+parseInt('20.6'); // 정수로 변환: 20
+parseFloat('20.6'); // 실수로 변환: 20.6
