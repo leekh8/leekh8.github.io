@@ -188,6 +188,14 @@ console.log(10 === 10 && 20 === 30); // AND: 모두 참인 경우: false
 
 console.log(10 === 10 || 20 === 30); // OR: 하나만 참인 경우: true
 
+// ----------------
+// typeof: 피연산자의 평가 전 자료형을 나타내는 문자열 반환
+typeof operand;
+console.log(typeof 43); // 숫자
+console.log(typeof 'blue lemon'); // 문자열
+console.log(typeof true); // boolean
+console.log(typeof undeclaredVariable); // undefined
+
 // ---------------- 조건문 ----------------
 // if 문: if ( 조건 ) { 실행할 명령 }
 var a = 20;
