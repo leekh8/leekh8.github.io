@@ -1,0 +1,986 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <title>게시판</title>
+
+  <meta id="themeColor" name="theme-color" content="#FFFFFF">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/mobile_favicon.png">
+  <style>
+    undefined
+  </style>
+  <link href="https://www.googletagmanager.com" rel="preconnect">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V3WH78VG3N&amp;l=dataLayer"></script>
+  <script charset="utf-8" src="/dist/vue/static/js/51.6a05736f696b4a3c7218.js"></script>
+  <script src="https://common.worksmobile.com/gnb/v2/home?q=100001502934135_230307143630" charset="utf-8"></script>
+  <script src="https://notify.worksmobile.com/works.notify.bee-3.6.0.js?1678167457570" charset="utf-8"></script>
+  <style type="text/css">
+    .infinite-loading-container[data-v-46b21138] {
+      clear: both;
+      text-align: center
+    }
+
+    .infinite-loading-container[data-v-46b21138] [class^=loading-] {
+      display: inline-block;
+      margin: 5px 0;
+      width: 28px;
+      height: 28px;
+      font-size: 28px;
+      line-height: 28px;
+      border-radius: 50%
+    }
+
+    .btn-try-infinite[data-v-46b21138] {
+      margin-top: 5px;
+      padding: 5px 10px;
+      color: #999;
+      font-size: 14px;
+      line-height: 1;
+      background: transparent;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer
+    }
+
+    .btn-try-infinite[data-v-46b21138]:not(:active):hover {
+      opacity: .8
+    }
+  </style>
+
+  <link href="https://common.worksmobile.com/css/v2/v3.4/common_works.css?20230126" type="text/css" rel="stylesheet"
+    id="worksCommonCss">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
+  <script type="text/javascript" src="https://talk.worksmobile.com/dist/snooze/snoozeNotify.js?"></script>
+  <script charset="utf-8" src="/dist/vue/static/js/45.7f33590b747b97a0b9a6.js"></script>
+</head>
+
+<body class="ko_KR ua_win">
+  <div id="app" style="height: 100%;">
+    <div><a href="#content" class="skip">본문 바로가기</a>
+      <div id="wrap" style="height: 100%;">
+        <div id="header" class="h_home skin_corp_bg  ">
+          <style type="text/css" id="skinCss">
+            .skin_corp_bg {
+              background-color: #07B53B !important
+            }
+
+            .skin_corp_line {
+              border-color: #07B53B !important
+            }
+
+            .skin_corp_txt {
+              color: #FFFFFF !important
+            }
+          </style>
+
+          <h1 id="logo_title"><span class="logo">
+              <span class="img naver_works"><img id="logoimg"
+                  src="https://static.worksmobile.net/static/pwe/wm/dm/service_logo_nw.png"
+                  onerror="this.src='https://static.worksmobile.net/static/pwe/wm/dm/service_logo_nw.png'">
+              </span>
+            </span>
+            <span class="service">게시판</span>
+          </h1>
+          <div class="login_group">
+            <div class="account">
+              <ul class="menu"></ul>
+            </div>
+            <div class="staff_srch">
+              <label for="searchVal" class="blind">구성원 검색</label><input type="text" placeholder="구성원 검색"
+                class="type_sort" name="nweSearchText" id="nweSearchText" autocomplete="off"
+                onkeydown="javascript:nweSearchKeyDownEvent(event);"><button type="button" class="btn_srch"
+                onclick="javascript:nweMemberSearch(); return false;"><span class="blind">구성원 검색</span></button>
+            </div>
+            <div class="setting_more">
+              <div class="setting_area"><a class="btn_help" id="btnWorksCommonHelp"
+                  href="javascript:toggleCommonGnbLayers('worksLnbHelpLayer', 'btnWorksCommonHelp', 'show');"><span
+                    class="blind">도움말</span></a>
+                <ul class="menu _gnbSettingsLayer _gnbLayer" id="worksLnbHelpLayer" style="display:none; ">
+                  <li class="item"><a target="_blank" href="javascript:;"
+                      onclick="javascript:openWorksFooterPopup('https://docs.worksmobile.com/pcw-hm-ntc', '_notice_home', 730, 860, 'no'); return false;">공지사항</a>
+                  </li>
+                  <li class="item"><a target="_blank"
+                      onclick="javascript:toggleCommonGnbLayers('worksLnbHelpLayer', 'btnWorksCommonHelp', 'show');"
+                      href="https://docs.worksmobile.com/hm-ft-hc">헬프센터</a></li>
+                  <li class="item"><a target="_blank"
+                      onclick="javascript:toggleCommonGnbLayers('worksLnbHelpLayer', 'btnWorksCommonHelp', 'show');"
+                      href="https://docs.worksmobile.com/pcw-ft-app">애플리케이션</a></li>
+                </ul>
+              </div>
+              <div class="setting_area"><a class="btn_setting" id="btnWorksCommonSettings"
+                  href="javascript:toggleSettingLayer();toggleCommonGnbLayers('', 'btnWorksCommonSettings', 'show');"><span
+                    class="blind">설정</span></a></div>
+            </div>
+            <div class="user_profile"><a
+                href="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser', 'selected');loadGnbMemberInfo();"
+                id="btnWorksCommonGnbUser"><img id="worksGnbProfileImg"
+                  src="https://photo.contact.worksmobile.com/v2/photos?kind=DOMAIN_USER&amp;id=100001502934135&amp;size=ff40"
+                  onerror="this.style.display='none'; document.getElementById('worksGnbProfileInitial').style.display='block'; bLoadProfileImage=false;"
+                  width="32" height="32" title="이규해" style="display: none;"><span id="worksGnbProfileInitial"
+                  class="initial_profile"
+                  style="background-color: rgb(139, 203, 153); display: block;"><em>이</em></span><span
+                  id="worksNotification" class="status etiquette" style="display:none;"><em
+                    class="blind">etiquette</em></span><span id="worksMemberStatusIcon1" class="state_dot skin_corp_bg "
+                  style="display:none;"><span class="ico_state"><img id="worksMemberStatusIconImgMini" src=""
+                      onerror="document.getElementById('worksMemberStatusIcon1').style.display='none';"></span></span></a>
+            </div>
+            <div id="gnb_user" class="gnb_usermenu _gnbInfoLayer _gnbLayer" style="display:none;">
+              <h2 class="blind">My Information</h2>
+              <div class="user_infor" id="gnbMemberInfo">
+                <p class="profile"><span class="initial_profile" style="background-color:#8BCB99;"><em>이</em></span></p>
+                <div class="infor">
+                  <p class="user"><span>이규해</span></p>
+                  <p class="work"><span>에너지</span></p>
+                </div>
+              </div>
+              <h2 class="blind">User Info</h2>
+              <ul>
+                <li><a target="works_settings_personal_info"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://contact.worksmobile.com/personal-info-settings/my">개인정보</a></li>
+                <li id="liWorksMemberStatus" style="display: none;"><a target="works_settings_personal_info"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://contact.worksmobile.com/personal-info-settings/status"><span
+                      class="mn_title">상태</span><span class="mn_value"><span class="ico_status"
+                        id="worksMemberStatusIcon2" style="display:none"><img id="worksMemberStatusIconImg"
+                          src="https://static.worksmobile.net/static/wm/settings/profile_state/ic-16-busy.png"></span><span
+                        class="text" id="worksMemberStatusName">설정 안 함</span></span></a></li>
+                <li><a class="has_submenu"
+                    href="javascript:window.showNotifyOption('snoozeNotifyLayer');toggleCommonGnbSubLayers('snoozeNotifyLayer');"
+                    id="btnToggleSnoozeLayer">알림 일시 정지</a></li>
+                <li><a target="works_settings_notify"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://notify.worksmobile.com/settings">알림 수신 시간 설정</a></li>
+                <li><a target="works_settings_personal_info"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://contact.worksmobile.com/personal-info-settings#message">외부 멤버와 대화하기</a></li>
+                <li><a target="works_settings_security"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://common.worksmobile.com/security-settings">보안</a></li>
+                <li><a target="works_settings_security"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://common.worksmobile.com/security-settings/access-info">접속현황</a></li>
+                <li><a target="works_settings_security"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://common.worksmobile.com/security-settings/device-info">디바이스</a></li>
+                <li><a target="works_settings_personal_info"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');"
+                    href="https://contact.worksmobile.com/personal-info-settings#language">언어·시간대</a></li>
+                <li class="line">line</li>
+                <li><a href="#"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');nweGnbOpenPopup('https://contact.worksmobile.com/v2/domain/invitation/popup', 'invite', 750, 578); return false;">신규
+                    구성원 초대</a></li>
+                <li><a href="https://common.worksmobile.com/p/admin" target="_blank"
+                    onclick="javascript:toggleCommonGnbLayers('gnb_user', 'btnWorksCommonGnbUser');">Admin</a></li>
+                <li class="line">line</li>
+                <li><a href="https://auth.worksmobile.com/logout?redirectUrl=https://board.worksmobile.com"
+                    referrerpolicy="origin">로그아웃</a></li>
+              </ul>
+              <div id="snoozeNotifyLayer" class="gnb_usermenu_sub" style="display: none; top: -9px;"></div>
+            </div>
+          </div>
+          <div class="gnb_area">
+            <h2 class="blind">LINE WORKS Services Shortcuts</h2>
+            <div id="gnb_list" class="gnb_list_box">
+              <ul>
+                <li class="home on"><a href="https://board.worksmobile.com" target="_blank" data-title="게시판"><span
+                      class="ico">home</span></a></li>
+                <li class="talk "><a href="https://talk.worksmobile.com" target="_blank" data-title="메시지"><span
+                      class="ico">message</span></a></li>
+                <li class="calendar "><a href="https://calendar.worksmobile.com/main.nhn" target="_blank"
+                    data-title="캘린더"><span class="ico">calendar</span></a></li>
+                <li class="contact "><a href="https://contact.worksmobile.com" target="_blank" data-title="주소록"><span
+                      class="ico">contact</span></a></li>
+                <li class="task "><a href="https://task.worksmobile.com" target="_blank" data-title="할 일"><span
+                      class="ico">task</span></a></li>
+                <li class="form "><a href="https://form.worksmobile.com" target="_blank" data-title="설문"><span
+                      class="ico">form</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="toggleLnb" class="toggle_lnb"><button type="button"
+              onclick="javascript:toggleLnb();return false;">Toggle Lnb</button></div>
+        </div>
+        <div id="container">
+          <div class="nav_lnb" style="width: 250px;">
+            <div class="main_pane">
+              <div class="core_button"><button type="button" class="skin_corp_bg skin_corp_txt"
+                  style="background-color: white;"><strong>글쓰기</strong></button></div>
+              <div class="top_menu"><button type="button" class="recent"><strong class="count">3</strong>
+                  <span>최신글</span></button> <button type="button" class="must"><em
+                    class="ic_new">NEW</em><span>필독</span></button> <button type="button" class="mypost"><span>내
+                    게시글</span></button></div>
+            </div>
+            <div class="scroll_pane _scroll_pane"><!--fragment#13a30cfdbee#head-->
+              <ul fragment="13a30cfdbee" class="menu_cover">
+                <li class="menu_box groups _groups">
+                  <div class="head_bar"><button type="button" class="btn_fold">
+                      즐겨찾기
+                    </button></div>
+                  <div class="empty_tree" style="">게시판명 옆의 <em class="ico_fav">☆</em>을 선택해서 추가해주세요.</div>
+                  <ul class="lnb_tree"></ul>
+                </li>
+                <li class="menu_box groups _groups"><!---->
+                  <div class="head_bar"><em class="ic_new">NEWS</em> <button type="button" title="myeong-archi"
+                      class="btn_fold">
+                      myeong-archi
+                    </button></div>
+                  <ul class="lnb_tree">
+                    <li class="">
+                      <div class="menu_item"><em class="ic_new">NEW</em> <button type="button" title="공지사항"
+                          class="item_txt">
+                          공지사항
+                        </button> <input id="bd_4070000000113672638" type="checkbox" name="chk_fav" class="input_fav">
+                        <label for="bd_4070000000113672638" class="ico_fav side_btn">즐겨찾기</label>
+                      </div>
+                    </li>
+                    <li class="">
+                      <div class="menu_item"><em class="ic_new">NEW</em> <button type="button" title="업무 매뉴얼"
+                          class="item_txt">
+                          업무 매뉴얼
+                        </button> <input id="bd_4070000000113672639" type="checkbox" name="chk_fav" class="input_fav">
+                        <label for="bd_4070000000113672639" class="ico_fav side_btn">즐겨찾기</label>
+                      </div>
+                    </li>
+                    <li class="">
+                      <div class="menu_item"><!----> <button type="button" title="자유게시판" class="item_txt">
+                          자유게시판
+                        </button> <input id="bd_4070000000113672640" type="checkbox" name="chk_fav" class="input_fav">
+                        <label for="bd_4070000000113672640" class="ico_fav side_btn">즐겨찾기</label>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu_loading" style="display: none;"><img
+                    src="https://static.worksmobile.net/static/pwe/address/loading.gif" width="32" height="8"
+                    alt="게시판 목록 불러오는 중"></li>
+                <li class="menu_box groups">
+                  <ul class="lnb_tree">
+                    <li>
+                      <div class="menu_item mbox_trash"><button type="button" class="item_txt">
+                          휴지통
+                        </button></div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <div data-v-46b21138="" class="infinite-loading-container" fragment="13a30cfdbee">
+                <div data-v-46b21138="" class="infinite-status-prompt" style="display: none;"><span
+                    data-v-46b21138=""></span></div>
+                <div data-v-46b21138="" class="infinite-status-prompt" style=""><span data-v-46b21138=""></span></div>
+                <div data-v-46b21138="" class="infinite-status-prompt" style="display: none;"><span
+                    data-v-46b21138=""></span></div>
+                <div data-v-46b21138="" class="infinite-status-prompt"
+                  style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">
+                  Opps, something went wrong :(
+                  <br data-v-46b21138=""> <button data-v-46b21138="" class="btn-try-infinite">Retry</button>
+                </div>
+              </div><!--fragment#13a30cfdbee#tail-->
+              <div id="worksCommonCopyright" class="footer"></div>
+            </div> <!----> <button type="button" class="btn_fold_lnb" style="display: none;"><i
+                class="blind"></i></button>
+            <div class="lnb_drag_area" style=""></div>
+          </div>
+          <div id="section_cen" style="margin-left: 250px;">
+            <div id="content" class="">
+              <div class="g_search">
+                <h2 class="blind">홈 서비스 통합 검색</h2>
+                <div class="srch_box">
+                  <div class="inp_box"><label for="basicKeyword" class="btn_search"><i>검색</i></label> <input
+                      id="basicKeyword" type="text" autocomplete="off" placeholder="게시글 검색"></div> <button type="button"
+                    class="detail">
+                    상세
+                  </button> <strong class="search_result" style="display: none;">검색 결과<em class="count">0</em></strong>
+                  <div class="ly_autocomplete" style="display: none;">
+                    <ul style="display: none;">
+                      <li style="display: none;"><span class="empty">검색어 저장 기능이 꺼져있습니다.</span></li>
+                      <li><span class="empty">최근 검색어가 없습니다.</span></li> <!---->
+                    </ul>
+                    <div class="save_keyword"><button type="button" class="reset" style="display: none;">
+                        전체 삭제
+                      </button> <button type="button">
+                        검색어저장 끄기
+                      </button> <button type="button" style="display: none;">
+                        검색어저장 켜기
+                      </button></div>
+                  </div>
+                </div>
+                <div class="srch_detail">
+                  <h3 class="blind"></h3>
+                  <div class="fm_keyword">
+                    <div class="box_col1"><strong class="tit">게시판</strong>
+                      <div class="select_box board"><button type="button" class="selected"><strong>전체
+                            게시판</strong></button>
+                        <div class="option_box" style="z-index: 200;">
+                          <ul style="display: none;"><!----> <!----> <!---->
+                            <li class=""><button type="button">
+                                전체 게시판
+                              </button></li>
+                            <li class="line"></li><!---->
+                            <li><span>myeong-archi</span></li> <!----> <!----> <!----><!----> <!----> <!---->
+                            <li class="depth"><button type="button">
+                                공지사항
+                              </button></li> <!----><!----> <!----> <!---->
+                            <li class="depth"><button type="button">
+                                업무 매뉴얼
+                              </button></li> <!----><!----> <!----> <!---->
+                            <li class="depth"><button type="button">
+                                자유게시판
+                              </button></li> <!----><!----> <!---->
+                            <li class="line"></li>
+                            <li class=""><button type="button">
+                                휴지통
+                              </button></li> <!---->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box_col2"><strong class="tit">내용</strong>
+                      <div class="select_box"><button type="button" class="selected"><strong>전체</strong></button>
+                        <div class="option_box" style="display: none;">
+                          <ul>
+                            <li><button type="button" class="sel">
+                                전체
+                              </button></li>
+                            <li><button type="button" class="">
+                                제목+본문
+                              </button></li>
+                            <li><button type="button" class="">
+                                제목
+                              </button></li>
+                            <li><button type="button" class="">
+                                본문
+                              </button></li>
+                            <li><button type="button" class="">
+                                첨부 파일
+                              </button></li>
+                          </ul>
+                        </div>
+                      </div> <label for="detailKeyword" class="blind">입력</label> <input id="detailKeyword" type="text"
+                        autocomplete="off" class="cont">
+                    </div> <span class="break"></span>
+                    <div class="box_col1"><strong class="tit">작성자</strong>
+                      <div class="has_ly"><label for="srch_writer" class="blind">입력</label> <input id="srch_writer"
+                          type="text" autocomplete="off">
+                        <div class="ly_slct_member" style="display: none;">
+                          <ul></ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box_col2 _searchPeriod"><strong class="tit">기간</strong>
+                      <div class="select_box"><button type="button" class="selected"><strong>1년</strong></button>
+                        <div class="option_box" style="display: none;">
+                          <ul>
+                            <li><button type="button" class="">
+                                전체
+                              </button></li>
+                            <li><button type="button" class="">
+                                1주
+                              </button></li>
+                            <li><button type="button" class="">
+                                1개월
+                              </button></li>
+                            <li><button type="button" class="">
+                                3개월
+                              </button></li>
+                            <li><button type="button" class="">
+                                6개월
+                              </button></li>
+                            <li><button type="button" class="sel">
+                                1년
+                              </button></li>
+                            <li><button type="button" class="">
+                                직접입력
+                              </button></li>
+                          </ul>
+                        </div>
+                      </div> <label for="srch_date_start" class="blind">입력</label><input id="srch_date_start"
+                        type="text" autocomplete="off" class="date hasDatepicker"> <span class="dash">-</span> <label
+                        for="srch_date_finish" class="blind">입력</label><input id="srch_date_finish" type="text"
+                        autocomplete="off" class="date hasDatepicker">
+                    </div>
+                  </div>
+                  <div class="fm">
+                    <p><input id="chk_attfile" type="checkbox"><label for="chk_attfile">첨부 파일 있음</label></p>
+                    <p><input id="chk_comment" type="checkbox" disabled="disabled"><label for="chk_comment">댓글
+                        포함</label></p> <button type="button" class="submit_detail">
+                      검색
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="_datepickerPositionMarker" style="position: relative;">
+                <div id="ui-datepicker-div"
+                  class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+                  style="display: none;">
+                  <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a
+                      class="ui-datepicker-prev-year ui-corner-all" data-handler="prevYear" data-event="click"
+                      title="PrevYear"><span class="ui-icon ui-icon-circle-triangle-w">PrevYear</span></a><a
+                      class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span
+                        class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a
+                      class="ui-datepicker-next ui-corner-all ui-state-disabled" title="Next"><span
+                        class="ui-icon ui-icon-circle-triangle-e">Next</span></a><a
+                      class="ui-datepicker-next-year ui-corner-all ui-state-disabled" title="NextYear"><span
+                        class="ui-icon ui-icon-circle-triangle-e">NextYear</span></a>
+                    <div class="ui-datepicker-title"><span class="ui-datepicker-year">2023</span>.&nbsp;<span
+                        class="ui-datepicker-month">3</span></div>
+                  </div>
+                  <table class="ui-datepicker-calendar">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">일</span></th>
+                        <th scope="col"><span title="Monday">월</span></th>
+                        <th scope="col"><span title="Tuesday">화</span></th>
+                        <th scope="col"><span title="Wednesday">수</span></th>
+                        <th scope="col"><span title="Thursday">목</span></th>
+                        <th scope="col"><span title="Friday">금</span></th>
+                        <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">토</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                          &nbsp;</td>
+                        <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                        <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                        <td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2023"><a
+                            class="ui-state-default" style="cursor: pointer;">1</a></td>
+                        <td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2023"><a
+                            class="ui-state-default" style="cursor: pointer;">2</a></td>
+                        <td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2023"><a
+                            class="ui-state-default" style="cursor: pointer;">3</a></td>
+                        <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2"
+                          data-year="2023"><a class="ui-state-default" style="cursor: pointer;">4</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2"
+                          data-year="2023"><a class="ui-state-default" style="cursor: pointer;">5</a></td>
+                        <td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2023"><a
+                            class="ui-state-default" style="cursor: pointer;">6</a></td>
+                        <td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today"
+                          data-handler="selectDay" data-event="click" data-month="2" data-year="2023"><a
+                            class="ui-state-default ui-state-highlight ui-state-active ui-state-hover"
+                            style="cursor: pointer;">7</a></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">8</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">9</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">10</span></td>
+                        <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">11</span></td>
+                      </tr>
+                      <tr>
+                        <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">12</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">13</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">14</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">15</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">16</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">17</span></td>
+                        <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">18</span></td>
+                      </tr>
+                      <tr>
+                        <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">19</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">20</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">21</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">22</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">23</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">24</span></td>
+                        <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">25</span></td>
+                      </tr>
+                      <tr>
+                        <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">26</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">27</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">28</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">29</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">30</span></td>
+                        <td class=" ui-datepicker-unselectable ui-state-disabled "><span
+                            class="ui-state-default">31</span></td>
+                        <td
+                          class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                          &nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="ui-datepicker-buttonpane ui-widget-content"><button type="button"
+                      class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all"
+                      data-handler="today" data-event="click">오늘</button><button type="button"
+                      class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" data-handler="hide"
+                      data-event="click">Done</button></div>
+                </div>
+              </div> <!--fragment#125d3ce2517#head-->
+              <div fragment="125d3ce2517" class="main_box" style="">
+                <div class="home_box introduce">
+                  <div class="tit_area"><em class="sub_tit">게시판은 어떤 곳 인가요?</em>
+                    <h2 class="tit">중요 정보를 구성원과 공유할&nbsp;수&nbsp;있는&nbsp;서비스 입니다.</h2>
+                  </div>
+                  <div class="list_home"><a role="button" tabindex="0" class="link_home">
+                      <h3 class="tit">게시판이란?</h3>
+                    </a> <a role="button" tabindex="0" class="link_function">
+                      <h3 class="tit">주요 기능</h3>
+                    </a> <a role="button" tabindex="0" class="link_permission">
+                      <h3 class="tit">관리 권한</h3>
+                    </a> <a href="https://docs.worksmobile.com/hm-main-usecase" target="_blank" class="link_use_case">
+                      <h3 class="tit">활용사례</h3>
+                    </a></div> <button type="button" class="btn_close">
+                    닫기
+                  </button>
+                </div>
+                <div class="banner_box">
+                  <h2 class="tit">관리자님! <em>게시판 추가 마법사</em>기능을 통해, 우리 회사에 필요한 게시판을 추가해보세요.</h2> <button type="button"
+                    class="btn_start">
+                    게시판 추가 마법사
+                  </button> <button type="button" class="btn_close">
+                    닫기
+                  </button>
+                </div>
+                <div class="home_box notice">
+                  <h2 class="tit">필독</h2>
+                  <p class="more"><a href="/main/board/attention">더보기</a><em></em></p>
+                  <div class="board_list"><!--fragment#de86fd8451#head-->
+                    <ul fragment="de86fd8451" class="list preview">
+                      <li class="has_photo" style="cursor: pointer;"><!----> <!---->
+                        <p class="photo" style="cursor: pointer;"><img
+                            src="https://static.worksmobile.net/static/pwe/wm/home/img_basic_notice_thum_680x384.png"
+                            width="100px" height="100px"> <!----></p> <!--fragment#76c9559a5a#head--><!---->
+                        <p fragment="76c9559a5a" class="bd_name">
+                          공지사항
+                        </p>
+                        <div fragment="76c9559a5a" class="sbj_box"><em class="ic_new"></em>
+                          <p class="sbj"><!----> <!----> <!----> <a href="/main/article/4070000000113672641">NAVER WORKS
+                              게시판 소개가 게시판 활용 첫 단계로써 도움이 되셨나요?</a> <!----></p>
+                        </div><!--fragment#76c9559a5a#tail-->
+                        <p class="cont">
+                          이제 게시판 서비스에서 제공하는 다양한 기능을 활용하여 게시글을 작성해보세요! 사내 공지를 전달하거나 뉴스 및 중요한 정보 등을 공유하여 회사 구성원과 원활한
+                          커뮤니케이션을 할 수 있습니다. 타 회사의 게시판 생성 활용사례를 확인해보세요. 게시판 활용사례 확인하기
+                        </p>
+                        <p class="infor"><!----> <strong class="user">Board</strong> <span class="date">1분전</span> <span
+                            class="read_chk">읽음<strong>0</strong></span> <!----></p> <!----> <!----> <!---->
+                      </li>
+                    </ul>
+                    <ul fragment="de86fd8451" class="list default"></ul><!--fragment#de86fd8451#tail-->
+                  </div>
+                </div>
+                <div class="home_box">
+                  <h2 class="tit">최신글</h2>
+                  <p class="more"><a href="/main/board/recent">더보기</a><em></em></p>
+                  <div class="board_list">
+                    <ul class="list default recent">
+                      <li class="has_photo" style="cursor: pointer;"><!----> <!----> <!---->
+                        <!--fragment#71a5b4ed08#head--><!----> <!---->
+                        <div fragment="71a5b4ed08" class="sbj_box"><em class="ic_new"></em>
+                          <p class="sbj"><!----> <!----> <!----> <a href="/main/article/4070000000113672645">[게시글 작성
+                              가이드] 업무 매뉴얼 게시판 활용하기</a> <!----></p>
+                        </div><!--fragment#71a5b4ed08#tail--> <!---->
+                        <p class="infor"><span class="bd_name">업무 매뉴얼</span> <strong class="user">Board</strong> <span
+                            class="date">1분전</span> <!----> <!----></p> <!----> <!----> <!---->
+                      </li>
+                      <li class="has_photo" style="cursor: pointer;"><!----> <!----> <!---->
+                        <!--fragment#d8835be95e#head--><!----> <!---->
+                        <div fragment="d8835be95e" class="sbj_box"><em class="ic_new"></em>
+                          <p class="sbj"><!----> <!----> <!----> <a href="/main/article/4070000000113672643">[게시글 작성
+                              가이드] 공지사항 게시판 활용하기</a> <!----></p>
+                        </div><!--fragment#d8835be95e#tail--> <!---->
+                        <p class="infor"><span class="bd_name">공지사항</span> <strong class="user">Board</strong> <span
+                            class="date">1분전</span> <!----> <!----></p> <!----> <!----> <!---->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="home_box">
+                  <h2 class="tit">자유게시판</h2>
+                  <p class="more"><a href="/main/board/4070000000113672640">더보기</a><em></em></p>
+                  <div class="board_list">
+                    <div class="empty">
+                      <div class="desc">
+                        <p><strong>등록된 게시글이 없습니다.</strong></p>
+                        <p>게시판에 공유할 글을 남겨보세요.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div> <span class="space"></span>
+              </div>
+              <div class="loading_box" fragment="125d3ce2517" style="display: none;"><span class="loading"><img
+                    src="https://static.worksmobile.net/static/pwe/address/loading.gif" width="32" height="8"
+                    alt="Loading">진행중
+                </span></div><!--fragment#125d3ce2517#tail-->
+            </div>
+          </div>
+        </div>
+        <div class="ly_context ly_setting" style="display: none;">
+          <ul>
+            <li><button type="button">
+                환경설정
+              </button></li>
+          </ul>
+          <ul>
+            <li><button type="button">
+                알림 설정
+              </button></li>
+          </ul>
+        </div>
+        <div class="ly_tooltip point ly_board_admin" style="display: none;">
+          <p class="infor">게시판 서비스 관리자입니다. 게시판을 추가하고 편집할 수 있습니다.</p> <a target="_blank"
+            href="https://docs.worksmobile.com/hm-lnb-admin" class="link">자세히 보기</a>
+          <p class="close"><button type="button">
+              닫기
+            </button></p>
+        </div>
+      </div> <!--fragment#172c2db8f25#head-->
+      <div class="toast_wrap" fragment="172c2db8f25" style="display: none;">
+        <div class="toast">
+          <h3 class="blind"></h3> <strong class="message"></strong>
+        </div>
+      </div>
+      <div fragment="172c2db8f25" class="ly_wrapper" style="display: none;">
+        <div class="ly_loading" style="left: 330px; top: 800px; display: none;">
+          <div class="cont">
+            <p class="cont1"><span class="loading"><img
+                  src="https://static.worksmobile.net/static/pwe/address/loading_fff.gif" width="32" height="8"
+                  alt="loading"></span> <!----></p>
+          </div>
+        </div>
+        <div class="layer_bg"></div>
+      </div>
+      <div fragment="172c2db8f25" class="ly_wrapper" style="display: none;">
+        <div class="ct_layer" style="display: none;">
+          <div class="layer_content type_upload">
+            <h3 class="tit">파일 업로드</h3>
+            <div class="upld_box">
+              <div id="uploadStatus" class="upload_status">
+                <p class="status"><span class="count"><strong>0개</strong> / 0개</span> <span class="size">0KB/0KB</span>
+                  <span class="remain">0초 남음</span>
+                </p>
+                <p class="progress_bar"><span class="tit">전체 전송</span> <span class="total">0%</span> <span
+                    class="p_bar"><span class="p_bar_value" style="width: 0%;"><span
+                        class="total">0%</span></span></span></p>
+              </div>
+              <div class="upld_file">
+                <div class="upld_file_head"><span class="file_name">이름</span> <span class="file_progress">전송량</span>
+                  <span class="transfer_status">전송 상태</span>
+                </div>
+                <div class="upld_file_list osx_scrl">
+                  <ul id="progressFileList"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="addButton nb"><button id="uploadResumeButton" type="button" style="display: none;"><span
+                  class="icon_upload"></span>재시작
+              </button> <button id="uploadPauseButton" type="button"><span class="icon_pause"></span>일시중지
+              </button></div> <button type="button" class="btn_close"><span class="blind">닫기</span></button>
+          </div>
+        </div>
+        <div class="ly_common" style="display: none;">
+          <div class="layer_area">
+            <h3 class="tit">미리보기</h3>
+            <div class="cont board_preview">
+              <div class="board_view">
+                <div class="subject"><!---->
+                  <h3 class="txt"></h3>
+                </div>
+                <div class="infor">
+                  <div class="infor_inner">
+                    <p class="photo"><!--fragment#1413aeb7508#head--><!----> <span fragment="1413aeb7508"
+                        class="initial_profile"><em>
+                          false
+                        </em></span><!--fragment#1413aeb7508#tail--></p> <span class="name"><strong></strong><span
+                        style="display: none;"></span></span> <span class="date"></span> <span class="edit">편집 허용 : OFF
+                      (작성자 및 게시판 관리자만 편집 가능) <!----> <!----></span>
+                  </div>
+                </div>
+                <div class="lw_file_attach_view" style="display: none;">
+                  <div class="file_infor"><span class="file_tit"><button type="button" class="btn_fold_attach"><i
+                          class="blind">첨부 파일</i></button><span>첨부파일 0개</span><span
+                        class="file_size">(0KB)</span></span></div>
+                  <div class="file_wrap" style="display: block;">
+                    <ul class="file_list"></ul>
+                  </div>
+                </div>
+                <div id="previewCont" class="cont _preview_cont"></div>
+              </div>
+            </div>
+            <div class="btn_area"><button type="button" class="btn">
+                수정
+              </button> <button type="button" class="btn tx_point"><strong>등록</strong></button></div>
+            <p class="bt_hide"><button type="button"><i>레이어 닫기</i></button></p>
+          </div>
+        </div>
+        <div class="ly_common" style="display: none;">
+          <div class="layer_area">
+            <h3 class="tit">게시판 추가 마법사</h3>
+            <div class="cont board_add">
+              <p class="infor">원하는 게시판을 선택하고 (복수 선택 가능) 게시판 추가 버튼을 누르면 게시판 추가가 완료됩니다.</p>
+              <ul class="board_box">
+                <li>
+                  <div class="item board"><input id="checkbox_0" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_0" class="item_txt">뉴스,정보 공유</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item board"><input id="checkbox_1" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_1" class="item_txt">업무 일지</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item board"><input id="checkbox_2" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_2" class="item_txt">사내 양식 문서함</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item board"><input id="checkbox_3" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_3" class="item_txt">업무 문의</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item board"><input id="checkbox_4" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_4" class="item_txt">점포소식</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item board"><input id="checkbox_5" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_5" class="item_txt">회의록</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item board"><input id="checkbox_6" type="checkbox" name="board" value="true"> <label
+                      for="checkbox_6" class="item_txt">자료 공유</label> <!----></div>
+                </li>
+                <li>
+                  <div class="item"><input id="customBoard" type="checkbox" name="board"><label for="customBoard"><i
+                        class="blind"></i></label> <span class="input_cover"><input type="text"
+                        placeholder="게시판명 입력"></span></div>
+                </li>
+                <li>
+                  <div class="item"><span class="item_txt">템플릿</span>
+                    <div class="tooltip_cover"><button type="button" class="btn_tooltip">
+                        도움말
+                      </button>
+                      <div class="ly_tooltip" style="display: none;">
+                        <p class="infor">설정한 템플릿이 게시글을 쓸 때 자동으로 적용됩니다.</p> <a
+                          href="https://docs.worksmobile.com/hm-addwzd-detail" target="_blank" class="link">자세히 보기</a>
+                        <button type="button" class="btn_close">
+                          닫기
+                        </button>
+                      </div>
+                    </div> <span class="status">설정 안함 </span>
+                    <a class="link_settings" style="cursor: pointer;">
+                      <i class="blind"></i></a>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="btn_area">
+                <div class="guide_box"><a target="_blank" href="https://admin.worksmobile.com/service/home/boards"
+                    class="link">어드민에서 관리</a>
+                  <div class="tooltip_cover"><button type="button" class="btn_tooltip">
+                      도움말
+                    </button>
+                    <div class="ly_tooltip" style="display: none;">
+                      <p class="infor">어드민에서 게시판 관리에 필요한 다양한 기능을 추가로 제공하고 있습니다. </p>
+                      <a href="https://docs.worksmobile.com/hm-wzd-qm" target="_blank" class="link">가이드 보기</a> <button
+                        type="button" class="btn_close">
+                        닫기
+                      </button>
+                    </div>
+                  </div>
+                </div> <button type="button" class="btn"><strong>닫기</strong>
+                </button>
+                <button type="button" class="btn tx_point"><strong>게시판 추가</strong></button>
+              </div>
+            </div>
+          </div>
+        </div> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+        <div class="layer_bg" style="display: none;"></div>
+      </div>
+
+      <div fragment="172c2db8f25" class="ly_wrapper" style="display: none;">
+        <div class="ly_loading" style="left: 330px; top: 800px; display: none;">
+          <div class="cont">
+            <p class="cont1"><span class="loading"><img
+                  src="https://static.worksmobile.net/static/pwe/address/loading_fff.gif" width="32" height="8"
+                  alt="loading"></span> <!----></p>
+          </div>
+        </div>
+
+        <div class="ct_layer" style="display: none;">
+          <div class="layer_content type_alert">
+            <h4> </h4>
+            <p class="desc">
+
+            </p>
+
+            <div class="block_list">
+              <div class="block_list_head"><span class="file_name">이름</span> <span class="reason">사유</span></div>
+              <div class="block_list_cover">
+                <table class="block_list_body">
+                  <caption><span class="blind">사유</span></caption>
+
+                  <colgroup>
+                    <col class="col_filename">
+                    <col class="col_reason">
+                  </colgroup>
+
+                  <thead>
+                    <tr>
+                      <th class="file_name"><span>이름</span></th>
+                      <th class="reason"><span>사유</span></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="btn_area _btn_area"><button type="button" class="btn">
+                확인
+              </button></div>
+
+          </div>
+
+        </div>
+
+        <div class="ly_common" style="display: none;">
+          <div class="layer_area">
+            <h3 class="tit">게시판 선택</h3>
+            <div class="cont board_select">
+              <div class="option_box">
+                <ul></ul>
+              </div>
+            </div>
+
+            <div class="btn_area"><button type="button" class="btn">
+                닫기
+              </button> <button type="button" class="btn tx_point"><strong>확인</strong></button></div>
+          </div>
+        </div>
+
+        <div class="layer_bg" style="display: none;"></div>
+
+      </div>
+
+      <div fragment="172c2db8f25" class="ly_wrapper" style="display: none;">
+        <div class="ct_layer">
+          <div class="layer_content alert"><span class="ico_caution" style="display: none;"></span> <span
+              class="ico_complete" style="display: none;"></span> <!----> <!---->
+            <div class="chk_area" style="display: none;"><input id="send_msg" type="checkbox"> <label
+                for="send_msg"></label></div>
+            <div class="btn_area"><button type="button" tabindex="-1" class="btn tx_point"><span>확인</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="layer_bg"></div>
+
+      </div><!--fragment#172c2db8f25#tail-->
+    </div>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    var IS_NCS = 'false';
+    var IS_GOV = 'false';
+    var IS_ADMIN = 'true';
+    var IS_FREEMIUM = 'true';
+    var IS_MULTI_INSTANCE = 'false';
+    var USER_ID = '100001502934135';
+    var MEMBER_NAME = '이규해' || '이규해';
+    var DOMAIN_ID = '300073643';
+    var ADMIN_URL = 'https://admin.worksmobile.com';
+    var ADMIN_URL_V1 = 'https://admin-v1.worksmobile.com';
+    var PROFILE_URL = 'https://photo.contact.worksmobile.com/v2/photos';
+    var APP_URL_SCHEME_PREFIX = 'lineworks';
+    // language for timeFormat and vue i18n, Must at the top
+    var LANGUAGE = 'ko_KR';
+    if (['ko_kr', 'ja_jp', 'en_us', 'zh_cn', 'zh_tw'].indexOf((LANGUAGE || '').toLowerCase()) < 0) {
+      LANGUAGE = 'en_US';
+    }
+    // client access auth. ex)mail_web,calendar_web,contact_web,drive_web,office_web,works_home,mail_app,one_app
+    var SERVICE_AUTH = 'admin_web,calendar_web,contact_web,form_web,guide_web,help_web,home_web,message_web,one_app,one_calendar,one_contact,one_form,one_home,one_message,one_notice,one_pc,one_task,task_web';
+    // service ON/OFF ex)mail,calendar,contact,drive,home,message,form
+    var SERVICE_ON = 'calendar,task,home,form,contact,message';
+    var FUNCTION_AUTH = 'F001,F008,F012,F014,F017,F019,F021,F023,F024,F025,F026,F027,F031,F032,F034,F035,F036,F037,F039,F040,F041,F042,F046,F050,F054,F055,F056,F057,F060,F063,F064,F1001';
+    var FUNCTION_VALUE = 'F004_Y,F006_R,F007_MA=N|ME=N|HO=N|CA=N|DR=N|CO=N|TA=N,F013_251,F014_ALL,F017_A=N|O=Y|P=N|S=Y|-1,F018_NF4|5,F020_10,F021_3600,F022_3,F026_worksat,line,F027_line,worksat,F031_ALL,F032_3,F034_3,F035_ALL,F037_worksat,line,F038_worksmobile.com,worksmobile.net,works.do,F045_Y,F057_10,F064_WM';
+    var INSTANCE_CODE = '24101';
+    var IDC_LOCATION = 'kr1';
+    var MAIN_PROFILE_DOMAIN = 'https://contact.worksmobile.com';
+    var STORAGE_URL = 'https://storage.worksmobile.com';
+    var DRIVE_URL = 'https://drive.worksmobile.com';
+    var SEND_NOTE_URL = 'https://talk.worksmobile.com/note/add';
+    var ALLOW_COPY_TEXT = 'true';
+    try {
+      var RESTRICTED_FILE_EXTENSION_LIST = JSON.parse('[]');
+    } catch (e) {
+      var RESTRICTED_FILE_EXTENSION_LIST = [];
+    }
+    var GNB_MAIN_COLOR = '#FFFFFF';
+    var GNB_FONT_COLOR = '#000000';
+    var QUICK_GUIDE_STATUS = '100';
+    var INTRODUCTION_STATUS = '100';
+    var GNB_SCRIPT_URL = 'https://common.worksmobile.com/gnb/v2/home?q=100001502934135_230307143630';
+    var BEE_JS_URL = 'https://notify.worksmobile.com/works.notify.bee-3.6.0.js';
+    var NOTIFY_URL = 'https://notify.worksmobile.com';
+    var IS_REDIRECTED_FROM_WEB_URL = window.location.href.indexOf("isRedirectedFromWebUrl=true") >= 0;
+    var DOCUMENT_VIEWER_URL = 'https://docviewer.worksmobile.com';
+    var TEMPLATE_API_URL = 'https://template.worksmobile.com';
+    var IS_TEMPLATE_USE = 'true';
+    var COUNTRY = 'KR';
+    var BRAND_NAME = 'NAVER WORKS';
+    var BRAND_NAME_PREFIX = 'NAVER';
+    var GUIDE_DOMAIN = 'docs.worksmobile.com';
+    var JOIN_DATE = '1678167356000'
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    function escapeText(text) {
+      var result = text;
+      result = result.replaceAll("&", "&amp;");
+      result = result.replaceAll("<", "&lt;");
+      result = result.replaceAll(">", "&gt;");
+      result = result.replaceAll("\"", "&quot;");
+      result = result.replaceAll("'", "&#39;");
+      return result;
+    }
+
+    var ARTICLE_DATA = escapeText("") || "{}";
+
+    // if windows, then add class "ua_win" - radio button font bug fix (WORKSHOME-5032)
+    if (navigator.platform.toLowerCase().indexOf('win') == 0) {
+      document.body.classList.add('ua_win');
+    }
+  </script>
+
+  <link href="/dist/vue/static/css/web.b1e884c811d60a488783.css" rel="stylesheet">
+  <script type="text/javascript" src="/dist/vue/static/js/0.2cbd6a8c50faf9eacd5e.js"></script>
+  <script type="text/javascript" src="/dist/vue/static/js/40.976ee4d5eba80204c7c0.js"></script>
+  <script type="text/javascript" src="/dist/vue/static/js/web.ce8aa157167b21449730.js"></script>
+
+  <iframe src="https://notify.worksmobile.com/bee-iframe/index-3.6.0.html" style="display: none;"></iframe>
+</body>
+
+</html>
