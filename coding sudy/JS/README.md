@@ -1,6 +1,8 @@
 # JS 공부 정리
 
-## [엘리스 SW 트랙 4기](https://elice.training/) 중 공부 내용을 정리
+## [엘리스 pre 트랙](https://kdt/elice.id) 공부 내용 정리
+
+## 거기에 [엘리스 SW 트랙 4기](https://elice.training/) 중 공부 내용도 정리
 
 ### 그 외에 모르는 건 [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript)에서 찾아 정리
 
