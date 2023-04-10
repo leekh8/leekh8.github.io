@@ -13,17 +13,6 @@
 
 <body>
   <main class="container">
-    <section class="intro">
-      <div class="intro-header">
-      <div class="intro-title">
-        <ul>
-          <li class="one">
-            <a href="../_study/README.md">study log</a>
-          </li>
-        </ul>
-      </div>
-      </div>
-    </section>
     <section class="about">
       <div class="about-header {{condensed_class}}">
       <div class="about-title">
@@ -167,7 +156,6 @@
       <p class="about-footer {{condensed_class}}">&copy;
         {{ "now" | date: "%Y" }}</p>
       {%- if site.plainwhite.dark_mode -%}
-      <!--
       <div class="about-footer {{condensed_class}}">
         <p>Dark Mode
           <i class="icon-moon"></i>
@@ -177,7 +165,6 @@
           </label>
         </p>
       </div>
-      -->
       {%- endif -%}
       {% endcapture %}
       {{ footer }}
