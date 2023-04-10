@@ -27,7 +27,7 @@ plainwhite:
   social_links:
     #twitter: samarsault
     github: leekh8
-    gitlog: leekh8
+    #gitlog: leekh8
     #linkedIn: in/samarsault
     #dribbble: jekyll
     #flickr:   jekyll
@@ -50,6 +50,8 @@ plainwhite:
   show_excerpts: true
 
   navigation:
+    - title: Home
+      url: "/home"
     - title: Study
       url: "/study"
     - title: About me
