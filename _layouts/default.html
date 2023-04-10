@@ -13,6 +13,17 @@
 
 <body>
   <main class="container">
+    <section class="intro">
+      <div class="intro-header">
+      <div class="intro-title">
+        <ul>
+          <li class="one">
+            <a href="../_study/README.md">study log</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </section>
     <section class="about">
       <div class="about-header {{condensed_class}}">
       <div class="about-title">
@@ -42,6 +53,18 @@
           </li>
         </a>
         {%- endif -%}
+        {%- if site.plainwhite.social_links.gitlog -%}
+        <a href="https://github.com/{{ site.plainwhite.social_links.gitlog }}" target="_blank">
+          <li>
+            <i class="icon-github-log"></i>
+          </li>
+        </a>
+        {%- endif -%}
+        <a href="https://github.com/{{ site.plainwhite.social_links.gitlog }}" target="_blank">
+          <li>
+            <i class="icon-github-log"></i>
+          </li>
+        </a>
         {%- if site.plainwhite.social_links.gitlab -%}
         <a href="https://gitlab.com/{{ site.plainwhite.social_links.gitlab }}" target="_blank">
           <li>
@@ -149,6 +172,7 @@
       <p class="about-footer {{condensed_class}}">&copy;
         {{ "now" | date: "%Y" }}</p>
       {%- if site.plainwhite.dark_mode -%}
+      <!--
       <div class="about-footer {{condensed_class}}">
         <p>Dark Mode
           <i class="icon-moon"></i>
@@ -158,6 +182,7 @@
           </label>
         </p>
       </div>
+      -->
       {%- endif -%}
       {% endcapture %}
       {{ footer }}

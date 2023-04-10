@@ -1,4 +1,4 @@
-title: Your awesome title
+title: About me
 author: Leekh
 email: amysun125@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -20,13 +20,14 @@ plainwhite:
   portfolio_image: 'assets/logo.png' # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: 'ko' # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   condensed_mobile:
-    #- home
+    - home
     - page
     - post
   # generate social links in footer
   social_links:
     #twitter: samarsault
     github: leekh8
+    gitlog: leekh8
     #linkedIn: in/samarsault
     #dribbble: jekyll
     #flickr:   jekyll
@@ -37,7 +38,7 @@ plainwhite:
     #soundcloud: jekyll
     #telegram: jekyll
     #gitlab: jekyll
-    #email: jekyll
+    #email: amysun125@gmail.com
 
     # Mastodon instances
     # mastodon:
