@@ -46,7 +46,7 @@ plainwhite:
     #   instance: example.com
     # - username: jekyll2
     #   instance: example.com
-  disqus_shortname: games
+  # disqus_shortname: games
   show_excerpts: true
 
   navigation:
