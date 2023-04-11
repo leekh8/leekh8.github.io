@@ -64,6 +64,7 @@ plainwhite:
 
 # Build settings
 theme: plainwhite
+
 remote-theme: plainwhite
 
 # Filtering Content
