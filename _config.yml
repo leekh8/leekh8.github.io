@@ -75,4 +75,4 @@ plugins:
 #  - jekyll-feed
 
 # Serving
-baseurl: /leekh8
+baseurl: ""
