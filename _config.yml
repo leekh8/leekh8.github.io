@@ -13,7 +13,7 @@ sass:
 plainwhite:
   name: LeeKH
   tagline: Student
-  date_format: "%Y %m %-d %H:%M:%S"
+  date_format: "%Y %m %-d"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: false # set to true to add dark mode toggle
@@ -54,7 +54,7 @@ plainwhite:
       url: "/home"
     - title: Study
       url: "/study"
-    - title: About me
+    - title: "About me"
       url: "/about-me"
 
 # If you want to link only specific pages in your header, uncomment

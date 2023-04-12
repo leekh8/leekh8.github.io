@@ -2,8 +2,7 @@
 layout: default
 ---
 
-{%- assign date_format = site.plainwhite.date_format | default: "%Y %m %-d
-%H:%M:%S" -%}
+{%- assign date_format = site.plainwhite.date_format | default: "%Y %m %-d" -%}
 <div class="post-container">
   <a class="post-link" href="{{ page.url | relative_url }}">
     <h2 class="post-title">{{ page.title | escape }}</h2>
