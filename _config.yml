@@ -1,10 +1,7 @@
-title: About me
+title: My homepage
 author: Leekh
 email: amysun125@gmail.com
-description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: > 내 홈페이지에 대한 설명
 show_excerpts: true # set to true to show excerpts on the homepage
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -13,16 +10,16 @@ sass:
 plainwhite:
   name: LeeKH
   tagline: Student
-  date_format: "%Y %m %-d"
+  date_format: "%Y년 %m월 %d일 %H:%M:%S %z"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
-  dark_mode: false # set to true to add dark mode toggle
   portfolio_image: "assets/logo.png" # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: "ko" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   condensed_mobile:
     - home
     - page
     - post
+    - study
   # generate social links in footer
   social_links:
     #twitter: samarsault
@@ -46,12 +43,10 @@ plainwhite:
     #   instance: example.com
     # - username: jekyll2
     #   instance: example.com
-  # disqus_shortname: games
-  show_excerpts: true
 
   navigation:
-    - title: Home
-      url: "/home"
+    # - title: Main
+    #   url: "/main"
     - title: Study
       url: "/study"
     - title: "About me"
@@ -72,6 +67,17 @@ future: true
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-coffeescript
+  - jekyll-redirect-from
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+exclude:
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock
 
 # Serving
 baseurl: ""
