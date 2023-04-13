@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '안녕 클레오파트라'
-date: 2023-04-05 21:03:36 +0530
+title: "안녕 클레오파트라"
+date: "%Y-%m-%d"
 categories: Javascript NodeJS
 tags: JS sql
 ---
@@ -13,11 +13,11 @@ let's study about this page
 ~.~
 
 ```javascript
-const Razorpay = require('razorpay');
+const Razorpay = require("razorpay");
 
 let rzp = Razorpay({
-  key_id: 'KEY_ID',
-  secret: 'name',
+  key_id: "KEY_ID",
+  secret: "name",
 });
 
 // capture request
