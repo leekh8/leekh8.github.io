@@ -1,67 +1,63 @@
 ---
 layout: default
 ---
-  <!--<body>
-  <div class="container">
-    <div>
-      <header id="intro">
 
-        <h1><a href="./index.html">여기는 intro</a></h1>
-
-        <nav class="gnb_area">
-          <div id="gnb_list" class="gnl_list_box"></div>
-          <ul>
-            <li class="one"><a href="./coding.html" target="_blank" data-title="개발 공부"><span
-                  class="ico">home</span></span></a></li>
-            <li class="two"><a href="./folder2/myinfo.html">Introduce</a></li>
-            <li class="three"><a href="./folder3/extra.html">Introduce</a></li>
-            <li class="four"><a href="./ex.html">예시 페이지</a>
-            </li>
-          </ul>
-        </nav>
-
-      </header>
+{%- if page.title -%}
+<h1 class="page-heading">{{ page.title }}</h1>
+{%- endif -%} {{ content }} {%- if site.study.size > 0 -%}
+<ul class="posts">
+  <li class="posts-labelgroup" id="posts-labelgroup">
+    <h1 id="posts-label">studies</h1>
+    {% if site.plainwhite.search %}
+    <div class="search-container">
+      <div class="search-section">
+        <i class="icon-search"></i>
+        <input
+          type="text"
+          name="search"
+          id="searchbar"
+          autocomplete="off"
+          aria-label="search in study"
+        />
+      </div>
+      <div
+        class="search-results"
+        id="search-results"
+        data-placeholder="No Results"
+        style="display: none"
+      ></div>
     </div>
+    {% endif %}
+  </li>
 
-    <main role="main" id="main">
-      <div class="nav_lnb" style="width: 250px">
-
-
+  {%- for post in site.studies -%}
+  <li>
+    {%- assign date_format = site.plainwhite.date_format | default: "%Y년 %m월
+    %d일" -%}
+    <a class="post-link" href="{{ study.url | relative_url }}">
+      <h2 class="post-title">{{ study.title | escape }}</h2>
+    </a>
+    <div class="post-meta">
+      <div class="post-date">
+        <i class="icon-calendar"></i>
+        {{ study.date | date: date_format }}
       </div>
-      <article class="text">
-        <p>안녕하세요</p>
-        <p>여기는 article.text</p>
+      {%- if study.categories.size > 0-%}
+      <ul class="post-categories">
+        {%- for tag in study.categories -%}
+        <li>{{ tag }}</li>
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+    </div>
+    <div class="post">
+      {%- if site.show_excerpts -%} {{ study.excerpt }} {%- endif -%}
+    </div>
+  </li>
+  {%- endfor -%}
+</ul>
 
-      </article>
-
-      <article class="one">
-        <b>hello</b>
-        <p>여기는 article.one</p>
-        <script src="sample.js"></script>
-      </article>
-
-      <article class="two">
-        <p>i'm q</p>
-        <ol>
-          <li>1994.01.25.</li>
-        </ol>
-        <p>여기는 article.two</p>
-      </article>
-
-      <article class="three">
-        <p>personal log</p>
-        <p>여기는 article.three</p>
-      </article>
-
-    </main>
-
-    <footer id="footer">
-      <div class="contact">
-        <p>contact: amysun125@gmail.com</p>
-      </div>
-
-    </footer>
-
-  </div>
-</body>
---></html>
+<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
+{%- endif -%}

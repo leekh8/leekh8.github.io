@@ -1,33 +1,44 @@
+<!--웹 페이지의 기본 구조 정의하는 doctype 선언-->
 <!DOCTYPE html>
+<!--{{site.plainwhite.html_lang}}은 jekyll 변수를 사용해 사이트의 언어 값을 동적으로 설정-->
 <html lang="{{ site.plainwhite.html_lang }}">
 
+<!--웹 페이지의 헤더 정의-->
 <head>
+  <!--head.html 파일을 iclude해 헤더 부분의 내용 가져옴-->
+  <!--중괄호, 퍼센트, 대쉬는 liquid 태그에서 공백 제거를 위한 문법-->
   {%- include head.html -%}
 </head>
 
+<!--페이지 레이아웃이 `site.plainwhite.condensed_mobile`에 포함되어 있는지 확인-->
+<!--`page.layout`은 현재 페이지의 레이아웃 정보-->
+<!--`site.plainwhite.condensed_mobile`은 웹 사이트의 설정 정보 중 하나-->
+<!--페이지 레이아웃이 `site.plainwhite.condensed_mobile`에 포함되어 있다면 `condensed_class` 변수에 "condensed"값을 할당하고
+그렇지 않으면 빈 문자열 할당-->
 {%- if site.plainwhite.condensed_mobile contains page.layout -%}
 {% assign condensed_class = "condensed" %}
 {% else %}
 {% assign condensed_class = "" %}
 {%- endif -%}
 
+<!--웹 페이지의 본문 부분 정의-->
 <body>
   <main class="container">
     <section class="about">
+      <!--`about-header`클래스에 `condensed_calss`변수의 값을 포함해
+      클래스를 동적으로 설정-->
       <div class="about-header {{condensed_class}}">
+        <!--소개 부분의 제목과 이미지 정의-->
       <div class="about-title">
+        <!--현재 페이지의 상대 URL을 사용해 메인 페이지로 이동하는 링크 생성-->
       <a href="{{ "/" | relative_url}}">
-        {% if site.plainwhite.portfolio_image_dark and site.plainwhite.dark_mode %}
-        <img class="light" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
-        <img class="dark" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
-        {% else %}
         <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
-        {% endif %}
       </a>
       <h2 id="title">
         <a href="{{ "/" | relative_url }}">{{ site.plainwhite.name }}</a>
       </h2>
       </div>
+      <!--site.plainwhite.tagline 변수가 비어있지 않으면 p 실행-->
       {%- if site.plainwhite.tagline -%}
       <p class="tagline">{{ site.plainwhite.tagline }}</p>
       {%- endif -%}
@@ -155,17 +166,6 @@
       {%- endif -%}
       <p class="about-footer {{condensed_class}}">&copy;
         {{ "now" | date: "%Y" }}</p>
-      {%- if site.plainwhite.dark_mode -%}
-      <div class="about-footer {{condensed_class}}">
-        <p>Dark Mode
-          <i class="icon-moon"></i>
-          <label class="switch">
-            <input type="checkbox" class="dark-mode-toggle">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
-        </p>
-      </div>
-      {%- endif -%}
       {% endcapture %}
       {{ footer }}
     </section>
@@ -176,9 +176,6 @@
       {{ footer }}
     </footer>
   </main>
-  {% if site.plainwhite.dark_mode %}
-  <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
-  {% endif %}
 
   {%- if site.plainwhite.analytics_id -%}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
