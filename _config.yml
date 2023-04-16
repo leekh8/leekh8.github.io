@@ -20,7 +20,7 @@ timezone: Asia/Seoul
 
 title: 내 블로그 # the main title
 
-tagline: 읽고, 쓴거\n 블로그로 만들어볼게요 # it will display as the sub-title
+tagline: 읽고, 쓴거  블로그로 만들어볼게요 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   블로그 한번 해볼게요
@@ -31,8 +31,8 @@ url: "https://leekh8.github.io"
 github:
   username: leekh8 # change to your github username
 
-twitter:
-  username: twitter_username # change to your twitter username
+# twitter:
+#  username: twitter_username # change to your twitter username
 
 social:
   # Change to your full name.
@@ -41,7 +41,7 @@ social:
   email: amysun125@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
+    # - https://twitter.com/username # change to your twitter homepage
     - https://github.com/leekh8 # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -197,3 +197,5 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+mermaid: true
