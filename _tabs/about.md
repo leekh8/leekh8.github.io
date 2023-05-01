@@ -15,7 +15,6 @@ order: 4
 
 |                                                                                         where i learned                                                                                         | what i learned here |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------: |
-|                                                                          [README.md](../README.md){:target="\_blank"}                                                                           |                     |
 |                                                                   [MDN](https://developer.mozilla.org/ko/){:target="\_blank"}                                                                   |                     |
 |                                                                        [NPM](https://www.npmjs.com/){:target="\_blank"}                                                                         |                     |
 | [마크다운 문법 살펴보기](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax){:target="\_blank"} |      Markdown       |
