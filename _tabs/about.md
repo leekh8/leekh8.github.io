@@ -31,4 +31,4 @@ order: 4
 
 에 기본 문법 정리
 
-#### 사용한 Theme: [Jekyll Theme](./Chirpy-README.md)
+#### 사용한 Theme: [Jekyll Theme: Chirpy](https://github.com/leekh8/leekh8.github.io/blob/main/Chirpy-README.md)
