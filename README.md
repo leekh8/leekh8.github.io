@@ -14,13 +14,13 @@
 
 ### Content list
 
-|                  what i learned                  |                           about                            |
-| :----------------------------------------------: | :--------------------------------------------------------: |
-|                       SQL                        | [SQL 좀좀따리 문법 정리](./grammar.sql){:target="\_blank"} |
-|                        JS                        |  [NPM](https://www.npmjs.com/){:target="\_blank"} Python   |
-|                    HTML, CSS                     |      [NPM](https://www.npmjs.com/){:target="\_blank"}      |
-| [NPM](https://www.npmjs.com/){:target="\_blank"} |      [NPM](https://www.npmjs.com/){:target="\_blank"}      |
+|                  what i learned                  |                          about                          |
+| :----------------------------------------------: | :-----------------------------------------------------: |
+|                       SQL                        |       [SQL 좀좀따리 문법 정리]{:target="\_blank"}       |
+|                        JS                        | [NPM](https://www.npmjs.com/){:target="\_blank"} Python |
+|                    HTML, CSS                     |    [NPM](https://www.npmjs.com/){:target="\_blank"}     |
+| [NPM](https://www.npmjs.com/){:target="\_blank"} |    [NPM](https://www.npmjs.com/){:target="\_blank"}     |
 
 에 기본 문법 정리
 
-#### 사용한 Theme: [Jekyll Theme](./Chirpy%20README.md)
+#### 사용한 Theme: [Jekyll Theme](./Chirpy-README.md)
