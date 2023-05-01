@@ -1,47 +1,26 @@
-# [Jekyll Theme](./Chirpy%20README.md)
+# What i learned?
 
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+## Summarizing what i studied
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `/_data`, `/_layouts`, `/_includes`, `/_sass` and `/assets`, as well as a small part of options of the `/_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+### Reference site
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
+|                                                                               where i learned                                                                                | what i learned here |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------: |
+|                                                                [엘리스 SW 트랙 4기](https://elice.training/)                                                                 |     JavaScript      |
+|                                                                [인공지능사관학교](https://gj-aischool.or.kr/)                                                                |       Python        |
+|                                                                   [MDN](https://developer.mozilla.org/ko/)                                                                   |                     |
+|                                                                        [NPM](https://www.npmjs.com/)                                                                         |                     |
+| [마크다운 문법 살펴보기](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) |      Markdown       |
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
+### Content list
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+|                 what i learned                 |                  about                  |
+| :--------------------------------------------: | :-------------------------------------: |
+|                      SQL                       | [SQL 좀좀따리 문법 정리](./grammar.sql) |
+| [인공지능사관학교](https://gj-aischool.or.kr/) |                 Python                  |
+|    [MDN](https://developer.mozilla.org/ko/)    |                                         |
+|         [NPM](https://www.npmjs.com/)          |                                         |
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][cd] workflow to here, so that you can start writing in minutes.
+에 기본 문법 정리
 
-## Prerequisites
-
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
-
-## Installation
-
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
-
-```
-$ bundle
-```
-
-## Usage
-
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[cd]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+#### 사용한 Theme: [Jekyll Theme](./Chirpy%20README.md)
