@@ -126,8 +126,5 @@
 
   <script src="{{ site.data.assets[origin].jquery.js | relative_url }}"></script>
 
-  {% unless site.theme_mode %} {% include mode-toggle.html %} {% endunless %} {%
-  if page.mermaid %}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  {% endif %}
+  {% unless site.theme_mode %} {% include mode-toggle.html %} {% endunless %}
 </head>
