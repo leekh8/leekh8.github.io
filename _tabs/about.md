@@ -7,6 +7,7 @@ order: 4
 > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
 > {: .prompt-tip }
 
+<!--
 ### Reference site
 
 |                                                                                         where i learned                                                                                         | what i learned here |
@@ -29,3 +30,4 @@ order: 4
 에 기본 문법 정리
 
 #### 사용한 Theme: [Jekyll Theme: Chirpy](https://github.com/leekh8/leekh8.github.io/blob/main/Chirpy-README.md)
+-->
