@@ -1,7 +1,3 @@
----
-permalink: /assets/lib/code/
----
-
 # What i learned?
 
 ## Summarizing what i studied
