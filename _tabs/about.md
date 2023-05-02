@@ -28,6 +28,6 @@ order: 4
 | [NPM](https://www.npmjs.com/){:target="\_blank"} |                                                                                                           [NPM](https://www.npmjs.com/){:target="\_blank"}                                                                                                           |
 
 에 기본 문법 정리
+-->
 
 #### 사용한 Theme: [Jekyll Theme: Chirpy](https://github.com/leekh8/leekh8.github.io/blob/main/Chirpy-README.md)
--->
