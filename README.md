@@ -1,3 +1,7 @@
+---
+link_path: /assets/lib/code/
+---
+
 # What i learned?
 
 ## Summarizing what i studied
@@ -16,7 +20,7 @@
 
 |                  what i learned                  |                          about                          |
 | :----------------------------------------------: | :-----------------------------------------------------: |
-|                       SQL                        |       [SQL 좀좀따리 문법 정리]{:target="\_blank"}       |
+|                      React                       |    [문법 정리](react-grammar.jsx){:target="\_blank"}    |
 |                        JS                        | [NPM](https://www.npmjs.com/){:target="\_blank"} Python |
 |                    HTML, CSS                     |    [NPM](https://www.npmjs.com/){:target="\_blank"}     |
 | [NPM](https://www.npmjs.com/){:target="\_blank"} |    [NPM](https://www.npmjs.com/){:target="\_blank"}     |
