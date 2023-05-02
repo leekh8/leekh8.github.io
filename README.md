@@ -16,7 +16,7 @@
 
 |                  what i learned                  |                                about                                |
 | :----------------------------------------------: | :-----------------------------------------------------------------: |
-|                      React                       | [문법 정리](./assets/lib/code/react-grammer.jsx){:target="\_blank"} |
+|                      React                       | [문법 정리](./assets/lib/code/react-grammar.jsx){:target="\_blank"} |
 |                        JS                        |       [NPM](https://www.npmjs.com/){:target="\_blank"} Python       |
 |                    HTML, CSS                     |          [NPM](https://www.npmjs.com/){:target="\_blank"}           |
 | [NPM](https://www.npmjs.com/){:target="\_blank"} |          [NPM](https://www.npmjs.com/){:target="\_blank"}           |
