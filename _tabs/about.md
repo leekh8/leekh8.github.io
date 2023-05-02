@@ -2,7 +2,7 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
-permalink: https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code
+permalink: "https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code"
 ---
 
 > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
