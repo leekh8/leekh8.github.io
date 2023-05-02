@@ -1,7 +1,3 @@
----
-link_path: /assets/lib/code/
----
-
 # What i learned?
 
 ## Summarizing what i studied
@@ -18,12 +14,12 @@ link_path: /assets/lib/code/
 
 ### Content list
 
-|                  what i learned                  |                          about                          |
-| :----------------------------------------------: | :-----------------------------------------------------: |
-|                      React                       |    [문법 정리](react-grammar.jsx){:target="\_blank"}    |
-|                        JS                        | [NPM](https://www.npmjs.com/){:target="\_blank"} Python |
-|                    HTML, CSS                     |    [NPM](https://www.npmjs.com/){:target="\_blank"}     |
-| [NPM](https://www.npmjs.com/){:target="\_blank"} |    [NPM](https://www.npmjs.com/){:target="\_blank"}     |
+|                  what i learned                  |                                about                                |
+| :----------------------------------------------: | :-----------------------------------------------------------------: |
+|                      React                       | [문법 정리](./assets/lib/code/react-grammar.jsx){:target="\_blank"} |
+|                        JS                        |       [NPM](https://www.npmjs.com/){:target="\_blank"} Python       |
+|                    HTML, CSS                     |          [NPM](https://www.npmjs.com/){:target="\_blank"}           |
+| [NPM](https://www.npmjs.com/){:target="\_blank"} |          [NPM](https://www.npmjs.com/){:target="\_blank"}           |
 
 에 기본 문법 정리
 
