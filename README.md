@@ -1,3 +1,7 @@
+---
+permalink: /assets/lib/code/
+---
+
 # What i learned?
 
 ## Summarizing what i studied
@@ -14,12 +18,13 @@
 
 ### Content list
 
-|                  what i learned                  |                                                         about                                                          |
-| :----------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
-|                      React                       | [문법 정리](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/react-grammar.jsx){:target="\_blank"} |
-|                        JS                        |                                [NPM](https://www.npmjs.com/){:target="\_blank"} Python                                 |
-|                    HTML, CSS                     |                                    [NPM](https://www.npmjs.com/){:target="\_blank"}                                    |
-| [NPM](https://www.npmjs.com/){:target="\_blank"} |                                    [NPM](https://www.npmjs.com/){:target="\_blank"}                                    |
+|        what i learned         |                                                    about                                                     |
+| :---------------------------: | :----------------------------------------------------------------------------------------------------------: |
+|             React             | [문법 정리](react-grammar.jsx) <a href="{{page.permalink}}/react-grammar.jsx" target="\_blank">문법 정리</a> |
+|              JS               |                           <a href="https://www.npmjs.com/" target="_blank">NPM</a>                           |
+|           HTML, CSS           |                           <a href="https://www.npmjs.com/" target="_blank">NPM</a>                           |
+| [NPM](https://www.npmjs.com/) |                           <a href="https://www.npmjs.com/" target="_blank">NPM</a>                           |
+|            Python             |
 
 에 기본 문법 정리
 
