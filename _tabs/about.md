@@ -2,7 +2,7 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
-permalink: /assets/lib/code/
+permalink: https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code
 ---
 
 > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
@@ -20,12 +20,12 @@ permalink: /assets/lib/code/
 
 ### Content list
 
-|                  what i learned                  |                       about                       |
-| :----------------------------------------------: | :-----------------------------------------------: |
-|                      React                       | [문법 정리](react-grammar.jsx){:target="\_blank"} |
-|                        JS                        |                      Python                       |
-|                    HTML, CSS                     | [NPM](https://www.npmjs.com/){:target="\_blank"}  |
-| [NPM](https://www.npmjs.com/){:target="\_blank"} | [NPM](https://www.npmjs.com/){:target="\_blank"}  |
+|                  what i learned                  |                                                     about                                                      |
+| :----------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
+|                      React                       | [문법 정리](react-grammar.jsx){:target="\_blank"}<br>[기본 활용](react-utilizing-basic.jsx){:target="\_blank"} |
+|                        JS                        |                                                     Python                                                     |
+|                    HTML, CSS                     |                                [NPM](https://www.npmjs.com/){:target="\_blank"}                                |
+| [NPM](https://www.npmjs.com/){:target="\_blank"} |                                [NPM](https://www.npmjs.com/){:target="\_blank"}                                |
 
 에 기본 문법 정리
 
