@@ -79,7 +79,7 @@ theme_mode: # [light|dark]
 # e.g. 'https://cdn.com'
 img_cdn:
 
-img_path: /assets/lib/post-img/
+img_path: "https://github.com/leekh8/leekh8.github.io/tree/main/assets/lib/post-img"
 
 # the avatar on sidebar, support local or CORS resources
 avatar: ./assets/lib/logo.png
