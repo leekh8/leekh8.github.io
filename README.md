@@ -14,12 +14,12 @@
 
 ### Content list
 
-|                  what i learned                  |                                about                                |
-| :----------------------------------------------: | :-----------------------------------------------------------------: |
-|                      React                       | [문법 정리](./assets/lib/code/react-grammar.jsx){:target="\_blank"} |
-|                        JS                        |       [NPM](https://www.npmjs.com/){:target="\_blank"} Python       |
-|                    HTML, CSS                     |          [NPM](https://www.npmjs.com/){:target="\_blank"}           |
-| [NPM](https://www.npmjs.com/){:target="\_blank"} |          [NPM](https://www.npmjs.com/){:target="\_blank"}           |
+|                  what i learned                  |                                                         about                                                          |
+| :----------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|                      React                       | [문법 정리](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/react-grammar.jsx){:target="\_blank"} |
+|                        JS                        |                                [NPM](https://www.npmjs.com/){:target="\_blank"} Python                                 |
+|                    HTML, CSS                     |                                    [NPM](https://www.npmjs.com/){:target="\_blank"}                                    |
+| [NPM](https://www.npmjs.com/){:target="\_blank"} |                                    [NPM](https://www.npmjs.com/){:target="\_blank"}                                    |
 
 에 기본 문법 정리
 
