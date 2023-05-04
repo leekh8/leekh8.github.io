@@ -24,13 +24,13 @@ assets/js/dist
 Gemfile.lock
 
 # 내가 설정
-./assets/lib/project/react/todoList/package.json
-./assets/lib/project/react/todoList/package-lock.json
-./assets/lib/project/react/todoList/README.md
-./assets/lib/project/react/todoList/src/index.js
-./assets/lib/project/react/todoList/src/index.css
-./assets/lib/project/react/todoList/src/logo.svg
-./assets/lib/project/react/todoList/src/reportWebVitals.js
-./assets/lib/project/react/todoList/src/setupTest.js
-./assets/lib/project/react/todoList/src/App.test.js
-./assets/lib/project/react/todoList/public/
+./assets/lib/project/React/todoList/package.json
+./assets/lib/project/React/todoList/package-lock.json
+./assets/lib/project/React/todoList/README.md
+./assets/lib/project/React/todoList/src/index.js
+./assets/lib/project/React/todoList/src/index.css
+./assets/lib/project/React/todoList/src/logo.svg
+./assets/lib/project/React/todoList/src/reportWebVitals.js
+./assets/lib/project/React/todoList/src/setupTest.js
+./assets/lib/project/React/todoList/src/App.test.js
+./assets/lib/project/React/todoList/public/
