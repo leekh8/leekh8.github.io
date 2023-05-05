@@ -1,6 +1,6 @@
 ---
 categories: [React]
-tags: [React, Props]
+tags: [React, Props, State]
 img_path: /assets/lib/post-img/
 ---
 
