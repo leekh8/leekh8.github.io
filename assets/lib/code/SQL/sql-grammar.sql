@@ -10,7 +10,7 @@
 
 
 -- EMP 테이블의 구조 출력
-DESC EMP;
+-- DESC EMP;
 
 
 -- EMP 테이블 조회
