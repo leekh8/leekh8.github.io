@@ -22,5 +22,6 @@
 |                                                                        [NPM](https://www.npmjs.com/){:target="\_blank"}                                                                         |         NPM         |
 |                                                                [엘리스 SW 트랙 4기](https://elice.training/){:target="\_blank"}                                                                 |     JavaScript      |
 |                                                                [인공지능사관학교](https://gj-aischool.or.kr/){:target="\_blank"}                                                                |       Python        |
+|                                                                      [Mermain official homepage](https://mermaid.js.org/)                                                                       |       Mermaid       |
 
 #### 사용한 Theme: [Jekyll Theme](./Chirpy-README.md)
