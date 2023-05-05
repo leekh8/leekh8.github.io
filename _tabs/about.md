@@ -27,5 +27,6 @@ order: 6
 |                                                                        [NPM](https://www.npmjs.com/){:target="\_blank"}                                                                         |                                                  |
 |                                                                [엘리스 SW 트랙 4기](https://elice.training/){:target="\_blank"}                                                                 | JavaScript<br>Node.js<br>TypeScript<br>React<br> |
 |                                                                [인공지능사관학교](https://gj-aischool.or.kr/){:target="\_blank"}                                                                |                Python<br>SQL<br>                 |
+|                                                                      [Mermaid official homepage](https://mermaid.js.org/)                                                                       |                     Mermaid                      |
 
 #### 사용한 Theme: [Jekyll Theme: Chirpy](https://github.com/leekh8/leekh8.github.io/blob/main/Chirpy-README.md)
