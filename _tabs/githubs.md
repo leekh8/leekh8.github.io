@@ -1,6 +1,6 @@
 ---
-layout: githubs
-icon: fas fa-archive
+# the default layout is 'page'
+icon: fas fa-info-circle
 order: 5
 ---
 
