@@ -1,5 +1,5 @@
 ---
-# the default layout is 'page'
+layout: githubs
 icon: fas fa-info-circle
 order: 4
 ---
