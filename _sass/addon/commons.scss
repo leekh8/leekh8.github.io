@@ -1141,7 +1141,9 @@ $sidebar-display: 'sidebar-display';
 #core-wrapper {
   .categories,
   #tags,
-  #archives {
+  #archives,
+  #projects,
+  #githubs {
     a:not(:hover) {
       @extend %no-bottom-border;
     }
