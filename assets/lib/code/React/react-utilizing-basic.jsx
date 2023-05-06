@@ -422,3 +422,156 @@ function App2() {
 }
 
 // export default App2;
+
+// -------- Effect Hook 1
+// Effect Hook을 사용하면 함수 컴포넌트에서 side effect를 수행할 수 있음
+// 컴포넌트가 최초로 렌더링될 때, 지정한 State나 Props가 변경될 때마다 이펙트 콜백 함수가 호출
+
+// Effect Hook 사용 형태
+// const App = () => {
+//   useEffect(EffectCallback, Deps);
+// }
+
+// 예시
+// // count 가 증가할 때마다 콘솔에 출력해주는 예시
+// const App = () => {
+//     const [count, setCount] = useState(0);
+//     useEffect(() => {
+//         console.log(count);
+//     }, [count]);
+//     return <button onClick={() => {
+//         setCount(current => {
+//             return current + 1;
+//         });
+//     }}>
+//         카운트 증가
+//     </button>
+// }
+
+// 그럼 직접 state 값이 바뀔 때마다 console에 변경된 값이 출력되는 코드를 작성해보자
+
+// 지시사항
+// App 컴포넌트에 inputValue 라는 값을 갖는 state를 선언
+// className이 "App"인 div element 내부에 <input> element를 생성하고
+// value를 생성한 inputValue state로 설정하고 사용자가 값을 입력할 때마다 state가 변경되도록 설정
+// 선언한 state와 return 사이에 useEffect를 이용해 inputValue state가 변경될 때마다
+// console.log를 이용해 값을 출력
+// useEffect 작성 예:
+// useEffect(EffectCallback, Deps);
+import React, { useState, useEffect } from "react";
+
+function App() {
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    console.log(`${inputValue}`);
+  }, [inputValue]);
+  return (
+    <div className="App">
+      <input
+        value={inputValue}
+        onChange={(event) => {
+          setInputValue(event.target.value);
+        }}
+      />
+    </div>
+  );
+}
+
+// export default App;
+
+// -------- Effect Hook 2
+// 지난 실습에서 Effect Hook을 이용하면 컴포넌트 내의 State나 Props의 변화를 감지해
+// 원하는 로직을 실행할 수 있다는 점을 배워음
+// 이어서 Effect Hook을 응용해 개발하는 방법 확인
+
+// Effect Hook을 이용하면 컴포넌트가 생성됐을 때,
+// 컴포넌트가 소멸될 때를 감지해서 특정 로직 실행 가능
+
+// Effect Hook으로 컴포넌트의 생성/소멸 시의 로직을 작성하는 방법.
+
+// 예시
+// const App = () => {
+
+//     useEffect(() => {
+//         console.log("컴포넌트 생성");
+
+//         return () => {
+//             console.log("컴포넌트 소멸");
+//         }
+//     }, []);
+//     return <div></div>
+// }
+
+// 위의 코드를 보면 useEffect의 두 번째 매개변수인 Deps에 빈 배열 넣음
+// 이 때는 오직 컴포넌트의 생성과 소멸 시에만 Effect Callback 함수가 호출되게 함
+
+// 또한 Effect Callback 함수 내에서 return 해주는 또다른 함수가 Effect의 종료 시에 호출되기 때문에
+// 이는 곧 컴포넌트의 소멸 단계에 호출이 되는 함수라고 할 수 있음
+
+// 지시사항
+// src/components 디렉토리를 생성하고 Greeting.js 파일을 생성
+// 생성한 Greeting.js 파일 내에 새로운 함수 컴포넌트 Greeting을 선언
+// 이 컴포넌트는 <h1>안녕하세요.</h1>를 반환
+// Effect Hook을 이용한 코드를 작성
+// deps는 빈 배열,
+// Effect Callback 함수에서는 console.log를 이용해 "컴포넌트가 생성되었습니다." 를 출력하고
+// "컴포넌트가 소멸되었습니다." 를 출력하는 새로운 함수를 반환하도록 함
+// useEffect(() => {
+//     console.log("컴포넌트가 생성되었습니다.");
+//     return () => {
+//         console.log("컴포넌트가 소멸되었습니다.");
+//     }
+// }, []);
+
+// Greeting 컴포넌트를 export 후 App.js로 돌아와 해당 컴포넌트를 import
+// App 컴포넌트 내에 isCreated state를 선언
+// 타입은 boolean이며 초기값은 false
+// className이 "App"인 div element 내에 <button> element를 하나 삽입
+// button의 내용은 컴포넌트 생성/제거 라고 입력하고
+// onClick 이벤트 발생 시 isCreated state를 반전시키는 코드를 작성
+// (현재 값이 false일 경우 true로, true일 경우 false로 전환)
+// 생성한 버튼 아래쪽에 아래와 같은 코드를 작성
+// 주어진 코드는 isCreated가 true일 경우 Greeting 컴포넌트를 출력한다는 의미의 코드
+// 중괄호를 포함해서 입력
+// {isCreated && <Greeting />}
+
+// 코드를 실행하여 버튼을 클릭해보고 개발자 도구의 콘솔을 관찰
+
+// -------- Greeting.js
+import React, { useState, useEffect } from "react";
+const Greeting = () => {
+  useEffect(() => {
+    console.log(`컴포넌트가 생성되었습니다.`);
+    return () => {
+      console.log(`컴포넌트가 소멸되었습니다.`);
+    };
+  }, []);
+  return <h1>안녕하세요.</h1>;
+};
+
+// export default Greeting;
+
+// -------- App.js
+import React, { useState, useEffect } from "react";
+import Greeting from "./components/Greeting";
+
+function App() {
+  const [isCreated, setIsCreated] = useState(false);
+  return (
+    <div className="App">
+      <button
+        onClick={(current) => {
+          setIsCreated((current) => {
+            return !current;
+          });
+        }}
+      >
+        컴포넌트 생성/제거
+      </button>
+      {isCreated && <Greeting />}
+    </div>
+  );
+}
+
+// export default App;
