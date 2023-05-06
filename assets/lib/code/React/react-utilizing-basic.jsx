@@ -363,10 +363,62 @@ function Hello(props) {
 import React from "react";
 import "./App.css";
 
-//함수명이 Welcome인 컴포넌트를 작성합니다.
+//함수명이 Welcome인 컴포넌트를 작성
 function Welcome(props) {
   return <h2>안녕하세요. {props.name}님!</h2>;
 }
 
-//컴포넌트를 호출하여 element에 저장합니다.
+//컴포넌트를 호출하여 element에 저장
 const element33 = <Welcome name="Sara" />;
+
+// -------- 이벤트와 State 연동하기
+// React로 애플리케이션을 개발하다보면 실시간으로 사용자로부터 값을 전달받아
+// 컴포넌트에 반영할 일이 많기 때문에 이벤트와 State는 뗄래야 뗄 수 없는 관계라고 할 수 있음
+
+// 아래 예시는 input element로부터 값을 입력받아 state에 반영하는 코드
+
+// const App = () => {
+//   const [inputValue, setInputValue] =
+// useState("defaultValue");
+
+//   const handleChange = (event) => {
+//     setInputValue(event.target.value);
+//   }
+
+//   return (
+//     <div>
+//       <input onChange={hadleChange}
+// defaultValue={inputValue} />
+//       <br />
+//       입력한 값은: {inputValue}
+//     </div>
+//   );
+// };
+
+// 이제 직접 사용자로부터 값을 입력받는 이벤트 핸들링 함수를 작성해보자
+
+// 지시사항
+// App 컴포넌트 내에 inputValue 라는 state를 선언
+// className이 "App"인 div element 내에 <input> element를 생성
+// 생성한 input element의 onChange 이벤트에서 사용자로부터 입력받은 값을 state에 반영
+// 힌트: event.target.value
+// input element 아래에 <span> element를 생성
+// span element의 내용은 inputValue state를 출력하도록
+
+import React, { useState } from "react";
+
+function App2() {
+  const [inputValue, setInputValue] = useState("");
+  return (
+    <div className="App">
+      <input
+        onChange={(event) => {
+          setInputValue(event.target.value);
+        }}
+      />
+      <span>{inputValue}</span>
+    </div>
+  );
+}
+
+// export default App2;
