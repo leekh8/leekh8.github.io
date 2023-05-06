@@ -123,7 +123,7 @@ const App = () => {
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-- 지정한 state나 propㄴ가 변경될 경우 해당 값을 활용해 계산된 값을 메모이제이션해 재 렌더링 시 불필요한 연산 줄임
+- 지정한 state나 props가 변경될 경우 해당 값을 활용해 계산된 값을 메모이제이션해 재 렌더링 시 불필요한 연산 줄임
 
 ```jsx
 const App = () => {
