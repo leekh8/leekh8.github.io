@@ -21,6 +21,7 @@ order: 5
   - [문법 정리](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/React/react-grammar.jsx){:target="\_blank"}
   - [기본 활용](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/React/react-utilizing-basic.jsx){:target="\_blank"}
   - [활용](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/React/react-utilizing.jsx){:target="\_blank"}
+  - [사용 활용](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/React/react-utilizing-practice.jsx){:target="\_blank"}
 - TS
   - [문법 정리](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/TS/ts-grammar.ts){:target="\_blank"}
   - [기본 활용](https://github.com/leekh8/leekh8.github.io/blob/main/assets/lib/code/TS/ts-utilizing-basic.ts){:target="\_blank"}

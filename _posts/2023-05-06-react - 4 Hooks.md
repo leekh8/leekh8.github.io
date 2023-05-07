@@ -204,3 +204,8 @@ function useMyHook(args) {
   return status;
 }
 ```
+
+- 한 로직이 여러 번 사용될 경우 함수를 분리하는 것처럼 hook을 만드는 것
+- 새로운 개념은 아님
+- hook의 이름은 `use`로 시작해야 함
+- 한 hook 내의 state는 공유되지 않음
