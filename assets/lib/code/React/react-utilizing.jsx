@@ -429,3 +429,78 @@ function App() {
 }
 
 // export default App;
+
+// -------- useCallback
+// useCallback은 함수를 메모이제이션하기 위해 사용하는 Hook
+// 컴포넌트가 재 렌더링될 때 불필요하게 함수가 다시 생성되는 것을 방지
+
+// 참고: js useMemo(() => fn, deps) 와 useCallback(fn, deps) 는 같습니다.
+
+// 예시
+const App = () => {
+  const [firstName, setFirstName] = useState('철수')
+  const [lastName, setLastName] = useState('김')
+
+  // 이름과 성이 바뀔 때마다
+  // 풀네임을 return하는 함수를 메모이제이션
+  const getFullName = useCallback(() => {
+    return `${firstName} ${lastName}`
+  }, [firstName, lastName])
+
+  return <>{getFullName()}</>
+}
+
+// 이제 직접 useCallback을 사용하여 코드를 작성해보자
+
+
+// 지시사항
+// App.js 파일 내의 App 컴포넌트에 foo, bar state를 선언
+// 두 state 모두 number이며 초기값은 0
+
+// useCallback을 이용해 foo, bar state가 변경될 때마다
+// foo + bar를 연산하여 return 해주는 함수를 메모이제이션
+// 메모이제이션된 함수의 이름은 calc
+
+// className이 "App"인 div element 내부에 <input> element 두 개를 삽입하고
+// foo와 bar state를 각각 변경할 수 있도록 value와 onChange 이벤트를 작성
+
+// 주의사항: onChange 이벤트에서 setState를 할 때
+// parseInt를 이용해 string을 number로 변환해보자
+// 예시
+
+setFoo(parseInt(event.target.value));
+
+// 생성한 두 개의 input element 아래에
+// <div> element를 생성하고 내부에 calc() 값을 출력
+
+// 코드를 실행하여 확인해봅니다. input element의 숫자를 자유롭게 변경해보자
+
+import React, { useState, useCallback } from 'react';
+
+function App() {
+  const [foo, setFoo] = useState(0);
+  const [bar, setBar] = useState(0);
+
+  const calc = useCallback(() => {
+    return foo + bar;
+  }, [foo, bar]);
+  return (
+    <div className="App">
+      <input
+        value={foo}
+        onChange={event => {
+          setFoo(parseInt(event.target.value));
+        }}
+      />
+      <input
+        value={bar}
+        onChange={event => {
+          setBar(parseInt(event.target.value));
+        }}
+      />
+      <div>{calc()}</div>
+    </div>
+  );
+}
+
+// export default App;
