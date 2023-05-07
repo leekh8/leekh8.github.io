@@ -12,11 +12,14 @@ img_path: /assets/lib/post-img/
   - 대표적인 예: useState
 - 기존 컴포넌트 내에서 state와 생명 주기를 관리하기 위해 반드시 사용해야 했던 class component의 복잡함을 보완하기 위해 react ver.16.8에 추가
 - 함수 컴포넌트에서 클래스 컴포넌트의 기능 구현
+
   ### 유의사항
+
   - react 함수 내에서만 (component, hook) 사용 가능
   - 이름의 시작이 반드시 `use`
   - 최상위 level에서만 hook 호출 가능
     - if문, for문 내, 콜백 함수에서 호출하지 않을 것
+
   ```jsx
   const App = () => {
     const [username, setUsername] = useState("");
@@ -48,10 +51,8 @@ const App = () => {
 ```jsx
 const App = () => {
   const [title, setTitle] = useState("");
-
   // state를 변경할 값 직접 입력
   setTitle("hello");
-
   // 또는 현재 값을 매개변수로 받는 함수 선언
   // return 값이 state에 반영
   setTitle((current) => {
@@ -74,42 +75,43 @@ const App=()=>{
 
 - effect hook 사용해 함수 컴포넌트에서 side effect 수행 가능
 - 컴포넌트가 최초로 렌더링될 때, 지정한 state나 prop이 변경될 때마다 이펙트 콜백 함수 호출
+
   - Deps?
     - 변경을 감지할 변수들의 집합(배열)
   - EffectCallback?
     - Deps에 지정된 변수가 변경될 때 실행할 함수
 
-```jsx
-const App = () => {
-  const [count, setCount] = useState(0);
+  ```jsx
+  const App = () => {
+    const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    console.log(`clicked the button ${count} times`);
-  }, [count]);
+    useEffect(() => {
+      console.log(`clicked the button ${count} times`);
+    }, [count]);
 
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)}></button>
-    </div>
-  );
-};
-```
+    return (
+      <div>
+        <button onClick={() => setCount(count + 1)}></button>
+      </div>
+    );
+  };
+  ```
 
-```jsx
-const App = () => {
-  useEffect(()=>{
-// state가 변경될 때, 컴포넌트를 렌더링할 때
-    const intervalId = setInterval(() => {
-      console.log(`hello`);
-    }, 1000);
+  ```jsx
+  const App = () => {
+    useEffect(()=>{
+  // state가 변경될 때, 컴포넌트를 렌더링할 때
+      const intervalId = setInterval(() => {
+        console.log(`hello`);
+      }, 1000);
 
-    // 컴포넌트를 재 렌더링 하기 전에, 컴포넌트가 없어질 때
-    return ()={
-      clearInterval(intervalId)
-    }
-  }, [])
-}
-```
+      // 컴포넌트를 재 렌더링 하기 전에, 컴포넌트가 없어질 때
+      return ()={
+        clearInterval(intervalId)
+      }
+    }, [])
+  }
+  ```
 
 - useEffect의 이펙트 함수 내에서 다른 함수를 return할 경우 state가 변경되어 컴포넌트가 다시 렌더링되기 전과 컴포넌트가 없어질 때(destroy) 호출할 함수를 지정
 
@@ -190,3 +192,15 @@ const App = () => {
 - 일반적으로 react에서 DOM element에 접근할 때 사용
   - DOM element의 ref 속성 이용
 - useRef에 의해 반환된 ref 객체가 변경되어도 컴포넌트 재 렌더링 되지 않음
+
+## Custom Hook
+
+- 나만의 hook을 만들면 컴포넌트 로직을 함수로 뽑아 재사용 가능
+- UI 요소의 재사용성을 올리기 위해 컴포넌트를 만드는 것처럼, 로직의 재사용성을 높이기 위해 custom hook 제작
+
+```jsx
+function useMyHook(args) {
+  const [status, setStatus] = useState(null);
+  return status;
+}
+```
