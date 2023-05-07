@@ -173,7 +173,7 @@ const refContainer = useRef(initialValue);
 
 ```jsx
 const App = () => {
-  const inputRef = useFef(null);
+  const inputRef = useRef(null);
   const onButtonClick = () => {
     inputRef.current.focus();
   };
