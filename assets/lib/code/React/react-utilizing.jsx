@@ -438,20 +438,19 @@ function App() {
 
 // 예시
 const App = () => {
-  const [firstName, setFirstName] = useState('철수')
-  const [lastName, setLastName] = useState('김')
+  const [firstName, setFirstName] = useState("철수");
+  const [lastName, setLastName] = useState("김");
 
   // 이름과 성이 바뀔 때마다
   // 풀네임을 return하는 함수를 메모이제이션
   const getFullName = useCallback(() => {
-    return `${firstName} ${lastName}`
-  }, [firstName, lastName])
+    return `${firstName} ${lastName}`;
+  }, [firstName, lastName]);
 
-  return <>{getFullName()}</>
-}
+  return <>{getFullName()}</>;
+};
 
 // 이제 직접 useCallback을 사용하여 코드를 작성해보자
-
 
 // 지시사항
 // App.js 파일 내의 App 컴포넌트에 foo, bar state를 선언
@@ -475,7 +474,7 @@ setFoo(parseInt(event.target.value));
 
 // 코드를 실행하여 확인해봅니다. input element의 숫자를 자유롭게 변경해보자
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback } from "react";
 
 function App() {
   const [foo, setFoo] = useState(0);
@@ -488,17 +487,74 @@ function App() {
     <div className="App">
       <input
         value={foo}
-        onChange={event => {
+        onChange={(event) => {
           setFoo(parseInt(event.target.value));
         }}
       />
       <input
         value={bar}
-        onChange={event => {
+        onChange={(event) => {
           setBar(parseInt(event.target.value));
         }}
       />
       <div>{calc()}</div>
+    </div>
+  );
+}
+
+// export default App;
+
+// -------- useRef
+// useRef는 컴포넌트 생애 주기 내에서 유지할 ref 객체를 반환
+
+// ref 객체는 .current라는 프로퍼티를 가지며 이 값을 자유롭게 변경할 수 있음
+
+// 일반적으로 React에서 DOM Element에 접근할 때 사용(DOM Element의 ref 속성을 이용)
+
+// useRef에 의해 반환된 ref 객체가 변경되어도 컴포넌트가 재 렌더링되지 않음
+
+// 예시
+const App = () => {
+  const inputRef = useRef(null);
+  const onButtonClick = () => {
+    inputRef.current.focus();
+  };
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={onButtonClick}>input으로 포커스</button>
+    </div>
+  );
+};
+
+// 이제 직접 useRef를 활용해보자
+// 이번에는 input element에 접근하여 입력된 value 값을 alert를 이용해 출력해보는 코드를 작성
+
+// 지시사항
+// App.js 파일 내의 App 컴포넌트 내에 useRef를 이용해 ref object를 선언
+// 반환된 ref object를 담을 변수명은 inputRef
+// className이 "App"인 div 내에 <input> element를 생성하고 ref attribute를 inputRef로 설정
+// 생성한 input element 하단에 <button> element를 생성하고 onClick 이벤트 발생 시
+// 생성한 input element의 value를 alert를 이용해 출력
+// inputRef로부터 value를 가져오는 코드는 다음과 같다
+// inputRef.current.value
+
+// 작성한 코드를 실행하고 input에 값을 입력한 뒤 button을 클릭하여 결과를 확인해보자
+
+import React, { useState, useRef } from "react";
+
+function App() {
+  const inputRef = useRef();
+  return (
+    <div className="App">
+      <input ref={inputRef} />
+      <button
+        onClick={() => {
+          alert(`${inputRef.current.value}`);
+        }}
+      >
+        button
+      </button>
     </div>
   );
 }
