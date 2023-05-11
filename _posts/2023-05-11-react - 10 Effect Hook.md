@@ -1,13 +1,13 @@
 ---
 categories: [React]
 tags: [React, Hook, Effect Hook]
-mermaid: true
+img_path: /assets/lib/post-img/
 ---
 
 # Effect Hook
 
 - React의 컴포넌트는 아래와 같은 생명주기, Mounting, Updating, Unmounting을 가지며 각 과정은 컴포넌트가 생성되고, 수정되고, 해제될 때를 의미한다
-  ![React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+  ![React lifecycle methods diagram](3.png)
   _React lifecycle methods diagram_
 
 - Effect Hook을 사용하면 함수 컴포넌트에서 side effect를 수행할 수 있다고 하였는데 side effect는 렌더링 된 이후에 비동기로 처리되어야 하는 부수적인 효과들을 말한다
