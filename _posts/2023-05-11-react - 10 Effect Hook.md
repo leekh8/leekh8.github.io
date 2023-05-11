@@ -8,7 +8,7 @@ img_path: /assets/lib/post-img/
 
 - React의 컴포넌트는 아래와 같은 생명주기, Mounting, Updating, Unmounting을 가지며 각 과정은 컴포넌트가 생성되고, 수정되고, 해제될 때를 의미한다
   ![React lifecycle methods diagram](3.png)
-  _React lifecycle methods diagram_
+  _React lifecycle methods diagram_<sup id="a1">[1](#footnote1)</sup>
 
 - Effect Hook을 사용하면 함수 컴포넌트에서 side effect를 수행할 수 있다고 하였는데 side effect는 렌더링 된 이후에 비동기로 처리되어야 하는 부수적인 효과들을 말한다
 
@@ -114,3 +114,5 @@ class FriendStatus extends React.Component {
 
 - 정리에 대한 예제 코드들의 문제점은 바로 각 생명주기 메소드에 똑같은 코드들이 들어 있는 것
 - Effect Hook을 이용하면 이렇게 중복되는 코드를 함수형 컴포넌트에서 간단하게 관리할 수 있다!
+
+> <b id="footnote1">1</b> [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) [↩](#a1)
