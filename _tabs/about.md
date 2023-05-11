@@ -4,10 +4,8 @@ icon: fas fa-info-circle
 order: 6
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-> {: .prompt-tip }
-
-hi~
+> hi~
+> {: .prompt-info }
 
 ## Reference site
 
@@ -20,4 +18,4 @@ hi~
 |                                                                [인공지능사관학교](https://gj-aischool.or.kr/){:target="\_blank"}                                                                |                Python<br>SQL<br>                 |
 |                                                                      [Mermaid official homepage](https://mermaid.js.org/)                                                                       |                     Mermaid                      |
 
-### 사용한 Theme: [Jekyll Theme: Chirpy](https://github.com/leekh8/leekh8.github.io/blob/main/Chirpy-README.md)
+### 사용한 Theme: [Jekyll Theme: Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
