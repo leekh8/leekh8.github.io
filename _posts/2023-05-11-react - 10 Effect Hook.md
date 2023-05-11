@@ -67,40 +67,40 @@ img_path: /assets/lib/post-img/
 - 그렇지 않으면 경우에 따라 메모리 누수가 발생해 시스템에 치명적인 영향을 미칠 수 있기 때문
 - 아래는 채팅 앱에서 친구의 상태를 보여주는 컴포넌트
 
-```jsx
-class FriendStatus extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isOnline: null };
-    this.handleStatusChange = this.handleStatusChange.bind(this);
-  }
-
-  componentDidMount() {
-    ChatAPI.subscribeToFriendStatus(
-      this.props.friend.id,
-      this.handleStatusChange
-    );
-  }
-  componentWillUnmount() {
-    ChatAPI.unsubscribeFromFriendStatus(
-      this.props.friend.id,
-      this.handleStatusChange
-    );
-  }
-  handleStatusChange(status) {
-    this.setState({
-      isOnline: status.isOnline
-    });
-  }
-
-  render() {
-    if (this.state.isOnline === null) {
-      return "Loading...";
+  ```jsx
+  class FriendStatus extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { isOnline: null };
+      this.handleStatusChange = this.handleStatusChange.bind(this);
     }
-    return this.state.isOnline ? "Online" : "Offline";
+
+    componentDidMount() {
+      ChatAPI.subscribeToFriendStatus(
+        this.props.friend.id,
+        this.handleStatusChange
+      );
+    }
+    componentWillUnmount() {
+      ChatAPI.unsubscribeFromFriendStatus(
+        this.props.friend.id,
+        this.handleStatusChange
+      );
+    }
+    handleStatusChange(status) {
+      this.setState({
+        isOnline: status.isOnline
+      });
+    }
+
+    render() {
+      if (this.state.isOnline === null) {
+        return "Loading...";
+      }
+      return this.state.isOnline ? "Online" : "Offline";
+    }
   }
-}
-```
+  ```
 
 - 그냥 예시이기 때문에 ChatAPI 모듈이나 subscribeToFriendStatus, unsubscribeFromFriendStatus 함수의 자세한 동작에 대해서는 지금은 신경 쓰지 않고 넘어가자
 - 간단히 설명하자면 해당 컴포넌트는 Mounting 시 subscribeToFriendStatus를 통해 접속 중인 친구 정보를 가져온다
