@@ -418,20 +418,19 @@ const App = () => {
 
   - [inline style's camelCase site](https://www.w3schools.com/react/react_css.asp)
 
-  ```JSX
-  (
-    // inline style의 property name은 camelCase로 사용
-    // 예)
-    // font-size -> fontSize, padding-left -> paddingLeft
+  ```jsx
+  // inline style의 property name은 camelCase로 사용
+  // 예)
+  // font-size -> fontSize, padding-left -> paddingLeft
 
-    // 첫번째 중괄호: JS 사용 표시
-    // 두번째 중괄호: object 시작 표시
+  // 첫번째 중괄호: JS 사용 표시
+  // 두번째 중괄호: object 시작 표시
 
-  <div className="greeting" style={{padding: 10, color: 'red'}}>
-    welcome, {name}<br />
+  <div className="greeting" style={{ padding: 10, color: "red" }}>
+    welcome, {name}
+    <br />
     nice to meet you
   </div>
-  )
   ```
 
 - 닫는 태그 필수
