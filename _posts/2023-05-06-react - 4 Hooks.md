@@ -1,6 +1,6 @@
 ---
 categories: [React]
-tags: [React, Hooks]
+tags: [React, Hook]
 img_path: /assets/lib/post-img/
 ---
 
