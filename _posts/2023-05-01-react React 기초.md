@@ -114,7 +114,7 @@ $("#todo-list").append(
 
 - 일반적으로 JS에서 사용하는 방법
 - 지금은 괜찮지만 나중에 코드 다시 볼 때 이해에 오랜 시간 소요
-- [참고 링크](https://github.com/leekh8/leekh8.github.io/tree/main/assets/lib/project/JS/jQuery/todoList){:target="\_blank"}
+- **[참고 링크](https://github.com/leekh8/leekh8.github.io/tree/main/assets/lib/project/JS/jQuery/todoList){:target="\_blank"}**
 
 ```jsx
 // 할 일 목록 출력
@@ -131,7 +131,7 @@ $("#todo-list").append(
 
 - HTML 코드 내에서 중괄호를 통해 JS 표현 적용 가능
 - map을 통해 element들에 접근 가능
-- [참고 링크](https://github.com/leekh8/leekh8.github.io/tree/main/assets/lib/project/react/todolist/src){:target="\_blank"}
+- **[참고 링크](https://github.com/leekh8/leekh8.github.io/tree/main/assets/lib/project/react/todolist/src){:target="\_blank"}**
 
 ### [Component](#component-2)
 
@@ -247,7 +247,7 @@ npm build
 ctrl + c
 ```
 
-- [더 많은 명령어 참고](https://docs.npmjs.com/cli/v9/commands?v=true)
+- **[더 많은 명령어 참고](https://docs.npmjs.com/cli/v9/commands?v=true)**
 
 ### directory 구조
 
@@ -416,7 +416,7 @@ const App = () => {
 - class -> className
 - 스타일 큰따옴표"" -> object{}로 표현
 
-  - [inline style's camelCase site](https://www.w3schools.com/react/react_css.asp)
+  - **[inline style's camelCase site](https://www.w3schools.com/react/react_css.asp)**
 
   ```jsx
   // inline style의 property name은 camelCase로 사용
