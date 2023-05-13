@@ -5,7 +5,16 @@ img_path: /assets/lib/post-img/
 mermaid: true
 ---
 
+<style>
+  .title{
+  position: sticky;
+  }
+</style>
+<div class="title">
+
 # React styling
+
+</div>
 
 ## styling 좋은 응용 프로그램 만들기
 
@@ -284,3 +293,165 @@ end
 ```
 
 - 자세한 사항은 **[Sass mixin and include](https://sass-lang.com/documentation/at-rules/mixin){:target="\_blank"}**, **[Sass import](https://sass-lang.com/documentation/at-rules/import){:target="\_blank"}** 참고하기
+
+## CSS Flexbox Model
+
+- HTML element를 하나의 상자로 간주하고, 그 안에서 어떻게 내부 item을 배열할 것인가를 스타일하는 모델
+- 1차원의 레이아웃 디자인에 사용한다
+- responsive design에 유리하다
+- 가운데 정렬, 비율로 정렬 등을 처리할 때 유리하다
+
+  ```mermaid
+  flowchart TB
+  subgraph fc[flex container]
+  style fc fill:#00ff0000, stroke:#00ff0000
+  subgraph BB[ ]
+  style BB fill:#00ff0000, stroke:#40e0d0, stroke-width: 2px
+    subgraph fi[flex item]
+    style fi color: #333, fill:#00ff0000, stroke:#f66, stroke-width: 5px
+    end
+    subgraph fi1[ flex item ]
+    style fi1 color:#00ff0000, fill:#00ff0000, stroke:#f66, stroke-width: 5px
+    end
+  end
+  end
+  ```
+
+  ```mermaid
+  flowchart LR
+    a[a]=="  flex axis(main axis)  "==>b[b]
+    style a color:#00ff0000,fill:#00ff0000, stroke:#00ff0000, width:120px
+    style b color:#00ff0000,fill:#00ff0000, stroke:#00ff0000, width:120px
+  ```
+
+  - flex container
+    - flex box 아이템을 담는 컨테이너
+    - flex-direction
+      - row, column 등의 방향 결정
+    - justify-content
+      - main axis에서의 정렬 결정
+    - align-items
+      - cross-axis(y축)에서의 정렬 결정
+    - flex-wrap
+      - flex container가 내부 item의 width를 합친 것보다 작아질 때, 어떻게 정렬할 것인지 결정
+  - flex item
+    - 컨테이너 안에 담긴 아이템
+    - flex-grow
+      - flex container가 커질 때 item이 얼마만큼 늘어날 것인지 결정
+    - flex-shrink
+      - flex container가 줄어들 때 item이 얼마만큼 줄어들 것인지 결정
+    - fles-basis
+      - 기준점이 되는 item의 크기
+    - justify-self
+      - 한 item을 main-axis에 따라 어떻게 정렬할 것인지 결정
+    - align-self
+      - 한 item을 cross-axis에 따라 어떻게 정렬할 것인지 결정
+    - order
+      - flex container에서 item의 순서 결정
+  - flex axis
+    - flex 아이템의 방향을 결정하는 축
+  - 자세한 사항은 **[CSS flexbox](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox){:target="\_blank"}** 참고하기
+
+  ```css
+  /* flex box example */
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  ```
+
+  <div class="container1">
+    <div class="one">Item One</div>
+    <div class="two">Item Two</div>
+    <div class="three">Item Three</div>
+  </div>
+  <style>
+    .container1 {
+      display: flex;
+      justify-content: center;
+    }
+    .one {
+      border-style: solid;
+      border-color: #bff5cc;
+      padding: 3px 10px;
+      margin: 10px;
+    }
+    .two {
+      border-color: #895895;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+    }
+    .three {
+      border-color: #f4cf4c;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+    }
+  </style>
+
+  ```css
+  /* flex box example */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  ```
+
+  <div class="container2">
+    <div class="one">Item One</div>
+    <div class="two">Item Two</div>
+    <div class="three">Item Three</div>
+  </div>
+  <style>
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+
+  ```css
+  /* flex box example */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .three {
+    align-self
+  }
+  ```
+
+  <div class="container3">
+    <div class="one3">Item One</div>
+    <div class="two3">Item Two</div>
+    <div class="three3">Item Three</div>
+  </div>
+  <style>
+    .container3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .one3 {
+      border-style: solid;
+      border-color: #bff5cc;
+      padding: 3px 10px;
+      margin: 10px;
+    }
+    .two3 {
+      border-color: #895895;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+    }
+    .three3 {
+      border-color: #f4cf4c;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      align-self: flex-start;
+    }
+  </style>
