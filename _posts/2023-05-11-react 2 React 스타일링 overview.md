@@ -7,7 +7,7 @@ mermaid: true
 
 <style>
   .title{
-  position: sticky;
+    position: sticky;
   }
 </style>
 <div class="title">
@@ -420,7 +420,7 @@ end
     align-items: center;
   }
   .three {
-    align-self
+    align-self: flex-start;
   }
   ```
 
@@ -434,18 +434,21 @@ end
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100px;
     }
     .one3 {
       border-style: solid;
       border-color: #bff5cc;
       padding: 3px 10px;
       margin: 10px;
+      align-self: flex-end;
     }
     .two3 {
       border-color: #895895;
       border-style: solid;
       padding: 3px 10px;
       margin: 10px;
+            align-self: flex-end;
     }
     .three3 {
       border-color: #f4cf4c;
@@ -454,4 +457,170 @@ end
       margin: 10px;
       align-self: flex-start;
     }
+  </style>
+
+  ```css
+  /* flex box example */
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .item {
+    width: 100%;
+  }
+  ```
+
+  <div class="container4">
+    <div class="one4">Item One</div>
+    <div class="two4">Item Two</div>
+    <div class="three4">Item Three</div>
+  </div>
+  <style>
+    .container4 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+    .one4 {
+      border-style: solid;
+      border-color: #bff5cc;
+      padding: 3px 10px;
+      margin: 10px;
+      width: 100%
+    }
+    .two4 {
+      border-color: #895895;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      width: 100%
+    }
+    .three4 {
+      border-color: #f4cf4c;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      width: 100%
+    }
+  </style>
+  <p><br></p>
+
+  ```css
+  /* flex box example */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ```
+
+  <div class="container5">
+    <div class="one">Item One</div>
+    <div class="two">Item Two</div>
+    <div class="three">Item Three</div>
+  </div>
+  <style>
+    .container5 {
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+  </style>
+
+  ```css
+  /* flex box example */
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .one {
+    flex: 1;
+  }
+  .two {
+    flex: 0 0 120px;
+  }
+  ```
+
+  <div class="container6">
+    <div class="one6">Item One</div>
+    <div class="two6">Item Two</div>
+  </div>
+  <style>
+    .container6 {
+      display: flex;
+      align-items: center;
+    }
+    .one6 {
+      border-style: solid;
+      border-color: #bff5cc;
+      padding: 3px 10px;
+      margin: 10px;
+      flex: 1;
+    }
+    .two6 {
+      border-color: #895895;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      flex: 0 0 120px;
+    }
+  </style>
+
+  ```css
+  /* flex box example */
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .three {
+    display: flex;
+  }
+  .four,
+  .five {
+    flex: 1;
+  }
+  ```
+
+  <div class="container7">
+    <div class="one">Item One</div>
+    <div class="two">Item Two</div>
+    <div class="three7">
+      <div class="four7">Item One</div>
+      <div class="five7">Item Two</div>
+    </div>
+  </div>
+  <style>
+    .container7 {
+    display: flex;
+    flex-direction: column;
+    border-color: black;
+    border-style: solid;
+    width: 100%;
+    }
+    .three7 {
+      border-color: #f4cf4c;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      display: flex;
+    }
+    .four7 {
+      border-color: #bff5cc;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      flex: 1;
+    }
+    .five7 {
+      border-color: #895895;
+      border-style: solid;
+      padding: 3px 10px;
+      margin: 10px;
+      flex: 1;
+    }
+
   </style>
