@@ -25,4 +25,4 @@ Thanks~
 |                                                          **[Mermain official homepage](https://mermaid.js.org/){:target="\_blank"}**                                                          |                  Mermaid                   |
 |                                                            **[Sass official homepage](https://sass-lang.com){:target="\_blank"}**                                                             |                    Sass                    |
 
-#### 사용한 Theme: [Jekyll Theme](./Chirpy-README.md)
+#### [Jekyll Theme: Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
