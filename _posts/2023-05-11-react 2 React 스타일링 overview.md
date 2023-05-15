@@ -622,5 +622,69 @@ end
       margin: 10px;
       flex: 1;
     }
-
   </style>
+
+## Styled-components
+
+- JS 파일 안에 스타일을 정의하고, React component처럼 활용
+- JS 코드와 긴밀히 연계해 다양한 코드를 작성할 수 있다
+- 별도의 CSS 파일을 만들지 않고 하나의 파일 안에 스타일을 관리하고 싶을 때 사용한다
+- 스타일 코드와 컴포넌트 코드 간의 결합을 나누고 싶을 때 유리하다
+- Tagged template literal 문법 활용
+- CSS 코드에 post-css, minification, Sass 적용
+- CSS 코드를 겹치지 않게 처리
+- 클래스의 이름 자체가 hash가 되어 겹치지 않도록 관리해준다
+
+  ```js
+  <!-- styled-components example -->
+  function Sample() {
+    return (
+      <Container>
+        <Button>Submit</Button>
+      </Container>
+    );
+  }
+  ```
+
+  ```js
+  <!-- styled-components example -->
+  const Container = styled.div`
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.3);
+  `;
+
+  const Button = styled.button`
+    background: orangered;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+  `;
+  ```
+
+  ```jsx
+  function Sample() {
+    const [clicked, setClicked] = useState(false);
+
+    return (
+      <Container>
+        <Button onClick={() => setClicked((bool) => !bool)} clicked={clicked}>
+          Submit
+        </Button>
+      </Container>
+    );
+  }
+  ```
+
+  ```jsx
+  const Button = styled.button`
+    background: ${({ clicked }) => (clicked ? "orangered" : "lavender")};
+    color: ${({ clicked }) => (clicked ? "lavender" : "orangered")};
+    padding: 12px 40px;
+    border: none;
+  `;
+  ```
