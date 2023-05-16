@@ -20,7 +20,7 @@ timezone: Asia/Seoul
 
 title: 내 블로그 # the main title
 
-tagline: 읽고, 쓴거 # it will display as the sub-title
+tagline: 읽고, 본거 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   leekh
