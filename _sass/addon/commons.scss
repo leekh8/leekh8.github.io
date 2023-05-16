@@ -922,7 +922,7 @@ $sidebar-display: 'sidebar-display';
     .icon-border {
       @extend %no-cursor;
 
-      background-color: var(--sidebar-muted-color);
+      background-color: var(--sidebar-bg);
       content: '';
       width: 3px;
       height: 3px;
