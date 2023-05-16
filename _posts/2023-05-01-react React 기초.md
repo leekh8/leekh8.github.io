@@ -29,7 +29,7 @@ img_path: /assets/lib/post-img/
 
 ### SPA (Single Page Application)?
 
-#### <center>전통적인 사이트</center>
+#### 전통적인 사이트
 
 ```mermaid
 sequenceDiagram
@@ -42,9 +42,9 @@ sequenceDiagram
 - 최초에 서버로부터 HTML을 전달 받고 페이지의 변경이 필요할 때 다시 서버에 요청해 HTML 전달 받음
 - 이 과정에서 페이지를 **처음부터** 다시 불러옴
 
-**<center>↓</center>**
+**↓**
 
-#### <center>SPA</center>
+#### SPA
 
 ```mermaid
 sequenceDiagram
