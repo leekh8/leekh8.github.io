@@ -88,7 +88,7 @@ permalink: /assets/lib/code/
 
 [NPM Open in a new window](https://www.npmjs.com/){:target="\_blank"}
 
-<a href="<https://www.npmjs.com/>" target="_blank">NPM</a>
+<a href="https://www.npmjs.com/" target="_blank">NPM</a>
 
 ```md
 [NPM](https://www.npmjs.com/)
@@ -97,7 +97,7 @@ permalink: /assets/lib/code/
 
 <!-- HTML version -->
 
-<a href="<https://www.npmjs.com/>" target="_blank">NPM</a>
+<a href="https://www.npmjs.com/" target="_blank">NPM</a>
 ```
 
 ## Images
