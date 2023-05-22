@@ -1,6 +1,6 @@
 ---
 categories: [React]
-tags: [React, 비동기 통신, Promise]
+tags: [React, 비동기 통신, Promise, async, await, POSTMAN, OpenAPI, CORS]
 img_path: /assets/lib/post-img/
 mermaid: true
 ---
@@ -277,3 +277,152 @@ function returnPromise() {
   DONE
   */
   ```
+
+## async / await
+
+- Promise 체인을 구축하지 않고도, Promise를 직관적으로 사용할 수 있는 문법
+- 많은 프로그래밍 언어에 있는 `try-catch`문으로 에러를 직관적으로 처리한다
+- `async function`을 만들고, Promise를 기다려야 하는 표현 앞에 `await`를 붙인다
+
+```jsx
+// async / await
+async function fetchUsers() {
+  try {
+    const users = await request("/users");
+    console.log("users fetched");
+    return users;
+  } catch (e) {
+    console.log("error: ", e);
+  }
+}
+//Promise
+function fetchUsers() {
+  return request("/users")
+    .then((users) => console.log("users fetched"))
+    .catch((e) => console.error("error: ", e));
+}
+```
+
+### 여러 개의 await
+
+- 여러 개의 `await`을 순서대로 나열하여 `then chain`을 구현할 수 있다
+- `try-catch` 문을 자유롭게 활용하여 에러 처리를 적용한다
+
+  ```jsx
+  async function fetchUsersWithAddress(id) {
+    try {
+      const user = await request(`/user/${user.id}`);
+      const address = await request(`/user/${user.id}/address`);
+      return { ...user, address };
+    } catch (e) {
+      console.log("error: ", e);
+    }
+  }
+  ```
+
+  ```jsx
+  // try-catch로 묶어 각각 error 처리
+  async function fetchUserWithAddress(id) {
+    let user = null;
+    try {
+      const user = await request(`/user/${user.id}`);
+    } catch (e) {
+      console.log("user fetch error: ", e);
+      return;
+    }
+    try {
+      const address = await request(`/user/${user.id}/address`);
+      return { ...user, address };
+    } catch (e) {
+      console.log("address fetch error: ", e);
+    }
+  }
+  ```
+
+  ```jsx
+  // try 구문 안에서 중간에 error 처리 가능
+  async function fetchUserWithAddress(id) {
+    try {
+      const user = await request(`/user/${user.id}`);
+      if (!user) throw new Error("no user found");
+
+      const address = await request(`/user/${user.id}/address`);
+      if (!address.userId !== user.id)
+        throw new Error("no address match with user");
+
+      return { ...user, address };
+    } catch (e) {
+      console.log("user fetch error: ", e);
+    }
+  }
+  ```
+
+  ```jsx
+  // catch 문에서 error log를 try-catch로 묶어 처리하는 nested 구조
+  async function fetchUserWithAddress(id) {
+    try {
+      const user = await request(`/user/${user.id}`);
+      const address = await request(`/user/${user.id}/address`);
+      return { ...user, address };
+    } catch (e) {
+      try {
+        sendErrorLog(e);
+      } catch (e) {
+        console.log("fail to log the error");
+      }
+    }
+  }
+  ```
+
+  ### Promise 와의 조합
+
+  - `Promise.all`은 특정 비동기 작업이 상대적으로 빠르게 끝나더라도 느린 처리를 끝까지 기다려야 한다
+  - `async/await`를 활용하면 parallelism 구현 (끝난대로 먼저 처리) 가능하다
+
+  ```jsx
+  async function fetchUserWithAddress(id) {
+    return await Promise.all([
+      (async () => await request(`/user/${id}`))(),
+      (async () => await request(`/user/${id}/address`))()
+    ]);
+  }
+
+  fetchUserWithAddress("1234")
+    .then(([user, address]) => ({ ...user, address }))
+    .catch((e) => console.log("error: ", e));
+  ```
+
+## POSTMAN, OpenAPI, CORS
+
+### POSTMAN
+
+- 서버와의 통신을 위해 API를 활용하는 경우 React앱으로만 요청하여 API 동작을 확인하는 것을 비효율적이므로 POSTMAN과 같은 API 테스트 개발 도구 활용
+- 많은 API의 endpoint와 실행조건을 관리
+- Auth, header, payload, query 등 API 요청에 필요한 데이터를 쉽게 설정할 수 있다
+- 다른 개발자가 쉽게 set up해 테스트할 수 있도록 API 정보 공유 가능하다
+- Request를 모아 collection으로 만들어 API를 종류별로 관리한다
+- 환경 변수를 정의해 환경별로 테스트 가능
+- [POSTMAN 홈페이지](https://www.postman.com/)
+
+### Open API
+
+- RESTful API를 하나의 문서로 정의하기 위한 문서 표준
+- OpenAPI Specification(OAS)로 정의된다
+- Swagger 와 같은 도구를 이용해 Open API로 작성된 문서를 파싱해 테스팅 도구로 만들 수 있다
+- 프론트엔드와 백엔드의 협업 시 주요한 도구로 사용
+- API의 method, endpoint를 정의한다
+- endpoint마다 인증 방식, content type 등을 정의한다
+- body data, query string, path variable 등을 정의한다
+- 요청, 응답 데이터 형식과 타입을 data model(schema)를 활용해 정의한다
+
+### CORS
+
+- Cross-Origin Resource Sharing
+- 브라우저는 모든 요청 시 Origin header 포함한다
+- 서버는 Origin header를 보고, 해당 요청이 원하는 도메인에서 출발한 것인지 판단한다
+- 다른 Origin에서 온 요청은 서버에서 기본적으로 거부한다
+- 일반적으로 서버의 endpoint와 홈페이지의 endpoint가 다른 경우가 많아 서버에서 홈페이지 도메인을 허용해 다른 도메인이라고 하더라도 요청을 보낼 수 있도록 하는 것
+- 서버는 `Access-Control-Allow-Origin` 외에 `Access-Control-\*` 를 포함하는 헤더에 CORS 관련 정보를 클라이언트로 보낸다
+- 웹 사이트에 악성 script가 로드되어 수상한 요청을 하는 것을 막기 위한 것
+- 또는 익명 사용자로부터의 DDos 공격을 막기 위한 것
+- 서버에 직저 CORS 설정을 할 수 없다면 Proxy 서버를 만들어 해결한다
