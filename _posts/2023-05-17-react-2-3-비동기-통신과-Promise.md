@@ -58,7 +58,7 @@ mermaid: true
 ## 비동기 처리를 위한 내부 구조
 
 - 브라우저에서 실행되는 JS 코드는 event driven 시스템으로 작동
-- 웹 앱을 로드하면 브라우저는 HTML document를 읽어 문서에 있는 CSS code, JS code를 불러온다
+- 웹 애플리케이션을 로드하면 브라우저는 HTML document를 읽어 문서에 있는 CSS code, JS code를 불러온다
 - JS 엔진은 코드를 읽어 실행한다
 - 브라우저의 main thread는 JS 코드에서 동기적으로 처리되어야 할 코드 실행 외에도, 웹 페이지를 실시간으로 렌더링하고, 사용자의 입력을 감지하고, 네트워크 통신을 처리하는 등 많은 일을 처리한다
 - 비동기 작업을 할당하면, 비동기 처리가 끝나고 브라우저는 `task queue`에 실행 코드를 넣는다
@@ -80,7 +80,7 @@ mermaid: true
     subgraph TQ[Task Queue]
     style TQ fill:#00ff0000, stroke:#02
     B(" ")
-    style B fill:#00ff0010, stroke:#333
+    style B fill:#00ff0000, stroke:#00ff0000
     end
     B -.-> C{Event Loop}
     style C fill:#00ff0000, stroke:#333
@@ -396,7 +396,7 @@ function fetchUsers() {
 
 ### POSTMAN
 
-- 서버와의 통신을 위해 API를 활용하는 경우 React앱으로만 요청하여 API 동작을 확인하는 것을 비효율적이므로 POSTMAN과 같은 API 테스트 개발 도구 활용
+- 서버와의 통신을 위해 API를 활용하는 경우 React 애플리케이션으로만 요청하여 API 동작을 확인하는 것을 비효율적이므로 POSTMAN과 같은 API 테스트 개발 도구 활용
 - 많은 API의 endpoint와 실행조건을 관리
 - Auth, header, payload, query 등 API 요청에 필요한 데이터를 쉽게 설정할 수 있다
 - 다른 개발자가 쉽게 set up해 테스트할 수 있도록 API 정보 공유 가능하다
@@ -425,4 +425,4 @@ function fetchUsers() {
 - 서버는 `Access-Control-Allow-Origin` 외에 `Access-Control-\*` 를 포함하는 헤더에 CORS 관련 정보를 클라이언트로 보낸다
 - 웹 사이트에 악성 script가 로드되어 수상한 요청을 하는 것을 막기 위한 것
 - 또는 익명 사용자로부터의 DDos 공격을 막기 위한 것
-- 서버에 직저 CORS 설정을 할 수 없다면 Proxy 서버를 만들어 해결한다
+- 서버에 직접 CORS 설정을 할 수 없다면 Proxy 서버를 만들어 해결한다

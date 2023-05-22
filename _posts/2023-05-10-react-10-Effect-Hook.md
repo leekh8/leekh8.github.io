@@ -65,7 +65,7 @@ img_path: /assets/lib/post-img/
 - 정리(clean-up)가 필요한 side effects도 있다
 - React가 DOM을 업데이트한 뒤 추가로 코드를 실행할 필요가 없으면 정리를 해줘야 한다
 - 그렇지 않으면 경우에 따라 메모리 누수가 발생해 시스템에 치명적인 영향을 미칠 수 있기 때문
-- 아래는 채팅 앱에서 친구의 상태를 보여주는 컴포넌트
+- 아래는 채팅 애플리케이션에서 친구의 상태를 보여주는 컴포넌트
 
   ```jsx
   class FriendStatus extends React.Component {
