@@ -1,8 +1,6 @@
 ---
 # the default layout is 'page'
-layout: home
+layout: troubleshoot
 icon: fas fa-info-circle
 order: 4
 ---
-
-# trouble shooting
