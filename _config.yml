@@ -195,6 +195,6 @@ jekyll-archives:
     category: category
     tag: tag
   permalinks:
-    trouble shoot: /trouble-shoot/:name/
+    trouble shoots: /trouble-shoots/:name/
     tag: /tags/:name/
     category: /categories/:name/
