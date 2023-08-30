@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-layout: troubleshoots
+layout: tils
 icon: fas fa-info-circle
 order: 1
 ---
