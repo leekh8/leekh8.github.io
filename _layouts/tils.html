@@ -1,11 +1,11 @@
 ---
 layout: page
-# Troubleshooting Posts
+# TIL Posts
 ---
 
-<div id="page-troubleshooting">
+<div id="page-til">
   {% assign filtered_posts = site.posts | where_exp: "item", "item.tags contains
-  'troubleshoot'" %}
+  'til'" %}
   <div id="post-list">
     {% for post in filtered_posts %}
     <div class="card post-preview">
