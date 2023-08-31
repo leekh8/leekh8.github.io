@@ -1,6 +1,6 @@
 ---
 categories: [Trouble Shooting]
-tags: [Campus7, troubleshoot]
+tags: [Campus7, project, troubleshoot]
 img_path: /assets/lib/post-img/
 mermaid: true
 ---
