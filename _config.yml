@@ -190,14 +190,16 @@ exclude:
   - package*.json
 
 jekyll-archives:
-  enabled: [TIL, trouble shoots, categories, tags]
+  enabled: [today i learned, trouble shoots, book, categories, tags]
   layouts:
-    TIL: tils
+    today i learned: tils
     trouble shoots: troubleshoots
+    book: books
     category: category
     tag: tag
   permalinks:
-    TIL: /til/:name/
+    today i learned: /til/:name/
     trouble shoots: /trouble-shoots/:name/
+    book: /book/:name
     tag: /tags/:name/
     category: /categories/:name/
