@@ -1,0 +1,41 @@
+// _portfolio.scss
+#page-portfolio {
+  .portfolio-header {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $primary-color;
+    }
+  }
+
+  .portfolio-items {
+    margin-bottom: 2rem;
+
+    .portfolio-item {
+      margin-bottom: 1rem;
+      border: 1px solid $item-border-color;
+      border-radius: $border-radius;
+
+      .card-body {
+        h2 {
+          font-size: 1.75rem;
+          color: $text-color;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $secondary-text-color;
+        }
+
+        a {
+          color: $link-color;
+          &:hover {
+            color: darken($link-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

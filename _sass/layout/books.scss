@@ -1,0 +1,37 @@
+// _books.scss
+#page-books {
+  .books-header {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $primary-color;
+    }
+  }
+
+  .books-items {
+    .posts {
+      margin-bottom: 2rem;
+
+      .post-preview {
+        margin-bottom: 1rem;
+
+        h3 {
+          font-size: 1.25rem;
+          a {
+            color: $text-color;
+            &:hover {
+              color: darken($text-color, 10%);
+            }
+          }
+        }
+
+        .summary {
+          font-size: 1rem;
+          color: $secondary-text-color;
+        }
+      }
+    }
+  }
+}
