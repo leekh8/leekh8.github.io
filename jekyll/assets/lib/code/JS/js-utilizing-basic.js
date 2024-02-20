@@ -1,0 +1,2 @@
+// -------- Array method --------
+// -------- Array.forEach

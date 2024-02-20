@@ -1,0 +1,165 @@
+<!-- 사이드 바 -->
+<div id="sidebar" class="d-flex flex-column align-items-end">
+  <!-- 프로필 섹션 -->
+  <div class="profile-wrapper text-center">
+    <!-- 아바타 이미지 -->
+    <div id="avatar">
+      <a href="{{ '/' | relative_url }}" class="mx-auto">
+        {% if site.avatar != empty and site.avatar %}
+          {% capture avatar_url %}
+            {% if site.avatar contains '://' %}
+              {{ site.avatar }}
+            {% elsif site.img_cdn != empty and site.img_cdn %}
+              {{ site.avatar | prepend: site.img_cdn }}
+            {% else %}
+              {{ site.avatar | relative_url }}
+            {% endif %}
+          {% endcapture %}
+          <img src="{{ avatar_url | strip }}" alt="avatar" onerror="this.style.display='none'">
+        {% endif %}
+      </a>
+    </div>
+    <!-- 사이트 제목과 부제목 -->
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    <div class="site-subtitle font-italic">{{ site.tagline }}</div>
+  </div>
+  <!-- .profile-wrapper -->
+
+  <!-- 네비게이션 메뉴 -->
+  <ul class="w-100">
+    <!-- 홈 탭 -->
+    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>HOME</span>
+      </a>
+    </li>
+
+
+    <!-- Portfolio 탭 -->
+    <li class="nav-item{% if page.layout == 'portfolio' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-briefcase ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>PORTFOLIO</span>
+      </a>
+    </li>
+
+    <!-- Learning Log 드롭다운 메뉴 -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLearningLog" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-fw fas fa-book-open ml-xl-3 mr-xl-3 unloaded"></i>
+        LEARNING LOG
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownLearningLog">
+        <a class="dropdown-item" href="{{ '/learning/' | relative_url }}">전체보기</a>
+        <a class="dropdown-item" href="{{ '/learning/today-i-learned/' | relative_url }}">Today I Learned</a>
+        <a class="dropdown-item" href="{{ '/learning/deep-dives/' | relative_url }}">Deep Dives</a>
+        <a class="dropdown-item" href="{{ '/learning/troubleshooting/' | relative_url }}">Troubleshooting</a>
+      </div>
+    </li>
+
+    <!-- Books 드롭다운 메뉴 -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBooks" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-fw fas fa-book ml-xl-3 mr-xl-3 unloaded"></i>
+        BOOKS
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownBooks">
+        <a class="dropdown-item" href="{{ '/books/' | relative_url }}">전체보기</a>
+        <a class="dropdown-item" href="{{ '/books/technical/' | relative_url }}">기술 서적</a>
+        <a class="dropdown-item" href="{{ '/books/non-fiction/' | relative_url }}">논픽션</a>
+        <a class="dropdown-item" href="{{ '/books/fiction/' | relative_url }}">소설</a>
+      </div>
+    </li>
+
+    <!-- Categories 탭 -->
+    <li class="nav-item{% if page.layout == 'categories' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/categories/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>CATEGORIES</span>
+      </a>
+    </li>
+
+    <!-- Tags 탭 -->
+    <li class="nav-item{% if page.layout == 'tags' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/tags/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>TAGS</span>
+      </a>
+    </li>
+
+    <!-- Archives 탭 -->
+    <li class="nav-item{% if page.layout == 'archives' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/archives/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>ARCHIVES</span>
+      </a>
+    </li>
+
+    <!-- About 탭 -->
+    <li class="nav-item{% if page.layout == 'about' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/about/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>ABOUT</span>
+      </a>
+    </li>
+  </ul>
+  <!-- ul.nav.flex-column -->
+
+  <!-- 사이드바 하단의 소셜 미디어 및 연락처 아이콘 -->
+  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+    {% unless site.theme_mode %}
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
+
+    {% for entry in site.data.contact %}
+      {% case entry.type %}
+        {% when 'github', 'twitter' %}
+          {%- capture url -%}
+            https://{{ entry.type }}.com/{{ site[entry.type].username }}
+          {%- endcapture -%}
+        {% when 'email' %}
+          {% assign email = site.social.email | split: '@' %}
+          {%- capture url -%}
+            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+          {%- endcapture -%}
+        {% when 'rss' %}
+          {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+          {% assign url = entry.url %}
+      {% endcase %}
+
+      {% if url %}
+        <a
+          href="{{ url }}" aria-label="{{ entry.type }}"
+          {% assign link_types = '' %}
+
+          {% unless entry.noblank %}
+            target="_blank"
+            {% assign link_types = 'noopener noreferrer' %}
+          {% endunless %}
+
+          {% if entry.type == 'mastodon' %}
+            {% assign link_types = link_types | append: ' me' | strip %}
+          {% endif %}
+
+          {% unless link_types == empty %}
+            rel="{{ link_types }}"
+          {% endunless %}
+        >
+          <i class="{{ entry.icon }}"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <!-- .sidebar-bottom -->
+</div>
+<!-- #sidebar -->

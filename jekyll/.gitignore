@@ -1,0 +1,33 @@
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
+
+# Jekyll cache
+.jekyll-cache
+_site
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode
+
+# Misc
+assets/js/dist
+
+Gemfile.lock
+
+# 내가 설정
+./assets/lib/project/React/todoList/package.json
+./assets/lib/project/React/todoList/package-lock.json
+./assets/lib/project/React/todoList/README.md
+./assets/lib/project/React/todoList/public/
+./assets/lib/project/React/todoList/src/
+!./assets/lib/project/React/todoList/src/App.js
+!./assets/lib/project/React/todoList/src/App.css
