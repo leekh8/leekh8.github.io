@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://leekh8.github.io/sitemap-index.xml
+Host: https://leekh8.github.io

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 25 Mar 2024 09:59:27 GMT</lastBuildDate><item><title><![CDATA[💾 SQL Basic - 1. 소개 및 기본 개념]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. SQL이란? 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/SQL/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/SQL/</guid><pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
+&lt;h2&gt;SQL이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;컴퓨터에 &lt;strong&gt;node.js&lt;/strong&gt; 와 &lt;strong&gt;gatsby-cli&lt;/strong&gt; 가 설치되어 있어야합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npx gatsby new my-hoodie-blog https://github.com/devHudi/gatsby-starter-hoodie&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;2. 개발 서버 시작&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ cd my-hoodie-blog
+$ npm run start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 localhost:8000 으로 여러분의 블로그를 접속할 수 있습니다.&lt;/p&gt;
+&lt;h2&gt;3. Github 레포지토리 생성&lt;/h2&gt;
+&lt;p&gt;Utterance 댓글 위젯은 &lt;strong&gt;Github 이슈 시스템&lt;/strong&gt; 기반입니다. 따라서 각 블로그 별 Github 레포지토리가 필요합니다. 또한 여러분이 Github Pages 혹은 Netlify 로 블로그를 배포하길 원한다면, Github 레포지토리는 필수입니다.&lt;/p&gt;
+&lt;p&gt;만약 Github 레포지토리를 생성하는 법을 모른다면, &lt;a href=&quot;https://docs.github.com/en/github/getting-started-with-github/create-a-repo&quot;&gt;Github 공식 문서&lt;/a&gt; 를 참조하세요.&lt;/p&gt;
+&lt;h3&gt;원격 레포지토리 등록&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git remote add origin https://github.com/{YOUR_GITHUB_NAME}/{YOUR_REPOSITORY_NAME}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;4. blog-config.js 작성&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MY BLOG&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello, This is my blog&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;YOUR NAME&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;siteUrl&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://myblog.com&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://github.com&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://www.facebook.com&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;instagram&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://www.instagram.com&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://www.google.com/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;utterances&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;{YOUR_GITHUB_NAME}/{YOUR_REPOSITORY_NAME}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;pathname&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;gatsby-starter-hoodie 는 &lt;code class=&quot;language-text&quot;&gt;blog-config.js&lt;/code&gt; 라는 설정 파일을 제공합니다. 이 파일에서 블로그 정보, 작성자 프로필, Utterance 설정 등을 작성할 수 있습니다. 여러분 블로그 설정에 맞게 &lt;code class=&quot;language-text&quot;&gt;blog-config.js&lt;/code&gt; 를 설정하세요. 하지만, &lt;code class=&quot;language-text&quot;&gt;utterances.type&lt;/code&gt; 속성은 수정하지 않는 것을 권장합니다.&lt;/p&gt;
+&lt;h3&gt;프로필 이미지 변경&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;static/profile.png&lt;/code&gt; 에 위치한 이미지 파일을 원하는 이미지 파일로 교체하세요. 만약 파일명을 변경하고 싶다면, &lt;code class=&quot;language-text&quot;&gt;src/components/Bio.jsx&lt;/code&gt; 의 소스코드를 수정해야합니다.&lt;/p&gt;
+&lt;h2&gt;5. 포스트 추가&lt;/h2&gt;
+&lt;p&gt;마크다운 포스트는 &lt;code class=&quot;language-text&quot;&gt;contents/posts&lt;/code&gt; 경로에 위치해있습니다. 해당 경로에서 글을 작성할 수 있습니다. &lt;a href=&quot;https://devHudi.github.io/gatsby-starter-hoodie/writing-guide&quot;&gt;여기를 클릭하여&lt;/a&gt; 더 자세한 글 작성 방법을 확인하세요.&lt;/p&gt;
+&lt;h2&gt;6. 블로그 배포하기&lt;/h2&gt;
+&lt;h3&gt;6-1 Netlify 를 통해&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.netlify.com/blog/2016/02/24/a-step-by-step-guide-gatsby-on-netlify/&quot;&gt;A Step-by-Step Guide: Gatsby on Netlify&lt;/a&gt; 문서를 참조하여, Netlify 를 Github 레포지토리와 연결할 수 있습니다. 이 과정은 어렵지 않습니다.&lt;/p&gt;
+&lt;p&gt;Github 레포지토리와 연결이 되었다면, Github 레포지토리에 변경사항이 발생할 때 마다 자동으로 여러분의 블로그에 배포됩니다.&lt;/p&gt;
+&lt;h3&gt;6-2. Github Pages 를 통해&lt;/h3&gt;
+&lt;h4&gt;상황 1&lt;/h4&gt;
+&lt;p&gt;레포지토리 이름이 &lt;code class=&quot;language-text&quot;&gt;{YOUR_GITHUB_NAME}.github.io&lt;/code&gt; 형태일 경우, 아래 명령어를 실행해주세요.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm run deploy-gh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;상황 2&lt;/h4&gt;
+&lt;p&gt;레포지토리 이름이 &lt;code class=&quot;language-text&quot;&gt;{YOUR_GITHUB_NAME}.github.io&lt;/code&gt; 형태가 아닐 경우, 아래 명령어를 실행해주세요.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm run deploy-gh-prefix-paths&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;만약 위와 같은 경우 &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt; 에서 &lt;code class=&quot;language-text&quot;&gt;pathPrefix&lt;/code&gt; 를 여러분의 레포지토리 이름으로 바꿔야합니다.&lt;/p&gt;
+&lt;h3&gt;6-3. 다른 플랫폼&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm run build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위 명령어로 Gastby 웹사이트를 빌드할 수 있습니다. 빌드 결과물은 &lt;code class=&quot;language-text&quot;&gt;/public&lt;/code&gt; 에 저장됩니다. &lt;code class=&quot;language-text&quot;&gt;/public&lt;/code&gt; 디렉토리를 여러분이 사용하는 플랫폼의 배포 명령을 통해 배포해주세요.&lt;/p&gt;
+&lt;h2&gt;7. 커스터마이징&lt;/h2&gt;
+&lt;h3&gt;프로젝트 구조&lt;/h3&gt;
+&lt;p&gt;아래 프로젝트 구조를 참고하여 커스터마이징 할 수 있습니다 🙊.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── node_modules
+├── contents
+│   └── posts // your articles are here
+├── public // build outputs are here
+└── src
+    ├── assets
+    │   └── theme // theme config is here
+    ├── components
+    │   └── Article
+    │       └── Body
+    │           └── StyledMarkdown
+    │               └── index.jsx // markdown styles are here
+    │   ...
+    ├── fonts // webfonts are here
+    ├── hooks
+    ├── images
+    ├── pages // page components are here
+    ├── reducers
+    ├── templates // post components are here
+    └── utils&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
