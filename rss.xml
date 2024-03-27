@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 27 Mar 2024 11:57:07 GMT</lastBuildDate><item><title><![CDATA[📘React 기초 정리 ]]></title><description><![CDATA[React 기초 정리 📘 React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 27 Mar 2024 12:02:56 GMT</lastBuildDate><item><title><![CDATA[📘React 기초 정리 ]]></title><description><![CDATA[React 기초 정리 📘 React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
 사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다. React의 기본 개념과 왜 React…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/React/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/React/</guid><pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;React 기초 정리 📘&lt;/h1&gt;
 &lt;p&gt;React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
 사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다.&lt;/p&gt;
@@ -235,7 +235,7 @@ DOM은 브라우저가 만들고 유지 관리하는 전체 HTML을 나타낸다
 &lt;h2&gt;React 컴포넌트 🎨&lt;/h2&gt;
 &lt;p&gt;React에서 페이지를 구성하는 기본 단위인 컴포넌트에 대해 알아보자.
 컴포넌트는 React 애플리케이션의 핵심 요소로, 재사용 가능한 코드의 블록을 제공한다.&lt;/p&gt;
-&lt;h3&gt;컴포넌트란?&lt;/h3&gt;
+&lt;h3&gt;컴포넌트란? 🤔&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;React에서의 역할: 페이지를 구성하는 최소 단위로, 재사용 가능한 UI 조각.&lt;/li&gt;
 &lt;li&gt;네이밍 규칙: 컴포넌트의 이름은 대문자로 시작한다.
