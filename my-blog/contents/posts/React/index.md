@@ -11,7 +11,7 @@ tags:
   - JSX
   - NPM
   - Basic
-series: "📘React Basic"
+series: "React Basic"
 ---
 
 # React 기초 정리 📘
