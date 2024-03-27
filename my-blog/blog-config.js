@@ -13,8 +13,8 @@ module.exports = {
     // medium: "https://medium.com",
     // blogger: "https://blogger.com",
     email: "mailto:amysun125@gmail.com",
-    resume: "https://leekh8.blog",
-    link: "https://leekh8.blog",
+    // resume: "https://leekh8.blog",
+    // link: "https://leekh8.blog",
   },
   utterances: {
     repo: "leekh8/gatsby-starter-hoodie",
