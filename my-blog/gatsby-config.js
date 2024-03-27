@@ -1,4 +1,3 @@
-require("dotenv").config()
 const blogConfig = require("./blog-config")
 const { title, description, author, siteUrl } = blogConfig
 
@@ -11,20 +10,6 @@ module.exports = {
     siteUrl,
   },
   plugins: [
-    {
-      resolve: `gatsby-source-notion-feely`,
-      options: {
-        // Notion API 토큰 입력
-        token: process.env.NOTION_API_TOKEN,
-        // Notion 데이터베이스 ID 입력
-        database: [
-          {
-            id: process.env.NOTION_DATABASE_ID,
-            name: `blog`,
-          },
-        ],
-      },
-    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-robots-txt`,
     {
