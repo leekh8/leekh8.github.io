@@ -1,4 +1,312 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 26 Mar 2024 11:04:20 GMT</lastBuildDate><item><title><![CDATA[TEST 💾 SQL Basic - 1. 소개 및 기본 개념~~]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. SQL이란? 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/SQL/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/SQL/</guid><pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 27 Mar 2024 11:30:33 GMT</lastBuildDate><item><title><![CDATA[📘React 기초 정리 ]]></title><description><![CDATA[React 기초 정리 📘 React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
+사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다. React의 기본 개념과 왜 React…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/React/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/React/</guid><pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;React 기초 정리 📘&lt;/h1&gt;
+&lt;p&gt;React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
+사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다.&lt;/p&gt;
+&lt;p&gt;React의 기본 개념과 왜 React를 배워야 하는지, React의 특징, JSX의 활용, SPA의 개념, JSX와 일반 JavaScript의 차이점, Component의 개념과 활용, Component의 데이터 관리 방법등에 대해 알아보자.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://react.dev/&quot;&gt;React&lt;/a&gt;란? 🤔&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;정의: React는 사용자 인터페이스를 구축하기 위한 JavaScript 라이브러리. Facebook에서 개발하였고, 컴포넌트 기반의 개발을 지향한다.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;특징:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Component: 독립적인 단위로 쪼개어 구현되며, 레고 블럭처럼 여러 컴포넌트들을 조립하여 한 페이지를 완성한다.&lt;/li&gt;
+&lt;li&gt;Virtual DOM: 가상의 DOM을 메모리에 저장하고, 실제 DOM과 동기화하는 프로그래밍 개념. 이를 통해 성능을 향상시킨다.&lt;/li&gt;
+&lt;li&gt;JSX: JavaScript 내에서 HTML과 유사한 문법을 사용하여 UI를 표현한다. 이로 인해 개발자는 보다 직관적으로 UI를 구성할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;SPA (Single Page Application)와 전통적인 사이트 비교 🔄&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;전통적인 사이트: 페이지 변경이 필요할 때마다 서버에 요청하여 새로운 HTML을 받아오는 방식.
+이 과정에서 페이지 전체를 새로 불러온다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;mermaid&quot;&gt;&lt;pre class=&quot;language-mermaid&quot;&gt;&lt;code class=&quot;language-mermaid&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;sequenceDiagram&lt;/span&gt;
+Client&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+Server&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 최초 접속 요청
+Server&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;+Client&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; HTML 전달
+Client&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+Server&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 데이터 전달 &lt;span class=&quot;token text string&quot;&gt;(Form Post)&lt;/span&gt;
+Server&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;+Client&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; HTML 전달&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SPA: 초기 로딩 시 서버로부터 HTML을 받아온 후, 이후의 페이지 변경은 AJAX 통신을 통해 필요한 데이터만 JSON 형태로 받아와서 클라이언트에서 렌더링한다.
+이 방식은 React를 포함한 현대적인 JavaScript 프레임워크/라이브러리에서 널리 사용된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;mermaid&quot;&gt;&lt;pre class=&quot;language-mermaid&quot;&gt;&lt;code class=&quot;language-mermaid&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;sequenceDiagram&lt;/span&gt;
+Client&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+Server&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 최초 접속 요청
+Server&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;+Client&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; HTML 전달
+Client&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+Server&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 데이터 전달 &lt;span class=&quot;token text string&quot;&gt;(AJAX 통신)&lt;/span&gt;
+Server&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;+Client&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; JSON 전달&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;React를 공부해야 하는 이유 🚀&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;생산성과 재사용성: 컴포넌트와 Hook을 활용하여 개발자의 생산성을 높이고, 코드의 재사용성을 증가시킨다.&lt;/li&gt;
+&lt;li&gt;풍부한 자료와 라이브러리: React는 널리 사용되기 때문에 다양한 자료와 오픈소스 라이브러리를 쉽게 찾을 수 있다.&lt;/li&gt;
+&lt;li&gt;다양한 사용처: React를 배우면 웹 애플리케이션 뿐만 아니라 React Native를 통해 모바일 애플리케이션 개발에도 활용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;React를 배우는 것은 현대 웹 개발의 트렌드를 따라가는 데 있어 필수적인 요소가 되었다고 할 수 있다.
+시작하기 전에, 기본적인 JavaScript 지식을 갖추는 것이 좋다.
+React의 세계로! 🌟&lt;/p&gt;
+&lt;h2&gt;React의 핵심 특징 정리 🌟&lt;/h2&gt;
+&lt;p&gt;React는 현대 웹 개발에서 중요한 역할을 하는 JavaScript 라이브러리. React의 주요 특징들을 좀 더 자세히 살펴보자.&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3&gt;HTML과 JS 함께 사용하기 📝&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;전통적인 방식 (jQuery 사용 예): HTML 요소를 JavaScript로 동적으로 추가하는 방식.
+코드가 복잡해지고 유지보수가 어려워질 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;#todo-list&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;li&gt;&amp;lt;span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;
+  value &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;/span&gt;&amp;lt;button type=&apos;button&apos; class=&apos;complete&apos;&gt;complete&amp;lt;/button&gt; &amp;lt;button type=&apos;button&apos; class=&apos;delete&apos;&gt;delete&amp;lt;/button&gt;&amp;lt;/li&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;React 방식 (JSX 사용 예): HTML과 JavaScript를 함께 사용하여 UI를 선언적으로 표현한다.
+코드가 더 간결하고 이해하기 쉽다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;ol&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;todo-list&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;todoList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;item&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;li&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;isCompleted &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;completed&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleCompleteClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleDeleteClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;li&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;ol&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Component 기반 개발 🛠️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;React는 컴포넌트 기반으로 개발된다.
+각 컴포넌트는 독립적인 단위로, 재사용이 가능하며, 복잡한 UI도 쉽게 구성할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; text &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello world&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;State를 통한 데이터 관리 🔄&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;React에서는 state를 사용하여 컴포넌트의 상태를 관리한다. state가 변경될 때마다 컴포넌트는 자동으로 다시 렌더링된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;todoList&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setTodoList&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;inputValue&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setInputValue&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;React의 이러한 특징들은 개발자가 더 효율적으로 웹 애플리케이션을 구축할 수 있도록 돕는다.
+JSX, 컴포넌트, 그리고 상태 관리는 React 개발의 핵심을 이루며, 이를 통해 더 나은 사용자 경험을 제공하는 웹 애플리케이션을 만들 수 있다.
+React를 배우고 싶다면, 이러한 개념들을 깊이 이해하는 것이 중요! 🚀&lt;/p&gt;
+&lt;h2&gt;Create React App(CRA) 및 Node.js, NPM에 대한 정리 🚀&lt;/h2&gt;
+&lt;p&gt;Create React App(CRA)은 React 프로젝트를 쉽게 시작할 수 있게 해주는 도구.&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a href=&quot;#fn-3&quot; class=&quot;footnote-ref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;
+Facebook에 의해 만들어졌으며, 프로젝트 생성부터 다양한 개발 도구를 제공한다.
+Node.js와 NPM은 CRA를 사용하여 React 프로젝트를 시작할 때 필수적인 환경이다.&lt;/p&gt;
+&lt;h3&gt;Create React App(CRA) 🛠️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;개요: React 프로젝트를 쉽게 생성할 수 있도록 도와주는 Boilerplate.
+직접 스크립트를 추가하여 사용하는 것도 가능하지만, CRA를 사용하면 더 편리하다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;장점:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;개발에 집중할 수 있도록 환경을 구성해준다.&lt;/li&gt;
+&lt;li&gt;다양한 브라우저에서 작동할 수 있도록 transcompile을 지원한다. (예: babel, webpack)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사용 방법:&lt;sup id=&quot;fnref-4&quot;&gt;&lt;a href=&quot;#fn-4&quot; class=&quot;footnote-ref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;npx create-react-app &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;directory name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;directory name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://create-react-app.dev/&quot;&gt;공식 문서 및 자세한 정보&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Node.js와 NPM 🌐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Node.js:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서버 프로그래밍에 주로 사용되는 JavaScript 기반의 소프트웨어 플랫폼.&lt;/li&gt;
+&lt;li&gt;프론트엔드 개발자가 서버 개발에 쉽게 접근할 수 있도록 도와준다.&lt;/li&gt;
+&lt;li&gt;CRA를 사용한 React 프로젝트 생성 시 개발 환경 및 테스트 서버로 활용된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NPM (Node Package Manager):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js 환경에서 사용할 수 있는 패키지와 라이브러리를 관리하는 저장소.&lt;/li&gt;
+&lt;li&gt;패키지 관리와 서버 실행, 관리에 필요한 다양한 명령어를 제공한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;설치 및 사용:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js 설치:&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en&quot;&gt;Node.js 공식 홈페이지&lt;/a&gt; 에서 LTS 버전을 다운로드하고 설치한다.&lt;/li&gt;
+&lt;li&gt;버전 확인: &lt;code class=&quot;language-text&quot;&gt;node -v&lt;/code&gt; 명령어로 설치된 Node.js 버전을 확인할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;React 프로젝트 생성 과정 📦&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Node.js 설치: 위에서 언급한 대로 LTS 버전을 설치.&lt;/li&gt;
+&lt;li&gt;프로젝트 생성: &lt;code class=&quot;language-text&quot;&gt;npx create-react-app &amp;lt;directory name&gt;&lt;/code&gt; 명령어를 사용.&lt;/li&gt;
+&lt;li&gt;프로젝트 실행: 생성된 디렉토리로 이동한 후 npm start 명령어로 프로젝트를 실행.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;npm 명령어 📚&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt;: package.json에 정의된 의존성 패키지들을 설치.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm install &amp;lt;package name&gt;&lt;/code&gt;: 원하는 패키지를 설치.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm install &amp;lt;package name&gt;@&amp;lt;version&gt;&lt;/code&gt;: 특정 버전의 패키지를 설치.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm install &amp;lt;git repository 주소&gt;&lt;/code&gt;: git repository로부터 패키지를 설치.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm start&lt;/code&gt;: Node.js를 이용해 프로젝트를 실행.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm build&lt;/code&gt;: 프로젝트를 빌드.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.npmjs.com/cli/v9/commands?v=true&quot;&gt;더 많은 명령어 참고&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CRA, Node.js, NPM을 활용하면 React 프로젝트를 효율적으로 시작하고 관리할 수 있다.
+이 도구들은 현대 웹 개발에서 중요한 역할을 하며, 개발자가 더 나은 웹 애플리케이션을 만들 수 있도록 돕는다. 🌟&lt;/p&gt;
+&lt;h3&gt;React 프로젝트의 기본 구조 및 JSX 소개 📁&lt;/h3&gt;
+&lt;p&gt;React 프로젝트를 시작하면 기본적으로 몇 가지 주요 디렉토리와 파일이 생성된다.
+이들은 프로젝트의 구조를 이해하고 관리하는 데 중요한 역할을 한다.
+또한, JSX는 React 개발에서 핵심적인 역할을 하는 문법으로, HTML과 유사하지만 JavaScript를 확장한 문법이다.&lt;sup id=&quot;fnref-5&quot;&gt;&lt;a href=&quot;#fn-5&quot; class=&quot;footnote-ref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h4&gt;Directory 구조 📂&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;./node_modules/&lt;/code&gt;: npm을 이용해 설치한 패키지 모음.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;./public/&lt;/code&gt;: 정적인 파일들(HTML, 이미지 등)의 모음.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;./src/&lt;/code&gt;: 리액트 개발을 위한 주요 소스 파일들이 위치한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;./.gitignore&lt;/code&gt;: git에 올리지 않을 파일 설정을 포함한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;./package.json&lt;/code&gt;: 프로젝트 관련 정보와 사용 패키지 명세 파일.
+패키지 버전은 ^, &amp;#x3C;=, &gt;= 등의 기호로 범위를 표현할 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;./README.md&lt;/code&gt;: 프로젝트에 관한 설명을 작성하는 파일.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;설치한 라이브러리 불러오기 📚&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;package name&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// CSS나 import만으로 역할을 하는 라이브러리&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; something &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;package name&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 기본적으로 불러와 활용할 때&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;package name&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 패키지 내 일부만 가져올 때&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; something &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;package name&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// default로 export되지 않은 경우&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;JSX 소개 ✨&lt;/h2&gt;
+&lt;p&gt;JSX는 JavaScript를 확장한 문법으로, UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용된다.
+JSX는 React &quot;엘리먼트&quot;를 생성하며, HTML과 유사한 생김새를 가지지만 JavaScript의 모든 기능을 포함한다&lt;sup id=&quot;fnref-6&quot;&gt;&lt;a href=&quot;#fn-6&quot; class=&quot;footnote-ref&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3&gt;JSX의 장점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;개발자 편의성의 향상&lt;/li&gt;
+&lt;li&gt;협업 용이 및 생산성의 향상&lt;/li&gt;
+&lt;li&gt;문법 오류 및 코드량 감소&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;JSX의 특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML 태그 내에서 JavaScript 연산을 간결하게 표현할 수 있다.&lt;/li&gt;
+&lt;li&gt;HTML과의 차이점으로는 class 대신 className을 사용하고, 스타일은 객체 형태로 표현한다.&lt;/li&gt;
+&lt;li&gt;닫는 태그가 필수이며, 최상단 element는 반드시 하나여야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;JSX와 JavaScript의 차이점&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;JSX는 사용자 인터페이스를 정의하는 데 사용되며, HTML처럼 보이지만 실제로는 JavaScript임.&lt;/li&gt;
+&lt;li&gt;React에서는 JSX를 통해 컴포넌트를 정의하고, 이를 통해 UI를 구성한다. 이는 기존 JavaScript와 HTML을 사용하는 방식과는 다른 접근 방식을 제공한다&lt;sup id=&quot;fnref-7&quot;&gt;&lt;a href=&quot;#fn-7&quot; class=&quot;footnote-ref&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;JSX는 React 개발에서 중요한 역할을 하며, 개발자가 보다 효율적으로 UI를 구성할 수 있도록 돕는다.
+React 프로젝트의 구조와 JSX에 대해 이해하면, React 애플리케이션 개발에 있어 훨씬 더 편리하게 접근할 수 있다. 🚀&lt;/p&gt;
+&lt;h4&gt;브라우저에 데이터 저장 및 UI 업데이트 방법 💾🔄&lt;/h4&gt;
+&lt;p&gt;브라우저에 데이터를 저장하고 UI를 업데이트하는 방법은 기술 스택에 따라 다르다.
+JavaScript와 React는 이러한 작업을 처리하는 데 있어 서로 다른 접근 방식을 제공한다.&lt;/p&gt;
+&lt;h4&gt;브라우저에 데이터 저장 방법&lt;/h4&gt;
+&lt;h5&gt;JavaScript&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자 데이터는 주로 DOM에 저장된다.
+DOM은 브라우저가 만들고 유지 관리하는 전체 HTML을 나타낸다.&lt;/li&gt;
+&lt;li&gt;사용자가 데이터를 입력하면, 개발자는 DOM에서 해당 값을 찾아 추출해야 한다.
+이 과정은 관리가 번거로울 수 있다&lt;sup id=&quot;fnref-8&quot;&gt;&lt;a href=&quot;#fn-8&quot; class=&quot;footnote-ref&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;React&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;React에서는 제어 컴포넌트를 사용하여 사용자 입력을 기반으로 상태를 관리하고 업데이트한다.
+이는 DOM에 의존하지 않고 JS 변수에 애플리케이션의 상태를 저장함으로써 이루어진다.&lt;/li&gt;
+&lt;li&gt;이 방식은 애플리케이션이 성장함에 따라 더욱 중요해지며, 코드 관리가 편리해진다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;UI 업데이트 방법&lt;/h4&gt;
+&lt;h5&gt;JavaScript&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;UI 업데이트를 위해, 개발자는 DOM에서 요소를 찾고, 이벤트 리스너를 설정하여 사용자 상호작용에 반응해야 한다.
+이 과정은 복잡하고 관리하기 어려울 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;React&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;React는 상태 관리를 통해 UI를 자동으로 업데이트한다. 상태가 변경되면 React는 이를 감지하고 필요한 UI 부분만을 효율적으로 업데이트한다.&lt;/li&gt;
+&lt;li&gt;이는 개발자가 UI 업데이트 로직에 집중하기보다는 사용자와의 상호작용 및 애플리케이션의 상태 관리에 더 집중할 수 있게 해준다&lt;sup id=&quot;fnref-9&quot;&gt;&lt;a href=&quot;#fn-9&quot; class=&quot;footnote-ref&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;브라우저에 데이터를 저장하고 UI를 업데이트하는 방법은 기술의 선택에 따라 크게 달라질 수 있다. JavaScript는 직접적인 DOM 조작에 의존하는 반면, React는 상태 관리를 통해 보다 선언적이고 효율적인 방식을 제공한다.
+이러한 차이점을 이해하는 것은 웹 개발에서 중요한 요소 중 하나. 🌟&lt;/p&gt;
+&lt;h2&gt;React 컴포넌트 🎨&lt;/h2&gt;
+&lt;p&gt;React에서 페이지를 구성하는 기본 단위인 컴포넌트에 대해 알아보자.
+컴포넌트는 React 애플리케이션의 핵심 요소로, 재사용 가능한 코드의 블록을 제공한다.&lt;/p&gt;
+&lt;h3&gt;컴포넌트란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;React에서의 역할: 페이지를 구성하는 최소 단위로, 재사용 가능한 UI 조각.&lt;/li&gt;
+&lt;li&gt;네이밍 규칙: 컴포넌트의 이름은 대문자로 시작한다.
+이는 일반 HTML 요소와 구별하기 위함임.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;컴포넌트의 종류&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Class 컴포넌트: 초기 React에서 주로 사용되었으며, Java 개발자에게 친숙한 개념.
+React의 생명 주기를 쉽게 파악할 수 있다.&lt;/li&gt;
+&lt;li&gt;Function 컴포넌트: React v16부터 추가된 기능으로, 현재는 대부분의 컴포넌트가 이 형태로 사용된다.
+Hook을 사용하여 상태 관리가 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Controlled Component와 Uncontrolled Component&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Controlled Component: form을 통해 입력을 받을 때, 각 input의 데이터를 state를 통해 직접 관리한.&lt;/li&gt;
+&lt;li&gt;Uncontrolled Component: React로 input의 데이터를 직접 관리하지 않고, 필요할 때 DOM에서 직접 값을 가져온다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;컴포넌트의 특징&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Props(Properties): 컴포넌트의 속성으로, 상위 컴포넌트로부터 데이터를 전달받는다.&lt;/li&gt;
+&lt;li&gt;Children: 컴포넌트 안에 작성된 하위 요소로, props의 일부로 취급된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;컴포넌트의 데이터 관리&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Props를 통한 데이터 전달: 컴포넌트 간 데이터는 props를 통해 부모에서 자식으로 전달된다.&lt;/li&gt;
+&lt;li&gt;State를 통한 내부 데이터 관리: 컴포넌트 내에서 데이터를 관리할 때는 state를 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;React 컴포넌트는 애플리케이션을 구성하는 데 있어 매우 중요한 역할을 한다.
+컴포넌트를 통해 UI를 모듈화하고 재사용 가능한 코드를 생성하여, 개발 과정을 효율적으로 만들 수 있다.
+데이터 관리에 대한 더 자세한 정보는 &lt;a href=&quot;https://blog.stackademic.com/data-handling-in-react-components-props-state-and-best-practices-1c74ae800b43&quot;&gt;여기&lt;/a&gt;에서 확인할 수 있다. 🌟&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ko.legacy.reactjs.org/tutorial/tutorial.html&quot;&gt;https://ko.legacy.reactjs.org/tutorial/tutorial.html&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-2&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.elancer.co.kr/blog/view?seq=167&quot;&gt;https://www.elancer.co.kr/blog/view?seq=167&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-3&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://create-react-app.dev/&quot;&gt;https://create-react-app.dev/&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-3&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-4&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://legacy.reactjs.org/docs/create-a-new-react-app.html&quot;&gt;https://legacy.reactjs.org/docs/create-a-new-react-app.html&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-4&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-5&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ko.legacy.reactjs.org/docs/introducing-jsx.html&quot;&gt;https://ko.legacy.reactjs.org/docs/introducing-jsx.html&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-5&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-6&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ko.legacy.reactjs.org/docs/introducing-jsx.html&quot;&gt;https://ko.legacy.reactjs.org/docs/introducing-jsx.html&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-6&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-7&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.w3schools.com/react/react_css.asp&quot;&gt;https://www.w3schools.com/react/react_css.asp&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-7&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-8&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage&quot;&gt;https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-8&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-9&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/pulse/understanding-react-reconciliation-heartbeat-ui-updates-rostami&quot;&gt;https://www.linkedin.com/pulse/understanding-react-reconciliation-heartbeat-ui-updates-rostami&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-9&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[💾 SQL Basic - 1. 소개 및 기본 개념]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. SQL이란? 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/SQL/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/SQL/</guid><pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
 &lt;h2&gt;SQL이란?&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;컴퓨터에 &lt;strong&gt;node.js&lt;/strong&gt; 와 &lt;strong&gt;gatsby-cli&lt;/strong&gt; 가 설치되어 있어야합니다.&lt;/p&gt;
