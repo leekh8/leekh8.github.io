@@ -1,10 +1,10 @@
 ---
 title: "📘React 기초 정리 "
-description: "SQL과 관계형 데이터베이스의 기본과 데이터 검색, 삽입, 수정, 삭제 등의 기능과 함께 관계형 데이터베이스의 구조와 SQL을 사용한 데이터 조작의 기초 학습"
+description: "React는 JSX, 컴포넌트, 상태 관리를 기반으로 웹 UI를 효율적으로 개발하는 JavaScript 라이브러리이다"
 date: 2023-05-01
 update: 2024-03-27
 tags:
-  - SQL
+  - React
   - SPA
   - Component
   - Hook
