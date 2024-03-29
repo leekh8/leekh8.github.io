@@ -25,7 +25,5 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        env:
-          ACCESS_TOKEN: ${{ secrets.PAT }}
         run: |
-          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+          npx gh-pages -d ./public -b gh-pages -t ${{ secrets.PAT }}
