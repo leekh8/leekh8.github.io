@@ -28,6 +28,5 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.PAT }}
         run: |
-          git config --global user.email "amysun125@gmail.com"
-          git config --global user.name "leekh"
+          git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
           npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
