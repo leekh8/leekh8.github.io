@@ -27,8 +27,11 @@ jobs:
         run: npm run build
 
       - name: Set Git user information
-        run: git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+        run: |
+          git config --global user.email "amysun125@gmail.com"
+          git config --global user.name "leekh8"
 
       - name: Deploy to GitHub Pages
         run: |
+          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
           npx gh-pages -d ./public -b gh-pages -t $PAT
