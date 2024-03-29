@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PAT: ${{ secrets.PAT }}
 
     steps:
       - name: Checkout Repository
@@ -26,4 +28,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          npx gh-pages -d ./public -b gh-pages -t ${{ secrets.PAT }}
+          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+          npx gh-pages -d ./public -b gh-pages -t $PAT
