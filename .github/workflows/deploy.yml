@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 20.3.1
 
       - name: Install Dependencies
         run: npm install
@@ -27,6 +27,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACCESS_TOKEN }} # 깃허브 토큰을 시크릿에 등록하고 여기서 사용하세요
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
