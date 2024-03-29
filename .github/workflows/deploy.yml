@@ -28,4 +28,4 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.PAT }}
         run: |
-          npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
