@@ -24,9 +24,10 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build
-        run: npm run build
+        run: |
+          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+          npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
           npx gh-pages -d ./public -b gh-pages -t $PAT
