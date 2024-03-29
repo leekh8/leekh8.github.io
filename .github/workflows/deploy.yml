@@ -19,7 +19,7 @@ jobs:
           node-version: 20.3.1
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
