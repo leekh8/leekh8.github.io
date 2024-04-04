@@ -11,8 +11,8 @@ tags:
   - PAT
   - SSH Key
   - 의존성 관리
-  - Code & Solve
-series: "Code & Solve"
+  - Code N Solve
+series: "Code N Solve"
 ---
 
 # Code & Solve 📘
