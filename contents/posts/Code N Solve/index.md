@@ -15,7 +15,7 @@ tags:
 series: "Code N Solve"
 ---
 
-# Code & Solve 📘
+# Code N Solve 📘
 
 ## GitHub Actions[^1]를 이용한 문제 해결과 배포 자동화 🚀
 
