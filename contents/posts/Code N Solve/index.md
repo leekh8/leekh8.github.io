@@ -964,14 +964,8 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 Published
 ```
 
-[^1]:
-
-https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions
-[^2]:
-https://docs.github.com/ko/enterprise-server@3.10/actions/automating-builds-and-tests/about-continuous-integration
-[^3]:
-https://docs.github.com/ko/enterprise-server@3.10/actions/examples/using-scripts-to-test-your-code-on-a-runner
-[^4]:
-https://docs.github.com/ko/enterprise-server@3.10/actions/using-workflows/workflow-syntax-for-github-actions
-[^5]:
-https://github.com/orgs/community/discussions/26580
+[^1]: https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions
+[^2]: https://docs.github.com/ko/enterprise-server@3.10/actions/automating-builds-and-tests/about-continuous-integration
+[^3]: https://docs.github.com/ko/enterprise-server@3.10/actions/examples/using-scripts-to-test-your-code-on-a-runner
+[^4]: https://docs.github.com/ko/enterprise-server@3.10/actions/using-workflows/workflow-syntax-for-github-actions
+[^5]: https://github.com/orgs/community/discussions/26580
