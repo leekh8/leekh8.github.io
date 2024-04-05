@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 04 Apr 2024 12:17:30 GMT</lastBuildDate><item><title><![CDATA[🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정]]></title><description><![CDATA[Code N Solve 📘 GitHub Actions를 이용한 문제 해결과 배포 자동화 🚀 GitHub Actions…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</guid><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Code N Solve 📘&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Apr 2024 12:13:50 GMT</lastBuildDate><item><title><![CDATA[🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정]]></title><description><![CDATA[Code N Solve 📘 GitHub Actions를 이용한 문제 해결과 배포 자동화 🚀 GitHub Actions…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</guid><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Code N Solve 📘&lt;/h1&gt;
 &lt;h2&gt;GitHub Actions&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;를 이용한 문제 해결과 배포 자동화 🚀&lt;/h2&gt;
 &lt;p&gt;GitHub Actions는 개발 프로세스를 자동화하여 빌드, 테스트, 배포 등을 수행할 수 있는 강력한 도구이다.
 하지만 올바른 설정 없이는 원하는 대로 작동하지 않을 수 있다.
@@ -941,20 +941,28 @@ PAT: ${{ secrets.PAT }}&lt;/p&gt;
 &lt;li&gt;성공!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Published&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions&lt;/a&gt;
-&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;:
-&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/automating-builds-and-tests/about-continuous-integration&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/automating-builds-and-tests/about-continuous-integration&lt;/a&gt;
-&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a href=&quot;#fn-3&quot; class=&quot;footnote-ref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;:
-&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/examples/using-scripts-to-test-your-code-on-a-runner&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/examples/using-scripts-to-test-your-code-on-a-runner&lt;/a&gt;
-&lt;sup id=&quot;fnref-4&quot;&gt;&lt;a href=&quot;#fn-4&quot; class=&quot;footnote-ref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;:
-&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/using-workflows/workflow-syntax-for-github-actions&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/using-workflows/workflow-syntax-for-github-actions&lt;/a&gt;
-&lt;sup id=&quot;fnref-5&quot;&gt;&lt;a href=&quot;#fn-5&quot; class=&quot;footnote-ref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;:
-&lt;a href=&quot;https://github.com/orgs/community/discussions/26580&quot;&gt;https://github.com/orgs/community/discussions/26580&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions&lt;/a&gt;&lt;/p&gt;
 &lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-2&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/automating-builds-and-tests/about-continuous-integration&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/automating-builds-and-tests/about-continuous-integration&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-3&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/examples/using-scripts-to-test-your-code-on-a-runner&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/examples/using-scripts-to-test-your-code-on-a-runner&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-3&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-4&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/enterprise-server@3.10/actions/using-workflows/workflow-syntax-for-github-actions&quot;&gt;https://docs.github.com/ko/enterprise-server@3.10/actions/using-workflows/workflow-syntax-for-github-actions&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-4&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-5&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/orgs/community/discussions/26580&quot;&gt;https://github.com/orgs/community/discussions/26580&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-5&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[📘React 기초 정리 2 ]]></title><description><![CDATA[React 기초 정리 📘 Props와 State: React 컴포넌트의 핵심 이해하기 🚀 React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자. 📦 Props…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/React-2-Props-State/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/React-2-Props-State/</guid><pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;React 기초 정리 📘&lt;/h1&gt;
