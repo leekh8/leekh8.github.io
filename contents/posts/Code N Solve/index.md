@@ -17,22 +17,22 @@ series: "Code N Solve"
 
 # Code N Solve 📘
 
-## GitHub Actions[^1]를 이용한 문제 해결과 배포 자동화 🚀
+# GitHub Actions[^1]를 이용한 문제 해결과 배포 자동화 🚀
 
 GitHub Actions는 개발 프로세스를 자동화하여 빌드, 테스트, 배포 등을 수행할 수 있는 강력한 도구이다.
 하지만 올바른 설정 없이는 원하는 대로 작동하지 않을 수 있다.
 Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪은 몇 가지 문제와 이를 해결하는 방법에 대해 이야기해보자.
 
-### Blog Deployment 자동화
+## Blog Deployment 자동화
 
 현재 블로그 테마는 [gatsby-starter-hoodie](https://github.com/devHudi/gatsby-starter-hoodie?tab=readme-ov-file)를 활용하고 있다.
 
 여기에 CI (Continuous Integration)[^2] 코드는 이미 작성되어 있고, Netlify를 통한 배포 방식이 설명되어 있지만 Github Pages를 이용해 배포를 하고 있었다.
 매번 `$ npm run deploy-gh` 명령을 하기 귀찮아져 자동화 Workflow를 만들기로 결심한다.
 
-### GitHub Actions Workflow 설정
+## GitHub Actions Workflow 설정
 
-#### 1. GitHub Pages 자동 배포[^3][^4]
+### 1. GitHub Pages 자동 배포[^3][^4]
 
 - 시도:
 
@@ -91,7 +91,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
   </details>
 
-#### 2. Node.js 버전 충돌
+### 2. Node.js 버전 충돌
 
 - 문제:
 
@@ -180,7 +180,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
 </details>
 
-#### 3. Node.js 패키지 의존성 충돌 및 GitHub 토큰 시크릿 등록
+### 3. Node.js 패키지 의존성 충돌 및 GitHub 토큰 시크릿 등록
 
 - 시도:
 
@@ -279,7 +279,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 4. User authenticate using git config
+### 4. User authenticate using git config
 
 - 시도:
   - token을 secret에 등록하였지만 token 인증에 실패하여 git config 명령을 통해 사용자를 등록하였다.
@@ -343,7 +343,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 5. User authenticate using token
+### 5. User authenticate using token
 
 - 시도:
 
@@ -401,7 +401,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     ```
 </details>
 
-#### 6. User authenticate using token 2
+### 6. User authenticate using token 2
 
 - 시도:
 
@@ -475,7 +475,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
 </details>
 
-#### 7. User authenticate using git config 2
+### 7. User authenticate using git config 2
 
 - 시도:
 
@@ -542,7 +542,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 8. User authenticate using git config 3
+### 8. User authenticate using git config 3
 
 - 시도:
 
@@ -620,7 +620,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 9. User authenticate using git config 4
+### 9. User authenticate using git config 4
 
 - 시도:
 
@@ -681,7 +681,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 10. User authenticate using git config 5
+### 10. User authenticate using git config 5
 
 - 시도:
 
@@ -746,7 +746,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 11. User authenticate using git config 6
+### 11. User authenticate using git config 6
 
 - 시도:
 
@@ -828,7 +828,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
 </details>
 
-#### 12. User authenticate using git config 7
+### 12. User authenticate using git config 7
 
 - 시도:
 
@@ -907,7 +907,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     </details>
 
-#### 13. User authenticate using git config 8
+### 13. User authenticate using git config 8
 
 - 시도:
 
