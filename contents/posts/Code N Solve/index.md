@@ -15,9 +15,9 @@ tags:
 series: "Code N Solve"
 ---
 
-# Code N Solve 📘
+## Code N Solve 📘
 
-# GitHub Actions[^1]를 이용한 문제 해결과 배포 자동화 🚀
+## GitHub Actions[^1]를 이용한 문제 해결과 배포 자동화 🚀
 
 GitHub Actions는 개발 프로세스를 자동화하여 빌드, 테스트, 배포 등을 수행할 수 있는 강력한 도구이다.
 하지만 올바른 설정 없이는 원하는 대로 작동하지 않을 수 있다.
