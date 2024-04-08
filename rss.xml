@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Apr 2024 12:13:50 GMT</lastBuildDate><item><title><![CDATA[🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정]]></title><description><![CDATA[Code N Solve 📘 GitHub Actions를 이용한 문제 해결과 배포 자동화 🚀 GitHub Actions…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</guid><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Code N Solve 📘&lt;/h1&gt;
-&lt;h2&gt;GitHub Actions&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;를 이용한 문제 해결과 배포 자동화 🚀&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 08 Apr 2024 05:28:05 GMT</lastBuildDate><item><title><![CDATA[🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정]]></title><description><![CDATA[Code N Solve 📘 GitHub Actions를 이용한 문제 해결과 배포 자동화 🚀 GitHub Actions…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/Code N Solve/</guid><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Code N Solve 📘&lt;/h1&gt;
+&lt;h1&gt;GitHub Actions&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;를 이용한 문제 해결과 배포 자동화 🚀&lt;/h1&gt;
 &lt;p&gt;GitHub Actions는 개발 프로세스를 자동화하여 빌드, 테스트, 배포 등을 수행할 수 있는 강력한 도구이다.
 하지만 올바른 설정 없이는 원하는 대로 작동하지 않을 수 있다.
 Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪은 몇 가지 문제와 이를 해결하는 방법에 대해 이야기해보자.&lt;/p&gt;
-&lt;h3&gt;Blog Deployment 자동화&lt;/h3&gt;
+&lt;h2&gt;Blog Deployment 자동화&lt;/h2&gt;
 &lt;p&gt;현재 블로그 테마는 &lt;a href=&quot;https://github.com/devHudi/gatsby-starter-hoodie?tab=readme-ov-file&quot;&gt;gatsby-starter-hoodie&lt;/a&gt;를 활용하고 있다.&lt;/p&gt;
 &lt;p&gt;여기에 CI (Continuous Integration)&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 코드는 이미 작성되어 있고, Netlify를 통한 배포 방식이 설명되어 있지만 Github Pages를 이용해 배포를 하고 있었다.
 매번 &lt;code class=&quot;language-text&quot;&gt;$ npm run deploy-gh&lt;/code&gt; 명령을 하기 귀찮아져 자동화 Workflow를 만들기로 결심한다.&lt;/p&gt;
-&lt;h3&gt;GitHub Actions Workflow 설정&lt;/h3&gt;
-&lt;h4&gt;1. GitHub Pages 자동 배포&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a href=&quot;#fn-3&quot; class=&quot;footnote-ref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref-4&quot;&gt;&lt;a href=&quot;#fn-4&quot; class=&quot;footnote-ref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h4&gt;
+&lt;h2&gt;GitHub Actions Workflow 설정&lt;/h2&gt;
+&lt;h3&gt;1. GitHub Pages 자동 배포&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a href=&quot;#fn-3&quot; class=&quot;footnote-ref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref-4&quot;&gt;&lt;a href=&quot;#fn-4&quot; class=&quot;footnote-ref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -64,7 +64,7 @@ Upgrade Node to the latest stable release: https://gatsby.dev/upgrading-node-js
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;2. Node.js 버전 충돌&lt;/h4&gt;
+&lt;h3&gt;2. Node.js 버전 충돌&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;문제:&lt;/p&gt;
@@ -155,7 +155,7 @@ name: Build and Deploy
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
-&lt;h4&gt;3. Node.js 패키지 의존성 충돌 및 GitHub 토큰 시크릿 등록&lt;/h4&gt;
+&lt;h3&gt;3. Node.js 패키지 의존성 충돌 및 GitHub 토큰 시크릿 등록&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -258,7 +258,7 @@ Error: Action failed with &quot;The process &apos;/usr/bin/ssh-add&apos; failed 
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;4. User authenticate using git config&lt;/h4&gt;
+&lt;h3&gt;4. User authenticate using git config&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -325,7 +325,7 @@ Error: Process completed with exit code 1.
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;5. User authenticate using token&lt;/h4&gt;
+&lt;h3&gt;5. User authenticate using token&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -384,7 +384,7 @@ Error: Process completed with exit code 1.
     Error: Process completed with exit code 1.
     ```
 &lt;/details&gt;
-&lt;h4&gt;6. User authenticate using token 2&lt;/h4&gt;
+&lt;h3&gt;6. User authenticate using token 2&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -458,7 +458,7 @@ Error: Process completed with &lt;span class=&quot;token builtin class-name&quot
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
-&lt;h4&gt;7. User authenticate using git config 2&lt;/h4&gt;
+&lt;h3&gt;7. User authenticate using git config 2&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -529,7 +529,7 @@ fatal: could not read Username for &apos;https://github.com&apos;: No such devic
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;8. User authenticate using git config 3&lt;/h4&gt;
+&lt;h3&gt;8. User authenticate using git config 3&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -603,7 +603,7 @@ Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;9. User authenticate using git config 4&lt;/h4&gt;
+&lt;h3&gt;9. User authenticate using git config 4&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -663,7 +663,7 @@ fatal: could not read Username for &apos;https://github.com&apos;: No such devic
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;10. User authenticate using git config 5&lt;/h4&gt;
+&lt;h3&gt;10. User authenticate using git config 5&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -733,7 +733,7 @@ fatal: could not read Username for &apos;https://github.com&apos;: No such devic
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;11. User authenticate using git config 6&lt;/h4&gt;
+&lt;h3&gt;11. User authenticate using git config 6&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -813,7 +813,7 @@ Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
-&lt;h4&gt;12. User authenticate using git config 7&lt;/h4&gt;
+&lt;h3&gt;12. User authenticate using git config 7&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
@@ -888,7 +888,7 @@ Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;13. User authenticate using git config 8&lt;/h4&gt;
+&lt;h3&gt;13. User authenticate using git config 8&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;시도:&lt;/p&gt;
