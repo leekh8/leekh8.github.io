@@ -14,7 +14,7 @@ tags:
 series: "React Basic"
 ---
 
-# React 기초 정리 📘
+## React 기초 정리 📘
 
 React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
 사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다.

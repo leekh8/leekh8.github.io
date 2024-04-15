@@ -11,7 +11,7 @@ tags:
 series: "React Basic"
 ---
 
-# React 기초 정리 📘
+## React 기초 정리 📘
 
 ## Props와 State: React 컴포넌트의 핵심 이해하기 🚀
 
