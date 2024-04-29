@@ -187,41 +187,39 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
 
-          steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v2
+            steps:
+              - name: Checkout Repository
+                uses: actions/checkout@v2
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: 20.3.1
+              - name: Setup Node.js
+                uses: actions/setup-node@v2
+                with:
+                  node-version: 20.3.1
 
-            - name: Install Dependencies
-              run: npm install --legacy-peer-deps
+              - name: Install Dependencies
+                run: npm install --legacy-peer-deps
 
-            - name: Build
-              run: npm run build
+              - name: Build
+                run: npm run build
 
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                deploy_key: ${{ secrets.ACCESS_TOKEN }}
-                publish_dir: ./public
-                publish_branch: gh-pages
+              - name: Deploy to GitHub Pages
+                uses: peaceiris/actions-gh-pages@v3
+                with:
+                  deploy_key: ${{ secrets.ACCESS_TOKEN }}
+                  publish_dir: ./public
+                  publish_branch: gh-pages
 
-    ```
-
-    ```
+        ```
 
 </details>
 
