@@ -1,8 +1,8 @@
 module.exports = {
-  title: "leekh8",
+  title: "leekh8's Blog",
   description: "Hello :)",
   author: "leekh8",
-  siteUrl: "https://leekh8.github.io/gatsby-starter-hoodie/",
+  siteUrl: "https://leekh8.github.io/",
   links: {
     github: "https://github.com/leekh8",
     // linkedIn: "https://linkedin.com",
