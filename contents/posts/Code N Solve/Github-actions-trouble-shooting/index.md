@@ -322,7 +322,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
                   git config --global user.name "USER NAME"
                   git config --global user.email "USER@EMAIL.COM"
                   npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
-        ````
+        ```
 
         </details>
         - 문제
@@ -550,43 +550,41 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+          name: Build and Deploy
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
+          on:
+            push:
+              branches:
+                - main
 
-          steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v2
+          jobs:
+            deploy:
+              runs-on: ubuntu-latest
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: 20.3.1
+              steps:
+                - name: Checkout Repository
+                  uses: actions/checkout@v2
 
-            - name: Install Dependencies
-              run: npm install --legacy-peer-deps
+                - name: Setup Node.js
+                  uses: actions/setup-node@v2
+                  with:
+                    node-version: 20.3.1
 
-            - name: Build
-              run: npm run build
+                - name: Install Dependencies
+                  run: npm install --legacy-peer-deps
 
-            - name: Deploy to GitHub Pages
-              env:
-                ACCESS_TOKEN: ${{ secrets.PAT }}
-              run: |
-                git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
-                npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+                - name: Build
+                  run: npm run build
 
-    ```
+                - name: Deploy to GitHub Pages
+                  env:
+                    ACCESS_TOKEN: ${{ secrets.PAT }}
+                  run: |
+                    git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
+                    npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
 
-    ```
-
-</details>
+    </details>
 
 - 문제:
 
@@ -616,7 +614,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
         Error: Process completed with exit code 1.
 
-        ````
+        ```
 
     </details>
 
