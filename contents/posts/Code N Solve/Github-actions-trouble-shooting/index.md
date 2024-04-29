@@ -349,15 +349,15 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
 
           steps:
             - name: Checkout Repository
@@ -380,9 +380,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
               run: |
                 npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
 
-    ```
-
-    ```
+        ```
 
 </details>
 
@@ -411,15 +409,15 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
 
           steps:
             - name: Checkout Repository
@@ -441,10 +439,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
                 ACCESS_TOKEN: ${{ secrets.PAT }}
               run: |
                 npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-
-    ```
-
-    ```
+        ```
 
 </details>
 
@@ -486,15 +481,15 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
 
           steps:
             - name: Checkout Repository
@@ -693,17 +688,17 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
-    env:
-    PAT: ${{ secrets.PAT }}
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
+        env:
+        PAT: ${{ secrets.PAT }}
 
           steps:
             - name: Checkout Repository
@@ -760,15 +755,15 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
         ```yaml
         name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
-    env:
-    PAT: ${{ secrets.PAT }}
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
+        env:
+        PAT: ${{ secrets.PAT }}
 
             steps:
               - name: Checkout Repository
@@ -803,26 +798,26 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```bash
-      Run npx gh-pages -d ./public -b gh-pages -t $PAT
-        npx gh-pages -d ./public -b gh-pages -t $PAT
-        shell: /usr/bin/bash -e {0}
-        env:
-          PAT: ***
-      Author identity unknown
+        Run npx gh-pages -d ./public -b gh-pages -t $PAT
+          npx gh-pages -d ./public -b gh-pages -t $PAT
+          shell: /usr/bin/bash -e {0}
+          env:
+            PAT: ***
+        Author identity unknown
 
-    \*\*\* Please tell me who you are.
+        \*\*\* Please tell me who you are.
 
-    Run
+        Run
 
-    git config --global user.email "you@example.com"
-    git config --global user.name "Your Name"
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
 
-    to set your account's default identity.
-    Omit --global to set the identity only in this repository.
+        to set your account's default identity.
+        Omit --global to set the identity only in this repository.
 
-    fatal: unable to auto-detect email address (got 'runner@fv-az1385-401.(none)')
+        fatal: unable to auto-detect email address (got 'runner@fv-az1385-401.(none)')
 
-    Error: Process completed with exit code 1.
+        Error: Process completed with exit code 1.
 
         ```
 
@@ -836,17 +831,17 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
-    env:
-    PAT: ${{ secrets.PAT }}
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
+        env:
+        PAT: ${{ secrets.PAT }}
 
           steps:
             - name: Checkout Repository
@@ -880,26 +875,26 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
       <details>
       <summary>접기/펼치기</summary>
         ```bash
-        Run npx gh-pages -d ./public -b gh-pages -t $PAT
-          npx gh-pages -d ./public -b gh-pages -t $PAT
-          shell: /usr/bin/bash -e {0}
-          env:
-            PAT: ***
-        Author identity unknown
+          Run npx gh-pages -d ./public -b gh-pages -t $PAT
+            npx gh-pages -d ./public -b gh-pages -t $PAT
+            shell: /usr/bin/bash -e {0}
+            env:
+              PAT: ***
+          Author identity unknown
 
-        \*\*\* Please tell me who you are.
+          \*\*\* Please tell me who you are.
 
-        Run
+          Run
 
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
 
-        to set your account's default identity.
-        Omit --global to set the identity only in this repository.
+          to set your account's default identity.
+          Omit --global to set the identity only in this repository.
 
-        fatal: empty ident name (for <runner@fv-az914-157.2e4pmxhwlzfuhnev11cd0y0noa.phxx.internal.cloudapp.net>) not allowed
+          fatal: empty ident name (for <runner@fv-az914-157.2e4pmxhwlzfuhnev11cd0y0noa.phxx.internal.cloudapp.net>) not allowed
 
-        Error: Process completed with exit code 1.
+          Error: Process completed with exit code 1.
 
         ```
 
@@ -913,17 +908,17 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-      name: Build and Deploy
+        name: Build and Deploy
 
-    on:
-    push:
-    branches: - main
+        on:
+        push:
+        branches: - main
 
-    jobs:
-    deploy:
-    runs-on: ubuntu-latest
-    env:
-    PAT: ${{ secrets.PAT }}
+        jobs:
+        deploy:
+        runs-on: ubuntu-latest
+        env:
+        PAT: ${{ secrets.PAT }}
 
           steps:
             - name: Checkout Repository
