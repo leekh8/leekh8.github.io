@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 25 Apr 2024 12:48:44 GMT</lastBuildDate><item><title><![CDATA[🚀 Gatsby 블로그 검색 엔진 배포]]></title><description><![CDATA[Code N Solve 📘: Gatsby 블로그 배포 Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다. Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/Expose-Blog/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/Expose-Blog/</guid><pubDate>Thu, 25 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘: Gatsby 블로그 배포&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8's Blog]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Apr 2024 01:26:28 GMT</lastBuildDate><item><title><![CDATA[🚀 Gatsby 블로그 검색 엔진 배포]]></title><description><![CDATA[Code N Solve 📘: Gatsby 블로그 배포 Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다. Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO…]]></description><link>https://leekh8.github.io/Expose-Blog/</link><guid isPermaLink="false">https://leekh8.github.io/Expose-Blog/</guid><pubDate>Thu, 25 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘: Gatsby 블로그 배포&lt;/h2&gt;
 &lt;p&gt;Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO) 설정에 대해 정리해보자.&lt;/p&gt;
-&lt;h3&gt;검색 엔진 최적화 (SEO) 설정&lt;/h3&gt;
-&lt;h4&gt;검색 엔진 최적화 (SEO)란? 🤔&lt;/h4&gt;
+&lt;h2&gt;검색 엔진 최적화 (SEO) 설정&lt;/h2&gt;
+&lt;h3&gt;검색 엔진 최적화 (SEO)란? 🤔&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;SEO는 웹사이트가 검색 엔진에서 보다 잘 노출되도록 최적화하는 작업이다.&lt;/li&gt;
 &lt;li&gt;
@@ -16,23 +16,23 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;검색 엔진&lt;/h3&gt;
-&lt;h4&gt;1. Google Search Console&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h4&gt;
+&lt;h2&gt;검색 엔진&lt;/h2&gt;
+&lt;h3&gt;1. Google Search Console&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;도메인 (Domain property)&lt;/strong&gt;: 모든 서브도메인과 프로토콜, 포트를 포함한 데이터를 볼 수 있다. DNS 레코드를 수정하여 소유권 인증이 필요하다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL 접두어 (URL-prefix property)&lt;/strong&gt;: 특정 URL 형식에 대해서만 데이터를 볼 수 있다. 다양한 방법(HTML 태그, Google Analytics 등)으로 소유권 인증이 가능하다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;2. Naver Webmaster Tools&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a href=&quot;#fn-3&quot; class=&quot;footnote-ref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h4&gt;
+&lt;h3&gt;2. Naver Webmaster Tools&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a href=&quot;#fn-3&quot; class=&quot;footnote-ref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;간단하게 HTML 파일을 업로드하여 소유권 인증을 진행할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;GitHub Pages 배포 시 고려사항&lt;/h4&gt;
+&lt;h3&gt;GitHub Pages 배포 시 고려사항&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;GitHub Pages의 도메인은 GitHub에 의해 관리되기 때문에 DNS 설정이 불가능하다.&lt;/li&gt;
 &lt;li&gt;따라서 URL 방식의 소유권 인증이 더 적합할 것 같다.&lt;/li&gt;
 &lt;li&gt;root directory에 HTML 파일은 build가 안되어서 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; directory에 넣으면 build가 가능하다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Gatsby의 SEO 친화적 구조&lt;sup id=&quot;fnref-4&quot;&gt;&lt;a href=&quot;#fn-4&quot; class=&quot;footnote-ref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h4&gt;
+&lt;h3&gt;Gatsby의 SEO 친화적 구조&lt;sup id=&quot;fnref-4&quot;&gt;&lt;a href=&quot;#fn-4&quot; class=&quot;footnote-ref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Gatsby는 React 기반의 정적 사이트 생성기로, 빠른 로딩 시간과 SEO 친화적 구조를 갖고 있다.&lt;sup id=&quot;fnref-5&quot;&gt;&lt;a href=&quot;#fn-5&quot; class=&quot;footnote-ref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -67,7 +67,7 @@
 &lt;a href=&quot;#fnref-5&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정]]></title><description><![CDATA[Code N Solve 📘 GitHub Actions를 이용한 문제 해결과 배포 자동화 🚀 GitHub Actions…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/Github-actions-trouble-shooting/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/Github-actions-trouble-shooting/</guid><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘&lt;/h2&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정]]></title><description><![CDATA[Code N Solve 📘 GitHub Actions를 이용한 문제 해결과 배포 자동화 🚀 GitHub Actions…]]></description><link>https://leekh8.github.io/Github-actions-trouble-shooting/</link><guid isPermaLink="false">https://leekh8.github.io/Github-actions-trouble-shooting/</guid><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘&lt;/h2&gt;
 &lt;h2&gt;GitHub Actions&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;를 이용한 문제 해결과 배포 자동화 🚀&lt;/h2&gt;
 &lt;p&gt;GitHub Actions는 개발 프로세스를 자동화하여 빌드, 테스트, 배포 등을 수행할 수 있는 강력한 도구이다.
 하지만 올바른 설정 없이는 원하는 대로 작동하지 않을 수 있다.
@@ -1034,7 +1034,7 @@ PAT: ${{ secrets.PAT }}&lt;/p&gt;
 &lt;a href=&quot;#fnref-5&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📘React 기초 정리 3 ]]></title><description><![CDATA[React 기초 정리 📘 Props와 State: React 컴포넌트의 핵심 이해하기 🚀 React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자. 📦 Props…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/React-3-Props-State/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/React-3-Props-State/</guid><pubDate>Fri, 05 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React 기초 정리 📘&lt;/h2&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📘React 기초 정리 3 ]]></title><description><![CDATA[React 기초 정리 📘 Props와 State: React 컴포넌트의 핵심 이해하기 🚀 React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자. 📦 Props…]]></description><link>https://leekh8.github.io/React-3-Props-State/</link><guid isPermaLink="false">https://leekh8.github.io/React-3-Props-State/</guid><pubDate>Fri, 05 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React 기초 정리 📘&lt;/h2&gt;
 &lt;h2&gt;Props와 State: React 컴포넌트의 핵심 이해하기 🚀&lt;/h2&gt;
 &lt;p&gt;React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3&gt;📦 Props란? 🤔&lt;/h3&gt;
@@ -1168,7 +1168,7 @@ State를 변경하는 두 가지 방법과 객체를 포함하는 State를 만�
 &lt;a href=&quot;#fnref-3&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📘React 기초 정리 2 ]]></title><description><![CDATA[React 기초 정리 📘 Props와 State: React 컴포넌트의 핵심 이해하기 🚀 React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자. 📦 Props…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/React-2-Props-State/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/React-2-Props-State/</guid><pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React 기초 정리 📘&lt;/h2&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📘React 기초 정리 2 ]]></title><description><![CDATA[React 기초 정리 📘 Props와 State: React 컴포넌트의 핵심 이해하기 🚀 React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자. 📦 Props…]]></description><link>https://leekh8.github.io/React-2-Props-State/</link><guid isPermaLink="false">https://leekh8.github.io/React-2-Props-State/</guid><pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React 기초 정리 📘&lt;/h2&gt;
 &lt;h2&gt;Props와 State: React 컴포넌트의 핵심 이해하기 🚀&lt;/h2&gt;
 &lt;p&gt;React를 사용하여 멋진 웹 애플리케이션을 만들기 위해 반드시 알아야 할 두 가지 개념, Props와 State에 대해 자세히 알아보자.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3&gt;📦 Props란? 🤔&lt;/h3&gt;
@@ -1303,7 +1303,7 @@ State를 변경하는 두 가지 방법과 객체를 포함하는 State를 만�
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[📘React 기초 정리 ]]></title><description><![CDATA[React 기초 정리 📘 React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
-사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다. React의 기본 개념과 왜 React…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/React-1-SPA-Component-State-CRA/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/React-1-SPA-Component-State-CRA/</guid><pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React 기초 정리 📘&lt;/h2&gt;
+사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다. React의 기본 개념과 왜 React…]]></description><link>https://leekh8.github.io/React-1-SPA-Component-State-CRA/</link><guid isPermaLink="false">https://leekh8.github.io/React-1-SPA-Component-State-CRA/</guid><pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React 기초 정리 📘&lt;/h2&gt;
 &lt;p&gt;React는 웹 프론트엔드 개발에 혁신을 가져온 JavaScript 라이브러리.
 사용자 인터페이스를 구축하기 위해 개발되었으며, 컴포넌트 기반의 개발을 가능하게 한다.&lt;/p&gt;
 &lt;p&gt;React의 기본 개념과 왜 React를 배워야 하는지, React의 특징, JSX의 활용, SPA의 개념, JSX와 일반 JavaScript의 차이점, Component의 개념과 활용, Component의 데이터 관리 방법등에 대해 알아보자.&lt;/p&gt;
@@ -1610,7 +1610,7 @@ Hook을 사용하여 상태 관리가 가능하다.&lt;/li&gt;
 &lt;a href=&quot;#fnref-9&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[💾 SQL Basic - 1. 소개 및 기본 개념]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. SQL이란? 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://leekh8.github.io/gatsby-starter-hoodie/SQL/</link><guid isPermaLink="false">https://leekh8.github.io/gatsby-starter-hoodie/SQL/</guid><pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[💾 SQL Basic - 1. 소개 및 기본 개념]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. SQL이란? 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://leekh8.github.io/SQL/</link><guid isPermaLink="false">https://leekh8.github.io/SQL/</guid><pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
 &lt;h2&gt;SQL이란?&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;컴퓨터에 &lt;strong&gt;node.js&lt;/strong&gt; 와 &lt;strong&gt;gatsby-cli&lt;/strong&gt; 가 설치되어 있어야합니다.&lt;/p&gt;
