@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8's Blog]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Apr 2024 05:25:28 GMT</lastBuildDate><item><title><![CDATA[🚀 Gatsby 블로그 검색 엔진 배포]]></title><description><![CDATA[Code N Solve 📘: Gatsby 블로그 배포 Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다. Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO…]]></description><link>https://leekh8.github.io/Expose-Blog/</link><guid isPermaLink="false">https://leekh8.github.io/Expose-Blog/</guid><pubDate>Thu, 25 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘: Gatsby 블로그 배포&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8's Blog]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Apr 2024 05:37:42 GMT</lastBuildDate><item><title><![CDATA[🚀 Gatsby 블로그 검색 엔진 배포]]></title><description><![CDATA[Code N Solve 📘: Gatsby 블로그 배포 Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다. Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO…]]></description><link>https://leekh8.github.io/Expose-Blog/</link><guid isPermaLink="false">https://leekh8.github.io/Expose-Blog/</guid><pubDate>Thu, 25 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘: Gatsby 블로그 배포&lt;/h2&gt;
 &lt;p&gt;Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO) 설정에 대해 정리해보자.&lt;/p&gt;
 &lt;h2&gt;검색 엔진 최적화 (SEO) 설정&lt;/h2&gt;
@@ -404,35 +404,34 @@ Error: Process completed with exit code 1.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
 &lt;p&gt;jobs:
 deploy:
 runs-on: ubuntu-latest&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;p&gt;  steps:
+- name: Checkout Repository
+uses: actions/checkout@v2&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- name: Setup Node.js
+  uses: actions/setup-node@v2
+  with:
+    node-version: 20.3.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+- name: Install Dependencies
+  run: npm install --legacy-peer-deps
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+- name: Build
+  run: npm run build
 
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      env:
-        ACCESS_TOKEN: ${{ secrets.PAT }}
-      run: |
-        npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- name: Deploy to GitHub Pages
+  env:
+    ACCESS_TOKEN: ${{ secrets.PAT }}
+  run: |
+    npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
@@ -467,35 +466,34 @@ runs-on: ubuntu-latest&lt;/p&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
 &lt;p&gt;jobs:
 deploy:
 runs-on: ubuntu-latest&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;p&gt;  steps:
+- name: Checkout Repository
+uses: actions/checkout@v2&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- name: Setup Node.js
+  uses: actions/setup-node@v2
+  with:
+    node-version: 20.3.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+- name: Install Dependencies
+  run: npm install --legacy-peer-deps
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+- name: Build
+  run: npm run build
 
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      env:
-        ACCESS_TOKEN: ${{ secrets.PAT }}
-      run: |
-        npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- name: Deploy to GitHub Pages
+  env:
+    ACCESS_TOKEN: ${{ secrets.PAT }}
+  run: |
+    npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
@@ -535,38 +533,36 @@ Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
 &lt;p&gt;jobs:
 deploy:
 runs-on: ubuntu-latest&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;p&gt;  steps:
+- name: Checkout Repository
+uses: actions/checkout@v2&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- name: Setup Node.js
+  uses: actions/setup-node@v2
+  with:
+    node-version: 20.3.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+- name: Install Dependencies
+  run: npm install --legacy-peer-deps
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+- name: Build
+  run: npm run build
 
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      env:
-        ACCESS_TOKEN: ${{ secrets.PAT }}
-      run: |
-        git config --global user.email &quot;USER@EMAIL.COM&quot;
-        git config --global user.name &quot;USER NAME&quot;
-        npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-
-```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- name: Deploy to GitHub Pages
+  env:
+    ACCESS_TOKEN: ${{ secrets.PAT }}
+  run: |
+    git config --global user.email &quot;USER@EMAIL.COM&quot;
+    git config --global user.name &quot;USER NAME&quot;
+    npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
@@ -741,8 +737,6 @@ runs-on: ubuntu-latest&lt;/p&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
@@ -751,27 +745,27 @@ deploy:
 runs-on: ubuntu-latest
 env:
 PAT: ${{ secrets.PAT }}&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;p&gt;  steps:
+- name: Checkout Repository
+uses: actions/checkout@v2&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- name: Setup Node.js
+  uses: actions/setup-node@v2
+  with:
+    node-version: 20.3.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+- name: Install Dependencies
+  run: npm install --legacy-peer-deps
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+- name: Build
+  run: npm run build
 
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      run: |
-        git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-        npx gh-pages -d ./public -b gh-pages -t $PAT
-
-```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- name: Deploy to GitHub Pages
+  run: |
+    git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+    npx gh-pages -d ./public -b gh-pages -t $PAT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
@@ -810,8 +804,6 @@ fatal: could not read Username for &apos;https://github.com&apos;: No such devic
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
@@ -820,28 +812,29 @@ deploy:
 runs-on: ubuntu-latest
 env:
 PAT: ${{ secrets.PAT }}&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20.3.1
+  - name: Setup Node.js
+    uses: actions/setup-node@v2
+    with:
+      node-version: 20.3.1
 
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+  - name: Install Dependencies
+    run: npm install --legacy-peer-deps
 
-      - name: Build
-        run: |
-          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-          npm run build
+  - name: Build
+    run: |
+      git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+      npm run build
 
-      - name: Deploy to GitHub Pages
-        run: |
-          npx gh-pages -d ./public -b gh-pages -t $PAT
-
-```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  - name: Deploy to GitHub Pages
+    run: |
+      npx gh-pages -d ./public -b gh-pages -t $PAT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/details&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -859,13 +852,11 @@ PAT: ${{ secrets.PAT }}&lt;/p&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```bash
 Run npx gh-pages -d ./public -b gh-pages -t $PAT
-npx gh-pages -d ./public -b gh-pages -t $PAT
-shell: /usr/bin/bash -e {0}
-env:
-  PAT: ***
+  npx gh-pages -d ./public -b gh-pages -t $PAT
+  shell: /usr/bin/bash -e {0}
+  env:
+    PAT: ***
 Author identity unknown
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;*** Please tell me who you are.&lt;/p&gt;
 &lt;p&gt;Run&lt;/p&gt;
 &lt;p&gt;git config --global user.email &quot;you@example.com&quot;
@@ -874,7 +865,9 @@ git config --global user.name &quot;Your Name&quot;&lt;/p&gt;
 Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;p&gt;fatal: unable to auto-detect email address (got &apos;runner@fv-az1385-401.(none)&apos;)&lt;/p&gt;
 &lt;p&gt;Error: Process completed with exit code 1.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
@@ -889,8 +882,6 @@ Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
@@ -899,29 +890,29 @@ deploy:
 runs-on: ubuntu-latest
 env:
 PAT: ${{ secrets.PAT }}&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;p&gt;  steps:
+- name: Checkout Repository
+uses: actions/checkout@v2&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- name: Setup Node.js
+  uses: actions/setup-node@v2
+  with:
+    node-version: 20.3.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+- name: Install Dependencies
+  run: npm install --legacy-peer-deps
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+- name: Build
+  run: npm run build
 
-    - name: Build
-      run: npm run build
+- name: Set Git user information
+  run: git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
 
-    - name: Set Git user information
-      run: git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-
-    - name: Deploy to GitHub Pages
-      run: |
-        npx gh-pages -d ./public -b gh-pages -t $PAT
-
-```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- name: Deploy to GitHub Pages
+  run: |
+    npx gh-pages -d ./public -b gh-pages -t $PAT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
@@ -934,20 +925,20 @@ PAT: ${{ secrets.PAT }}&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```bash
-Run npx gh-pages -d ./public -b gh-pages -t $PAT
-  npx gh-pages -d ./public -b gh-pages -t $PAT
-  shell: /usr/bin/bash -e {0}
-  env:
-    PAT: ***
-Author identity unknown
-&lt;p&gt;*** Please tell me who you are.&lt;/p&gt;
-&lt;p&gt;Run&lt;/p&gt;
-&lt;p&gt;git config --global user.email &quot;you@example.com&quot;
+  Run npx gh-pages -d ./public -b gh-pages -t $PAT
+    npx gh-pages -d ./public -b gh-pages -t $PAT
+    shell: /usr/bin/bash -e {0}
+    env:
+      PAT: ***
+  Author identity unknown
+&lt;p&gt;  *** Please tell me who you are.&lt;/p&gt;
+&lt;p&gt;  Run&lt;/p&gt;
+&lt;p&gt;  git config --global user.email &quot;you@example.com&quot;
 git config --global user.name &quot;Your Name&quot;&lt;/p&gt;
-&lt;p&gt;to set your account&apos;s default identity.
+&lt;p&gt;  to set your account&apos;s default identity.
 Omit --global to set the identity only in this repository.&lt;/p&gt;
-&lt;p&gt;fatal: empty ident name (for &lt;a href=&quot;mailto:runner@fv-az914-157.2e4pmxhwlzfuhnev11cd0y0noa.phxx.internal.cloudapp.net&quot;&gt;runner@fv-az914-157.2e4pmxhwlzfuhnev11cd0y0noa.phxx.internal.cloudapp.net&lt;/a&gt;) not allowed&lt;/p&gt;
-&lt;p&gt;Error: Process completed with exit code 1.&lt;/p&gt;
+&lt;p&gt;  fatal: empty ident name (for &lt;a href=&quot;mailto:runner@fv-az914-157.2e4pmxhwlzfuhnev11cd0y0noa.phxx.internal.cloudapp.net&quot;&gt;runner@fv-az914-157.2e4pmxhwlzfuhnev11cd0y0noa.phxx.internal.cloudapp.net&lt;/a&gt;) not allowed&lt;/p&gt;
+&lt;p&gt;  Error: Process completed with exit code 1.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -965,8 +956,6 @@ Omit --global to set the identity only in this repository.&lt;/p&gt;
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
@@ -975,32 +964,32 @@ deploy:
 runs-on: ubuntu-latest
 env:
 PAT: ${{ secrets.PAT }}&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;p&gt;  steps:
+- name: Checkout Repository
+uses: actions/checkout@v2&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- name: Setup Node.js
+  uses: actions/setup-node@v2
+  with:
+    node-version: 20.3.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+- name: Install Dependencies
+  run: npm install --legacy-peer-deps
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+- name: Build
+  run: npm run build
 
-    - name: Build
-      run: npm run build
+- name: Set Git user information
+  run: |
+    git config --global user.email &quot;amysun125@gmail.com&quot;
+    git config --global user.name &quot;leekh8&quot;
 
-    - name: Set Git user information
-      run: |
-        git config --global user.email &quot;amysun125@gmail.com&quot;
-        git config --global user.name &quot;leekh8&quot;
-
-    - name: Deploy to GitHub Pages
-      run: |
-        git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-        npx gh-pages -d ./public -b gh-pages -t $PAT
-
-```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- name: Deploy to GitHub Pages
+  run: |
+    git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+    npx gh-pages -d ./public -b gh-pages -t $PAT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
