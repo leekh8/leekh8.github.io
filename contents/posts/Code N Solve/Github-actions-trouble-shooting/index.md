@@ -144,39 +144,38 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
   - Node.js 버전을 20.3.1로 업데이트하여 문제를 해결했지만 이후에 패키지 의존성 충돌 문제가 발생했다.
     <details>
     <summary>접기/펼치기</summary>
-
-    ```bash
-    Run npm install
-    npm ERR! code ERESOLVE
-    npm ERR! ERESOLVE could not resolve
-    npm ERR!
-    npm ERR! While resolving: gatsby-remark-katex@3.10.0
-    npm ERR! Found: gatsby@5.13.3
-    npm ERR! node_modules/gatsby
-    npm ERR!   gatsby@"^5.11.0" from the root project
-    npm ERR!   peer gatsby@"^5.0.0-next" from babel-plugin-remove-graphql-queries@5.13.1
-    npm ERR!   node_modules/babel-plugin-remove-graphql-queries
-    npm ERR!     babel-plugin-remove-graphql-queries@"^5.13.1" from gatsby@5.13.3
-    npm ERR!     babel-plugin-remove-graphql-queries@"^5.13.1" from gatsby-plugin-typescript@5.13.1
-    npm ERR!     node_modules/gatsby-plugin-typescript
-    npm ERR!       gatsby-plugin-typescript@"^5.13.1" from gatsby@5.13.3
-    npm ERR!   17 more (gatsby-plugin-catch-links, gatsby-plugin-feed, ...)
-    npm ERR!
-    npm ERR! Could not resolve dependency:
-    npm ERR! peer gatsby@"^2.0.0" from gatsby-remark-katex@3.10.0
-    npm ERR! node_modules/gatsby-remark-katex
-    npm ERR!   gatsby-remark-katex@"^3.5.0" from the root project
-    npm ERR!
-    npm ERR! Conflicting peer dependency: gatsby@2.32.13
-    npm ERR! node_modules/gatsby
-    npm ERR!   peer gatsby@"^2.0.0" from gatsby-remark-katex@3.10.0
-    npm ERR!   node_modules/gatsby-remark-katex
-    npm ERR!     gatsby-remark-katex@"^3.5.0" from the root project
-    npm ERR!
-    npm ERR! Fix the upstream dependency conflict, or retry
-    npm ERR! this command with --force or --legacy-peer-deps
-    npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
-    ```
+      ```bash
+      Run npm install
+      npm ERR! code ERESOLVE
+      npm ERR! ERESOLVE could not resolve
+      npm ERR!
+      npm ERR! While resolving: gatsby-remark-katex@3.10.0
+      npm ERR! Found: gatsby@5.13.3
+      npm ERR! node_modules/gatsby
+      npm ERR!   gatsby@"^5.11.0" from the root project
+      npm ERR!   peer gatsby@"^5.0.0-next" from babel-plugin-remove-graphql-queries@5.13.1
+      npm ERR!   node_modules/babel-plugin-remove-graphql-queries
+      npm ERR!     babel-plugin-remove-graphql-queries@"^5.13.1" from gatsby@5.13.3
+      npm ERR!     babel-plugin-remove-graphql-queries@"^5.13.1" from gatsby-plugin-typescript@5.13.1
+      npm ERR!     node_modules/gatsby-plugin-typescript
+      npm ERR!       gatsby-plugin-typescript@"^5.13.1" from gatsby@5.13.3
+      npm ERR!   17 more (gatsby-plugin-catch-links, gatsby-plugin-feed, ...)
+      npm ERR!
+      npm ERR! Could not resolve dependency:
+      npm ERR! peer gatsby@"^2.0.0" from gatsby-remark-katex@3.10.0
+      npm ERR! node_modules/gatsby-remark-katex
+      npm ERR!   gatsby-remark-katex@"^3.5.0" from the root project
+      npm ERR!
+      npm ERR! Conflicting peer dependency: gatsby@2.32.13
+      npm ERR! node_modules/gatsby
+      npm ERR!   peer gatsby@"^2.0.0" from gatsby-remark-katex@3.10.0
+      npm ERR!   node_modules/gatsby-remark-katex
+      npm ERR!     gatsby-remark-katex@"^3.5.0" from the root project
+      npm ERR!
+      npm ERR! Fix the upstream dependency conflict, or retry
+      npm ERR! this command with --force or --legacy-peer-deps
+      npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+      ```
 
 </details>
 
@@ -187,40 +186,41 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
   - 패키지 의존성 충돌 문제를 --legacy-peer-deps 명령으로 해결하고 GitHub 토큰을 시크릿에 등록을 하기로 했다.
     <details>
     <summary>접기/펼치기</summary>
-
-    ```yaml
-    name: Build and Deploy
+      ```yaml
+      name: Build and Deploy
 
     on:
-      push:
-        branches:
-          - main
+    push:
+    branches: - main
 
     jobs:
-      deploy:
-        runs-on: ubuntu-latest
+    deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v2
+          steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
 
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: 20.3.1
 
-          - name: Install Dependencies
-            run: npm install --legacy-peer-deps
+            - name: Install Dependencies
+              run: npm install --legacy-peer-deps
 
-          - name: Build
-            run: npm run build
+            - name: Build
+              run: npm run build
 
-          - name: Deploy to GitHub Pages
-            uses: peaceiris/actions-gh-pages@v3
-            with:
-              deploy_key: ${{ secrets.ACCESS_TOKEN }}
-              publish_dir: ./public
-              publish_branch: gh-pages
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                deploy_key: ${{ secrets.ACCESS_TOKEN }}
+                publish_dir: ./public
+                publish_branch: gh-pages
+
+    ```
+
     ```
 
 </details>
@@ -350,56 +350,60 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
   - token으로 사용자 인증을 시도하였다.
     <details>
     <summary>접기/펼치기</summary>
-
-    ```yaml
-    name: Build and Deploy
+      ```yaml
+      name: Build and Deploy
 
     on:
-      push:
-        branches:
-          - main
+    push:
+    branches: - main
 
     jobs:
-      deploy:
-        runs-on: ubuntu-latest
+    deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v2
+          steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
 
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: 20.3.1
 
-          - name: Install Dependencies
-            run: npm install --legacy-peer-deps
+            - name: Install Dependencies
+              run: npm install --legacy-peer-deps
 
-          - name: Build
-            run: npm run build
+            - name: Build
+              run: npm run build
 
-          - name: Deploy to GitHub Pages
-            env:
-              ACCESS_TOKEN: ${{ secrets.PAT }}
-            run: |
-              npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+            - name: Deploy to GitHub Pages
+              env:
+                ACCESS_TOKEN: ${{ secrets.PAT }}
+              run: |
+                npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+
+    ```
+
     ```
 
 </details>
+
 - 문제:
+
   - 같은 문제가 반복되었다.
-  <details>
-  <summary>접기/펼치기</summary>
-    ```bash
-    Run npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
-      npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
-      shell: /usr/bin/bash -e {0}
-      env:
-        ACCESS_TOKEN: ***
-    Could not parse name and email from user option "***" (format should be "Your Name <email@example.com>")
-    Error: Process completed with exit code 1.
-    ```
-</details>
+
+    <details>
+    <summary>접기/펼치기</summary>
+      ```bash
+      Run npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+        npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+        shell: /usr/bin/bash -e {0}
+        env:
+          ACCESS_TOKEN: ***
+      Could not parse name and email from user option "***" (format should be "Your Name <email@example.com>")
+      Error: Process completed with exit code 1.
+      ```
+  </details>
 
 ### 6. User authenticate using token 2
 
@@ -408,48 +412,49 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
   - 토큰을 이용해 사용자 인증을 시도할때 옵션을 -u에서 -t로 변경해 토큰을 인식하도록 해주었다.
     <details>
     <summary>접기/펼치기</summary>
-
-    ```yaml
-    name: Build and Deploy
+      ```yaml
+      name: Build and Deploy
 
     on:
-      push:
-        branches:
-          - main
+    push:
+    branches: - main
 
     jobs:
-      deploy:
-        runs-on: ubuntu-latest
+    deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v2
+          steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
 
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: 20.3.1
 
-          - name: Install Dependencies
-            run: npm install --legacy-peer-deps
+            - name: Install Dependencies
+              run: npm install --legacy-peer-deps
 
-          - name: Build
-            run: npm run build
+            - name: Build
+              run: npm run build
 
-          - name: Deploy to GitHub Pages
-            env:
-              ACCESS_TOKEN: ${{ secrets.PAT }}
-            run: |
-              npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+            - name: Deploy to GitHub Pages
+              env:
+                ACCESS_TOKEN: ${{ secrets.PAT }}
+              run: |
+                npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+
+    ```
+
     ```
 
 </details>
+
 - 문제:
 
 - git config 명령을 이용해 사용자의 신원을 설정하라는 오류(Author identity unknown)로 변경되었다.
   <details>
   <summary>접기/펼치기</summary>
-
       ```bash
       Run npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
         npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
@@ -482,42 +487,41 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
   - git config 명령을 사용해 사용자 정보를 인식할 수 있도록 해주었다.
     <details>
     <summary>접기/펼치기</summary>
-
-    ```yaml
-    name: Build and Deploy
+      ```yaml
+      name: Build and Deploy
 
     on:
-      push:
-        branches:
-          - main
+    push:
+    branches: - main
 
     jobs:
-      deploy:
-        runs-on: ubuntu-latest
+    deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v2
+          steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
 
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: 20.3.1
 
-          - name: Install Dependencies
-            run: npm install --legacy-peer-deps
+            - name: Install Dependencies
+              run: npm install --legacy-peer-deps
 
-          - name: Build
-            run: npm run build
+            - name: Build
+              run: npm run build
 
-          - name: Deploy to GitHub Pages
-            env:
-              ACCESS_TOKEN: ${{ secrets.PAT }}
-            run: |
-              git config --global user.email "USER@EMAIL.COM"
-              git config --global user.name "USER NAME"
-              npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-    ```
+            - name: Deploy to GitHub Pages
+              env:
+                ACCESS_TOKEN: ${{ secrets.PAT }}
+              run: |
+                git config --global user.email "USER@EMAIL.COM"
+                git config --global user.name "USER NAME"
+                npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+
+        ```
 
 </details>
 
@@ -547,10 +551,10 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 - 시도:
 
   - HTTPS URL에 토큰을 추가하여 사용자를 인식할 수 있게 시도하였다.[^5]
+
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
-
           name: Build and Deploy
 
           on:
@@ -583,6 +587,8 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
                   run: |
                     git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
                     npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+
+        ```
 
     </details>
 
@@ -659,23 +665,25 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
                   git config --global user.name "USER NAME"
                   git config --global user.email "USER@EMAIL.COM"
                   npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-        ````
+        ```
 
         </details>
+
         - 문제:
           - 이전에 나타났던 문제가 계속 나타나 눈물이 날 뻔 했다.
+
           <details>
           <summary>접기/펼치기</summary>
-        ```bash
-        Run git config --global user.name "USER NAME"
-          git config --global user.name "USER NAME"
-          git config --global user.email "USER@EMAIL.COM"
-          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-          shell: /usr/bin/bash -e {0}
-          env:
-            ACCESS_TOKEN: ***
-        fatal: could not read Username for 'https://github.com': No such device or address
-        ```
+            ```bash
+            Run git config --global user.name "USER NAME"
+              git config --global user.name "USER NAME"
+              git config --global user.email "USER@EMAIL.COM"
+              npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+              shell: /usr/bin/bash -e {0}
+              env:
+                ACCESS_TOKEN: ***
+            fatal: could not read Username for 'https://github.com': No such device or address
+            ```
 
     </details>
 
@@ -684,71 +692,6 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 - 시도:
 
   - 혹시 토큰이 인식이 안되고 있나 의심스러워서 순서를 변경하여 다시 시도하였다.
-    <details>
-    <summary>접기/펼치기</summary>
-
-    ```yaml
-    name: Build and Deploy
-
-    on:
-      push:
-        branches:
-          - main
-
-    jobs:
-      deploy:
-        runs-on: ubuntu-latest
-        env:
-          PAT: ${{ secrets.PAT }}
-
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v2
-
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
-
-          - name: Install Dependencies
-            run: npm install --legacy-peer-deps
-
-          - name: Build
-            run: npm run build
-
-          - name: Deploy to GitHub Pages
-            run: |
-              git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-              npx gh-pages -d ./public -b gh-pages -t $PAT
-    ```
-
-</details>
-
-- 문제:
-
-  - 달라지지 않은 오류 메시지가 나와 눈물이 났다.
-      <details>
-      <summary>접기/펼치기</summary>
-        ```bash
-        Run git config --global user.name "USER NAME"
-          git config --global user.name "USER NAME"
-          git config --global user.email "USER@EMAIL.COM"
-          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-          shell: /usr/bin/bash -e {0}
-          env:
-            ACCESS_TOKEN: ***
-        fatal: could not read Username for 'https://github.com': No such device or address
-
-        Error: Process completed with exit code 1.
-        ```
-
-    </details>
-
-### 11. User authenticate using git config 6
-
-- 시도:
-
-  - git config 명령을 빌드 과정에서 미리 해주면 될까 싶어 시도하였다.
     <details>
     <summary>접기/펼치기</summary>
       ```yaml
@@ -777,19 +720,82 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
               run: npm install --legacy-peer-deps
 
             - name: Build
-              run: |
-                git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-                npm run build
+              run: npm run build
 
             - name: Deploy to GitHub Pages
               run: |
+                git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
                 npx gh-pages -d ./public -b gh-pages -t $PAT
 
-    ```
-
-    ```
+        ```
 
 </details>
+
+- 문제:
+
+  - 달라지지 않은 오류 메시지가 나와 눈물이 났다.
+      <details>
+      <summary>접기/펼치기</summary>
+        ```bash
+        Run git config --global user.name "USER NAME"
+          git config --global user.name "USER NAME"
+          git config --global user.email "USER@EMAIL.COM"
+          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+          shell: /usr/bin/bash -e {0}
+          env:
+            ACCESS_TOKEN: ***
+        fatal: could not read Username for 'https://github.com': No such device or address
+
+        Error: Process completed with exit code 1.
+        ```
+
+    </details>
+
+### 11. User authenticate using git config 6
+
+- 시도:
+
+  - git config 명령을 빌드 과정에서 미리 해주면 될까 싶어 시도하였다.
+
+      <details>
+      <summary>접기/펼치기</summary>
+        ```yaml
+        name: Build and Deploy
+
+    on:
+    push:
+    branches: - main
+
+    jobs:
+    deploy:
+    runs-on: ubuntu-latest
+    env:
+    PAT: ${{ secrets.PAT }}
+
+            steps:
+              - name: Checkout Repository
+                uses: actions/checkout@v2
+
+              - name: Setup Node.js
+                uses: actions/setup-node@v2
+                with:
+                  node-version: 20.3.1
+
+              - name: Install Dependencies
+                run: npm install --legacy-peer-deps
+
+              - name: Build
+                run: |
+                  git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+                  npm run build
+
+              - name: Deploy to GitHub Pages
+                run: |
+                  npx gh-pages -d ./public -b gh-pages -t $PAT
+
+        ```
+
+    </details>
 
 - 해결:
   - git config 명령을 deploy 과정 이전에 진행해야 한다는 결론을 얻었다.
@@ -820,9 +826,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
     Error: Process completed with exit code 1.
 
-    ```
-
-    ```
+        ```
 
 </details>
 
@@ -868,9 +872,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
               run: |
                 npx gh-pages -d ./public -b gh-pages -t $PAT
 
-    ```
-
-    ```
+        ```
 
 </details>
 
@@ -950,16 +952,14 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
                 git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
                 npx gh-pages -d ./public -b gh-pages -t $PAT
 
-    ```
-
-    ```
+        ```
 
 </details>
 
 - 성공!
 
 ```bash
-Published
+  Published
 ```
 
 [^1]: https://docs.github.com/ko/enterprise-server@3.10/actions/learn-github-actions
