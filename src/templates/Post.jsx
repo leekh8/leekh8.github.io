@@ -34,7 +34,11 @@ const Post = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt} url={`${siteUrl}${slug}`} />
+      <SEO
+        title={title}
+        description={post.frontmatter.description || excerpt}
+        url={`${siteUrl}${slug}`}
+      />
       <Article>
         <Article.Header
           title={title}
