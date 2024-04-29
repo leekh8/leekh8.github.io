@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8's Blog]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Apr 2024 05:22:20 GMT</lastBuildDate><item><title><![CDATA[🚀 Gatsby 블로그 검색 엔진 배포]]></title><description><![CDATA[Code N Solve 📘: Gatsby 블로그 배포 Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다. Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO…]]></description><link>https://leekh8.github.io/Expose-Blog/</link><guid isPermaLink="false">https://leekh8.github.io/Expose-Blog/</guid><pubDate>Thu, 25 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘: Gatsby 블로그 배포&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of leekh8's Blog]]></title><description><![CDATA[Hello :)]]></description><link>https://leekh8.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Apr 2024 05:25:28 GMT</lastBuildDate><item><title><![CDATA[🚀 Gatsby 블로그 검색 엔진 배포]]></title><description><![CDATA[Code N Solve 📘: Gatsby 블로그 배포 Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다. Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO…]]></description><link>https://leekh8.github.io/Expose-Blog/</link><guid isPermaLink="false">https://leekh8.github.io/Expose-Blog/</guid><pubDate>Thu, 25 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Code N Solve 📘: Gatsby 블로그 배포&lt;/h2&gt;
 &lt;p&gt;Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 더 재미있겠다고 느껴졌다.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO) 설정에 대해 정리해보자.&lt;/p&gt;
 &lt;h2&gt;검색 엔진 최적화 (SEO) 설정&lt;/h2&gt;
@@ -237,36 +237,36 @@ npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
 &lt;summary&gt;접기/펼치기&lt;/summary&gt;
 ```yaml
 name: Build and Deploy
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;on:
 push:
 branches: - main&lt;/p&gt;
 &lt;p&gt;jobs:
 deploy:
 runs-on: ubuntu-latest&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+  - name: Setup Node.js
+    uses: actions/setup-node@v2
+    with:
+      node-version: 20.3.1
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+  - name: Install Dependencies
+    run: npm install --legacy-peer-deps
 
-    - name: Build
-      run: npm run build
+  - name: Build
+    run: npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: ./public
-        publish_branch: gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  - name: Deploy to GitHub Pages
+    uses: peaceiris/actions-gh-pages@v3
+    with:
+      deploy_key: ${{ secrets.ACCESS_TOKEN }}
+      publish_dir: ./public
+      publish_branch: gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
