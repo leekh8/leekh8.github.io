@@ -368,38 +368,40 @@ name: Build and Deploy
 <p>Node.js 버전을 20.3.1로 업데이트하여 문제를 해결했지만 이후에 패키지 의존성 충돌 문제가 발생했다.</p>
 <details>
 <summary>접기/펼치기</summary>
+```bash
+Run npm install
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR!
+npm ERR! While resolving: gatsby-remark-katex@3.10.0
+npm ERR! Found: gatsby@5.13.3
+npm ERR! node_modules/gatsby
+npm ERR!   gatsby@"^5.11.0" from the root project
+npm ERR!   peer gatsby@"^5.0.0-next" from babel-plugin-remove-graphql-queries@5.13.1
+npm ERR!   node_modules/babel-plugin-remove-graphql-queries
+npm ERR!     babel-plugin-remove-graphql-queries@"^5.13.1" from gatsby@5.13.3
+npm ERR!     babel-plugin-remove-graphql-queries@"^5.13.1" from gatsby-plugin-typescript@5.13.1
+npm ERR!     node_modules/gatsby-plugin-typescript
+npm ERR!       gatsby-plugin-typescript@"^5.13.1" from gatsby@5.13.3
+npm ERR!   17 more (gatsby-plugin-catch-links, gatsby-plugin-feed, ...)
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer gatsby@"^2.0.0" from gatsby-remark-katex@3.10.0
+npm ERR! node_modules/gatsby-remark-katex
+npm ERR!   gatsby-remark-katex@"^3.5.0" from the root project
+npm ERR!
+npm ERR! Conflicting peer dependency: gatsby@2.32.13
+npm ERR! node_modules/gatsby
+npm ERR!   peer gatsby@"^2.0.0" from gatsby-remark-katex@3.10.0
+npm ERR!   node_modules/gatsby-remark-katex
+npm ERR!     gatsby-remark-katex@"^3.5.0" from the root project
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+```
 </li>
 </ul>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">Run <span class="token function">npm</span> <span class="token function">install</span>
-<span class="token function">npm</span> ERR<span class="token operator">!</span> code ERESOLVE
-<span class="token function">npm</span> ERR<span class="token operator">!</span> ERESOLVE could not resolve
-<span class="token function">npm</span> ERR<span class="token operator">!</span>
-<span class="token function">npm</span> ERR<span class="token operator">!</span> While resolving: gatsby-remark-katex@3.10.0
-<span class="token function">npm</span> ERR<span class="token operator">!</span> Found: gatsby@5.13.3
-<span class="token function">npm</span> ERR<span class="token operator">!</span> node_modules/gatsby
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   gatsby@<span class="token string">"^5.11.0"</span> from the root project
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   peer gatsby@<span class="token string">"^5.0.0-next"</span> from babel-plugin-remove-graphql-queries@5.13.1
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   node_modules/babel-plugin-remove-graphql-queries
-<span class="token function">npm</span> ERR<span class="token operator">!</span>     babel-plugin-remove-graphql-queries@<span class="token string">"^5.13.1"</span> from gatsby@5.13.3
-<span class="token function">npm</span> ERR<span class="token operator">!</span>     babel-plugin-remove-graphql-queries@<span class="token string">"^5.13.1"</span> from gatsby-plugin-typescript@5.13.1
-<span class="token function">npm</span> ERR<span class="token operator">!</span>     node_modules/gatsby-plugin-typescript
-<span class="token function">npm</span> ERR<span class="token operator">!</span>       gatsby-plugin-typescript@<span class="token string">"^5.13.1"</span> from gatsby@5.13.3
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   <span class="token number">17</span> <span class="token function">more</span> <span class="token punctuation">(</span>gatsby-plugin-catch-links, gatsby-plugin-feed, <span class="token punctuation">..</span>.<span class="token punctuation">)</span>
-<span class="token function">npm</span> ERR<span class="token operator">!</span>
-<span class="token function">npm</span> ERR<span class="token operator">!</span> Could not resolve dependency:
-<span class="token function">npm</span> ERR<span class="token operator">!</span> peer gatsby@<span class="token string">"^2.0.0"</span> from gatsby-remark-katex@3.10.0
-<span class="token function">npm</span> ERR<span class="token operator">!</span> node_modules/gatsby-remark-katex
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   gatsby-remark-katex@<span class="token string">"^3.5.0"</span> from the root project
-<span class="token function">npm</span> ERR<span class="token operator">!</span>
-<span class="token function">npm</span> ERR<span class="token operator">!</span> Conflicting peer dependency: gatsby@2.32.13
-<span class="token function">npm</span> ERR<span class="token operator">!</span> node_modules/gatsby
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   peer gatsby@<span class="token string">"^2.0.0"</span> from gatsby-remark-katex@3.10.0
-<span class="token function">npm</span> ERR<span class="token operator">!</span>   node_modules/gatsby-remark-katex
-<span class="token function">npm</span> ERR<span class="token operator">!</span>     gatsby-remark-katex@<span class="token string">"^3.5.0"</span> from the root project
-<span class="token function">npm</span> ERR<span class="token operator">!</span>
-<span class="token function">npm</span> ERR<span class="token operator">!</span> Fix the upstream dependency conflict, or retry
-<span class="token function">npm</span> ERR<span class="token operator">!</span> this <span class="token builtin class-name">command</span> with <span class="token parameter variable">--force</span> or --legacy-peer-deps
-<span class="token function">npm</span> ERR<span class="token operator">!</span> to accept an incorrect <span class="token punctuation">(</span>and potentially broken<span class="token punctuation">)</span> dependency resolution.</code></pre></div>
 </li>
 </ul>
 </details>
@@ -412,40 +414,38 @@ name: Build and Deploy
 <p>패키지 의존성 충돌 문제를 --legacy-peer-deps 명령으로 해결하고 GitHub 토큰을 시크릿에 등록을 하기로 했다.</p>
 <details>
 <summary>접기/펼치기</summary>
+```yaml
+name: Build and Deploy
 </li>
 </ul>
-<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build and Deploy
+<p>on:
+push:
+branches: - main</p>
+<p>jobs:
+deploy:
+runs-on: ubuntu-latest</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> main
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20.3.1
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    - name: Install Dependencies
+      run: npm install --legacy-peer-deps
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout Repository
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    - name: Build
+      run: npm run build
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v2
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 20.3.1
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install <span class="token punctuation">-</span><span class="token punctuation">-</span>legacy<span class="token punctuation">-</span>peer<span class="token punctuation">-</span>deps
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm run build
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy to GitHub Pages
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> peaceiris/actions<span class="token punctuation">-</span>gh<span class="token punctuation">-</span>pages@v3
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">deploy_key</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.ACCESS_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span>
-          <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> ./public
-          <span class="token key atrule">publish_branch</span><span class="token punctuation">:</span> gh<span class="token punctuation">-</span>pages</code></pre></div>
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACCESS_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 </ul>
 </details>
@@ -581,56 +581,60 @@ Error: Process completed with exit code 1.</code></pre></div>
 <p>token으로 사용자 인증을 시도하였다.</p>
 <details>
 <summary>접기/펼치기</summary>
+```yaml
+name: Build and Deploy
 </li>
 </ul>
-<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build and Deploy
+<p>on:
+push:
+branches: - main</p>
+<p>jobs:
+deploy:
+runs-on: ubuntu-latest</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> main
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20.3.1
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    - name: Install Dependencies
+      run: npm install --legacy-peer-deps
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout Repository
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    - name: Build
+      run: npm run build
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v2
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 20.3.1
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install <span class="token punctuation">-</span><span class="token punctuation">-</span>legacy<span class="token punctuation">-</span>peer<span class="token punctuation">-</span>deps
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm run build
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy to GitHub Pages
-        <span class="token key atrule">env</span><span class="token punctuation">:</span>
-          <span class="token key atrule">ACCESS_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.PAT <span class="token punctuation">}</span><span class="token punctuation">}</span>
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN</span></code></pre></div>
-</li>
-</ul>
-</details>
-- 문제:
-  - 같은 문제가 반복되었다.
-  <details>
-  <summary>접기/펼치기</summary>
-    ```bash
-    Run npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
-      npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
-      shell: /usr/bin/bash -e {0}
+    - name: Deploy to GitHub Pages
       env:
-        ACCESS_TOKEN: ***
-    Could not parse name and email from user option "***" (format should be "Your Name <email@example.com>")
-    Error: Process completed with exit code 1.
-    ```
+        ACCESS_TOKEN: ${{ secrets.PAT }}
+      run: |
+        npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+</li>
+</ul>
 </details>
+<ul>
+<li>
+<p>문제:</p>
+<ul>
+<li>같은 문제가 반복되었다.</li>
+</ul>
+<details>
+<summary>접기/펼치기</summary>
+  ```bash
+  Run npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+    npx gh-pages -d ./public -b gh-pages -u $ACCESS_TOKEN
+    shell: /usr/bin/bash -e {0}
+    env:
+      ACCESS_TOKEN: ***
+  Could not parse name and email from user option "***" (format should be "Your Name <email@example.com>")
+  Error: Process completed with exit code 1.
+  ```
+</details>
+</li>
+</ul>
 <h3>6. User authenticate using token 2</h3>
 <ul>
 <li>
@@ -640,68 +644,62 @@ Error: Process completed with exit code 1.</code></pre></div>
 <p>토큰을 이용해 사용자 인증을 시도할때 옵션을 -u에서 -t로 변경해 토큰을 인식하도록 해주었다.</p>
 <details>
 <summary>접기/펼치기</summary>
+```yaml
+name: Build and Deploy
 </li>
 </ul>
-<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build and Deploy
+<p>on:
+push:
+branches: - main</p>
+<p>jobs:
+deploy:
+runs-on: ubuntu-latest</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> main
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20.3.1
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    - name: Install Dependencies
+      run: npm install --legacy-peer-deps
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout Repository
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    - name: Build
+      run: npm run build
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v2
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 20.3.1
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install <span class="token punctuation">-</span><span class="token punctuation">-</span>legacy<span class="token punctuation">-</span>peer<span class="token punctuation">-</span>deps
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm run build
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy to GitHub Pages
-        <span class="token key atrule">env</span><span class="token punctuation">:</span>
-          <span class="token key atrule">ACCESS_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.PAT <span class="token punctuation">}</span><span class="token punctuation">}</span>
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN</span></code></pre></div>
+    - name: Deploy to GitHub Pages
+      env:
+        ACCESS_TOKEN: ${{ secrets.PAT }}
+      run: |
+        npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 </ul>
 </details>
-- 문제:
 <ul>
+<li>문제:</li>
 <li>
 <p>git config 명령을 이용해 사용자의 신원을 설정하라는 오류(Author identity unknown)로 변경되었다.</p>
 <details>
 <summary>접기/펼치기</summary>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">Run npx gh-pages <span class="token parameter variable">-d</span> ./public <span class="token parameter variable">-b</span> gh-pages <span class="token parameter variable">-t</span> <span class="token variable">$ACCESS_TOKEN</span>
-  npx gh-pages <span class="token parameter variable">-d</span> ./public <span class="token parameter variable">-b</span> gh-pages <span class="token parameter variable">-t</span> <span class="token variable">$ACCESS_TOKEN</span>
-  shell: /usr/bin/bash <span class="token parameter variable">-e</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span>
-  env:
-    ACCESS_TOKEN: ***
-Author identity unknown
-
-*** Please tell me <span class="token function">who</span> you are.
-
-Run
-
-  <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"you@example.com"</span>
-  <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
-
-to <span class="token builtin class-name">set</span> your account<span class="token string">'s default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got '</span>runner@fv-az1535-535.<span class="token punctuation">(</span>none<span class="token punctuation">)</span>'<span class="token punctuation">)</span>
-
-Error: Process completed with <span class="token builtin class-name">exit</span> code <span class="token number">1</span>.</code></pre></div>
+  ```bash
+  Run npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+    npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+    shell: /usr/bin/bash -e {0}
+    env:
+      ACCESS_TOKEN: ***
+  Author identity unknown
+<p>  *** Please tell me who you are.</p>
+<p>  Run</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git config --global user.email "you@example.com"
+git config --global user.name "Your Name"</code></pre></div>
+<p>  to set your account's default identity.
+Omit --global to set the identity only in this repository.</p>
+<p>  fatal: unable to auto-detect email address (got 'runner@fv-az1535-535.(none)')</p>
+<p>  Error: Process completed with exit code 1.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 </ul>
 </details>
@@ -714,41 +712,40 @@ Error: Process completed with <span class="token builtin class-name">exit</span>
 <p>git config 명령을 사용해 사용자 정보를 인식할 수 있도록 해주었다.</p>
 <details>
 <summary>접기/펼치기</summary>
+```yaml
+name: Build and Deploy
 </li>
 </ul>
-<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build and Deploy
+<p>on:
+push:
+branches: - main</p>
+<p>jobs:
+deploy:
+runs-on: ubuntu-latest</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> main
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20.3.1
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    - name: Install Dependencies
+      run: npm install --legacy-peer-deps
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout Repository
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    - name: Build
+      run: npm run build
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v2
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 20.3.1
+    - name: Deploy to GitHub Pages
+      env:
+        ACCESS_TOKEN: ${{ secrets.PAT }}
+      run: |
+        git config --global user.email "USER@EMAIL.COM"
+        git config --global user.name "USER NAME"
+        npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install <span class="token punctuation">-</span><span class="token punctuation">-</span>legacy<span class="token punctuation">-</span>peer<span class="token punctuation">-</span>deps
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm run build
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy to GitHub Pages
-        <span class="token key atrule">env</span><span class="token punctuation">:</span>
-          <span class="token key atrule">ACCESS_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.PAT <span class="token punctuation">}</span><span class="token punctuation">}</span>
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          git config --global user.email "USER@EMAIL.COM"
-          git config --global user.name "USER NAME"
-          npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN</span></code></pre></div>
+```</code></pre></div>
 </li>
 </ul>
 </details>
@@ -781,42 +778,44 @@ fatal: could not read Username for 'https://github.com': No such device or addre
 <li>
 <p>시도:</p>
 <ul>
-<li>
-<p>HTTPS URL에 토큰을 추가하여 사용자를 인식할 수 있게 시도하였다.<sup id="fnref-5"><a href="#fn-5" class="footnote-ref">5</a></sup></p>
+<li>HTTPS URL에 토큰을 추가하여 사용자를 인식할 수 있게 시도하였다.<sup id="fnref-5"><a href="#fn-5" class="footnote-ref">5</a></sup></li>
+</ul>
 <details>
 <summary>접기/펼치기</summary>
-```yaml
-<p>  name: Build and Deploy</p>
-<p>  on:
-push:
-branches:
-- main</p>
-<p>  jobs:
-deploy:
-runs-on: ubuntu-latest</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+  ```yaml
+      name: Build and Deploy
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  on:
+    push:
+      branches:
+        - main
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v2
 
-    - name: Build
-      run: npm run build
+        - name: Setup Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: 20.3.1
 
-    - name: Deploy to GitHub Pages
-      env:
-        ACCESS_TOKEN: ${{ secrets.PAT }}
-      run: |
-        git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
-        npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN</code></pre></div>
-</li>
-</ul>
+        - name: Install Dependencies
+          run: npm install --legacy-peer-deps
+
+        - name: Build
+          run: npm run build
+
+        - name: Deploy to GitHub Pages
+          env:
+            ACCESS_TOKEN: ${{ secrets.PAT }}
+          run: |
+            git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
+            npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+
+```</code></pre></div>
 </details>
 </li>
 <li>
@@ -889,20 +888,22 @@ runs-on: ubuntu-latest</p>
       git config --global user.email "USER@EMAIL.COM"
       npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN</code></pre></div>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">&lt;/details>
+
 - 문제:
   - 이전에 나타났던 문제가 계속 나타나 눈물이 날 뻔 했다.
+
   &lt;details>
   &lt;summary>접기/펼치기&lt;/summary>
-```bash
-Run git config --global user.name "USER NAME"
-  git config --global user.name "USER NAME"
-  git config --global user.email "USER@EMAIL.COM"
-  npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
-  shell: /usr/bin/bash -e {0}
-  env:
-    ACCESS_TOKEN: ***
-fatal: could not read Username for 'https://github.com': No such device or address
-```</code></pre></div>
+    ```bash
+    Run git config --global user.name "USER NAME"
+      git config --global user.name "USER NAME"
+      git config --global user.email "USER@EMAIL.COM"
+      npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN
+      shell: /usr/bin/bash -e {0}
+      env:
+        ACCESS_TOKEN: ***
+    fatal: could not read Username for 'https://github.com': No such device or address
+    ```</code></pre></div>
 </li>
 </ul>
 </details>
@@ -917,40 +918,39 @@ fatal: could not read Username for 'https://github.com': No such device or addre
 <p>혹시 토큰이 인식이 안되고 있나 의심스러워서 순서를 변경하여 다시 시도하였다.</p>
 <details>
 <summary>접기/펼치기</summary>
+```yaml
+name: Build and Deploy
 </li>
 </ul>
-<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build and Deploy
+<p>on:
+push:
+branches: - main</p>
+<p>jobs:
+deploy:
+runs-on: ubuntu-latest
+env:
+PAT: ${{ secrets.PAT }}</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> main
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20.3.1
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
-    <span class="token key atrule">env</span><span class="token punctuation">:</span>
-      <span class="token key atrule">PAT</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.PAT <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    - name: Install Dependencies
+      run: npm install --legacy-peer-deps
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout Repository
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    - name: Build
+      run: npm run build
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v2
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 20.3.1
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+        npx gh-pages -d ./public -b gh-pages -t $PAT
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install <span class="token punctuation">-</span><span class="token punctuation">-</span>legacy<span class="token punctuation">-</span>peer<span class="token punctuation">-</span>deps
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm run build
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy to GitHub Pages
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-          npx gh-pages -d ./public -b gh-pages -t $PAT</span></code></pre></div>
+```</code></pre></div>
 </li>
 </ul>
 </details>
@@ -999,31 +999,30 @@ deploy:
 runs-on: ubuntu-latest
 env:
 PAT: ${{ secrets.PAT }}</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 20.3.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.3.1
 
-    - name: Install Dependencies
-      run: npm install --legacy-peer-deps
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
 
-    - name: Build
-      run: |
-        git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-        npm run build
+      - name: Build
+        run: |
+          git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
+          npm run build
 
-    - name: Deploy to GitHub Pages
-      run: |
-        npx gh-pages -d ./public -b gh-pages -t $PAT</code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
-</li>
-</ul>
+      - name: Deploy to GitHub Pages
+        run: |
+          npx gh-pages -d ./public -b gh-pages -t $PAT
+
+```</code></pre></div>
 </details>
-<ul>
+</li>
 <li>
 <p>해결:</p>
 <ul>
@@ -1054,7 +1053,7 @@ git config --global user.name "Your Name"</p>
 Omit --global to set the identity only in this repository.</p>
 <p>fatal: unable to auto-detect email address (got 'runner@fv-az1385-401.(none)')</p>
 <p>Error: Process completed with exit code 1.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">```</code></pre></div>
 </li>
 </ul>
 </details>
@@ -1099,8 +1098,9 @@ PAT: ${{ secrets.PAT }}</p>
 
     - name: Deploy to GitHub Pages
       run: |
-        npx gh-pages -d ./public -b gh-pages -t $PAT</code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+        npx gh-pages -d ./public -b gh-pages -t $PAT
+
+```</code></pre></div>
 </li>
 </ul>
 </details>
@@ -1177,15 +1177,16 @@ PAT: ${{ secrets.PAT }}</p>
     - name: Deploy to GitHub Pages
       run: |
         git config --global url.https://$PAT@github.com/.insteadOf https://github.com/
-        npx gh-pages -d ./public -b gh-pages -t $PAT</code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+        npx gh-pages -d ./public -b gh-pages -t $PAT
+
+```</code></pre></div>
 </li>
 </ul>
 </details>
 <ul>
 <li>성공!</li>
 </ul>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">Published</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">  Published</code></pre></div>
 <div class="footnotes">
 <hr>
 <ol>
