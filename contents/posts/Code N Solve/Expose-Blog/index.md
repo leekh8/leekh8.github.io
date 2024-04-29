@@ -1,6 +1,6 @@
 ---
 title: "🚀 Gatsby 블로그 검색 엔진 배포"
-description: "Let's learn about gatsby-starter-hoodie."
+description: "Gatsby와 Github Actions를 사용한 블로그의 배포를 위한 검색 엔진 설정 방법"
 date: 2024-04-25
 update: 2024-04-25
 tags:
