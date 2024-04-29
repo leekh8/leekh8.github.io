@@ -1,5 +1,6 @@
 ---
 title: "🚀 Gatsby 블로그 검색 엔진 배포"
+description: "Let's learn about gatsby-starter-hoodie."
 date: 2024-04-25
 update: 2024-04-25
 tags:
@@ -17,9 +18,9 @@ Netlify를 이용해 배포하는 것은 편하지만 직접 해보는 것이 �
 
 Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO) 설정에 대해 정리해보자.
 
-### 검색 엔진 최적화 (SEO) 설정
+## 검색 엔진 최적화 (SEO) 설정
 
-#### 검색 엔진 최적화 (SEO)란? 🤔
+### 검색 엔진 최적화 (SEO)란? 🤔
 
 - SEO는 웹사이트가 검색 엔진에서 보다 잘 노출되도록 최적화하는 작업이다.
 - 아래는 Gatsby 블로그에서 중요한 SEO 설정들이다.
@@ -30,24 +31,24 @@ Gatsby를 이용한 웹사이트의 배포 과정과 검색 엔진 최적화(SEO
   - **sitemap 생성**: `gatsby-plugin-sitemap` 플러그인을 사용하여 사이트 맵을 자동으로 생성하여 검색 엔진이 사이트를 더 쉽게 크롤링할 수 있게 한다.
   - **정적 파일 최적화**: `gatsby-image` 플러그인을 사용하여 이미지 파일을 최적화하여 로딩 시간을 단축한다.
 
-### 검색 엔진
+## 검색 엔진
 
-#### 1. Google Search Console[^2]
+### 1. Google Search Console[^2]
 
 - **도메인 (Domain property)**: 모든 서브도메인과 프로토콜, 포트를 포함한 데이터를 볼 수 있다. DNS 레코드를 수정하여 소유권 인증이 필요하다.
 - **URL 접두어 (URL-prefix property)**: 특정 URL 형식에 대해서만 데이터를 볼 수 있다. 다양한 방법(HTML 태그, Google Analytics 등)으로 소유권 인증이 가능하다.
 
-#### 2. Naver Webmaster Tools[^3]
+### 2. Naver Webmaster Tools[^3]
 
 - 간단하게 HTML 파일을 업로드하여 소유권 인증을 진행할 수 있다.
 
-#### GitHub Pages 배포 시 고려사항
+### GitHub Pages 배포 시 고려사항
 
 - GitHub Pages의 도메인은 GitHub에 의해 관리되기 때문에 DNS 설정이 불가능하다.
 - 따라서 URL 방식의 소유권 인증이 더 적합할 것 같다.
 - root directory에 HTML 파일은 build가 안되어서 `static` directory에 넣으면 build가 가능하다.
 
-#### Gatsby의 SEO 친화적 구조[^4]
+### Gatsby의 SEO 친화적 구조[^4]
 
 - Gatsby는 React 기반의 정적 사이트 생성기로, 빠른 로딩 시간과 SEO 친화적 구조를 갖고 있다.[^5]
 
