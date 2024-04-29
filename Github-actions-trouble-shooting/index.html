@@ -566,8 +566,7 @@ Run git config --global user.name "USER NAME"
   env:
     ACCESS_TOKEN: ***
 Could not parse name and email from user option "***" (format should be "Your Name &lt;email@example.com>")
-Error: Process completed with exit code 1.
-```</code></pre></div>
+Error: Process completed with exit code 1.</code></pre></div>
 </li>
 </ul>
 </details>
@@ -787,13 +786,12 @@ fatal: could not read Username for 'https://github.com': No such device or addre
 <details>
 <summary>접기/펼치기</summary>
 ```yaml
-name: Build and Deploy
-</li>
-</ul>
-<p>on:
+<p>  name: Build and Deploy</p>
+<p>  on:
 push:
-branches: - main</p>
-<p>jobs:
+branches:
+- main</p>
+<p>  jobs:
 deploy:
 runs-on: ubuntu-latest</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  steps:
@@ -817,11 +815,10 @@ runs-on: ubuntu-latest</p>
       run: |
         git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
         npx gh-pages -d ./public -b gh-pages -t $ACCESS_TOKEN</code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 </ul>
 </details>
-<ul>
+</li>
 <li>
 <p>문제:</p>
 <ul>
