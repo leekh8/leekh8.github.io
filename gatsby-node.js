@@ -83,7 +83,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -94,6 +94,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       name: `slug`,
       value: newSlug,
+    })
+
+    loadNodeContent(node).then(content => {
+      const wordCount = content.split(/\s+/g).length
+      const readingTime = Math.ceil(wordCount / 200)
+
+      createNodeField({ node, name: "timeToRead", value: readingTime })
+
+      if (!node.frontmatter.tags) {
+        createNodeField({ node, name: "tags", value: [] })
+      }
     })
   }
 }
