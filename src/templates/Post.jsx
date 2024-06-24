@@ -13,7 +13,7 @@ const Post = ({ data }) => {
 
   const { title, date, update, tags, series } = post.frontmatter
   const { excerpt } = post
-  const { readingTime, slug } = post.fields
+  const { timeToRead, slug } = post.fields
 
   let filteredSeries = []
   if (series !== null) {
@@ -45,7 +45,7 @@ const Post = ({ data }) => {
           date={date}
           update={update}
           tags={tags}
-          minToRead={Math.round(readingTime.minutes)}
+          minToRead={timeToRead}
         />
         {filteredSeries.length > 0 && (
           <Article.Series header={series} series={filteredSeries} />
@@ -84,9 +84,7 @@ export const pageQuery = graphql`
       }
       fields {
         slug
-        readingTime {
-          minutes
-        }
+        timeToRead
       }
     }
     seriesList: allMarkdownRemark(
