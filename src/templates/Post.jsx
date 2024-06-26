@@ -12,6 +12,7 @@ const MermaidContainer = styled.div`
   overflow-x: auto;
   .mermaid {
     max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
   }
