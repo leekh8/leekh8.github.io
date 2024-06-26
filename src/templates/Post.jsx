@@ -1,11 +1,21 @@
 import React from "react"
 import SEO from "components/SEO"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "components/Layout"
 import Article from "components/Article"
 
 import { siteUrl } from "../../blog-config"
+
+const MermaidContainer = styled.div`
+  overflow-x: auto;
+  .mermaid {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+`
 
 const Post = ({ data }) => {
   const post = data.markdownRemark
@@ -50,7 +60,9 @@ const Post = ({ data }) => {
         {filteredSeries.length > 0 && (
           <Article.Series header={series} series={filteredSeries} />
         )}
-        <Article.Body html={post.html} />
+        <MermaidContainer>
+          <Article.Body html={post.html} />
+        </MermaidContainer>
         <Article.Footer previous={previous} next={next} />
       </Article>
     </Layout>
