@@ -9,12 +9,18 @@ import Article from "components/Article"
 import { siteUrl } from "../../blog-config"
 
 const MermaidContainer = styled.div`
-  overflow-x: auto;
   .mermaid {
     max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    overflow: auto;
+  }
+  .mermaid svg {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .mermaid .node text {
+    font-size: 14px;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
   }
 `
 
