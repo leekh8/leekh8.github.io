@@ -37,7 +37,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-styled-components",
-    // "gatsby-remark-reading-time",
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -69,6 +68,14 @@ module.exports = {
         pedantic: true,
         gfm: true,
         plugins: [
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: {
+              mermaidOptions: {
+                theme: "base",
+              },
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
