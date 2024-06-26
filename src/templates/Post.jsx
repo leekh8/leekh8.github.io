@@ -18,7 +18,7 @@ const MermaidContainer = styled.div`
     height: auto !important;
   }
   .mermaid .node text {
-    font-size: 14px;
+    font-size: 54px;
     overflow-wrap: break-word;
     white-space: pre-wrap;
   }
