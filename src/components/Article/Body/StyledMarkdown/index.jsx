@@ -230,13 +230,15 @@ const StyledMarkdown = styled.div`
   & .mermaid {
     max-width: 100%;
     overflow: visible;
+    margin-bottom: 24px;
   }
   & .mermaid svg {
     width: 100% !important;
     height: auto !important;
+    overflow: visible;
   }
   & .mermaid .node text {
-    font-size: 12px;
+    font-size: 14px;
     white-space: pre-wrap;
   }
 `
