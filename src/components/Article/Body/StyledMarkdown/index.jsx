@@ -226,6 +226,19 @@ const StyledMarkdown = styled.div`
     background-color: ${props => props.theme.colors.text};
     color: ${props => props.theme.colors.hoveredLinkText};
   }
+
+  & .mermaid {
+    max-width: 100%;
+    overflow: visible;
+  }
+  & .mermaid svg {
+    width: 100% !important;
+    height: auto !important;
+  }
+  & .mermaid .node text {
+    font-size: 14px;
+    white-space: pre-wrap;
+  }
 `
 
 export default StyledMarkdown
