@@ -11,15 +11,14 @@ import { siteUrl } from "../../blog-config"
 const MermaidContainer = styled.div`
   .mermaid {
     max-width: 100%;
-    overflow: auto;
+    overflow: visible;
   }
   .mermaid svg {
     width: 100% !important;
     height: auto !important;
   }
   .mermaid .node text {
-    font-size: 54px;
-    overflow-wrap: break-word;
+    font-size: 14px;
     white-space: pre-wrap;
   }
 `
