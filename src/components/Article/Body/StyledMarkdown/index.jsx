@@ -236,7 +236,7 @@ const StyledMarkdown = styled.div`
     height: auto !important;
   }
   & .mermaid .node text {
-    font-size: 14px;
+    font-size: 12px;
     white-space: pre-wrap;
   }
 `
