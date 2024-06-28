@@ -81,6 +81,7 @@ module.exports = {
               flowchart: {
                 useMaxWidth: true,
                 htmlLabels: true,
+                diagramPadding: 20,
               },
             },
           },
