@@ -66,11 +66,6 @@ graph TD
     E -->|데이터 응답 📤| C
     C -->|API 응답 📬| B
     B -->|응답 📡| A
-    <!-- style A fill:#f99f,stroke:#ffffff
-    style B fill:#bbff,stroke:#ffffff
-    style C fill:#f966,stroke:#ffffff
-    style D fill:#966f,stroke:#ffffff
-    style E fill:#9f66,stroke:#ffffff -->
 ```
 
 - 🌐 다이어그램 요소 설명
