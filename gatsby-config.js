@@ -73,7 +73,6 @@ module.exports = {
             options: {
               mermaidConfig: {
                 theme: "neutral",
-                themeCSS: ".node rect { fill: #fff; }",
               },
             },
           },
