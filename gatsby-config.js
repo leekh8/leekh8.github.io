@@ -73,6 +73,20 @@ module.exports = {
             options: {
               mermaidConfig: {
                 theme: "neutral",
+                themeCSS: `
+                .label foreignObject {
+                  overflow: visible !important;
+                  font-size: 90% !important;
+                }
+                .node rect {
+                  width: auto !important;
+                  height: auto !important;
+                  fill: #fff;
+                }
+                .node text {
+                  white-space: pre-wrap !important;
+                }
+              `,
               },
             },
           },

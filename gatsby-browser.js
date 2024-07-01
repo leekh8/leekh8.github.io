@@ -7,8 +7,20 @@ export const onInitialClientRender = () => {
     flowchart: {
       useMaxWidth: true,
       htmlLabels: true,
-      diagramPadding: 10,
     },
+    themeCSS: `
+      .label foreignObject {
+        overflow: visible !important;
+        font-size: 90% !important;
+      }
+      .node rect {
+        width: auto !important;
+        height: auto !important;
+      }
+      .node text {
+        white-space: pre-wrap !important;
+      }
+    `,
   })
 
   window.addEventListener("load", () => {
