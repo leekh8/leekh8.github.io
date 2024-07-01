@@ -229,18 +229,18 @@ const StyledMarkdown = styled.div`
 
   & .mermaid {
     max-width: 100%;
-    overflow: visible;
+    overflow: visible !important;
     margin-bottom: 16px;
   }
   & .mermaid svg {
     width: 100% !important;
     height: auto !important;
-    overflow: visible;
-    display: block;
+    overflow: visible !important;
+    display: block !important;
   }
   & .mermaid .node text {
-    font-size: 14px;
-    white-space: pre-wrap;
+    font-size: 14px !important;
+    white-space: pre-wrap !important;
   }
   & .mermaid .node rect {
     width: auto;
