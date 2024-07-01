@@ -1,7 +1,8 @@
-const React = require("react")
+import React from "react"
 import mermaid from "mermaid"
+import "katex/dist/katex.min.css"
 
-exports.onInitialClientRender = () => {
+export const onInitialClientRender = () => {
   mermaid.initialize({
     startOnLoad: true,
     flowchart: {
@@ -15,5 +16,3 @@ exports.onInitialClientRender = () => {
     mermaid.init(undefined, document.querySelectorAll(".mermaid"))
   })
 }
-
-require("katex/dist/katex.min.css")

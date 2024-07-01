@@ -1,5 +1,5 @@
-const blogConfig = require("./blog-config")
-const { title, description, author, siteUrl } = blogConfig
+import  blogConfig  from "./blog-config"
+import { title, description, author, siteUrl } from blogConfig
 
 module.exports = {
   pathPrefix: "/haiblog",
