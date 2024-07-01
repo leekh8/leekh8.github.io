@@ -73,9 +73,6 @@ module.exports = {
             options: {
               mermaidOptions: {
                 theme: "base",
-                themeVariables: {
-                  edgeLabelBackground: "#cccccc",
-                },
               },
               startOnLoad: true,
               flowchart: {

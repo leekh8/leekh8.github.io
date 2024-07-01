@@ -1,15 +1,19 @@
 const React = require("react")
+import mermaid from "mermaid"
 
 exports.onInitialClientRender = () => {
-  const script = document.createElement("script")
-  script.src =
-    "https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.11.0/mermaid.min.js"
-  script.onload = () => {
-    if (window.mermaid) {
-      window.mermaid.initialize({ startOnLoad: true })
-    }
-  }
-  document.body.appendChild(script)
+  mermaid.initialize({
+    startOnLoad: true,
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      diagramPadding: 10,
+    },
+  })
+
+  window.addEventListener("load", () => {
+    mermaid.init(undefined, document.querySelectorAll(".mermaid"))
+  })
 }
 
 require("katex/dist/katex.min.css")
