@@ -1,6 +1,5 @@
-import React from "react"
-import mermaid from "mermaid"
 import "katex/dist/katex.min.css"
+import mermaid from "mermaid"
 
 export const onInitialClientRender = () => {
   mermaid.initialize({
