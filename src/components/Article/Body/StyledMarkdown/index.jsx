@@ -242,10 +242,6 @@ const StyledMarkdown = styled.div`
     font-size: 14px !important;
     white-space: pre-wrap !important;
   }
-  & .mermaid .node rect {
-    width: auto;
-    height: auto;
-  }
 `
 
 export default StyledMarkdown

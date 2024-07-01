@@ -71,14 +71,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-mermaid`,
             options: {
-              mermaidOptions: {
-                theme: "base",
-              },
-              startOnLoad: true,
-              flowchart: {
-                useMaxWidth: true,
-                htmlLabels: true,
-                diagramPadding: 10,
+              mermaidConfig: {
+                theme: "neutral",
+                themeCSS: ".node rect { fill: #fff; }",
               },
             },
           },
