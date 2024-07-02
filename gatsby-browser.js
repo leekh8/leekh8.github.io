@@ -4,13 +4,6 @@ import mermaid from "mermaid"
 export const onInitialClientRender = () => {
   mermaid.initialize({
     startOnLoad: true,
-    // flowchart: {
-    //   useMaxWidth: true,
-    //   diagramPadding: 10, // 다이어그램 외부 여백
-    //   nodeSpacing: 100, // 노드 간의 간격
-    //   rankSpacing: 100, // 랭크 간의 간격
-    //   padding: 20, // 노드 내부 여백
-    // },
   })
 
   window.addEventListener("load", () => {
@@ -20,6 +13,8 @@ export const onInitialClientRender = () => {
       svg.setAttribute("height", "auto")
       svg.style.maxWidth = "none"
       svg.style.overflow = "visible"
+      svg.style.width = "100%";
+      svg.style.height = "auto";
     })
     mermaid.init(undefined, document.querySelectorAll(".mermaid"))
   })
