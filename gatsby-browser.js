@@ -16,6 +16,7 @@ export const onInitialClientRender = () => {
       .node rect {
         width: auto !important;
         height: auto !important;
+        min-width: 150px;
       }
       .node text {
         white-space: pre-wrap !important;
