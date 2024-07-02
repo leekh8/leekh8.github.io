@@ -6,22 +6,11 @@ export const onInitialClientRender = () => {
     startOnLoad: true,
     flowchart: {
       useMaxWidth: true,
-      htmlLabels: true,
+      diagramPadding: 50, // 다이어그램 외부 여백
+      nodeSpacing: 100, // 노드 간의 간격
+      rankSpacing: 100, // 랭크 간의 간격
+      padding: 50, // 노드 내부 여백
     },
-    themeCSS: `
-      .label foreignObject {
-        overflow: visible !important;
-        font-size: 90% !important;
-      }
-      .node rect {
-        width: auto !important;
-        height: auto !important;
-        min-width: 150px;
-      }
-      .node text {
-        white-space: pre-wrap !important;
-      }
-    `,
   })
 
   window.addEventListener("load", () => {

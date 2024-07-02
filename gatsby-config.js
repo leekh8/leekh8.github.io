@@ -81,7 +81,7 @@ module.exports = {
                 .node rect {
                   width: auto !important;
                   height: auto !important;
-                  fill: #fff;
+                  fill: transparent !important ;
                   min-width: 150px;
                 }
                 .node text {
