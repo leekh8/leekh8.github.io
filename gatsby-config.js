@@ -78,12 +78,12 @@ module.exports = {
                   // overflow: auto !important;
                   font-size: 90% ;
                   height: 80%;
-                  width: 80%;
+                  width: 100%;
                 }
                 .node rect {
                   // width: auto !important;
                   // height: auto !important;
-                  // fill: transparent !important ;
+                  fill: transparent !important ;
                   // min-width: 150px;
                 }
                 .node text {
