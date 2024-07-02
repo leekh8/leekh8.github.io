@@ -75,10 +75,9 @@ module.exports = {
                 theme: "neutral",
                 themeCSS: `
                 .label foreignObject {
-                  // overflow: auto !important;
+                  overflow: auto ;
                   font-size: 90% ;
                   height: 70%;
-                  width: 70%;
                 }
                 .node rect {
                   width: auto;
@@ -87,7 +86,7 @@ module.exports = {
                   // min-width: 150px;
                 }
                 .node text {
-                  white-space: normal;
+                  white-space: break-spaces;
                 }
               `,
               },
