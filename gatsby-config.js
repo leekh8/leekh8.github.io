@@ -77,8 +77,8 @@ module.exports = {
                 .label foreignObject {
                   // overflow: auto !important;
                   font-size: 90% ;
-                  height: 80%;
-                  width: 100%;
+                  height: 70%;
+                  width: 70%;
                 }
                 .node rect {
                   width: auto;
@@ -87,7 +87,7 @@ module.exports = {
                   // min-width: 150px;
                 }
                 .node text {
-                  // white-space: pre-wrap !important;
+                  white-space: normal;
                 }
               `,
               },
