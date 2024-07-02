@@ -8,14 +8,14 @@ export const onInitialClientRender = () => {
 
   window.addEventListener("load", () => {
     const svgs = document.querySelectorAll(".mermaid svg")
+
     svgs.forEach(svg => {
       svg.setAttribute("width", "100%")
       svg.setAttribute("height", "auto")
       svg.style.maxWidth = "none"
       svg.style.overflow = "visible"
-      svg.style.width = "100%";
-      svg.style.height = "auto";
     })
+
     mermaid.init(undefined, document.querySelectorAll(".mermaid"))
   })
 }
