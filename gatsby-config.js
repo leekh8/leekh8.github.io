@@ -182,11 +182,5 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gastby-plugin-static-folders`,
-      options: {
-        folders: [{ source: `./src/assets/css`, destination: `css` }],
-      },
-    },
   ],
 }
