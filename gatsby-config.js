@@ -63,9 +63,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // commonmark: true,
         footnotes: true,
-        // pedantic: true,
         gfm: true,
         plugins: [
           {
@@ -182,6 +180,12 @@ module.exports = {
             match: "^/blog/",
           },
         ],
+      },
+    },
+    {
+      resolve: `gastby-plugin-static-folders`,
+      options: {
+        folders: [{ source: `./src/assets/css`, destination: `css` }],
       },
     },
   ],
