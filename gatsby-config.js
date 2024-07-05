@@ -72,7 +72,6 @@ module.exports = {
               mermaidConfig: {
                 theme: "neutral",
               },
-              mermaidCss: "/css/mermaid.min.css",
             },
           },
           {

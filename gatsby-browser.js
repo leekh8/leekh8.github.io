@@ -1,4 +1,3 @@
-import "./static/css/mermaid.min.css"
 import "katex/dist/katex.min.css"
 import mermaid from "mermaid"
 
