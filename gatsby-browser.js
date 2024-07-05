@@ -1,4 +1,4 @@
-import "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css"
+import "./static/css/mermaid.min.css"
 import "katex/dist/katex.min.css"
 import mermaid from "mermaid"
 

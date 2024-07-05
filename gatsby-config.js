@@ -72,8 +72,7 @@ module.exports = {
               mermaidConfig: {
                 theme: "neutral",
               },
-              mermaidCss:
-                "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css",
+              mermaidCss: "/css/mermaid.min.css",
             },
           },
           {
