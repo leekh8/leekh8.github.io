@@ -15,13 +15,13 @@ jobs:
           node-version: 20.3.1
 
       - name: Install node packages
-        run: yarn
-        
+        run: yarn install --frozen-lockfile
+
       - name: Check lint
         run: yarn check:lint
-        
+
       - name: Check prettier
         run: yarn check:prettier
-      
+
       - name: Build
         run: yarn build
