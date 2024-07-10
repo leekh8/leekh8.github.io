@@ -4,10 +4,10 @@ const { title, description, author, siteUrl } = blogConfig
 module.exports = {
   pathPrefix: "/haiblog",
   siteMetadata: {
-    title,
-    description,
-    author,
-    siteUrl,
+    title: title,
+    description: description,
+    author: author,
+    siteUrl: siteUrl,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
