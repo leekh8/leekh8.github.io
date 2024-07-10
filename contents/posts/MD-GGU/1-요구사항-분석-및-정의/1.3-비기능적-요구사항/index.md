@@ -1,6 +1,6 @@
 ---
-title: "🔧비기능적 요구 사항"
-description: "비기능적 요구 사항 정리"
+title: "🔧MDGGU의 비기능적 요구 사항"
+description: "MDGGU의 비기능적 요구 사항 정리"
 date: 2024-06-28
 update: 2024-06-28
 tags:
@@ -9,7 +9,7 @@ tags:
 series: "MDGGU"
 ---
 
-## 🔧비기능적 요구 사항
+## 🔧MDGGU의 비기능적 요구 사항
 
 **🔒보안**
 

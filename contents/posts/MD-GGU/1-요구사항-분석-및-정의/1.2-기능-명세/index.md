@@ -1,6 +1,6 @@
 ---
-title: "🔍기능 명세"
-description: "기능적 요구사항 정리"
+title: "🔍MDGGU의 기능 명세"
+description: "MDGGU의 기능적 요구사항 정리"
 date: 2024-06-28
 update: 2024-06-28
 tags:
@@ -9,7 +9,7 @@ tags:
 series: "MDGGU"
 ---
 
-## 🔍기능 명세
+## 🔍MDGGU의 기능 명세
 
 ### 마크다운 변환 엔진:
 
