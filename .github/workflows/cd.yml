@@ -70,6 +70,9 @@ jobs:
       - name: Install Dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
