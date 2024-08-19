@@ -4,6 +4,7 @@ module.exports = {
   author: "leekh8",
   siteUrl: "https://leekh8.github.io/",
   links: {
+    mdggu: "https://mdggu-front.onrender.com/",
     github: "https://github.com/leekh8",
     // linkedIn: "https://linkedin.com",
     // facebook: "https://www.facebook.com",
