@@ -17,6 +17,7 @@ import {
   FaBlogger,
   FaRegFileLines,
   FaLink,
+  FaPenToSquare,
 } from "react-icons/fa6"
 
 import { siteUrl, description, author, links } from "../../../blog-config"
@@ -92,6 +93,7 @@ const Link = ({ link, children }) => {
 
 const Bio = () => {
   const {
+    mdggu,
     github,
     kaggle,
     instagram,
@@ -113,6 +115,9 @@ const Bio = () => {
         <Author>@{author}</Author>
         <Description>{description}</Description>
         <LinksWrapper>
+          <Link link={mdggu}>
+            <FaPenToSquare />
+          </Link>
           <Link link={github}>
             <FaGithub />
           </Link>
