@@ -21,8 +21,11 @@ jobs:
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright" >> $GITHUB_ENV
 
+      - name: Check Playwright Browsers Path
+        run: echo "Playwright Browsers Path: $PLAYWRIGHT_BROWSERS_PATH"
+
       - name: Install Playwright Browsers
-        run: sudo npx playwright install
+        run: sudo yarn playwright install
 
       - name: Install node packages
         run: yarn
