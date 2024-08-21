@@ -10,7 +10,25 @@ on:
       - main
 
 jobs:
-  build:
+  check_on_pull_request:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install node packages
+        run: yarn
+
+      - name: Check lint
+        run: yarn check:lint
+
+      - name: Check prettier
+        run: yarn check:prettier
+
+  build_on_push:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,12 +47,6 @@ jobs:
 
       - name: Install node packages
         run: yarn
-
-      - name: Check lint
-        run: yarn check:lint
-
-      - name: Check prettier
-        run: yarn check:prettier
 
       - name: Build
         run: yarn build
