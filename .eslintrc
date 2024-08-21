@@ -3,8 +3,12 @@
   "parserOptions": {
     "requireConfigFile": false,
     "babelOptions": {
-      "plugins": ["@babel/plugin-syntax-jsx"]
+      "presets": ["@babel/preset-env", "@babel/preset-react"]
     }
+  },
+  "globals": {
+    "$": "readonly",
+    "jQuery": "readonly"
   },
   "settings": {
     "react": {
@@ -19,6 +23,9 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "react/prop-types": 0,
+    "no-unused-vars": 1,
+    "react/react-in-jsx-scope": "off",
+    "no-redeclare": "off",
     "no-undef": "off"
   }
 }
