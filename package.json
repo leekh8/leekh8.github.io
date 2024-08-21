@@ -6,7 +6,6 @@
   "version": "0.2.0",
   "author": "Hudi",
   "dependencies": {
-    "@babel/eslint-parser": "^7.14.7",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.13.4",
     "gatsby-plugin-catch-links": "^5.11.0",
