@@ -1,7 +1,10 @@
 {
   "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "requireConfigFile": false
+    "requireConfigFile": false,
+    "babelOptions": {
+      "plugins": ["@babel/plugin-syntax-jsx"]
+    }
   },
   "settings": {
     "react": {
@@ -10,10 +13,12 @@
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jquery": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-undef": "off"
   }
 }
