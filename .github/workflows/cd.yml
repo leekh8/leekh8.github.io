@@ -67,11 +67,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
 
-      - name: Install Dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Set Playwright Browsers Path
+        run: echo "PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright" >> $GITHUB_ENV
 
       - name: Install Playwright Browsers
         run: sudo npx playwright install
+
+      - name: Install Dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Gatsby
         env:
