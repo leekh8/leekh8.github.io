@@ -36,8 +36,14 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install node packages without Playwright browsers
-        run: PLAYWRIGHT_BROWSERS_PATH=0 npm install
+      - name: Set Playwright Browsers Path
+        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
+      - name: Install node packages
+        run: yarn
 
       - name: Build
         run: yarn build
