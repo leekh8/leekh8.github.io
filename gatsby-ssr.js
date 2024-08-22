@@ -14,6 +14,8 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.11.0/mermaid.min.css"
     />,
+
+    // <!-- Google AdSense Script -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3742032449453805"
