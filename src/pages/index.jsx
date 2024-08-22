@@ -34,7 +34,6 @@ const BlogIndex = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
       <VerticalSpace size={48} />
       <Bio />
       <Divider />
@@ -43,6 +42,10 @@ const BlogIndex = ({ data }) => {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO title={title} description={description} url={siteUrl} />
+)
 
 export default BlogIndex
 
