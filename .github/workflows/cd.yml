@@ -68,7 +68,7 @@ jobs:
             ${{ runner.os }}-gatsby-build-
 
       - name: Set Playwright Browsers Path
-        run: echo "PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright" >> $GITHUB_ENV
+        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
       - name: Install Playwright Browsers
         run: sudo npx playwright install
