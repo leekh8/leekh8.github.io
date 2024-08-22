@@ -40,7 +40,7 @@ jobs:
         run: echo "PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright" >> $GITHUB_ENV
 
       - name: Check Playwright Browsers Path
-        run: echo "Playwright Browsers Path ---> ${env.PLAYWRIGHT_BROWSERS_PATH}"
+        run: echo "Playwright Browsers Path ---> ${PLAYWRIGHT_BROWSERS_PATH}"
 
       - name: Install Playwright Browsers
         run: npx playwright install
