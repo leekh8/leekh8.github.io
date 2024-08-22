@@ -70,11 +70,11 @@ jobs:
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
-      - name: Verify Playwright Installation
-        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-1129/chrome-linux/
-
       - name: Install Playwright Browsers
         run: npx playwright install
+
+      - name: Verify Playwright Installation
+        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-1129/chrome-linux/
 
       - name: Install Dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
