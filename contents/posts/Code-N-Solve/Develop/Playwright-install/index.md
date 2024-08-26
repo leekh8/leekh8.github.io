@@ -4,11 +4,11 @@ description: "CI/CD 파이프라인에서 Playwright 브라우저 설치와 관�
 date: 2024-08-26
 update: 2024-08-26
 tags:
+  - Code N Solve
   - GitHub Actions
   - Gatsby
-  - SEO
-  - Netlify
-  - Code N Solve
+  - CI/CD
+  - Playwright
 series: "Code N Solve"
 ---
 
