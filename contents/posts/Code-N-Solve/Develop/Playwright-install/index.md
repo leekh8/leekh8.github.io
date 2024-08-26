@@ -51,10 +51,10 @@ Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 �
       run: npx playwright install
   ```
 
-  - `npm ci`
+  - `npm ci`[^4]
     - CI/CD 파이프라인에서 Node.js 프로젝트의`package-lock.json` 파일에 기록된 정확한 버전의 모든 종속성을 설치하는 역할을 수행한다.
     - 프로젝트의 의존성을 일관되게 관리하기 위해 중요
-  - `npm ci` VS `npm install` ?
+  - `npm ci` VS `npm install`[^5] ?
     - `npm ci`는 `npm install`과 비슷하지만, CI 환경에 특화된 몇가지 차이점이 있다.
       - `package-lock.json` 파일에 정확히 맞는 버전의 패키지를 설치하며, `node_modules` 폴더를 먼저 삭제한 후 설치를 진행한다.
         - 따라서 추가적인 계산 없이 바로 설치를 진행하므로 `npm install`에 비해 종속성 설치 속도가 빠르다.
@@ -109,3 +109,5 @@ Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 �
 [^1]: https://github.com/microsoft/playwright/issues/13188
 [^2]: https://playwright.dev/
 [^3]: https://playwright.dev/docs/intro
+[^4]: https://docs.npmjs.com/cli/v7/commands/npm-ci
+[^5]: https://docs.npmjs.com/cli/v7/commands/npm-install
