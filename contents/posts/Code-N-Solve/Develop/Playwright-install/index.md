@@ -16,12 +16,12 @@ series: "Code N Solve"
 
 Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 문제가 발생했다.
 
-어떻게 문제를 해결했는지 단계별로 살펴본다.
+어떻게 문제를 해결했는지 단계별로 살펴보자.
 
 ## 문제
 
 - 로컬 환경에서는 정상적으로 작동하는 Gatsby 블로그가 CI/CD 파이프라인에서 Playwright 브라우저 설치 오류로 인한 빌드 실패가 발생했다.
-- 특히, Playwright 설치 후, 브라우저 실행할 때 경로가 제대로 설정되지 않아 발생하였다.[^3]
+- 특히, Playwright 설치 후, 브라우저 실행할 때 경로가 제대로 설정되지 않아 발생하였다.[^1]
 - ```bash
     Error: Failed to launch chromium because executable doesn’t exist
 
@@ -30,7 +30,7 @@ Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 �
     Error:browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-  playwright/chromium-1124/chrome-linux/chrome
   ```
 
-### Playwright[^1] ? 🤔
+### Playwright[^2] ? 🤔
 
 - 웹 어플리케이션을 자동으로 테스트할 수 있는 도구로 여러 브라우저(Chromium, Firefox, WebKit 등)에서 웹 페이지의 기능을 테스트 할 수 있다.
 
@@ -42,7 +42,7 @@ Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 �
 
 ### CI/CD 설정
 
-- `npm ci` (또는 `yarn install`)로 필요한 의존성을 설치한 후, `npx playwright isntall` 명령어로 Playwright 브라우저를 설치하였다.[^2]
+- `npm ci` (또는 `yarn install`)로 필요한 의존성을 설치한 후, `npx playwright isntall` 명령어로 Playwright 브라우저를 설치하였다.[^3]
 - ```bash
    - name: Install Dependencies
       run: npm ci
@@ -50,6 +50,17 @@ Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 �
     - name: Install Playwright Browsers
       run: npx playwright install
   ```
+
+  - `npm ci`
+    - CI/CD 파이프라인에서 Node.js 프로젝트의`package-lock.json` 파일에 기록된 정확한 버전의 모든 종속성을 설치하는 역할을 수행한다.
+    - 프로젝트의 의존성을 일관되게 관리하기 위해 중요
+  - `npm ci` VS `npm install` ?
+    - `npm ci`는 `npm install`과 비슷하지만, CI 환경에 특화된 몇가지 차이점이 있다.
+      - `package-lock.json` 파일에 정확히 맞는 버전의 패키지를 설치하며, `node_modules` 폴더를 먼저 삭제한 후 설치를 진행한다.
+        - 따라서 추가적인 계산 없이 바로 설치를 진행하므로 `npm install`에 비해 종속성 설치 속도가 빠르다.
+      - `npm install`은 `package.json` 파일에 정의된 종속성을 기반으로 `node_modules` 폴더에 설치하며 이 과정에서 `package-lock.json` 파일도 참고하여 가능한 한 동일한 버전의 패키지를 설치하려고 한다.
+        - 또, 필요시 `package-lock.json` 을 업데이트한다.
+      - `package.json`과 `package-lock.json` 파일이 일치하지 않으면 실패하므로 로컬 개발 환경과 CI 환경간의 의존성 일관성을 보장한다.
 
 ## 문제 분석
 
@@ -95,6 +106,6 @@ Gatsby를 사용해 블로그를 배포할 때, Playwright 설치와 관련해 �
 - 효율적인 빌드
   - 이러한 접근법을 통해 로컬 환경뿐만 아니라, CI/CD 환경에서도 안정적인 빌드를 유지할 수 있다.
 
-[^1]: https://playwright.dev/
-[^2]: https://playwright.dev/docs/intro
-[^3]: https://github.com/microsoft/playwright/issues/13188
+[^1]: https://github.com/microsoft/playwright/issues/13188
+[^2]: https://playwright.dev/
+[^3]: https://playwright.dev/docs/intro
