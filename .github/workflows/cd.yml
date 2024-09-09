@@ -74,7 +74,7 @@ jobs:
         run: npx playwright install
 
       - name: Verify Playwright Installation
-        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-1129/chrome-linux/
+        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
 
       - name: Install Dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
