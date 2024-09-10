@@ -74,7 +74,7 @@ jobs:
         run: npx playwright install-deps
 
       - name: Install Playwright Browsers
-        run: npx playwright install
+        run: npx playwright install chromium
 
       - name: Verify Playwright Installation
         run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
