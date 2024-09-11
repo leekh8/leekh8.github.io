@@ -51,11 +51,11 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      - name: Install Playwright Dependencies
-        run: npx playwright install-deps
-
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+
+      - name: Install Playwright Dependencies
+        run: npx playwright install-deps
 
       - name: Install Playwright Browsers
         run: npx playwright install chromium
