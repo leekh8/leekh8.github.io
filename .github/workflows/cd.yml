@@ -75,7 +75,7 @@ jobs:
           path: |
             public
             .cache
-          key: ${{ runner.os }}-gatsby-build-v2-${{ hashFiles('public') }}
+          key: ${{ runner.os }}-gatsby-build-v2-${{ hashFiles('package.json', 'gatsby-config.js') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
 
