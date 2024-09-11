@@ -51,6 +51,18 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
+      - name: Install Playwright Dependencies
+        run: npx playwright install-deps
+
+      - name: Set Playwright Browsers Path
+        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium
+
+      - name: Verify Playwright Installation
+        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -66,18 +78,6 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-v2-${{ hashFiles('public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
-
-      - name: Set Playwright Browsers Path
-        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
-
-      - name: Install Playwright Dependencies
-        run: npx playwright install-deps
-
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium
-
-      - name: Verify Playwright Installation
-        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
 
       - name: Install Project Dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
