@@ -47,3 +47,5 @@ jobs:
 
       - name: Build
         run: yarn build
+      - name: Verify Playwright Installation
+        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
