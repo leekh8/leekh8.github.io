@@ -11,6 +11,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clear Cache
-        run: |
-          sudo rm -rf ${{ runner.workspace }}/_actions
-          sudo rm -rf ${{ runner.workspace }}/_tool
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            .cache
+            .npm
+            .playwright
+          key: ${{ runner.os }}-clear-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-clear
