@@ -52,7 +52,9 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Set Playwright Browsers Path
-        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+        run: |
+          echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+          source $GITHUB_ENV
 
       - name: Install Project Dependencies and Playwright Browsers
         run: |
