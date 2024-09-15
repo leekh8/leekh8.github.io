@@ -51,7 +51,7 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      - name: Setup pnpm
+      - name: Setup pnpm (for Playwright)
         run: npm install -g pnpm
 
       - name: Set Playwright Browsers Path
@@ -62,7 +62,7 @@ jobs:
       - name: Install Project Dependencies and Playwright Browsers
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-          pnpm dlx playwright-core install chromium
+          npx playwright install chromium
 
       - name: Verify Playwright Installation
         run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
