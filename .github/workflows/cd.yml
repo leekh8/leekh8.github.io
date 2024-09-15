@@ -58,6 +58,7 @@ jobs:
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
           npx playwright install chromium
+          echo $?
 
       - name: Verify Playwright Installation
         run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
