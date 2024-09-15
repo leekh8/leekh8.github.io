@@ -51,6 +51,9 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
+      - name: Setup pnpm
+        run: npm install -g pnpm
+
       - name: Set Playwright Browsers Path
         run: |
           echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
