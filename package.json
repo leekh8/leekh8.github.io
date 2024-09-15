@@ -76,7 +76,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy-gh": "gatsby build && gh-pages -d public && npm run install-playwright",
+    "deploy-gh": "gatsby build && npx playwright install --with-deps chromium && gh-pages -d public",
     "deploy-gh-prefix-paths": "gatsby build --prefix-paths && gh-pages -d public",
     "check:lint": "eslint . --ext .js,.jsx",
     "fix:lint": "eslint . --fix --ext .js,.jsx",

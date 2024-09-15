@@ -22,7 +22,7 @@ jobs:
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
-      - name: Install Playwright
+      - name: Install Playwright and Chromium Browser
         run: npx playwright install --with-deps chromium
 
       - name: Install node packages
@@ -46,7 +46,7 @@ jobs:
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
-      - name: Install Playwright
+      - name: Install Playwright and Chromium Browser
         run: npx playwright install --with-deps chromium
 
       - name: Install node packages
@@ -57,4 +57,3 @@ jobs:
 
       - name: Verify Playwright Installation
         run: npx playwright --version
-

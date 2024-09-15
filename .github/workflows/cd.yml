@@ -51,13 +51,8 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      - name: Setup pnpm (for Playwright)
-        run: npm install -g pnpm
-
       - name: Set Playwright Browsers Path
-        run: |
-          echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
-          source $GITHUB_ENV
+        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
       - name: Install Project Dependencies and Playwright Browsers
         run: |
@@ -66,23 +61,6 @@ jobs:
 
       - name: Verify Playwright Installation
         run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: gatsby
-
-      # 캐시 활성화 필요시 사용
-      # - name: Restore cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       public
-      #       .cache
-      #     key: ${{ runner.os }}-gatsby-build-v2-${{ hashFiles('**/package-lock.json', '**/yarn.lock', 'gatsby-config.js') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-gatsby-build-
 
       - name: Build with Gatsby
         env:
