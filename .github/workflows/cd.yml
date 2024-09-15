@@ -43,7 +43,6 @@ jobs:
           else
             echo "Unable to determine package manager"
             exit 1
-          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -59,7 +58,7 @@ jobs:
       - name: Install Project Dependencies and Playwright Browsers
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-          npx playwright install
+          pnpm dlx playwright-core install chromium
 
       - name: Verify Playwright Installation
         run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
@@ -70,6 +69,7 @@ jobs:
         with:
           static_site_generator: gatsby
 
+      # 캐시 활성화 필요시 사용
       # - name: Restore cache
       #   uses: actions/cache@v4
       #   with:
@@ -79,9 +79,6 @@ jobs:
       #     key: ${{ runner.os }}-gatsby-build-v2-${{ hashFiles('**/package-lock.json', '**/yarn.lock', 'gatsby-config.js') }}
       #     restore-keys: |
       #       ${{ runner.os }}-gatsby-build-
-
-      - name: Install Project Dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Gatsby
         env:
