@@ -66,8 +66,8 @@ jobs:
           echo "Chromium version: $CHROMIUM_DIR"
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
 
-          - name: Verify Playwright Installation
-          run: |
+      - name: Verify Playwright Installation
+        run: |
           ls -la $PLAYWRIGHT_BROWSERS_PATH/
           ls -la $PLAYWRIGHT_BROWSERS_PATH/$CHROMIUM_DIR/chrome-linux/
 
