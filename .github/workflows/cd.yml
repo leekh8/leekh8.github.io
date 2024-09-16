@@ -66,7 +66,7 @@ jobs:
 
 
       - name: Verify Playwright Installation
-        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
+        run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-1134/chrome-linux/
 
       - name: Build with Gatsby
         env:
