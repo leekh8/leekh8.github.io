@@ -60,6 +60,11 @@ jobs:
           npx playwright install chromium
           echo $?
 
+      - name: Check Playwright Chromium Version
+        run: |
+          ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-*/ | grep -o 'chromium-[0-9]*' || echo "No Chromium version found"
+
+
       - name: Verify Playwright Installation
         run: ls -la $PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux/
 
