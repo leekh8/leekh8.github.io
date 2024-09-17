@@ -10,14 +10,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Clear Cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            .cache
-            .npm
-            .playwright
-          key: ${{ runner.os }}-clear-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-clear
+      - name: Delete Cache Folders
+        run: |
+          rm -rf node_modules
+          rm -rf .cache
+          rm -rf ~/.npm
+          rm -rf ~/.cache/ms-playwright
+          echo "Cache folders deleted."
+
+      - name: Confirm Cache Deletion
+        run: |
+          if [ -d "node_modules" ] || [ -d ".cache" ] || [ -d "~/.npm" ] || [ -d "~/.cache/ms-playwright" ]; then
+            echo "Some cache directories still exist."
+            exit 1
+          else
+            echo "Cache directories successfully deleted."
+          fi
