@@ -58,13 +58,13 @@ jobs:
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
           npx playwright install chromium
+          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-*/ | grep -o 'chromium-[0-9]*')
+          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
 
       - name: Check Playwright Chromium Version
         id: check-chromium-version
         run: |
-          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-*/ | grep -o 'chromium-[0-9]*')
           echo "Chromium version: $CHROMIUM_DIR"
-          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
 
       - name: Verify Playwright Installation
         run: |
@@ -74,6 +74,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
+          CHROMIUM_DIR: ${{ env.CHROMIUM_DIR }}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
 
       - name: Upload artifact
