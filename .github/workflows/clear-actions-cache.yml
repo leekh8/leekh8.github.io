@@ -31,7 +31,7 @@ jobs:
           echo "Cache folders deleted."
 
       - name: Install Dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} install
+        run: ${{ steps.detect-package-manager.outputs.manager }} install --legacy-peer-deps
 
       - name: Clean Gatsby Cache
         run: ${{ steps.detect-package-manager.outputs.manager }} run clean
