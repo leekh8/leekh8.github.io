@@ -16,6 +16,7 @@ jobs:
           rm -rf .cache
           rm -rf ~/.npm
           rm -rf ~/.cache/ms-playwright
+          gatsby clean
           echo "Cache folders deleted."
 
       - name: Confirm Cache Deletion
