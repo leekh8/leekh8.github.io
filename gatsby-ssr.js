@@ -19,7 +19,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3742032449453805"
-      crossorigin="anonymous"
+      crossOrigin="anonymous"
     ></script>,
   ])
 }
