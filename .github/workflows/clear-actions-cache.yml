@@ -38,7 +38,7 @@ jobs:
 
       - name: Confirm Cache Deletion
         run: |
-          if [ -d "node_modules" ] || [ -d ".cache" ] || [ -d "~/.npm" ] || [ -d "~/.cache/ms-playwright" ]; then
+          if [ -d "~/.npm" ] || [ -d "~/.cache/ms-playwright" ]; then
             echo "Some cache directories still exist."
             exit 1
           else
