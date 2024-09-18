@@ -58,7 +58,8 @@ jobs:
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
           npx playwright install chromium
-          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-*/ | grep -o 'chromium-[0-9]*')
+          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-* | sort -V | tail -n 1)
+          echo "CHROMIUM_DIR is set to: $CHROMIUM_DIR"
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
 
       - name: Check Playwright Chromium Version
