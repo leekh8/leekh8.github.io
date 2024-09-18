@@ -54,11 +54,19 @@ jobs:
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
-      - name: Install Project Dependencies and Playwright Browsers
+      # - name: Install Project Dependencies and Playwright Browsers
+      #   run: |
+      #     ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      #     npx playwright install chromium
+      #     CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-* | sort -V | tail -n 1)
+      #     echo "CHROMIUM_DIR is set to: $CHROMIUM_DIR"
+      #     echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
+
+      - name: Install Specifiv Version of Project Dependencies and Playwright Browsers
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-          npx playwright install chromium
-          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-* | sort -V | tail -n 1)
+          npx playwright install --with-deps chromium@1129
+          CHROMIUM_DIR=$PLAYWRIGHT_BROWSERS_PATH/chromium-1129
           echo "CHROMIUM_DIR is set to: $CHROMIUM_DIR"
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
 
