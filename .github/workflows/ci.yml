@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-
   push:
     branches:
       - main
@@ -49,7 +48,7 @@ jobs:
       - name: Install Playwright and Chromium Browser
         run: |
           npx playwright install --with-deps chromium
-          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-*/ | grep -o 'chromium-[0-9]*')
+          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-*/ | sort -V | tail -n 1)
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
 
       - name: Install node packages

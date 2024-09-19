@@ -11,14 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,37 +46,21 @@ jobs:
       - name: Set Playwright Browsers Path
         run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
-      # - name: Install Project Dependencies and Playwright Browsers
-      #   run: |
-      #     ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      #     npx playwright install chromium
-      #     CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-* | sort -V | tail -n 1)
-      #     echo "CHROMIUM_DIR is set to: $CHROMIUM_DIR"
-      #     echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
-
-      - name: Install Specifiv Version of Project Dependencies and Playwright Browsers
+      - name: Install Project Dependencies and Playwright Browsers
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-          npx playwright install --with-deps chromium@1129
-          CHROMIUM_DIR=$PLAYWRIGHT_BROWSERS_PATH/chromium-1129
+          npx playwright install --with-deps chromium
+          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-* | sort -V | tail -n 1)
           echo "CHROMIUM_DIR is set to: $CHROMIUM_DIR"
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
-
-      - name: Check Playwright Chromium Version
-        id: check-chromium-version
-        run: |
-          echo "Chromium version: $CHROMIUM_DIR"
-
-      - name: Verify Playwright Installation
-        run: |
-          ls -la $PLAYWRIGHT_BROWSERS_PATH/
-          ls -la $CHROMIUM_DIR/chrome-linux/
 
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
           CHROMIUM_DIR: ${{ env.CHROMIUM_DIR }}
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        run: |
+          gatsby clean
+          ${{ steps.detect-package-manager.outputs.manager }} run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
