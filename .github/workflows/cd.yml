@@ -27,6 +27,12 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: gatsby
+
       - name: Install Project Dependencies and Playwright Browsers
         run: |
           yarn install
