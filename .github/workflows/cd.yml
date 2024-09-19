@@ -59,7 +59,7 @@ jobs:
           PREFIX_PATHS: "true"
           CHROMIUM_DIR: ${{ env.CHROMIUM_DIR }}
         run: |
-          gatsby clean
+          npm run clean
           ${{ steps.detect-package-manager.outputs.manager }} run build
 
       - name: Upload artifact
