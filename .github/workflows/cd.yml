@@ -14,53 +14,34 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PAT: ${{ secrets.PAT }}
-      USEREMAIL: ${{secrets.USEREMAIL}}
-      USERNAME: ${{secrets.USERNAME}}
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Detect package manager
-        id: detect-package-manager
+      - name: Remove Playwright Cache
         run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-          elif [ -f "${{ github.workspace }}/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci --legacy-peer-deps" >> $GITHUB_OUTPUT
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
+          rm -rf ~/.cache/ms-playwright
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
-
-      - name: Set Playwright Browsers Path
-        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
 
       - name: Install Project Dependencies and Playwright Browsers
         run: |
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+          yarn install
           npx playwright install --with-deps chromium
-          CHROMIUM_DIR=$(ls -d $PLAYWRIGHT_BROWSERS_PATH/chromium-* | sort -V | tail -n 1)
-          echo "CHROMIUM_DIR is set to: $CHROMIUM_DIR"
+          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-* | sort -V | tail -n 1)
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
+          ls -al $CHROMIUM_DIR
 
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
           CHROMIUM_DIR: ${{ env.CHROMIUM_DIR }}
         run: |
-          npm run clean
-          ${{ steps.detect-package-manager.outputs.manager }} run build
+          yarn clean
+          yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

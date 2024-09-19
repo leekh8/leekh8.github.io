@@ -18,11 +18,16 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Set Playwright Browsers Path
-        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+      - name: Remove Playwright Cache
+        run: |
+          rm -rf ~/.cache/ms-playwright
 
       - name: Install Playwright and Chromium Browser
-        run: npx playwright install --with-deps chromium
+        run: |
+          npx playwright install --with-deps chromium
+          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-*/ | sort -V | tail -n 1)
+          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
+          ls -al $CHROMIUM_DIR
 
       - name: Install node packages
         run: yarn
@@ -42,14 +47,16 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Set Playwright Browsers Path
-        run: echo "PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright" >> $GITHUB_ENV
+      - name: Remove Playwright Cache
+        run: |
+          rm -rf ~/.cache/ms-playwright
 
       - name: Install Playwright and Chromium Browser
         run: |
           npx playwright install --with-deps chromium
           CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-*/ | sort -V | tail -n 1)
           echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
+          ls -al $CHROMIUM_DIR
 
       - name: Install node packages
         run: yarn
