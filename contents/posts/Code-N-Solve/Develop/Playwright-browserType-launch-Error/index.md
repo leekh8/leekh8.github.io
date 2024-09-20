@@ -227,10 +227,50 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
             uses: actions/deploy-pages@v4
     ```
 
+## 추가
+
+- Gatsby 페이지 설징 및 404 오류 해결
+  - Node.js 20 버전 설치 후 `actions/configure-pages@v5`을 추가하여 Gatsby 페이지를 설정하여 빌드된 블로그가 정상적으로 배포되도록 한다.
+  - ```yml
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v5
+      with:
+        static_site_generator: gatsby
+    ```
+
+### Github Pages의 동작 방식:
+
+- Github Pages는 정적 웹사이트 호스팅 서비스로, HTML, CSS, JavaScript와 같은 정적 파일을 제공한다.
+- 사용자가 특정 URL에 접속하면, Github Pages는 해당 URL에 맞는 HTML 파일을 찾아서 제공한다.
+- 만약 해당 URL에 맞는 HTML 파일이 없으면, 404 오류 페이지를 표시한다.
+
+### Gatsby의 특징:
+
+- Gatsby는 React 기반의 정적 웹사이트 생성 프레임워크로 빌드 과정에서 모든 페이지를 미리 생성하여 정적 HTML 파일로 저장한다.
+- 하지만 Gatsby는 클라이언트 사이드 라우팅을 사용하여 페이지 전환을 처리한다.[^3]
+- 즉, 사용자가 웹사이트 내에서 링크를 클릭하면, 실제로 새로운 페이지를 요청하는 것이 아닌 JavaScript를 통해 페이지 내용을 변경한다.
+
+### 문제 발생 원인:
+
+- `actions/configure-pages@v5`[^4] 액션이 없으면, Github Pages는 Gatsby의 클라이언트 사이드 라우팅을 이해하지 못한다.[^5]
+- 사용자가 Gatsby 블로그 내에서 링크를 클릭하여 페이지를 전환하면, 실제로 새로운 URL에 접속하는 것처럼 보이지만 Github Pages는 해당 URL에 맞는 HTML 파일을 찾지 못해 404 오류 페이지를 표시했던 것이다.
+
+### 해결 방법:
+
+- `actions/configure-pages@v5` 액션 사용을 통해, Gatsby 블로그의 특징을 Github Pages에 알려준다.
+- 이 액션은 Gatsby 블로그의 빌드 결과를 분석하여, 각 페이지에 대한 정보를 Github Pages에 제공한다.
+- 따라서 사용자가 Gatsby 블로그 내에서 링크를 클릭하여 페이지를 전환하더라도, Github Pages는 해당 URL에 맞는 HTML 파일을 찾아서 제공할 수 있게 된다.
+
 ## 결론
 
 - Playwright 경로 문제
   - 최신 playwright 버전을 확인하고, 해당 버전의 최신 playwright를 사용하도록, 이전 캐시를 삭제함으로써 원하는 대로 최신 playwright를 사용하도록 지정할 수 있었다.
+- Gatsby 페이지 설정 및 404 오류 해결
+  - `actions/configure-pages@v5` 액션을 추가하여 Gatsby 페이지를 설정하고 404 페이지 오류를 해결할 수 있었다.
 
 [^1]: https://playwright.dev/
 [^2]: https://github.com/microsoft/playwright/issues/5767
+[^3]: https://www.gatsbyjs.com/docs/conceptual/rendering-options/
+[^4]: https://github.com/actions/configure-pages?tab=readme-ov-file
+[^5]: https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/#github-actions
