@@ -229,7 +229,7 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
 
 ## 추가
 
-- Gatsby 페이지 설징 및 404 오류 해결
+- Gatsby 페이지 설정 및 404 오류 해결
   - Node.js 20 버전 설치 후 `actions/configure-pages@v5`을 추가하여 Gatsby 페이지를 설정하여 빌드된 블로그가 정상적으로 배포되도록 한다.
   - ```yml
     - name: Setup Pages
