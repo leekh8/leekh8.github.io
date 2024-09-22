@@ -6,9 +6,20 @@
 
 // You can delete this file if you're not using it
 const React = require("react")
+const config = require("./blog-config")
 
 exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    <title key="title">{config.title}</title>,
+    <meta key="description" name="description" content={config.description} />,
+    <meta key="og-title" property="og:title" content={config.title} />,
+    <meta
+      key="og-description"
+      property="og:description"
+      content={config.description}
+    />,
+    <meta key="og-url" property="og:url" content={config.siteUrl} />,
+
     <link
       key="mermaid-css"
       rel="stylesheet"
@@ -16,6 +27,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
     />,
 
     // <!-- Google AdSense Script -->
+    // eslint-disable-next-line react/jsx-key
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3742032449453805"
