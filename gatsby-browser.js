@@ -5,6 +5,7 @@ export const onInitialClientRender = () => {
   mermaid.initialize({
     startOnLoad: true,
   })
+  mermaid.init()
 
   window.addEventListener("load", () => {
     const svgs = document.querySelectorAll(".mermaid svg")
