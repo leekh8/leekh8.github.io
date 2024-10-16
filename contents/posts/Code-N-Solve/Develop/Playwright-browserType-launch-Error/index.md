@@ -39,7 +39,7 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
 - Playwright 캐시 강제 삭제
 
   - 캐시된 Playwright 브라우저 파일들을 강제로 삭제한 후, 최신 버전으로 다시 설치하였다.
-  - ```yml
+  - ```yaml
     - name: Remove Playwright Cache
       run: |
         rm -rf ~/.cache/ms-playwright
@@ -51,7 +51,7 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
 
   - Playwright 브라우저를 설치한 후, 최신 Chromium 경로를 확인하여 명확하게 설정한다.
   - 이를 환경 변수에 저장하여 GitHub Actions와 Gatsby 빌드 시 명시적으로 해당 경로를 참조하게한다.
-  - ```yml
+  - ```yaml
     - name: Install Playwright and Set Browser Path
       run: |
         npx playwright install --with-deps chromium
@@ -64,7 +64,7 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
 - 빌드 시 Playwright 경로 확인
 
   - 빌드 도중 Playwright 브라우저가 올바르게 설치되었는지, 그리고 정확한 경로를 참조하고 있는지 확인하는 로그를 추가하여 디버깅에 활용했다.
-  - ```yml
+  - ```yaml
     - name: Verify Playwright Installation and Path
       run: |
         npx playwright --version
@@ -74,7 +74,7 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
 
 - 빌드 전 gatsby 캐시 삭제
   - 빌드 실행 전에 `package.json`에 설정해둔 cache clean 명령어를 미리 사용하여 빌드 시 이전 cache를 사용하지 않고 빌드하여 올바른 디렉토리를 찾도록 하였다.
-  - ```yml
+  - ```yaml
     - name: Build with Gatsby
       env:
         PREFIX_PATHS: "true"
@@ -231,7 +231,7 @@ Gatsby build 과정에서 지속적으로 오류가 발생했다.
 
 - Gatsby 페이지 설정 및 404 오류 해결
   - Node.js 20 버전 설치 후 `actions/configure-pages@v5`을 추가하여 Gatsby 페이지를 설정하여 빌드된 블로그가 정상적으로 배포되도록 한다.
-  - ```yml
+  - ```yaml
     - name: Setup Pages
       id: pages
       uses: actions/configure-pages@v5
