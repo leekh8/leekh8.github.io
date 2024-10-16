@@ -11,7 +11,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-plugin-react-redux`,
       options: {
@@ -70,6 +77,30 @@ module.exports = {
             options: {
               mermaidConfig: {
                 theme: "neutral",
+              },
+            },
+          },
+          {
+            resolve: `gatsby-remark-jsonld`,
+            options: {
+              context: siteUrl, // JSON-LD의 @context 값
+              type: "BlogPosting", // JSON-LD의 @type 값
+              generateSchema: node => {
+                return {
+                  "@context": "https://schema.org",
+                  "@type": "BlogPosting",
+                  headline: node.frontmatter.title,
+                  description: node.frontmatter.description || node.excerpt,
+                  datePublished: node.frontmatter.date,
+                  author: {
+                    "@type": "Person",
+                    name: author,
+                  },
+                  mainEntityOfPage: {
+                    "@type": "WebPage",
+                    "@id": `${siteUrl}${node.fields.slug}`,
+                  },
+                }
               },
             },
           },
@@ -181,5 +212,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }
