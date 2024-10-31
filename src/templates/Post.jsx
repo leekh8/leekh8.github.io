@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet"
 import Layout from "components/Layout"
 import Article from "components/Article"
 
-import { siteUrl, author  } from "../../blog-config"
+import { siteUrl, author, description  } from "../../blog-config"
 
 const Post = ({ data }) => {
   const post = data.markdownRemark
