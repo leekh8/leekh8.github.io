@@ -21,6 +21,7 @@ import {
 } from "react-icons/fa6"
 
 import { siteUrl, description, author, links } from "../../../blog-config"
+import {tt_logo} from "../../assets/images/tt_logo.png";
 
 const BioWrapper = styled.div`
   display: flex;
@@ -93,6 +94,7 @@ const Link = ({ link, children }) => {
 
 const Bio = () => {
   const {
+    timetrack,
     mdggu,
     github,
     kaggle,
@@ -115,6 +117,9 @@ const Bio = () => {
         <Author>@{author}</Author>
         <Description>{description}</Description>
         <LinksWrapper>
+          <Link link={timetrack}>
+            <img src={tt_logo} alt="Time Track logo" />
+          </Link>
           <Link link={mdggu}>
             <FaPenToSquare />
           </Link>
