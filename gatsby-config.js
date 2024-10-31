@@ -80,30 +80,30 @@ module.exports = {
               },
             },
           },
-          {
-            resolve: `gatsby-remark-jsonld`,
-            options: {
-              context: siteUrl, // JSON-LD의 @context 값
-              type: "BlogPosting", // JSON-LD의 @type 값
-              generateSchema: node => {
-                return {
-                  "@context": "https://schema.org",
-                  "@type": "BlogPosting",
-                  headline: node.frontmatter.title,
-                  description: node.frontmatter.description || node.excerpt,
-                  datePublished: node.frontmatter.date,
-                  author: {
-                    "@type": "Person",
-                    name: author,
-                  },
-                  mainEntityOfPage: {
-                    "@type": "WebPage",
-                    "@id": `${siteUrl}${node.fields.slug}`,
-                  },
-                }
-              },
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-jsonld`,
+          //   options: {
+          //     context: siteUrl, // JSON-LD의 @context 값
+          //     type: "BlogPosting", // JSON-LD의 @type 값
+          //     generateSchema: node => {
+          //       return {
+          //         "@context": "https://schema.org",
+          //         "@type": "BlogPosting",
+          //         headline: node.frontmatter.title,
+          //         description: node.frontmatter.description || node.excerpt,
+          //         datePublished: node.frontmatter.date,
+          //         author: {
+          //           "@type": "Person",
+          //           name: author,
+          //         },
+          //         mainEntityOfPage: {
+          //           "@type": "WebPage",
+          //           "@id": `${siteUrl}${node.fields.slug}`,
+          //         },
+          //       }
+          //     },
+          //   },
+          // },
           {
             resolve: `gatsby-remark-images`,
             options: {

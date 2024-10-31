@@ -1,11 +1,12 @@
 import React from "react"
 import SEO from "components/SEO"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "components/Layout"
 import Article from "components/Article"
 
-import { siteUrl } from "../../blog-config"
+import { siteUrl, author  } from "../../blog-config"
 
 const Post = ({ data }) => {
   const post = data.markdownRemark
@@ -32,8 +33,31 @@ const Post = ({ data }) => {
     })
   }
 
+    // JSON-LD 데이터 생성
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description || post.excerpt,
+      "datePublished": date,
+      "author": {
+        "@type": "Person",
+        "name": author,
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${siteUrl}${slug}`,
+      },
+    }
+
   return (
     <Layout>
+       <Helmet>
+        {/* JSON-LD 삽입 */}
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+      </Helmet>
       <SEO
         title={title}
         description={post.frontmatter.description || excerpt}
