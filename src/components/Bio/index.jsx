@@ -17,10 +17,10 @@ import {
   FaBlogger,
   FaRegFileLines,
   FaLink,
-  FaPenToSquare,
 } from "react-icons/fa6"
 
 import { siteUrl, description, author, links } from "../../../blog-config"
+import {mg_logo} from "../../assets/images/mg_logo.png";
 import {tt_logo} from "../../assets/images/tt_logo.png";
 
 const BioWrapper = styled.div`
@@ -121,7 +121,7 @@ const Bio = () => {
             <img src={tt_logo} alt="Time Track logo" />
           </Link>
           <Link link={mdggu}>
-            <FaPenToSquare />
+          <img src={mg_logo} alt="MD-GGU logo" />
           </Link>
           <Link link={github}>
             <FaGithub />

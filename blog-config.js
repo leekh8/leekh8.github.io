@@ -4,6 +4,7 @@ module.exports = {
   author: "leekh8",
   siteUrl: "https://leekh8.github.io/",
   links: {
+    timetrack:"https://time-track-psi.vercel.app/",
     mdggu: "https://mdggu-front.onrender.com/",
     github: "https://github.com/leekh8",
     // linkedIn: "https://linkedin.com",
