@@ -20,8 +20,8 @@ import {
 } from "react-icons/fa6"
 
 import { siteUrl, description, author, links } from "../../../blog-config"
-import {mg_logo} from "../../assets/images/mg_logo.png";
-import {tt_logo} from "../../assets/images/tt_logo.png";
+import mg_logo from "../../assets/images/mg_logo.png";
+import tt_logo from "../../assets/images/tt_logo.png";
 
 const BioWrapper = styled.div`
   display: flex;
