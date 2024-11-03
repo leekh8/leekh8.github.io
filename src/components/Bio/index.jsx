@@ -22,6 +22,7 @@ import {
 import { siteUrl, description, author, links } from "../../../blog-config"
 import mg_logo from "../../assets/images/mg_logo.png";
 import tt_logo from "../../assets/images/tt_logo.png";
+import sm_logo from "../../assets/images/sm_logo.png";
 
 const BioWrapper = styled.div`
   display: flex;
@@ -122,6 +123,9 @@ const Bio = () => {
           </Link>
           <Link link={timetrack}>
             <img src={tt_logo} alt="Time Track logo" />
+          </Link>
+          <Link link={sitemapper}>
+          <img src={sm_logo} alt="Site Mapper logo" />
           </Link>
           <Link link={mdggu}>
           <img src={mg_logo} alt="MD-GGU logo" />
