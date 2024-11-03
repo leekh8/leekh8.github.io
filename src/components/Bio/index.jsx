@@ -117,14 +117,14 @@ const Bio = () => {
         <Author>@{author}</Author>
         <Description>{description}</Description>
         <LinksWrapper>
+          <Link link={github}>
+            <FaGithub />
+          </Link>
           <Link link={timetrack}>
             <img src={tt_logo} alt="Time Track logo" />
           </Link>
           <Link link={mdggu}>
           <img src={mg_logo} alt="MD-GGU logo" />
-          </Link>
-          <Link link={github}>
-            <FaGithub />
           </Link>
           <Link link={kaggle}>
             <FaKaggle />
