@@ -5,6 +5,7 @@ module.exports = {
   siteUrl: "https://leekh8.github.io/",
   links: {
     timetrack:"https://time-track-psi.vercel.app/",
+    sitemapper: "https://site-mapper.onrender.com/",
     mdggu: "https://mdggu-front.onrender.com/",
     github: "https://github.com/leekh8",
     // linkedIn: "https://linkedin.com",

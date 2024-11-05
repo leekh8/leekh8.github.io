@@ -96,6 +96,7 @@ const Link = ({ link, children }) => {
 const Bio = () => {
   const {
     timetrack,
+    sitemapper,
     mdggu,
     github,
     kaggle,
