@@ -81,6 +81,17 @@ const LinksWrapper = styled.div`
 
   & a:hover svg path {
     fill: ${props => props.theme.colors.text};
+  }`
+
+  const IconImage = styled.img`
+  width: 25.6px;
+  height: 25.6px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1); // 호버 시 확대 효과
   }
 `
 
@@ -123,13 +134,13 @@ const Bio = () => {
             <FaGithub />
           </Link>
           <Link link={timetrack}>
-            <img src={tt_logo} alt="Time Track logo" />
+            <IconImage src={tt_logo} alt="Time Track logo" />
           </Link>
           <Link link={sitemapper}>
-          <img src={sm_logo} alt="Site Mapper logo" />
+          <IconImage src={sm_logo} alt="Site Mapper logo" />
           </Link>
           <Link link={mdggu}>
-          <img src={mg_logo} alt="MD-GGU logo" />
+          <IconImage src={mg_logo} alt="MD-GGU logo" />
           </Link>
           <Link link={kaggle}>
             <FaKaggle />
