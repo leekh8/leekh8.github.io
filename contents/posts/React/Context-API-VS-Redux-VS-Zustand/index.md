@@ -31,7 +31,7 @@ React 프로젝트에서 상태 관리는 필수적인 요소이지만, 프로�
 
 - **특징**: 복잡한 애플리케이션에서 중앙 집중형 상태 관리가 필요할 때 주로 사용되며 액션과 리듀서를 통해 상태 변경을 추적하고 제어할 수 있다.
   - 상태를 정확하게 추적하고 디버깅해야 할 필요가 있는 경우 유용하다.
-- **장점**: 상태가 예측 가능하고 디버깅이 용이해, 큰 프로젝트에서 효과적이다.
+- **장점**: 상태가 예측 가능하고 디버깅이 용이해, 큰 프로젝트에서 효과적이다.[^4]
 - **단점**: 보일러플레이트 코드가 많고, 복잡한 초기 설정이 필요할 수 있다.
 
 ### Zustand[^3]
@@ -368,6 +368,5 @@ Context API는 작은 프로젝트에서 충분히 활용 가능하고, Redux는
 
 [^1]: https://ko.legacy.reactjs.org/docs/context.html#api
 [^2]: https://redux.js.org/
-[^3]:
-    https://zustand-demo.pmnd.rs/
-    https://github.com/reduxjs/redux-devtools
+[^3]: https://zustand-demo.pmnd.rs/
+[^4]: https://github.com/reduxjs/redux-devtools]
