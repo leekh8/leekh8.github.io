@@ -2,12 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 import {
+  ImHappy,
+  ImRocket,
   FaGithub,
   FaKaggle,
   FaFacebook,
   FaTwitter,
   FaLinkedin,
   FaInstagram,
+  ImFileText2,
 } from "react-icons/fa"
 
 import {
@@ -20,9 +23,9 @@ import {
 } from "react-icons/fa6"
 
 import { siteUrl, description, author, links } from "../../../blog-config"
-import mg_logo from "../../assets/images/mg_logo.png";
-import tt_logo from "../../assets/images/tt_logo.png";
-import sm_logo from "../../assets/images/sm_logo.png";
+import mg_logo from "../../assets/images/mg_logo.png"
+import tt_logo from "../../assets/images/tt_logo.png"
+import sm_logo from "../../assets/images/sm_logo.png"
 
 const BioWrapper = styled.div`
   display: flex;
@@ -81,9 +84,10 @@ const LinksWrapper = styled.div`
 
   & a:hover svg path {
     fill: ${props => props.theme.colors.text};
-  }`
+  }
+`
 
-  const IconImage = styled.img`
+const IconImage = styled.img`
   width: 25.6px;
   height: 25.6px;
   cursor: pointer;
@@ -106,6 +110,8 @@ const Link = ({ link, children }) => {
 
 const Bio = () => {
   const {
+    about,
+    contact,
     timetrack,
     sitemapper,
     mdggu,
@@ -130,6 +136,12 @@ const Bio = () => {
         <Author>@{author}</Author>
         <Description>{description}</Description>
         <LinksWrapper>
+          <Link link={about}>
+            <IconImage src={ImHappy} alt="about Icon" />
+          </Link>
+          <Link link={contact}>
+            <IconImage src={ImRocket} alt="contact Icon" />
+          </Link>
           <Link link={github}>
             <FaGithub />
           </Link>
@@ -137,10 +149,10 @@ const Bio = () => {
             <IconImage src={tt_logo} alt="Time Track logo" />
           </Link>
           <Link link={sitemapper}>
-          <IconImage src={sm_logo} alt="Site Mapper logo" />
+            <IconImage src={sm_logo} alt="Site Mapper logo" />
           </Link>
           <Link link={mdggu}>
-          <IconImage src={mg_logo} alt="MD-GGU logo" />
+            <IconImage src={mg_logo} alt="MD-GGU logo" />
           </Link>
           <Link link={kaggle}>
             <FaKaggle />
@@ -174,6 +186,9 @@ const Bio = () => {
           </Link>
           <Link link={link}>
             <FaLink />
+          </Link>
+          <Link link={privacypolicy}>
+            <IconImage src={ImFileText2} alt="privacy-policy Icon" />
           </Link>
         </LinksWrapper>
       </div>
