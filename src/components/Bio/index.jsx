@@ -2,15 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 import {
-  ImHappy,
-  ImRocket,
+  FaChild,
+  FaMarker,
   FaGithub,
   FaKaggle,
   FaFacebook,
   FaTwitter,
   FaLinkedin,
   FaInstagram,
-  ImFileText2,
+  FaCheck,
 } from "react-icons/fa"
 
 import {
@@ -137,10 +137,10 @@ const Bio = () => {
         <Description>{description}</Description>
         <LinksWrapper>
           <Link link={about}>
-            <IconImage src={ImHappy} alt="about Icon" />
+            <IconImage src={FaChild} alt="about Icon" />
           </Link>
           <Link link={contact}>
-            <IconImage src={ImRocket} alt="contact Icon" />
+            <IconImage src={FaMarker} alt="contact Icon" />
           </Link>
           <Link link={github}>
             <FaGithub />
@@ -188,7 +188,7 @@ const Bio = () => {
             <FaLink />
           </Link>
           <Link link={privacypolicy}>
-            <IconImage src={ImFileText2} alt="privacy-policy Icon" />
+            <IconImage src={FaCheck} alt="privacy-policy Icon" />
           </Link>
         </LinksWrapper>
       </div>
