@@ -112,6 +112,7 @@ const Bio = () => {
   const {
     about,
     contact,
+    privacypolicy,
     timetrack,
     sitemapper,
     mdggu,
