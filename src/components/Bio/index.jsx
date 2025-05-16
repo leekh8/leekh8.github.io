@@ -138,10 +138,10 @@ const Bio = () => {
         <Description>{description}</Description>
         <LinksWrapper>
           <Link link={about}>
-            <IconImage src={FaChild} alt="about Icon" />
+            <FaChild />
           </Link>
           <Link link={contact}>
-            <IconImage src={FaMarker} alt="contact Icon" />
+            <FaMarker />
           </Link>
           <Link link={github}>
             <FaGithub />
@@ -189,7 +189,7 @@ const Bio = () => {
             <FaLink />
           </Link>
           <Link link={privacypolicy}>
-            <IconImage src={FaCheck} alt="privacy-policy Icon" />
+            <FaCheck />
           </Link>
         </LinksWrapper>
       </div>
