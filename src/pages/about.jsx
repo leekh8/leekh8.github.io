@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "components/Layout"
 import SEO from "components/SEO"
-import { title, description, siteUrl } from "../../blog-config"
+import { title, author, siteUrl } from "../../blog-config"
 
 const Content = styled.div`
   padding: 2rem;
