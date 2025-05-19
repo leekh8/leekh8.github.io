@@ -101,8 +101,16 @@ const IconImage = styled.img`
 
 const Link = ({ link, children }) => {
   if (!link) return null
+
+  const isExternal = /^https?:\/\//.test(link)
+  const fixedLink = isExternal ? link : `/${link.replace(/^\/?/, "")}`
+
   return (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a
+      href={fixedLink}
+      target={isExternal ? "_blank" : "_self"}
+      rel={isExternal ? "noreferrer" : undefined}
+    >
       {children}
     </a>
   )
