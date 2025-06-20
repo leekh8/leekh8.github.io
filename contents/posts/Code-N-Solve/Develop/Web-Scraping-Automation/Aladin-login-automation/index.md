@@ -76,7 +76,7 @@ await page.type("#Email", ALADIN_ID, delay=100)  # 100ms 간격으로 타이핑
 await page.type("#Password", ALADIN_PW, delay=150)
 await page.wait_for_timeout(1000)  # 입력 후 1초 대기
 
-# 다양한 로그인 버튼 클릭 방식 시도
+# 다양한 로그인 시도 방식 적용
 try:
     await page.click("input[type='submit'][value='로그인']")
 except:
@@ -107,6 +107,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'storage/aladin_storage.
 ### 🧐 원인 분석
 
 - GitHub Actions에서 `save_aladin_session.py`가 로그인 실패로 인해 세션 파일(`aladin_storage.json`) 생성에 실패.
+  - GitHub Actions 환경에서 Playwright가 로그인에 실패하기 때문이며, 이는 세션 저장 이전 단계에서 완전히 중단되기 때문에 이후 `fetch` 스크립트가 무의미해짐.
 - 이후 `fetch_aladin.py` 실행 시 존재하지 않는 세션 파일을 참조하려고 해서 `FileNotFoundError` 발생.
 - Playwright의 `storage_state` 옵션은 반드시 유효한 파일 경로를 요구하므로, 파일이 존재하지 않으면 브라우저 컨텍스트 생성 자체가 실패함.
 
@@ -135,7 +136,14 @@ def verify_session():
     except Exception as e:
         print(f"❌ 세션 확인 중 오류: {e}")
         return False
+
+# fetch_aladin.py 내부
+if not STORAGE_FILE.exists():
+    print("❌ 세션 파일이 없습니다. 먼저 로그인을 실행하세요.")
+    return
 ```
+
+- fetch 스크립트가 세션 파일이 없으면 즉시 종료되도록 안전장치 추가.
 
 #### 2. GitHub Actions 캐시 전략
 
@@ -336,6 +344,8 @@ def safe_goto(page, url, timeout=30000):
 
         return False
 ```
+
+- 실패 시 디버깅 이미니 저장 및 업로드하여 확인 가능하도록 구성.
 
 ## 🚨 5. GitHub Actions 실행 시간 초과
 
