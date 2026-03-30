@@ -4,65 +4,23 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
 
 jobs:
-  check_on_pull_request:
-    if: github.event_name == 'pull_request'
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "yarn"
 
-      - name: Remove Playwright Cache
-        run: |
-          rm -rf ~/.cache/ms-playwright
-
-      - name: Install Playwright and Chromium Browser
-        run: |
-          npx playwright install --with-deps chromium
-          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-*/ | sort -V | tail -n 1)
-          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
-          ls -al $CHROMIUM_DIR
-
-      - name: Install node packages
-        run: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Check lint
         run: yarn check:lint
 
       - name: Check prettier
         run: yarn check:prettier
-
-  build_on_push:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Remove Playwright Cache
-        run: |
-          rm -rf ~/.cache/ms-playwright
-
-      - name: Install Playwright and Chromium Browser
-        run: |
-          npx playwright install --with-deps chromium
-          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-*/ | sort -V | tail -n 1)
-          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
-          ls -al $CHROMIUM_DIR
-
-      - name: Install node packages
-        run: yarn
-
-      - name: Build
-        run: yarn build
-
-      - name: Verify Playwright Installation
-        run: npx playwright --version

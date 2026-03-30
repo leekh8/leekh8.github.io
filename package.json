@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-starter-hoodie",
-  "private": false,
-  "description": "gatsby-starter-hoodie is a gatsby theme developed for developers to write tech blogs.",
-  "homepage": "https://devhudi.github.io/gatsby-starter-hoodie/",
-  "version": "0.2.0",
-  "author": "Hudi",
+  "name": "leekh8-blog",
+  "private": true,
+  "description": "보안, 웹 개발, Python을 다루는 기술 블로그",
+  "homepage": "https://leekh8.github.io",
+  "version": "1.0.0",
+  "author": "leekh8",
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.13.4",
@@ -62,9 +62,11 @@
     "prettier": "2.8.8"
   },
   "keywords": [
+    "security",
+    "web-development",
+    "python",
     "gatsby",
-    "gatsby-theme",
-    "gatsby-starter"
+    "tech-blog"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -72,7 +74,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
@@ -85,9 +87,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devHudi/gatsby-starter-hoodie"
+    "url": "https://github.com/leekh8/leekh8.github.io"
   },
   "bugs": {
-    "url": "https://github.com/devHudi/gatsby-starter-hoodie"
+    "url": "https://github.com/leekh8/leekh8.github.io/issues"
   }
 }

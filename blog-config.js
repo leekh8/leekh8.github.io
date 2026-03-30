@@ -1,6 +1,6 @@
 module.exports = {
   title: "leekh8's Blog",
-  description: "Hello :)",
+  description: "보안, 웹 개발, Python을 다루는 기술 블로그",
   author: "leekh8",
   siteUrl: "https://leekh8.github.io",
   links: {
@@ -24,7 +24,7 @@ module.exports = {
     // link: "https://leekh8.blog",
   },
   utterances: {
-    repo: "leekh8/gatsby-starter-hoodie",
+    repo: "leekh8/leekh8.github.io",
     type: "pathname",
   },
 }

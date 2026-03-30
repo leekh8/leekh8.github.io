@@ -1,10 +1,9 @@
 name: CD
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -18,14 +17,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Remove Playwright Cache
-        run: |
-          rm -rf ~/.cache/ms-playwright
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "yarn"
 
       - name: Setup Pages
         id: pages
@@ -33,19 +29,19 @@ jobs:
         with:
           static_site_generator: gatsby
 
-      - name: Install Project Dependencies and Playwright Browsers
-        run: |
-          yarn install
-          npx playwright install --with-deps chromium
-          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-* | sort -V | tail -n 1)
-          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
-          ls -al $CHROMIUM_DIR
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install Playwright Chromium (for Mermaid rendering)
+        run: npx playwright install --with-deps chromium
 
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
           CHROMIUM_DIR: ${{ env.CHROMIUM_DIR }}
         run: |
+          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-* | sort -V | tail -n 1)
+          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
           yarn clean
           yarn build
 
