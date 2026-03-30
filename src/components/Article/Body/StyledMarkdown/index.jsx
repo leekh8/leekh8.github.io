@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 const StyledMarkdown = styled.div`
   & {
-    font-size: 16.7px;
+    font-size: 15.5px;
     color: ${props => props.theme.colors.text};
-    line-height: 1.73;
+    line-height: 1.68;
     overflow: hidden;
   }
 
@@ -46,21 +46,21 @@ const StyledMarkdown = styled.div`
   }
 
   & h2 {
-    margin-top: 100px;
-    margin-bottom: 24px;
-    font-size: 28px;
+    margin-top: 60px;
+    margin-bottom: 16px;
+    font-size: 24px;
   }
 
   & h3 {
-    margin-top: 70px;
-    margin-bottom: 20px;
-    font-size: 22.4px;
+    margin-top: 44px;
+    margin-bottom: 12px;
+    font-size: 19.5px;
   }
 
   & h4 {
-    margin-top: 70px;
-    margin-bottom: 15px;
-    font-size: 17.6px;
+    margin-top: 36px;
+    margin-bottom: 10px;
+    font-size: 16.5px;
   }
 
   & h5 {
@@ -172,7 +172,7 @@ const StyledMarkdown = styled.div`
   }
 
   & li {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 
   & li p {
