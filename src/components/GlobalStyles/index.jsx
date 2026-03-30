@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   body {
