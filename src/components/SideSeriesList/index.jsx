@@ -2,9 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+const RelativeWrapper = styled.div`
+  position: relative;
+`
+
 const Wrapper = styled.aside`
   position: absolute;
-  right: 112%;
+  right: calc(100% + 24px);
   top: 0px;
   width: 160px;
   font-size: 13px;
@@ -41,6 +45,7 @@ const SideSeriesList = ({ seriesList }) => {
   if (!seriesList || seriesList.length === 0) return null
 
   return (
+    <RelativeWrapper>
     <Wrapper>
       <Title>SERIES</Title>
       <ul>
@@ -57,6 +62,7 @@ const SideSeriesList = ({ seriesList }) => {
         ))}
       </ul>
     </Wrapper>
+    </RelativeWrapper>
   )
 }
 

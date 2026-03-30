@@ -14,16 +14,20 @@ const Wrapper = styled.div`
 `
 
 const ArticleTitle = styled.h1`
-  margin-bottom: 25.6px;
-  line-height: 1.2;
-  font-size: 44.8px;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  font-size: 28px;
   font-weight: 700;
   color: ${props => props.theme.colors.text};
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `
 
 const Information = styled.div`
-  margin-bottom: 32px;
-  font-size: 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
 `
 
 const Author = styled.span`
