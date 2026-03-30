@@ -9,9 +9,9 @@ const TagListWrapper = styled.div`
 
 const TagLink = styled.div`
   display: inline-block;
-  padding: 9.6px 11.2px;
-  margin-right: 8px;
-  margin-bottom: 8px;
+  padding: 4px 10px;
+  margin-right: 6px;
+  margin-bottom: 6px;
   border-radius: 50px;
   background-color: ${props =>
     props.selected
@@ -22,7 +22,7 @@ const TagLink = styled.div`
       ? props.theme.colors.selectedTagText
       : props.theme.colors.tagText};
   text-decoration: none;
-  font-size: 14.4px;
+  font-size: 12px;
   transition: all 0.2s;
 
   &:hover {

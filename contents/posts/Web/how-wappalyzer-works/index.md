@@ -5,12 +5,8 @@ date: 2026-03-30
 update: 2026-03-30
 tags:
   - Web
+  - Security
   - Wappalyzer
-  - 보안
-  - 핑거프린팅
-  - CPE
-  - CVE
-  - 웹보안
   - DevSecOps
 series: "웹 보안 기초"
 ---

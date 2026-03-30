@@ -1,0 +1,31 @@
+name: Auto Post
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 매주 월요일 00:00 UTC (09:00 KST)
+  workflow_dispatch:       # 수동 실행 가능
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install anthropic
+
+      - name: Generate and push post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_post.py

@@ -4,11 +4,9 @@ description: "NAT가 왜 생겨났는지, 패킷이 어떻게 변환되는지, S
 date: 2026-03-30
 update: 2026-03-30
 tags:
-  - 네트워크
+  - Network
   - NAT
   - TCP/IP
-  - 보안
-  - 인프라
 series: "네트워크 기초"
 ---
 

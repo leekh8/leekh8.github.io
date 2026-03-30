@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 const BodyWrapper = styled.div`
   margin: 0 auto;
-  padding-top: 80px;
-  max-width: 740px;
+  padding-top: 64px;
+  max-width: 760px;
 `
 
 const Body = ({ children }) => {

@@ -5,11 +5,9 @@ date: 2026-03-30
 update: 2026-03-30
 tags:
   - Python
-  - 보안자동화
-  - VirusTotal
   - Security
-  - API
-  - Slack
+  - VirusTotal
+  - 보안자동화
 series: "Python 보안 자동화"
 ---
 

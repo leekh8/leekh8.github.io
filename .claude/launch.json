@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gatsby-dev",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["develop"],
+      "port": 8000
+    }
+  ]
+}

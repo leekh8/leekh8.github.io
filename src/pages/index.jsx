@@ -7,6 +7,7 @@ import SEO from "components/SEO"
 import Bio from "components/Bio"
 import PostList from "components/PostList"
 import SideTagList from "components/SideTagList"
+import SideSeriesList from "components/SideSeriesList"
 import Divider from "components/Divider"
 import VerticalSpace from "components/VerticalSpace"
 
@@ -21,6 +22,7 @@ const BlogIndex = ({ data }) => {
   const tags = _.sortBy(data.allMarkdownRemark.group || [], [
     "totalCount",
   ]).reverse()
+  const series = _.sortBy(data.seriesGroup.group || [], ["totalCount"]).reverse()
 
   if (posts.length === 0) {
     return (
@@ -35,9 +37,10 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} description={description} url={siteUrl} />
-      <VerticalSpace size={48} />
+      <VerticalSpace size={24} />
       <Bio />
       <Divider />
+      <SideSeriesList seriesList={series} />
       <SideTagList tags={tags} postCount={posts.length} />
       <PostList postList={posts} />
     </Layout>
@@ -51,6 +54,12 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    seriesGroup: allMarkdownRemark {
+      group(field: { frontmatter: { series: SELECT } }) {
+        fieldValue
+        totalCount
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

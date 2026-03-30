@@ -8,9 +8,6 @@ tags:
   - SOAR
   - FortiSOAR
   - 보안자동화
-  - SOC
-  - 인시던트대응
-  - Playbook
 series: "보안 자동화 입문"
 ---
 

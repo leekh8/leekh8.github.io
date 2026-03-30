@@ -6,9 +6,7 @@ update: 2026-03-30
 tags:
   - Network
   - OSI
-  - 네트워크
   - TCP/IP
-  - 네트워크기초
 series: "네트워크 기초"
 ---
 
