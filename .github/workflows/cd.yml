@@ -32,7 +32,7 @@ jobs:
         run: yarn install
 
       - name: Install Playwright Chromium (for Mermaid rendering)
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium chromium-headless-shell
 
       - name: Build with Gatsby
         env:
