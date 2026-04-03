@@ -51,7 +51,7 @@ const SideSeriesList = ({ seriesList }) => {
       <ul>
         {seriesList.map(series => (
           <SeriesItem key={series.fieldValue}>
-            <Link to={`/series?q=${encodeURIComponent(series.fieldValue)}`}>
+            <Link to={`/series/${series.fieldValue.replace(/\s/g, "-")}`}>
               {series.fieldValue}
               <br />
               <span style={{ fontSize: "11px", opacity: 0.7 }}>
