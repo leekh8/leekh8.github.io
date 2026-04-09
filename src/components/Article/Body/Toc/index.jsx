@@ -45,8 +45,40 @@ const TocWrapper = styled.div`
   }
 
   @media (max-width: 1300px) {
-    display: None;
+    display: none;
   }
+`
+
+const MobileTocWrapper = styled.div`
+  display: none;
+  margin-bottom: 32px;
+
+  @media (max-width: 1300px) {
+    display: block;
+  }
+`
+
+const MobileTocToggle = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid ${props => props.theme.colors.border};
+  border-radius: 6px;
+  background: ${props => props.theme.colors.tableBackground};
+  color: ${props => props.theme.colors.secondaryText};
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+`
+
+const MobileTocList = styled.div`
+  margin-top: 4px;
+  padding: 12px 14px;
+  border: 1px solid ${props => props.theme.colors.border};
+  border-radius: 6px;
+  background: ${props => props.theme.colors.tableBackground};
 `
 
 const ParagraphTitle = styled.div`
@@ -76,6 +108,7 @@ const Toc = ({ items, articleOffset }) => {
   const [revealAt, setRevealAt] = useState(4000)
   const [headers, setHeaders] = useState([])
   const [active, setActive] = useState(0)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const bioElm = document.getElementById("bio")
@@ -104,25 +137,51 @@ const Toc = ({ items, articleOffset }) => {
 
   const handleClickTitle = index => {
     animateScroll.scrollTo(headers[index] - 100)
+    setMobileOpen(false)
   }
 
+  if (items.length === 0) return null
+
   return (
-    <RevealOnScroll revealAt={revealAt} reverse>
-      <TocWrapper stick={y > articleOffset - STICK_OFFSET}>
-        <div>
-          {items.map((item, i) => (
-            <ParagraphTitle
-              key={i}
-              subtitle={item.tagName === "H3"}
-              active={i === active}
-              onClick={() => handleClickTitle(i)}
-            >
-              {item.innerText}
-            </ParagraphTitle>
-          ))}
-        </div>
-      </TocWrapper>
-    </RevealOnScroll>
+    <>
+      <MobileTocWrapper>
+        <MobileTocToggle onClick={() => setMobileOpen(prev => !prev)}>
+          <span>{mobileOpen ? "▲" : "▼"}</span>
+          목차 {mobileOpen ? "닫기" : "열기"}
+        </MobileTocToggle>
+        {mobileOpen && (
+          <MobileTocList>
+            {items.map((item, i) => (
+              <ParagraphTitle
+                key={i}
+                subtitle={item.tagName === "H3"}
+                active={i === active}
+                onClick={() => handleClickTitle(i)}
+              >
+                {item.innerText}
+              </ParagraphTitle>
+            ))}
+          </MobileTocList>
+        )}
+      </MobileTocWrapper>
+
+      <RevealOnScroll revealAt={revealAt} reverse>
+        <TocWrapper stick={y > articleOffset - STICK_OFFSET}>
+          <div>
+            {items.map((item, i) => (
+              <ParagraphTitle
+                key={i}
+                subtitle={item.tagName === "H3"}
+                active={i === active}
+                onClick={() => handleClickTitle(i)}
+              >
+                {item.innerText}
+              </ParagraphTitle>
+            ))}
+          </div>
+        </TocWrapper>
+      </RevealOnScroll>
+    </>
   )
 }
 

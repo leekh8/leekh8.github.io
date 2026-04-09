@@ -9,11 +9,10 @@ const RelativeWrapper = styled.div`
 
 const Wrapper = styled.aside`
   position: absolute;
-  left: 112%;
+  left: calc(100% + 24px);
   top: 0px;
-  width: 200px;
-  height: 100px;
-  font-size: 16px;
+  width: 160px;
+  font-size: 13px;
 
   @media (max-width: 1300px) {
     display: none;

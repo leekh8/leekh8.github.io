@@ -29,6 +29,27 @@ const Body = ({ html }) => {
     )
   }, [])
 
+  useEffect(() => {
+    const codeBlocks = document.querySelectorAll("#article-body pre")
+    codeBlocks.forEach(pre => {
+      if (pre.querySelector(".copy-button")) return
+      const button = document.createElement("button")
+      button.className = "copy-button"
+      button.textContent = "copy"
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code")
+        navigator.clipboard.writeText(code ? code.innerText : pre.innerText)
+        button.textContent = "copied!"
+        button.classList.add("copied")
+        setTimeout(() => {
+          button.textContent = "copy"
+          button.classList.remove("copied")
+        }, 2000)
+      })
+      pre.appendChild(button)
+    })
+  }, [html])
+
   return (
     <Wrapper>
       <Toc items={toc} articleOffset={offsetTop} />

@@ -180,6 +180,8 @@ const StyledMarkdown = styled.div`
   }
 
   & pre {
+    position: relative;
+
     ::-webkit-scrollbar {
       height: 10px;
     }
@@ -190,6 +192,32 @@ const StyledMarkdown = styled.div`
     ::-webkit-scrollbar-thumb {
       background: ${props => props.theme.colors.scrollHandle};
     }
+  }
+
+  & .copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-family: inherit;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, background-color 0.2s;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    z-index: 1;
+  }
+
+  & pre:hover .copy-button {
+    opacity: 1;
+  }
+
+  & .copy-button.copied {
+    background: #27ae60;
+    opacity: 1;
   }
 
   & code[class*="language-"],
