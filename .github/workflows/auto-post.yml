@@ -1,9 +1,9 @@
 name: Auto Post
 
 on:
-  schedule:
-    - cron: '0 0 * * 1'  # 매주 월요일 00:00 UTC (09:00 KST)
-  workflow_dispatch:       # 수동 실행 가능
+  workflow_dispatch:       # 수동 실행만 가능 (API 키 준비 후 schedule 복구)
+  # schedule:
+  #   - cron: '0 0 * * 1'  # 매주 월요일 00:00 UTC (09:00 KST)
 
 jobs:
   generate-post:
