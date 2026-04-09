@@ -111,7 +111,7 @@ const PrivacyPolicyPage = () => (
       <p>개인정보 보호와 관련된 문의사항은 아래 이메일로 연락해 주세요.</p>
       <p>
         <strong>이메일</strong>:{" "}
-        <a href="mailto:amysun125@gmail.com">amysun125@gmail.com</a>
+        <a href="mailto:leekh8.contact@gmail.com">leekh8.contact@gmail.com</a>
       </p>
 
       <h2>6. 방침 변경</h2>

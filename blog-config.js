@@ -19,7 +19,7 @@ module.exports = {
     // instagram: "https://www.instagram.com",
     // medium: "https://medium.com",
     // blogger: "https://blogger.com",
-    email: "mailto:amysun125@gmail.com",
+    email: "mailto:leekh8.contact@gmail.com",
     // resume: "https://leekh8.blog",
     // link: "https://leekh8.blog",
   },
