@@ -201,13 +201,13 @@ const StyledMarkdown = styled.div`
     padding: 4px 10px;
     font-size: 11px;
     font-family: inherit;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.2s, background-color 0.2s;
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.45);
+    color: #e8e8e8;
     z-index: 1;
   }
 
@@ -215,8 +215,14 @@ const StyledMarkdown = styled.div`
     opacity: 1;
   }
 
+  & .copy-button:hover {
+    background: rgba(0, 0, 0, 0.65);
+  }
+
   & .copy-button.copied {
     background: #27ae60;
+    border-color: #27ae60;
+    color: #fff;
     opacity: 1;
   }
 
