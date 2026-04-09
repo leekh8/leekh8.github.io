@@ -8,10 +8,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Planned
-- 소셜 공유 버튼 (Twitter/LinkedIn)
-- 포스트 목록 읽기 시간 표시
-- Bio 링크 텍스트 레이블
-- 포스트 커버 이미지
+- 포스트 커버 이미지 (각 포스트 thumbnail 필드 지원)
+
+---
+
+## [2026-04-09] — UI/UX 2차 개선
+
+### Added
+- 소셜 공유 버튼: 포스트 하단 Twitter(X), LinkedIn 공유 버튼
+- 포스트 목록 읽기 시간 표시: 날짜 옆 `· N min read`
+- Bio 링크 아이콘 tooltip/aria-label 추가 (About, GitHub, Email 등)
 
 ---
 
