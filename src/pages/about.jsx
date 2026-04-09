@@ -43,6 +43,41 @@ const Tag = styled.li`
   color: ${props => props.theme.colors.text};
 `
 
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+`
+
+const ProjectCard = styled.a`
+  display: block;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid ${props => props.theme.colors.border};
+  text-decoration: none;
+  color: ${props => props.theme.colors.text};
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: ${props => props.theme.colors.text};
+    transform: translateY(-2px);
+    background-color: transparent;
+    color: ${props => props.theme.colors.text};
+  }
+`
+
+const ProjectName = styled.div`
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+`
+
+const ProjectDesc = styled.div`
+  font-size: 0.82rem;
+  color: ${props => props.theme.colors.tertiaryText};
+  line-height: 1.5;
+`
+
 const ContactLink = styled.a`
   color: ${props => props.theme.colors.text};
   font-weight: 600;
@@ -95,6 +130,86 @@ const AboutPage = () => (
       </Section>
 
       <Section>
+        <SectionTitle>기술 스택</SectionTitle>
+        <p style={{ marginBottom: "0.6rem", fontSize: "0.9rem" }}>
+          <strong>언어</strong>
+        </p>
+        <TagList style={{ marginBottom: "0.8rem" }}>
+          <Tag>Python</Tag>
+          <Tag>JavaScript</Tag>
+          <Tag>TypeScript</Tag>
+          <Tag>Java</Tag>
+          <Tag>Bash</Tag>
+        </TagList>
+        <p style={{ marginBottom: "0.6rem", fontSize: "0.9rem" }}>
+          <strong>보안 / 인프라</strong>
+        </p>
+        <TagList style={{ marginBottom: "0.8rem" }}>
+          <Tag>FortiSOAR</Tag>
+          <Tag>OWASP ZAP</Tag>
+          <Tag>Linux</Tag>
+          <Tag>Docker</Tag>
+          <Tag>GitHub Actions</Tag>
+        </TagList>
+        <p style={{ marginBottom: "0.6rem", fontSize: "0.9rem" }}>
+          <strong>웹 / 프레임워크</strong>
+        </p>
+        <TagList>
+          <Tag>React</Tag>
+          <Tag>Gatsby</Tag>
+          <Tag>Node.js</Tag>
+          <Tag>Spring Boot</Tag>
+          <Tag>Playwright</Tag>
+        </TagList>
+      </Section>
+
+      <Section>
+        <SectionTitle>프로젝트</SectionTitle>
+        <ProjectGrid>
+          <ProjectCard
+            href={links.sitemapper}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>🌐 Site Mapper</ProjectName>
+            <ProjectDesc>
+              사이트 구조 기반 sitemap 자동 생성기. Playwright + Node.js
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.timetrack}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>⏱ Time Track</ProjectName>
+            <ProjectDesc>
+              작업 시간 기록 및 통계 도구. React + Vercel 배포
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.mdggu}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>📝 MD-GGU</ProjectName>
+            <ProjectDesc>
+              마크다운 문서 최적화 및 변환 도구. Spring Boot + React
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.github}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>🐙 GitHub</ProjectName>
+            <ProjectDesc>
+              그 외 모든 프로젝트는 GitHub에서 확인하세요
+            </ProjectDesc>
+          </ProjectCard>
+        </ProjectGrid>
+      </Section>
+
+      <Section>
         <SectionTitle>이 블로그에 대해</SectionTitle>
         <p>
           블로그를 시작한 이유는 단순해요. 공부하면서 정리한 내용이 나만 보기엔
@@ -116,11 +231,7 @@ const AboutPage = () => (
         <SectionTitle>Contact</SectionTitle>
         <p>
           GitHub:{" "}
-          <ContactLink
-            href={links.github}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ContactLink href={links.github} target="_blank" rel="noreferrer">
             {links.github}
           </ContactLink>
         </p>
