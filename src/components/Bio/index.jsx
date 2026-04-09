@@ -99,7 +99,7 @@ const IconImage = styled.img`
   }
 `
 
-const Link = ({ link, children }) => {
+const Link = ({ link, title, children }) => {
   if (!link) return null
 
   const isExternal = /^https?:\/\//.test(link)
@@ -110,6 +110,8 @@ const Link = ({ link, children }) => {
       href={fixedLink}
       target={isExternal ? "_blank" : "_self"}
       rel={isExternal ? "noreferrer" : undefined}
+      title={title}
+      aria-label={title}
     >
       {children}
     </a>
@@ -145,58 +147,58 @@ const Bio = () => {
         <Author>@{author}</Author>
         <Description>{description}</Description>
         <LinksWrapper>
-          <Link link={about}>
+          <Link link={about} title="About">
             <FaChild />
           </Link>
-          <Link link={contact}>
+          <Link link={contact} title="Contact">
             <FaMarker />
           </Link>
-          <Link link={github}>
+          <Link link={github} title="GitHub">
             <FaGithub />
           </Link>
-          <Link link={timetrack}>
+          <Link link={timetrack} title="Time Track">
             <IconImage src={tt_logo} alt="Time Track logo" />
           </Link>
-          <Link link={sitemapper}>
+          <Link link={sitemapper} title="Site Mapper">
             <IconImage src={sm_logo} alt="Site Mapper logo" />
           </Link>
-          <Link link={mdggu}>
+          <Link link={mdggu} title="MD-GGU">
             <IconImage src={mg_logo} alt="MD-GGU logo" />
           </Link>
-          <Link link={kaggle}>
+          <Link link={kaggle} title="Kaggle">
             <FaKaggle />
           </Link>
-          <Link link={instagram}>
+          <Link link={instagram} title="Instagram">
             <FaInstagram />
           </Link>
-          <Link link={facebook}>
+          <Link link={facebook} title="Facebook">
             <FaFacebook />
           </Link>
-          <Link link={twitter}>
+          <Link link={twitter} title="Twitter">
             <FaTwitter />
           </Link>
-          <Link link={x}>
+          <Link link={x} title="X (Twitter)">
             <FaXTwitter />
           </Link>
-          <Link link={medium}>
+          <Link link={medium} title="Medium">
             <FaMedium />
           </Link>
-          <Link link={blogger}>
+          <Link link={blogger} title="Blogger">
             <FaBlogger />
           </Link>
-          <Link link={linkedIn}>
+          <Link link={linkedIn} title="LinkedIn">
             <FaLinkedin />
           </Link>
-          <Link link={email}>
+          <Link link={email} title="Email">
             <FaRegEnvelope />
           </Link>
-          <Link link={resume}>
+          <Link link={resume} title="Resume">
             <FaRegFileLines />
           </Link>
-          <Link link={link}>
+          <Link link={link} title="Website">
             <FaLink />
           </Link>
-          <Link link={privacypolicy}>
+          <Link link={privacypolicy} title="Privacy Policy">
             <FaCheck />
           </Link>
         </LinksWrapper>
