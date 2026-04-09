@@ -24,9 +24,9 @@ const PostWrapper = styled.div`
   }
 `
 
-const Date = styled.p`
+const Meta = styled.p`
   margin-bottom: 16px;
-  font-size: 14.4px;
+  font-size: 13px;
   color: ${props => props.theme.colors.tertiaryText};
 `
 
@@ -72,7 +72,7 @@ const PostList = ({ postList }) => {
       {postList.slice(0, postCount).map((post, i) => {
         const { title, description, date, tags } = post.frontmatter
         const { excerpt } = post
-        const { slug } = post.fields
+        const { slug, timeToRead } = post.fields
 
         return (
           <>
@@ -80,7 +80,10 @@ const PostList = ({ postList }) => {
               <Title size="bg">
                 <Link to={slug}>{title}</Link>
               </Title>
-              <Date>{date}</Date>
+              <Meta>
+                {date}
+                {timeToRead && <span> · {timeToRead} min read</span>}
+              </Meta>
               {description ? (
                 <Excerpt>{description}</Excerpt>
               ) : (

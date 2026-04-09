@@ -5,7 +5,7 @@ import styled, { useTheme } from "styled-components"
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
 import { Utterances } from "utterances-react-component"
 
-import { utterances } from "../../../../blog-config"
+import { utterances, siteUrl } from "../../../../blog-config"
 
 import MDSpinner from "react-md-spinner"
 
@@ -105,6 +105,50 @@ const ArticleButtonTitle = styled.div`
   overflow: hidden;
 `
 
+const ShareWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+`
+
+const ShareLabel = styled.span`
+  font-size: 13px;
+  color: ${props => props.theme.colors.tertiaryText};
+`
+
+const ShareButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    background-color: transparent;
+    color: inherit;
+  }
+`
+
+const TwitterButton = styled(ShareButton)`
+  background-color: #000;
+  color: #fff;
+`
+
+const LinkedInButton = styled(ShareButton)`
+  background-color: #0a66c2;
+  color: #fff;
+`
+
 const CommentWrapper = styled.div`
   @media (max-width: 768px) {
     padding: 0 15px;
@@ -182,7 +226,11 @@ const Comment = () => {
   )
 }
 
-const Footer = ({ previous, next }) => {
+const Footer = ({ previous, next, title, slug }) => {
+  const postUrl = `${siteUrl}${slug}`
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(postUrl)}`
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`
+
   return (
     <>
       <ArticleButtonContainer>
@@ -199,6 +247,17 @@ const Footer = ({ previous, next }) => {
           </ArticleButton>
         )}
       </ArticleButtonContainer>
+      {title && slug && (
+        <ShareWrapper>
+          <ShareLabel>공유하기</ShareLabel>
+          <TwitterButton href={twitterUrl} target="_blank" rel="noopener noreferrer">
+            𝕏 Twitter
+          </TwitterButton>
+          <LinkedInButton href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+            in LinkedIn
+          </LinkedInButton>
+        </ShareWrapper>
+      )}
       <Bio />
       <CommentWrapper>
         <Divider mt="32px" />
