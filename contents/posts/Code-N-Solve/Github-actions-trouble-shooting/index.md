@@ -937,7 +937,7 @@ Deployment 자동화를 위해 GitHub Actions의 Workflow를 설정할 때 겪�
 
             - name: Set Git user information
               run: |
-                git config --global user.email "amysun125@gmail.com"
+                git config --global user.email "your-email@gmail.com"
                 git config --global user.name "leekh8"
 
             - name: Deploy to GitHub Pages
