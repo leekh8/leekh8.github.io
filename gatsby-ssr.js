@@ -20,6 +20,23 @@ exports.onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
       content={config.description}
     />,
     <meta key="og-url" property="og:url" content={config.siteUrl} />,
+    // Google Analytics (GA4)
+    <script
+      key="ga4-async"
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsId}`}
+    />,
+    <script
+      key="ga4-init"
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${config.googleAnalyticsId}');
+        `,
+      }}
+    />,
     // Google AdSense
     <script
       key="adsense"

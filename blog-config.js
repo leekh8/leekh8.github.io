@@ -3,6 +3,7 @@ module.exports = {
   description: "보안, 웹 개발, Python을 다루는 기술 블로그",
   author: "leekh8",
   siteUrl: "https://leekh8.github.io",
+  googleAnalyticsId: "G-TE1CVMQ9CN",
   links: {
     about: "/about",
     contact: "/contact",
