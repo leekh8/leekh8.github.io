@@ -1010,3 +1010,11 @@ React Hooks는 함수형 컴포넌트를 강력하게 만들어주는 핵심 기
 [^3]: https://react.dev/learn/synchronizing-with-effects
 [^4]: https://react.dev/reference/react/useCallback
 [^5]: https://react.dev/reference/react/useMemo
+
+---
+
+## 관련 글
+
+- [📘 React 입문: SPA, 컴포넌트, JSX 핵심 개념](/react-1-spa-component/) — React 기초 1편
+- [📘 React Props와 State 완전 정복](/react-2-props-state/) — React 기초 2편
+- [⚡ JavaScript 비동기 처리 완전 가이드](/javascript-async/) — useEffect와 비동기 처리의 기초

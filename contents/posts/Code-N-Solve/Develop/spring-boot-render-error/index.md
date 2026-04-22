@@ -1,5 +1,5 @@
 ---
-title: "🚀 Spring Boot 프로젝트의 Render 배포 실패 사례 정리: gradlew, JAVA_HOME, Dockerfile 문제 해결"
+title: "🚀 Spring Boot Render 배포 오류 완전 가이드: gradlew, JAVA_HOME, Docker 설정"
 description: "Render에 Spring Boot 프로젝트를 배포할 때 겪는 gradlew 실행 오류, JAVA_HOME 설정 문제, Dockerfile 최적화, 환경변수 관리, Health Check까지 실제 사례 정리"
 date: 2025-05-13
 update: 2026-04-20

@@ -669,3 +669,11 @@ async function loadDashboard(userId) {
 JavaScript 비동기 처리의 핵심은 **Event Loop의 동작 원리**를 이해하는 것이다. Call Stack이 비면 Microtask Queue → Task Queue 순서로 처리된다는 것만 기억해도 코드 실행 순서를 머릿속에서 추적할 수 있다.
 
 다음 글에서는 이 비동기 처리를 React에서 어떻게 다루는지 (useEffect, 커스텀 훅, React Query) 알아볼 예정이다.
+
+---
+
+## 관련 글
+
+- [🔷 TypeScript 입문: JavaScript 개발자를 위한 타입 시스템](/typescript-getting-started/) — JavaScript를 더 안전하게 쓰는 방법
+- [📘 React Hooks 완전 정복](/React-3-Hooks/) — useEffect에서 비동기 처리 다루는 방법
+- [🎨 CSS Flexbox & Grid 완전 정복](/css-layout-guide/) — JavaScript와 함께 배우는 프론트엔드 기초

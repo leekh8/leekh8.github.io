@@ -868,3 +868,10 @@ OSI 7계층을 외울 필요는 없다. 하지만 **"이 문제는 몇 계층에
 [^6]: RFC 793. "Transmission Control Protocol." IETF, 1981. https://www.rfc-editor.org/rfc/rfc793
 
 [^7]: PortSwigger. "HTTP request smuggling." Web Security Academy. https://portswigger.net/web-security/request-smuggling
+
+---
+
+## 관련 글
+
+- [🔀 NAT 완전 정복: 공유기 안에서 무슨 일이 일어나는가](/nat-deep-dive/) — OSI 3·4계층 개념을 이해했다면, 다음은 NAT가 패킷을 어떻게 변환하는지 알아보자
+- [⚡ JavaScript 비동기 처리 완전 가이드](/javascript-async/) — 네트워크 요청을 코드로 다루는 방법

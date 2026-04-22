@@ -1334,3 +1334,11 @@ flowchart TD
 [^4]: https://userway.org/?utm_source=google&utm_medium=cpc&utm_campaign=3rd%20tier%20|%20search%20|%20terrific%20|%20desktop%20|%20competitors%20july%2024%20|%20max%20conversion%20value%20target%20roas&utm_content=wave%20accessibility&utm_ad=706732394142&utm_term=wave%20accessibility&matchtype=p&device=c&GeoLoc=9208388&placement=&network=g&utm_id=21500700470&campaign_id=21500700470&adset_id=170875842851&ad_id=706732394142&cq_src=google_ads&cq_cmp=21500700470&cq_con=170875842851&cq_term=wave%20accessibility&cq_med=&cq_plac=&cq_net=g&cq_pos=&cq_plt=gp&keyword_id=kwd-324645068061
 [^5]: https://www.deque.com/axe/
 [^6]: https://github.com/GoogleChrome/lighthouse
+
+---
+
+## 관련 글
+
+- [🎨 CSS Flexbox & Grid 완전 정복](/css-layout-guide/) — 접근성 있는 레이아웃 구현의 기초
+- [📘 React 입문: SPA, 컴포넌트, JSX 핵심 개념](/react-1-spa-component/) — React 컴포넌트에서 접근성 적용하기
+- [⚡ JavaScript 비동기 처리 완전 가이드](/javascript-async/) — 동적 콘텐츠와 접근성

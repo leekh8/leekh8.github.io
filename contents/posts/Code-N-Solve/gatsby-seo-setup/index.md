@@ -1,6 +1,6 @@
 ---
-title: "🚀 Gatsby 블로그 검색 엔진 배포"
-description: "Gatsby와 Github Actions를 사용한 블로그의 배포를 위한 검색 엔진 설정 방법"
+title: "🚀 Gatsby 블로그 SEO 설정 가이드: Google Search Console, sitemap, robots.txt"
+description: "Gatsby 블로그를 구글 검색에 노출시키기 위한 SEO 설정 완전 가이드. Google Search Console 등록, sitemap 자동 생성, robots.txt 설정, GitHub Actions 배포까지 단계별로 정리합니다."
 date: 2024-04-25
 update: 2024-04-25
 tags:

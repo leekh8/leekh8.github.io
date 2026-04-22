@@ -1,6 +1,6 @@
 ---
 title: "🚀 CI/CD 환경에서 Playwright 문제 해결하기: 설치 오류 분석 및 해결 방안"
-description: "CI/CD 파이프라인에서 Playwright 브라우저 설치와 관련된 문제 해결 및 캐시 사용 최적화 방법"
+description: "GitHub Actions CI/CD 파이프라인에서 Playwright 브라우저 설치 실패, 캐시 충돌, 의존성 오류를 단계별로 진단하고 해결하는 방법을 정리합니다. Gatsby 블로그 배포 실전 가이드."
 date: 2024-08-26
 update: 2024-08-26
 tags:
@@ -701,3 +701,11 @@ Playwright는 강력한 E2E 테스트 도구이지만, CI/CD 환경에서 처음
 [^3]: https://playwright.dev/docs/intro
 [^4]: https://docs.npmjs.com/cli/v7/commands/npm-ci
 [^5]: https://docs.npmjs.com/cli/v7/commands/npm-install
+
+---
+
+## 관련 글
+
+- [🚀 Playwright browserType.launch 오류 해결](/playwright-browsertype-launch-error/) — Playwright 오류 2편: Chromium 버전 충돌 심화 가이드
+- [🚀 Gatsby 블로그 SEO 설정 가이드](/gatsby-seo-setup/) — GitHub Actions로 Gatsby 배포 자동화
+- [🐳 Docker 입문: 컨테이너로 개발 환경 통일하기](/docker-getting-started/) — CI 환경을 Docker로 표준화하는 방법

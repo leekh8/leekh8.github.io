@@ -1,6 +1,6 @@
 ---
-title: "🚀 Gatsby CI/CD 환경에서 Playwright 오류 해결: browserType.launch, Chromium 버전 충돌 문제 해결"
-description: "Gatsby CI/CD 파이프라인에서 Playwright의 browserType.launch 오류와 Chromium 버전 충돌로 빌드가 실패하는 오류의 원인을 분석하고, 캐시 삭제, Chromium 경로 명시, 빌드 로그 활용 등 다양한 해결 방법을 통하여 GitHub Actions와 Gatsby 빌드 환경 설정을 최적화하여 안정적인 CI/CD 파이프라인을 구축해보자!"
+title: "🚀 Playwright browserType.launch 오류 해결: Gatsby CI/CD Chromium 설정 가이드"
+description: "Gatsby CI/CD에서 Playwright browserType.launch 오류와 Chromium 버전 충돌 원인을 분석하고, 캐시 전략·GitHub Actions 최적화·Docker 설정까지 완전히 해결하는 방법을 단계별로 정리합니다."
 date: 2024-09-13
 update: 2026-04-20
 tags:
@@ -996,3 +996,11 @@ npx playwright --version
 [^4]: https://github.com/actions/configure-pages?tab=readme-ov-file
 [^5]: https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/#github-actions
 [^6]: https://playwright.dev/docs/ci#caching-browsers
+
+---
+
+## 관련 글
+
+- [🚀 CI/CD 환경에서 Playwright 문제 해결하기](/playwright-cicd-troubleshooting/) — Playwright 설치 오류 1편: 기초 트러블슈팅
+- [🚀 Gatsby 블로그 SEO 설정 가이드](/gatsby-seo-setup/) — GitHub Actions CI/CD와 함께 Gatsby 배포 최적화
+- [🐳 Docker 입문: 컨테이너로 개발 환경 통일하기](/docker-getting-started/) — CI/CD에서 Docker를 활용하는 방법

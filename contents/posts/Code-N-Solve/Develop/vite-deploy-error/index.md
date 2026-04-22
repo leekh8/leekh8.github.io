@@ -1,6 +1,6 @@
 ---
 title: "🚀 Vite 배포 오류 해결: xdg-open, CJS API, npm 버전 충돌 문제 분석"
-description: "Vite 프로젝트를 Render에 배포할 때 발생하는 오류들과 그 해결 과정 정리"
+description: "Vite 프로젝트를 Render에 배포할 때 만나는 xdg-open 오류, CJS API deprecated 경고, npm 버전 충돌 문제의 원인을 분석하고 실제 해결 과정을 단계별로 정리합니다."
 date: 2025-03-05
 update: 2025-03-05
 tags:

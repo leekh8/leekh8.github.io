@@ -663,3 +663,11 @@ if (!element) throw new Error('root element not found');
 TypeScript는 처음엔 타입 오류와 씨름하는 것 같아서 번거롭게 느껴질 수 있다. 하지만 프로젝트 규모가 커질수록 TypeScript가 제공하는 **IDE 자동완성**, **리팩토링 안전성**, **버그 사전 차단**의 가치가 훨씬 커진다.
 
 다음 글에서는 TypeScript로 React 앱을 실전에서 어떻게 구조화하는지, 그리고 API 레이어를 어떻게 타입 안전하게 만드는지 다룰 예정이다.
+
+---
+
+## 관련 글
+
+- [⚡ JavaScript 비동기 처리 완전 가이드](/javascript-async/) — TypeScript와 함께 쓰는 async/await 패턴
+- [📘 React Props와 State 완전 정복](/react-2-props-state/) — TypeScript로 React 컴포넌트 타입 정의하기
+- [🎨 CSS Flexbox & Grid 완전 정복](/css-layout-guide/) — 프론트엔드 개발의 또 다른 핵심 기술
