@@ -1,6 +1,6 @@
 ---
 title: "🔀 NAT 완전 정복 — 공유기 안에서 무슨 일이 일어나는가"
-description: "NAT가 왜 생겨났는지, 패킷이 어떻게 변환되는지, SNAT·DNAT·포트포워딩이 어떻게 다른지 그림으로 완전히 이해해보자."
+description: "NAT(Network Address Translation)의 동작 원리를 완전히 이해합니다. 사설 IP → 공인 IP 변환 과정, SNAT·DNAT·포트포워딩 차이, 공유기 내부 패킷 흐름을 단계별로 설명합니다."
 date: 2026-03-30
 update: 2026-03-30
 tags:

@@ -1,6 +1,6 @@
 ---
-title: "🚀 Google Colab에서 Transformers 모델 학습 시 발생하는 오류 해결"
-description: "Google Colab 환경에서 Transformers 모델을 학습하는 과정에서 발생할 수 있는 다양한 오류를 해결하는 방법에 대한 설명. 라이브러리 설치 문제, 파일 경로 설정, 데이터 전처리 및 패딩 문제 해결 등을 포함."
+title: "Google Colab Transformers 오류 해결: 설치 실패, 경로 문제, 패딩 오류 완전 정리"
+description: "Google Colab에서 Hugging Face Transformers 모델 학습 중 발생하는 라이브러리 설치 실패, 파일 경로 오류, 데이터 패딩 문제를 원인별로 분석하고 해결 방법을 단계별로 정리합니다."
 date: 2024-11-08
 update: 2024-11-08
 tags:

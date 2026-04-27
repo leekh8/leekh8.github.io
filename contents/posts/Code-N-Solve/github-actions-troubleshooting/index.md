@@ -1,6 +1,6 @@
 ---
-title: "🚀 GitHub Actions를 이용한 블로그 자동 배포 문제 해결 과정"
-description: "GitHub Actions Workflow 설정 문제, Windows에서 SSH 키 대신 PAT 사용, 의존성 문제 해결, 그리고 Git 사용자 정보 설정 문제와 이들을 해결하는 방법"
+title: "GitHub Actions 자동 배포 오류 해결: SSH 키, PAT, 의존성, Git 설정 문제"
+description: "GitHub Actions Workflow에서 SSH 키 대신 PAT(Personal Access Token) 사용하는 방법, 의존성 설치 오류, Git 사용자 정보 설정 누락 등 자동 배포 시 자주 겪는 오류와 해결 과정을 정리합니다."
 date: 2024-04-01
 update: 2024-04-04
 tags:

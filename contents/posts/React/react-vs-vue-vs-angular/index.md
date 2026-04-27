@@ -1,6 +1,6 @@
 ---
-title: "🔥 React vs Vue vs Angular: 어떤 것을 선택해야 할까?"
-description: "React, Vue, Angular의 특징과 장단점을 비교하고, 어떤 프로젝트에서 어떤 프레임워크를 선택해야 하는지, 그리고 각 프레임워크에서 자주 발생하는 오류와 해결 방법까지 정리해보자."
+title: "React vs Vue vs Angular 비교: 2025년 기준 프레임워크 선택 가이드"
+description: "React, Vue, Angular를 학습 곡선, 성능, 생태계, 채용 시장 기준으로 완전 비교합니다. 스타트업엔 React, 소규모 팀엔 Vue, 엔터프라이즈엔 Angular를 추천하는 이유를 실제 코드와 함께 설명합니다."
 date: 2024-11-24
 update: 2024-11-24
 tags:

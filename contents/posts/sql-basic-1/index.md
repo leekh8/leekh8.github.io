@@ -1,6 +1,6 @@
 ---
-title: "💾 SQL Basic - 1. 소개 및 기본 개념"
-description: "SQL과 관계형 데이터베이스의 기본과 데이터 검색, 삽입, 수정, 삭제 등의 기능과 함께 관계형 데이터베이스의 구조와 SQL을 사용한 데이터 조작의 기초 학습"
+title: "SQL 기초 완전 정리 1편: SELECT, WHERE, JOIN, GROUP BY 핵심 문법"
+description: "SQL을 처음 배우는 분을 위한 기초 완전 가이드. 관계형 데이터베이스 구조, SELECT 문법부터 WHERE 조건, 집계 함수(COUNT, SUM, AVG), JOIN까지 실제 쿼리 예시로 배웁니다."
 date: 2023-03-16
 update: 2023-03-16
 tags:

@@ -1,6 +1,6 @@
 ---
-title: "📘React 기초 정리 3 — Hooks 완전 정복"
-description: "useState부터 useEffect, useRef, useMemo, useCallback, useContext까지 React Hooks를 실전 예제로 완전히 정리합니다."
+title: "React Hooks 완전 정복: useState, useEffect, useRef, useMemo, useCallback 실전 가이드"
+description: "React Hooks를 실전 예제로 완전히 정리합니다. useState, useEffect, useRef, useMemo, useCallback, useContext 각각의 동작 원리와 올바른 사용법, 흔한 실수까지 코드와 함께 설명합니다."
 date: 2023-05-05
 update: 2024-04-15
 tags:

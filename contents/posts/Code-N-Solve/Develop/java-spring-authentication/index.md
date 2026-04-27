@@ -1,6 +1,6 @@
 ---
-title: "🚀 Java Spring 프레임워크에서의 인증 작동 원리와 문제 해결"
-description: "Java Spring 프레임워크에서의 인증 메커니즘과 자주 발생하는 문제와 그 해결 방법에 대한 설명 및 Spring Security를 사용하여 사용자 인증을 관리하는 방법과 발생할 수 있는 일반적인 오류에 관한 정리"
+title: "Spring Security 인증 구조 완전 정리: UserDetailsService, JWT, 403 오류 해결"
+description: "Spring Security의 인증 흐름(AuthenticationManager, UserDetailsService, SecurityFilterChain)을 이해하고, JWT 설정 오류, 403 Forbidden, 세션 관련 문제를 단계별로 해결하는 방법을 정리합니다."
 date: 2024-09-09
 update: 2026-04-20
 tags:

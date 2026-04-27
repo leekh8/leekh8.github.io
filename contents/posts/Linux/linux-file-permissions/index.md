@@ -1,6 +1,6 @@
 ---
 title: "🔐 Linux 파일 권한 완전 정복 — chmod, chown, SUID/SGID/Sticky bit까지"
-description: "ls -l 출력이 뭔 뜻인지 몰라서 구글링한 적 있다면 이 글이 답이다. rwx부터 특수 권한 비트까지 한 번에 정리한다."
+description: "chmod, chown, SUID, SGID, Sticky bit까지 Linux 파일 권한을 완전히 정리합니다. ls -l 출력 해석, 숫자/기호 표기법, 특수 권한 비트 설정까지 실제 명령어 예시로 설명합니다."
 date: 2026-04-03
 update: 2026-04-03
 tags:
