@@ -681,3 +681,4 @@ docker run -e DB_PASSWORD=$DB_PASSWORD my-app
 - [🚀 Spring Boot Render 배포 오류 완전 가이드](/spring-boot-render-error/) — Docker로 Java 백엔드를 배포할 때 만나는 오류 해결
 - [🚀 Playwright browserType.launch 오류 해결](/playwright-browsertype-launch-error/) — Docker 환경에서 Playwright 실행하는 방법
 - [🌐 OSI 7계층, 외우지 말고 이해하자](/osi-7-layers/) — 컨테이너 네트워크를 이해하기 위한 기초
+- [🔐 OWASP Top 10:2025 완전 가이드](/owasp-top10-2025/) — 공급망 보안(A03), 설정 보안(A02) 등 컨테이너 환경의 보안 위협

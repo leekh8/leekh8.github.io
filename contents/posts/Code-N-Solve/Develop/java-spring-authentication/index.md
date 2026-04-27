@@ -1105,6 +1105,14 @@ public class LoginAttemptService {
 
 각 주제를 종합적으로 고려하여 안정적이고 효율적인 코드를 작성하길 바란다.
 
+---
+
+## 관련 글
+
+- [🔐 OWASP Top 10:2025 완전 가이드](/owasp-top10-2025/) — 인증 실패(A07)를 포함한 웹 보안 취약점 전체 흐름 파악
+- [🌐 OSI 7계층, 외우지 말고 이해하자](/osi-7-layers/) — 네트워크 계층에서 인증 패킷이 어떻게 흐르는지 이해
+- [🚀 Spring Boot Render 배포 오류 완전 가이드](/spring-boot-render-error/) — 구현한 인증 시스템을 실제 서버에 배포하기
+
 [^1]: Marco Behler - Spring Security: Authentication and Authorization In-Depth (https://www.marcobehler.com/guides/spring-security)
 [^2]: Medium - Securing Spring Boot Applications: Best Practices and ... (https://medium.com/@shubhamvartak01/securing-spring-boot-applications-best-practices-and-strategies-3ab731f8b317)
 [^3]: Spring - Getting Started | Securing a Web Application (https://spring.io/guides/gs/securing-web)
