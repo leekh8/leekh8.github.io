@@ -12,16 +12,29 @@ const Content = styled.div`
   line-height: 1.8;
 `
 
+const Intro = styled.div`
+  margin-bottom: 2.4rem;
+`
+
+const Role = styled.p`
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: ${props => props.theme.colors.tertiaryText};
+  margin-bottom: 0.6rem;
+`
+
 const Section = styled.section`
   margin-bottom: 2.4rem;
 `
 
 const SectionTitle = styled.h2`
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid ${props => props.theme.colors.text};
+  border-bottom: 2px solid ${props => props.theme.colors.text}22;
   color: ${props => props.theme.colors.text};
 `
 
@@ -41,6 +54,51 @@ const Tag = styled.li`
   font-weight: 500;
   background: ${props => props.theme.colors.tagBackground};
   color: ${props => props.theme.colors.text};
+`
+
+const StackGroup = styled.div`
+  margin-bottom: 1rem;
+`
+
+const StackLabel = styled.p`
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: ${props => props.theme.colors.tertiaryText};
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+`
+
+const TopicList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+`
+
+const TopicItem = styled.li`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+`
+
+const TopicIcon = styled.span`
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+`
+
+const TopicText = styled.span`
+  color: ${props => props.theme.colors.secondaryText};
+
+  strong {
+    color: ${props => props.theme.colors.text};
+    font-weight: 600;
+  }
 `
 
 const ProjectGrid = styled.div`
@@ -93,74 +151,114 @@ const AboutPage = () => (
   <Layout>
     <SEO
       title="About"
-      description={`${author}의 블로그 — 보안 자동화, FortiSOAR, Python, 웹 개발을 다룹니다.`}
+      description={`${author}의 블로그 — 보안 자동화, 웹 보안, Python, 웹 개발을 다룹니다.`}
       author={author}
       url={`${siteUrl}/about`}
     />
     <Content>
-      <h1>About Me</h1>
-
-      <Section>
+      <Intro>
+        <Role>Security Engineer · Developer</Role>
+        <h1 style={{ marginBottom: "1.2rem" }}>About Me</h1>
         <p>
           안녕하세요, <strong>{author}</strong>입니다.
+          IT 보안 분야에서 일하며 보안 자동화와 취약점 분석을 주로 다루고
+          있어요.
         </p>
         <p>
-          보안과 개발 사이 어딘가에서 일하고 있어요. 보안 자동화, Python
-          스크립트, 웹 개발을 주로 다루고, 공부한 것들을 이 블로그에 정리하고
-          있습니다.
+          보안 업무를 하다 보면 반복되는 작업이 생각보다 많습니다. 로그
+          분석, 취약점 티켓 처리, 알림 대응... 그 반복을 줄이려고 스크립트를
+          짜고 자동화 도구를 붙이다 보니 어느새 개발도 같이 하게 됐어요.
         </p>
         <p>
-          기술을 다루다 보면 "이걸 좀 더 자동화할 수 없을까?"라는 생각을 자주
-          해요. 반복되는 작업을 코드로 해결하는 것에 관심이 많습니다.
+          이 블로그는 그 과정에서 쌓인 기록들입니다. 공식 문서엔 잘 안 나오는
+          실제 오류 상황, 삽질한 설정, 직접 구현하면서 이해한 보안 개념들을
+          남겨두려고 씁니다. 같은 문제로 막혀있는 누군가에게 닿을 수 있으면
+          좋겠어요.
         </p>
-      </Section>
+      </Intro>
 
       <Section>
         <SectionTitle>관심 분야</SectionTitle>
         <TagList>
           <Tag>보안 자동화 (SOAR)</Tag>
-          <Tag>FortiSOAR</Tag>
-          <Tag>인시던트 대응</Tag>
           <Tag>취약점 분석</Tag>
-          <Tag>Python</Tag>
+          <Tag>웹 보안 (OWASP)</Tag>
+          <Tag>인시던트 대응</Tag>
+          <Tag>DevSecOps</Tag>
+          <Tag>Python 자동화</Tag>
           <Tag>웹 개발</Tag>
           <Tag>CI/CD</Tag>
-          <Tag>DevSecOps</Tag>
         </TagList>
       </Section>
 
       <Section>
         <SectionTitle>기술 스택</SectionTitle>
-        <p style={{ marginBottom: "0.6rem", fontSize: "0.9rem" }}>
-          <strong>언어</strong>
-        </p>
-        <TagList style={{ marginBottom: "0.8rem" }}>
-          <Tag>Python</Tag>
-          <Tag>JavaScript</Tag>
-          <Tag>TypeScript</Tag>
-          <Tag>Java</Tag>
-          <Tag>Bash</Tag>
-        </TagList>
-        <p style={{ marginBottom: "0.6rem", fontSize: "0.9rem" }}>
-          <strong>보안 / 인프라</strong>
-        </p>
-        <TagList style={{ marginBottom: "0.8rem" }}>
-          <Tag>FortiSOAR</Tag>
-          <Tag>OWASP ZAP</Tag>
-          <Tag>Linux</Tag>
-          <Tag>Docker</Tag>
-          <Tag>GitHub Actions</Tag>
-        </TagList>
-        <p style={{ marginBottom: "0.6rem", fontSize: "0.9rem" }}>
-          <strong>웹 / 프레임워크</strong>
-        </p>
-        <TagList>
-          <Tag>React</Tag>
-          <Tag>Gatsby</Tag>
-          <Tag>Node.js</Tag>
-          <Tag>Spring Boot</Tag>
-          <Tag>Playwright</Tag>
-        </TagList>
+        <StackGroup>
+          <StackLabel>보안 / 인프라</StackLabel>
+          <TagList>
+            <Tag>FortiSOAR</Tag>
+            <Tag>OWASP ZAP</Tag>
+            <Tag>Linux</Tag>
+            <Tag>Docker</Tag>
+            <Tag>GitHub Actions</Tag>
+          </TagList>
+        </StackGroup>
+        <StackGroup>
+          <StackLabel>언어</StackLabel>
+          <TagList>
+            <Tag>Python</Tag>
+            <Tag>JavaScript</Tag>
+            <Tag>TypeScript</Tag>
+            <Tag>Java</Tag>
+            <Tag>Bash</Tag>
+          </TagList>
+        </StackGroup>
+        <StackGroup>
+          <StackLabel>웹 / 프레임워크</StackLabel>
+          <TagList>
+            <Tag>React</Tag>
+            <Tag>Gatsby</Tag>
+            <Tag>Node.js</Tag>
+            <Tag>Spring Boot</Tag>
+            <Tag>Playwright</Tag>
+          </TagList>
+        </StackGroup>
+      </Section>
+
+      <Section>
+        <SectionTitle>이 블로그에서 다루는 것들</SectionTitle>
+        <TopicList>
+          <TopicItem>
+            <TopicIcon>🔐</TopicIcon>
+            <TopicText>
+              <strong>웹 보안</strong> — OWASP Top 10, API 보안, 취약점 분석
+              개념과 실습. 이론보다 실제로 어떻게 악용되고 어떻게 막는지에
+              집중합니다.
+            </TopicText>
+          </TopicItem>
+          <TopicItem>
+            <TopicIcon>⚙️</TopicIcon>
+            <TopicText>
+              <strong>보안 자동화</strong> — SOAR 플레이북, 스크립트 기반 자동화,
+              반복 업무를 코드로 줄이는 방법들을 정리합니다.
+            </TopicText>
+          </TopicItem>
+          <TopicItem>
+            <TopicIcon>🛠️</TopicIcon>
+            <TopicText>
+              <strong>개발 / 트러블슈팅</strong> — Python, React, Docker, CI/CD
+              설정하다가 막힌 것들. 공식 문서에 없는 실제 오류 해결 과정을
+              기록합니다.
+            </TopicText>
+          </TopicItem>
+          <TopicItem>
+            <TopicIcon>🌐</TopicIcon>
+            <TopicText>
+              <strong>네트워크 / 인프라</strong> — NAT, OSI 7계층, Linux 권한 관리
+              등 보안 업무에서 자주 마주치는 네트워크·시스템 개념들을 다룹니다.
+            </TopicText>
+          </TopicItem>
+        </TopicList>
       </Section>
 
       <Section>
@@ -210,25 +308,10 @@ const AboutPage = () => (
       </Section>
 
       <Section>
-        <SectionTitle>이 블로그에 대해</SectionTitle>
-        <p>
-          블로그를 시작한 이유는 단순해요. 공부하면서 정리한 내용이 나만 보기엔
-          아깝고, 어딘가 같은 문제를 겪고 있을 누군가에게 도움이 될 수도 있다는
-          생각에서였어요.
-        </p>
-        <p>
-          주로 보안 자동화, FortiSOAR, Python, 웹 개발 관련 글을 씁니다.
-          개념 정리부터 실제 트러블슈팅 경험까지, 읽고 나서 뭔가 하나라도
-          가져갈 수 있는 글을 쓰려고 노력하고 있어요.
-        </p>
-        <p>
-          틀린 내용이 있거나 더 좋은 방법을 알고 계시면 언제든지 댓글이나
-          메일로 알려주세요.
-        </p>
-      </Section>
-
-      <Section>
         <SectionTitle>Contact</SectionTitle>
+        <p>
+          틀린 내용이 있거나 더 좋은 방법을 알고 계시면 편하게 연락주세요.
+        </p>
         <p>
           GitHub:{" "}
           <ContactLink href={links.github} target="_blank" rel="noreferrer">
