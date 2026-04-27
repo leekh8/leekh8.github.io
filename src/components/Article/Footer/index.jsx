@@ -110,6 +110,7 @@ const ShareWrapper = styled.div`
   align-items: center;
   gap: 10px;
   margin-bottom: 32px;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     padding: 0 15px;
@@ -147,6 +148,34 @@ const TwitterButton = styled(ShareButton)`
 const LinkedInButton = styled(ShareButton)`
   background-color: #0a66c2;
   color: #fff;
+`
+
+const CopyButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid ${props => props.theme.colors.divider};
+  background: transparent;
+  color: ${props => props.theme.colors.secondaryText};
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  font-family: inherit;
+
+  &:hover {
+    background-color: ${props => props.theme.colors.tableBackground};
+    border-color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.text};
+  }
+
+  &.copied {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    color: #fff;
+  }
 `
 
 const CommentWrapper = styled.div`
@@ -227,9 +256,17 @@ const Comment = () => {
 }
 
 const Footer = ({ previous, next, title, slug }) => {
+  const [copied, setCopied] = useState(false)
   const postUrl = `${siteUrl}${slug}`
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(postUrl)}`
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(postUrl).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
 
   return (
     <>
@@ -256,6 +293,13 @@ const Footer = ({ previous, next, title, slug }) => {
           <LinkedInButton href={linkedInUrl} target="_blank" rel="noopener noreferrer">
             in LinkedIn
           </LinkedInButton>
+          <CopyButton
+            onClick={handleCopyLink}
+            className={copied ? "copied" : ""}
+            aria-label="링크 복사"
+          >
+            {copied ? "✓ 복사됨" : "🔗 링크 복사"}
+          </CopyButton>
         </ShareWrapper>
       )}
       <Bio />

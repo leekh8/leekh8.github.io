@@ -179,6 +179,27 @@ const StyledMarkdown = styled.div`
     margin: 8px 0;
   }
 
+  /* 코드블록 언어 라벨 */
+  & .gatsby-highlight {
+    position: relative;
+  }
+
+  & .gatsby-highlight[data-language]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-family: 'Source Code Pro', 'Consolas', monospace;
+    color: rgba(200, 200, 200, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1.6;
+  }
+
   & pre {
     position: relative;
 
