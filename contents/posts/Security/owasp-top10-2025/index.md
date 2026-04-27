@@ -292,11 +292,11 @@ add_header Permissions-Policy "geolocation=(), microphone=()";
 
 ```mermaid
 flowchart TD
-    A["공격자"] -->|"악성 코드 주입"| B["오픈소스 패키지 / 빌드 서버"]
-    B -->|"정상 배포 채널"| C["개발팀 의존성 설치\nnpm install / pip install"]
+    A["⚠️ 공격자"] -->|"악성 코드 주입"| B["오픈소스 패키지 / 빌드 서버"]
+    B -->|"정상 배포 채널"| C["개발팀: npm install / pip install"]
     C -->|"테스트 통과"| D["CI/CD 파이프라인"]
     D -->|"자동 배포"| E["프로덕션 서버"]
-    E -->|"피해 발생"| F["데이터 탈취\n백도어 설치\n랜섬웨어"]
+    E -->|"피해 발생"| F["💀 데이터 탈취 · 백도어 · 랜섬웨어"]
 
     style A fill:#ff4444,color:#fff
     style F fill:#ff4444,color:#fff
@@ -825,40 +825,18 @@ except Exception as e:
 
 ## 전체 위험도 요약
 
-```mermaid
-graph TD
-    subgraph Critical["🔴 Critical"]
-        A01["A01 Broken Access Control\n100% 앱에서 발견"]
-        A02["A02 Security Misconfiguration\n71만 건 이상"]
-        A03["A03 Supply Chain Failures\n발생률 5.19% 최고"]
-    end
-
-    subgraph High["🟠 High"]
-        A04["A04 Cryptographic Failures\n평문 저장, 약한 암호화"]
-        A05["A05 Injection\nSQL, Command, SSTI"]
-        A06["A06 Insecure Design\n설계 단계 결함"]
-    end
-
-    subgraph Medium["🟡 Medium"]
-        A07["A07 Auth Failures\n인증 메커니즘 결함"]
-        A08["A08 Integrity Failures\n무결성 검증 없음"]
-        A09["A09 Logging Failures\n탐지 불가"]
-        A10["A10 Exceptional Conditions\n예외 처리 실패"]
-    end
-```
-
-| 항목 | 이름 | 2021 대비 | 핵심 위험 |
-|------|------|---------|---------|
-| A01 | Broken Access Control | 유지 | 다른 사용자 데이터 접근 |
-| A02 | Security Misconfiguration | ⬆️ A05→A02 | 설정 오류로 시스템 노출 |
-| A03 | Supply Chain Failures | 🆕 범위 확대 | 빌드/배포 파이프라인 침해 |
-| A04 | Cryptographic Failures | ⬇️ A02→A04 | 데이터 평문 노출 |
-| A05 | Injection | ⬇️ A03→A05 | 악의적 쿼리/명령 실행 |
-| A06 | Insecure Design | ⬇️ A04→A06 | 아키텍처 수준 취약점 |
-| A07 | Auth Failures | 유지 | 계정 탈취 |
-| A08 | Integrity Failures | 유지 | 위조 코드/데이터 실행 |
-| A09 | Logging Failures | 유지 | 침해 탐지 불가 |
-| A10 | Exceptional Conditions | 🆕 (SSRF 대체) | 예외 처리 실패 |
+| 등급 | 항목 | 이름 | 2021 대비 | 핵심 위험 |
+|------|------|------|---------|---------|
+| 🔴 Critical | A01 | Broken Access Control | 유지 | 다른 사용자 데이터 접근 |
+| 🔴 Critical | A02 | Security Misconfiguration | ⬆️ A05→A02 | 설정 오류로 시스템 노출 |
+| 🔴 Critical | A03 | Supply Chain Failures | 🆕 범위 확대 | 빌드/배포 파이프라인 침해 |
+| 🟠 High | A04 | Cryptographic Failures | ⬇️ A02→A04 | 데이터 평문 노출 |
+| 🟠 High | A05 | Injection | ⬇️ A03→A05 | 악의적 쿼리/명령 실행 |
+| 🟠 High | A06 | Insecure Design | ⬇️ A04→A06 | 아키텍처 수준 취약점 |
+| 🟡 Medium | A07 | Auth Failures | 유지 | 계정 탈취 |
+| 🟡 Medium | A08 | Integrity Failures | 유지 | 위조 코드/데이터 실행 |
+| 🟡 Medium | A09 | Logging Failures | 유지 | 침해 탐지 불가 |
+| 🟡 Medium | A10 | Exceptional Conditions | 🆕 SSRF 대체 | 예외 처리 실패 |
 
 ---
 
