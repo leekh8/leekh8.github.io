@@ -1,6 +1,6 @@
 ---
-title: "🚀 CI/CD 환경에서 Playwright 문제 해결하기: 설치 오류 분석 및 해결 방안"
-description: "GitHub Actions CI/CD 파이프라인에서 Playwright 브라우저 설치 실패, 캐시 충돌, 의존성 오류를 단계별로 진단하고 해결하는 방법을 정리합니다. Gatsby 블로그 배포 실전 가이드."
+title: "Playwright 설치 오류 해결: failed to create browser context, $HOME 환경 변수, gstack setup failed"
+description: "CI/CD에서 자주 겪는 Playwright 오류를 정리합니다. 'failed to install playwright: $HOME environment variable is not set', 'gstack setup failed: chromium could not be launched', 'failed to create browser context' 등 구체적인 에러 원인과 해결법을 다룹니다."
 date: 2024-08-26
 update: 2024-08-26
 tags:

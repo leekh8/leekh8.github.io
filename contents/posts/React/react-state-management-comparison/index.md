@@ -1,6 +1,6 @@
 ---
-title: "⚛️ React 상태 관리 쉽게 하기: Context API vs Redux vs Zustand"
-description: "React에서 상태 관리 도구를 선택할 때 Context API, Redux, Zustand의 특징을 비교하고 프로젝트에 맞는 최적의 상태 관리 방법과 각각의 도구를 작은 프로젝트와 큰 프로젝트에 활용하는 방법과 성능 최적화 팁도 함께 소개한다."
+title: "Context API vs Zustand vs Redux: React 상태 관리 도구 비교 가이드"
+description: "Context API vs Zustand, 언제 어떤 걸 써야 할까요? 세 가지 React 상태 관리 도구의 성능, 보일러플레이트, 학습 곡선을 실제 코드로 비교합니다. 소규모 프로젝트엔 Context API, 중규모 이상엔 Zustand를 추천하는 이유를 설명합니다."
 date: 2024-11-10
 update: 2024-11-10
 tags:

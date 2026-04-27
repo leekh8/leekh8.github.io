@@ -1,6 +1,6 @@
 ---
-title: "🚀 Playwright browserType.launch 오류 해결: Gatsby CI/CD Chromium 설정 가이드"
-description: "Gatsby CI/CD에서 Playwright browserType.launch 오류와 Chromium 버전 충돌 원인을 분석하고, 캐시 전략·GitHub Actions 최적화·Docker 설정까지 완전히 해결하는 방법을 단계별로 정리합니다."
+title: "Playwright 'browserType.launch: executable doesn't exist' 오류 해결 가이드"
+description: "Playwright에서 'browserType.launch: executable doesn't exist at ...' 오류가 발생하는 원인과 해결법을 정리합니다. PLAYWRIGHT_BROWSERS_PATH 설정, Chromium 경로 문제, GitHub Actions CI/CD 캐시 전략까지 단계별로 다룹니다."
 date: 2024-09-13
 update: 2026-04-20
 tags:
