@@ -14,7 +14,14 @@ tags:
   - 배포 자동화
   - E2E 테스트
   - 테스트 자동화
-series: "Code N Solve"
+series: "Playwright 실전 가이드"
+---
+
+> **Playwright 실전 가이드 시리즈**
+> - [입문] [Playwright 완전 가이드: 설치부터 CI/CD까지](/playwright-complete-guide/)
+> - [오류 해결] **browserType.launch: executable doesn't exist** ← 현재 글
+> - [오류 해결] [failed to create browser context, $HOME 환경 변수, gstack setup failed](/playwright-cicd-troubleshooting/)
+
 ---
 
 ## Code N Solve 📘: Playwright와 Gatsby CI/CD 과정에서 발생한 browserType.launch 오류 및 해결 방법 정리

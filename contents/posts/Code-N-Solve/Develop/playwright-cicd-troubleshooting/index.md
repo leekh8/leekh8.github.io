@@ -9,7 +9,14 @@ tags:
   - Gatsby
   - CI/CD
   - Playwright
-series: "Code N Solve"
+series: "Playwright 실전 가이드"
+---
+
+> **Playwright 실전 가이드 시리즈**
+> - [입문] [Playwright 완전 가이드: 설치부터 CI/CD까지](/playwright-complete-guide/)
+> - [오류 해결] [browserType.launch: executable doesn't exist 해결](/playwright-browsertype-launch-error/)
+> - [오류 해결] **failed to create browser context, $HOME 환경 변수, gstack setup failed** ← 현재 글
+
 ---
 
 ## Code N Solve 📘: CI/CD 환경에서 Playwright 문제 해결하기: 설치 오류 분석 및 해결 방안
