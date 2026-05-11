@@ -2,9 +2,29 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const _ = require("lodash")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   const postTemplate = require.resolve(`./src/templates/Post.jsx`)
+  const redirectTemplate = require.resolve(`./src/templates/Redirect.jsx`)
+
+  // 구 Jekyll URL → 새 Gatsby URL 리다이렉트
+  const LEGACY_REDIRECTS = [
+    { from: '/Playwright-install/', to: '/playwright-cicd-troubleshooting/' },
+    { from: '/Playwright-browserType-launch-Error/', to: '/playwright-browsertype-launch-error/' },
+    { from: '/Vite-Develop-Error/', to: '/vite-deploy-error/' },
+    { from: '/Importance-and-Fundamental-Princilpes-of-Web-Accessibility/', to: '/web-accessibility-fundamentals/' },
+    { from: '/Context-API-VS-Redux-VS-Zustand/', to: '/react-state-management-comparison/' },
+    { from: '/Github-actions-trouble-shooting/', to: '/github-actions-troubleshooting/' },
+    { from: '/Google-Colab-Tranformers-Model-Train-Error/', to: '/google-colab-transformers-error/' },
+    { from: '/1.3-비기능적-요구사항/', to: '/' },
+    { from: '/5.1.1-프로젝트-빌드/', to: '/' },
+  ]
+
+  LEGACY_REDIRECTS.forEach(({ from, to }) => {
+    createRedirect({ fromPath: from, toPath: to, isPermanent: true, force: true })
+    createPage({ path: from, component: redirectTemplate, context: { to } })
+  })
+
   const seriesTemplate = require.resolve(`./src/templates/Series.jsx`)
 
   const result = await graphql(`
