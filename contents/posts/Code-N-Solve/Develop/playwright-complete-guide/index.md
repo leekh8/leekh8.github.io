@@ -14,9 +14,11 @@ category: "Code N Solve"
 series: "Playwright 실전 가이드"
 ---
 
-> **이 시리즈의 다른 글**
+> **Playwright 실전 가이드 시리즈**
+> - [입문] **Playwright 완전 가이드: 설치부터 CI/CD까지** ← 현재 글
 > - [오류 해결] [browserType.launch: executable doesn't exist 해결](/playwright-browsertype-launch-error/)
 > - [오류 해결] [failed to create browser context, $HOME 환경 변수, gstack setup failed 해결](/playwright-cicd-troubleshooting/)
+> - [실전] [Cloudflare 보호 사이트 페이지네이션이 안 되는 문제](/playwright-cloudflare-pagination/)
 
 ---
 
