@@ -7,14 +7,19 @@ tags:
   - Security
   - OWASP
   - LLM
-  - AI보안
-  - 프롬프트인젝션
+  - AI 보안
+  - 프롬프트 인젝션
 category: Security
 series: "웹 보안 기초"
 featured: false
 ---
 
-> 이 글은 [OWASP Top 10:2025](/owasp-top10-2025/), [OWASP API Security Top 10:2023](/owasp-api-security-2023/)에 이어지는 시리즈 3편입니다.
+> **웹 보안 기초 시리즈**
+> - [입문] [웹사이트 기술 스택 탐지와 핑거프린팅 보안](/how-wappalyzer-works/)
+> - [1편] [OWASP Top 10:2025 완전 가이드](/owasp-top10-2025/)
+> - [2편] [OWASP API Security Top 10:2023](/owasp-api-security-2023/)
+> - [3편] **OWASP LLM Top 10:2025** ← 현재 글
+> - [4편] [JWT, OAuth, 세션 보안 완전 가이드](/jwt-oauth-session-security/)
 
 ---
 

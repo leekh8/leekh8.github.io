@@ -4,16 +4,25 @@ title: "🔐 OWASP Top 10:2025 완전 가이드: 웹 보안 취약점과 방어 
 category: "Security"
 series: "웹 보안 기초"
 tags:
+  - Security
   - OWASP
-  - 웹보안
+  - 웹 보안
   - 취약점
-  - 보안
-  - 공급망보안
+  - 공급망 보안
   - 인젝션
-  - 인증보안
+  - 인증 보안
 thumbnail: ""
 featured: true
 description: "OWASP Top 10:2025 기준으로 웹 애플리케이션 10대 보안 취약점을 코드 예시와 방어 전략으로 정리합니다. 2021 대비 달라진 점, 공급망 공격, 예외 처리 실패까지 포함합니다."
+---
+
+> **웹 보안 기초 시리즈**
+> - [입문] [웹사이트 기술 스택 탐지와 핑거프린팅 보안](/how-wappalyzer-works/)
+> - [1편] **OWASP Top 10:2025 완전 가이드** ← 현재 글
+> - [2편] [OWASP API Security Top 10:2023](/owasp-api-security-2023/)
+> - [3편] [OWASP LLM Top 10:2025](/owasp-llm-top10-2025/)
+> - [4편] [JWT, OAuth, 세션 보안 완전 가이드](/jwt-oauth-session-security/)
+
 ---
 
 웹 애플리케이션을 개발하거나 운영할 때 "보안"은 늘 우선순위에서 밀리기 쉽다.  

@@ -6,7 +6,7 @@ update: 2026-05-06
 tags:
   - Playwright
   - E2E 테스트
-  - 브라우저자동화
+  - 브라우저 자동화
   - CI/CD
   - GitHub Actions
   - Chromium

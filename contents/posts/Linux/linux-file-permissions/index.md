@@ -6,7 +6,7 @@ update: 2026-04-03
 tags:
   - Linux
   - Security
-  - 시스템관리
+  - 시스템 관리
 series: "Linux 시스템 기초"
 ---
 

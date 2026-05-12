@@ -6,7 +6,7 @@ series: "보안 자동화 입문"
 tags:
   - SOAR
   - Playbook
-  - 보안자동화
+  - 보안 자동화
   - FortiSOAR
   - 입문
 thumbnail: ""

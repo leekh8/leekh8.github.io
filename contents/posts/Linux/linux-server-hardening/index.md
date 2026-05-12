@@ -6,7 +6,7 @@ update: 2026-05-06
 tags:
   - Linux
   - Security
-  - 서버보안
+  - 서버 보안
   - 하드닝
   - SSH
 category: Security
