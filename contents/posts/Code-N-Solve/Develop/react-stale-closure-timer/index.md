@@ -10,6 +10,13 @@ tags:
   - 웹 개발
   - 프론트엔드
 category: "Code N Solve"
+series: "React 버그 해부"
+---
+
+> **React 버그 해부 시리즈**
+> - [1편] **React 타이머 앱에서 stale closure에 세 번 당한 이야기** ← 현재 글
+> - [2편] [useCallback 없는 함수가 useEffect를 매 렌더마다 실행시킨 이야기](/react-useCallback-deps/)
+
 ---
 
 [TimeTrack](https://github.com/leekh8/TimeTrack)이라는 Pomodoro 타이머 앱을 만들고 있었다. 기능은 단순했다. 집중 시간 동안 타이머가 돌고, 끝나면 휴식으로 넘어가고, 배경에 화이트노이즈를 틀어주는 것.
