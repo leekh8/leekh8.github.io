@@ -60,7 +60,7 @@ def _load() -> dict:
 ```bash
 pyinstaller run.py --onefile \
   --collect-submodules=linux \
-  --collect-submodules=cce_common
+  --collect-submodules=common
 ```
 
 ---
@@ -91,7 +91,7 @@ pyinstaller run.py --onefile \
 ```bash
 pyinstaller run.py --onefile \
   --collect-submodules=linux \
-  --collect-submodules=cce_common \
+  --collect-submodules=common \
   --collect-data=linux          # 이 한 줄 추가
 ```
 
