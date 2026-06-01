@@ -1,8 +1,8 @@
 ---
 title: "PyInstaller --collect-data를 빠뜨리면 JSON 파일이 런타임에 사라진다"
 description: "개발 환경에서는 멀쩡히 동작하던 JSON 데이터 로더가 PyInstaller 바이너리에서 빈 dict를 반환했습니다. --collect-submodules와 --collect-data의 차이, sys._MEIPASS 폴백 패턴을 정리합니다."
-date: 2026-04-27
-update: 2026-04-27
+date: 2026-06-01
+update: 2026-06-01
 tags:
   - Python
   - PyInstaller
