@@ -147,7 +147,6 @@ export const pageQuery = graphql`
       }
     }
     featuredPost: allMarkdownRemark(
-      filter: { frontmatter: { featured: { eq: true } } }
       sort: { frontmatter: { date: DESC } }
       limit: 1
     ) {
