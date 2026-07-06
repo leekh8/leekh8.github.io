@@ -1,7 +1,6 @@
 import React from "react"
 import SEO from "components/SEO"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
 
 import Layout from "components/Layout"
 import Article from "components/Article"
@@ -9,13 +8,14 @@ import ReadingProgress from "components/ReadingProgress"
 import Breadcrumb from "components/Breadcrumb"
 import RelatedPosts from "components/RelatedPosts"
 
-import { siteUrl, author, description } from "../../blog-config"
+import { siteUrl, author } from "../../blog-config"
 
 const Post = ({ data }) => {
   const post = data.markdownRemark
   const { previous, next, seriesList, allPosts } = data
 
-  const { title, date, update, tags, series, category } = post.frontmatter
+  const { title, date, update, rawDate, rawUpdate, tags, series, category } =
+    post.frontmatter
   const { excerpt } = post
   const { timeToRead, slug } = post.fields
 
@@ -36,37 +36,18 @@ const Post = ({ data }) => {
     })
   }
 
-  // JSON-LD 데이터 생성
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: title,
-    description: description || post.excerpt,
-    datePublished: date,
-    author: {
-      "@type": "Person",
-      name: author,
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${siteUrl}${slug}`,
-    },
-  }
-
   const allPostNodes = allPosts?.nodes || []
 
   return (
     <Layout>
       <ReadingProgress />
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
-      </Helmet>
       <SEO
         title={title}
         description={post.frontmatter.description || excerpt}
         url={`${siteUrl}${slug}`}
+        author={author}
+        date={rawDate}
+        update={rawUpdate}
       />
       <Breadcrumb category={category} title={title} />
       <Article>
@@ -119,6 +100,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         update(formatString: "MMMM DD, YYYY")
+        rawDate: date
+        rawUpdate: update
         tags
         series
         category

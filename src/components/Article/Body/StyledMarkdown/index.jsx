@@ -28,12 +28,10 @@ const StyledMarkdown = styled.div`
   }
 
   & p {
-    overflow-x: scroll;
-    word-break: break-all;
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
+    /* 한글은 어절(공백) 단위로만 끊고, 긴 URL 등만 강제 줄바꿈.
+       기존 break-all은 한글 단어를 가운데서 끊어 가독성을 해쳤다. */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   & h2,
@@ -275,6 +273,10 @@ const StyledMarkdown = styled.div`
   & a {
     padding: 1.6px 0;
     color: ${props => props.theme.colors.text};
+    /* 본문 링크는 밑줄로 명확히 구분 (기존엔 hover 전까지 일반 텍스트와 동일) */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
   }
 
   & a:hover {

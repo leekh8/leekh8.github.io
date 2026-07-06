@@ -37,7 +37,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `noto sans kr:300,400,500,700,900`,
+          // 900은 코드베이스 어디서도 쓰지 않아 제거 (로드 무게만 차지)
+          `noto sans kr:300,400,500,700`,
           `source code pro:700`, // you can also specify font weights and styles
         ],
         display: "swap",
