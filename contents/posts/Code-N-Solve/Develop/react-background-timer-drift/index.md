@@ -19,6 +19,7 @@ category: "Code N Solve"
 > - [1편] [React 타이머 앱에서 stale closure에 세 번 당한 이야기](/react-stale-closure-timer/)
 > - [2편] [useCallback 없는 함수가 useEffect를 매 렌더마다 실행시킨 이야기](/react-useCallback-deps/)
 > - [3편] **백그라운드 탭에서 setInterval 타이머가 느려지는 이유와 벽시계 해법** ← 현재 글
+> - [4편] [드래그 앤 드롭이 조용히 죽었다 — react-beautiful-dnd와 React 18 StrictMode](/react-beautiful-dnd-strictmode/)
 
 ---
 
@@ -180,4 +181,5 @@ tick 방식은 25분이 지나도 콜백이 25번밖에 안 와서 `1500 − 25 
 
 - [1편 · React 타이머 앱에서 stale closure에 세 번 당한 이야기](/react-stale-closure-timer/)
 - [2편 · useCallback 없는 함수가 useEffect를 매 렌더마다 실행시킨 이야기](/react-useCallback-deps/)
+- [4편 · 드래그 앤 드롭이 조용히 죽었다 — react-beautiful-dnd와 React 18 StrictMode](/react-beautiful-dnd-strictmode/)
 - [React Hooks 정리 — useState부터 커스텀 훅까지](/React-3-Hooks/)

@@ -17,6 +17,7 @@ series: "React 버그 해부"
 > - [1편] **React 타이머 앱에서 stale closure에 세 번 당한 이야기** ← 현재 글
 > - [2편] [useCallback 없는 함수가 useEffect를 매 렌더마다 실행시킨 이야기](/react-useCallback-deps/)
 > - [3편] [백그라운드 탭에서 setInterval 타이머가 느려지는 이유와 벽시계 해법](/react-background-timer-drift/)
+> - [4편] [드래그 앤 드롭이 조용히 죽었다 — react-beautiful-dnd와 React 18 StrictMode](/react-beautiful-dnd-strictmode/)
 
 ---
 
