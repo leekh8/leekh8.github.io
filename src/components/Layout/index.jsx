@@ -22,7 +22,7 @@ const BackToTop = styled.button`
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: var(--fs-xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@ const BackToTop = styled.button`
     right: 20px;
     width: 36px;
     height: 36px;
-    font-size: 16px;
+    font-size: var(--fs-lg);
   }
 `
 

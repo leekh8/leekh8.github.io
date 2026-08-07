@@ -54,7 +54,7 @@ const Profile = styled.div`
 
 const Author = styled.div`
   margin-bottom: 4.8px;
-  font-size: 24px;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   color: ${props => props.theme.colors.text};
 `
@@ -62,7 +62,7 @@ const Author = styled.div`
 const Description = styled.div`
   margin-bottom: 11.2px;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: var(--fs-lg);
   color: ${props => props.theme.colors.secondaryText};
 `
 

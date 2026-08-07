@@ -9,7 +9,7 @@ const Nav = styled.nav`
   gap: 2px;
   margin-top: 12px;
   padding-bottom: 4px;
-  font-size: 12px;
+  font-size: var(--fs-sm);
   color: ${props => props.theme.colors.tertiaryText};
 
   @media (max-width: 768px) {

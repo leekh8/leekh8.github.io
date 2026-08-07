@@ -22,7 +22,7 @@ const TagLink = styled.div`
       ? props.theme.colors.selectedTagText
       : props.theme.colors.tagText};
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--fs-sm);
   transition: all 0.2s;
 
   &:hover {

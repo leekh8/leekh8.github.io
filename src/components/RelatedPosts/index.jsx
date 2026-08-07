@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const SectionTitle = styled.h3`
   margin-bottom: 16px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 700;
   color: ${props => props.theme.colors.text};
 `
@@ -42,7 +42,7 @@ const Card = styled(Link)`
 `
 
 const CardTitle = styled.div`
-  font-size: 13.5px;
+  font-size: var(--fs-base);
   font-weight: 600;
   color: ${props => props.theme.colors.text};
   line-height: 1.4;
@@ -50,7 +50,7 @@ const CardTitle = styled.div`
 `
 
 const CardDate = styled.div`
-  font-size: 11px;
+  font-size: var(--fs-xs);
   color: ${props => props.theme.colors.tertiaryText};
 `
 

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const StyledMarkdown = styled.div`
   & {
-    font-size: 15.5px;
+    font-size: var(--fs-lg);
     color: ${props => props.theme.colors.text};
     line-height: 1.68;
     overflow: hidden;
@@ -46,27 +46,27 @@ const StyledMarkdown = styled.div`
   & h2 {
     margin-top: 60px;
     margin-bottom: 16px;
-    font-size: 24px;
+    font-size: var(--fs-2xl);
   }
 
   & h3 {
     margin-top: 44px;
     margin-bottom: 12px;
-    font-size: 19.5px;
+    font-size: var(--fs-xl);
   }
 
   & h4 {
     margin-top: 36px;
     margin-bottom: 10px;
-    font-size: 16.5px;
+    font-size: var(--fs-lg);
   }
 
   & h5 {
-    font-size: 16px;
+    font-size: var(--fs-lg);
   }
 
   & h6 {
-    font-size: 14.4px;
+    font-size: var(--fs-lg);
   }
 
   & strong {
@@ -132,7 +132,7 @@ const StyledMarkdown = styled.div`
     top: -1px;
     margin-right: 3px;
     padding: 3px 5px 3px 5px;
-    font-size: 13px;
+    font-size: var(--fs-base);
     background-color: ${props => props.theme.colors.inlineCodeBackground};
     font-weight: bold;
     color: ${props => props.theme.colors.text};
@@ -188,7 +188,7 @@ const StyledMarkdown = styled.div`
     top: 10px;
     right: 60px;
     padding: 2px 8px;
-    font-size: 10px;
+    font-size: var(--fs-xs);
     font-family: 'Source Code Pro', 'Consolas', monospace;
     color: rgba(200, 200, 200, 0.55);
     text-transform: uppercase;
@@ -218,7 +218,7 @@ const StyledMarkdown = styled.div`
     top: 10px;
     right: 10px;
     padding: 4px 10px;
-    font-size: 11px;
+    font-size: var(--fs-xs);
     font-family: inherit;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
@@ -247,7 +247,7 @@ const StyledMarkdown = styled.div`
 
   & code[class*="language-"],
   & pre[class*="language-"] {
-    font-size: 13.5px;
+    font-size: var(--fs-base);
   }
 
   & img {
@@ -261,7 +261,7 @@ const StyledMarkdown = styled.div`
     margin-top: 5px;
     text-align: center;
     color: #868e96;
-    font-size: 12px;
+    font-size: var(--fs-sm);
     font-style: italic;
   }
 

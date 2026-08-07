@@ -35,11 +35,11 @@ const SeriesInform = styled.div`
 `
 
 const Date = styled.p`
-  font-size: 14.4px;
+  font-size: var(--fs-md);
 `
 
 const PostCount = styled.p`
-  font-size: 14.4px;
+  font-size: var(--fs-md);
 `
 
 const checkIsScrollAtBottom = () => {

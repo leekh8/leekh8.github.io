@@ -17,7 +17,7 @@ const Intro = styled.div`
 `
 
 const Role = styled.p`
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -30,7 +30,7 @@ const Section = styled.section`
 `
 
 const SectionTitle = styled.h2`
-  font-size: 1.15rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   margin-bottom: 0.8rem;
   padding-bottom: 0.4rem;
@@ -50,7 +50,7 @@ const TagList = styled.ul`
 const Tag = styled.li`
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   background: ${props => props.theme.colors.tagBackground};
   color: ${props => props.theme.colors.text};
@@ -61,7 +61,7 @@ const StackGroup = styled.div`
 `
 
 const StackLabel = styled.p`
-  font-size: 0.82rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: ${props => props.theme.colors.tertiaryText};
   margin-bottom: 0.4rem;
@@ -82,12 +82,12 @@ const TopicItem = styled.li`
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   line-height: 1.6;
 `
 
 const TopicIcon = styled.span`
-  font-size: 1.1rem;
+  font-size: var(--fs-lg);
   flex-shrink: 0;
   margin-top: 0.1rem;
 `
@@ -127,11 +127,11 @@ const ProjectCard = styled.a`
 const ProjectName = styled.div`
   font-weight: 700;
   margin-bottom: 0.3rem;
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
 `
 
 const ProjectDesc = styled.div`
-  font-size: 0.82rem;
+  font-size: var(--fs-xs);
   color: ${props => props.theme.colors.tertiaryText};
   line-height: 1.5;
 `

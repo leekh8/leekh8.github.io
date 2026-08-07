@@ -47,7 +47,7 @@ const BlogTitle = styled.span`
   letter-spacing: -1px;
   font-family: "Source Code Pro", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: var(--fs-2xl);
   color: ${props => props.theme.colors.text};
 
   & > a {

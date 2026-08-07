@@ -31,7 +31,7 @@ const PostWrapper = styled.div`
 
 const PostTitle = styled.div`
   margin-bottom: 12px;
-  font-size: 20px;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   line-height: 1.3;
   color: ${props => props.theme.colors.text};
@@ -51,14 +51,14 @@ const PostTitle = styled.div`
 
 const PostMeta = styled.p`
   margin-bottom: 10px;
-  font-size: 13px;
+  font-size: var(--fs-base);
   color: ${props => props.theme.colors.tertiaryText};
 `
 
 const PostExcerpt = styled.p`
   margin-bottom: 14px;
   line-height: 1.65;
-  font-size: 14.5px;
+  font-size: var(--fs-md);
   color: ${props => props.theme.colors.secondaryText};
   word-break: break-all;
 
@@ -80,18 +80,18 @@ const NoResults = styled.div`
 `
 
 const NoResultsIcon = styled.div`
-  font-size: 40px;
+  font-size: var(--fs-4xl);
   margin-bottom: 16px;
 `
 
 const NoResultsText = styled.p`
-  font-size: 15px;
+  font-size: var(--fs-lg);
   margin-bottom: 8px;
   color: ${props => props.theme.colors.secondaryText};
 `
 
 const NoResultsHint = styled.p`
-  font-size: 13px;
+  font-size: var(--fs-base);
   color: ${props => props.theme.colors.tertiaryText};
 `
 

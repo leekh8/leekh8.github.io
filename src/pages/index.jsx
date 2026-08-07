@@ -26,7 +26,7 @@ const FeaturedBadge = styled.span`
   display: inline-block;
   margin-bottom: 10px;
   padding: 3px 10px;
-  font-size: 11px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -53,7 +53,7 @@ const FeaturedCard = styled(Link)`
 `
 
 const FeaturedTitle = styled.h2`
-  font-size: 20px;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   color: ${props => props.theme.colors.text};
   line-height: 1.35;
@@ -61,14 +61,14 @@ const FeaturedTitle = styled.h2`
 `
 
 const FeaturedDesc = styled.p`
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: ${props => props.theme.colors.secondaryText};
   line-height: 1.6;
   margin-bottom: 10px;
 `
 
 const FeaturedMeta = styled.span`
-  font-size: 12px;
+  font-size: var(--fs-sm);
   color: ${props => props.theme.colors.tertiaryText};
 `
 

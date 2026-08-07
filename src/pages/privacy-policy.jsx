@@ -10,7 +10,7 @@ const Content = styled.div`
   margin: 0 auto;
   color: ${props => props.theme.colors.text};
   line-height: 1.8;
-  font-size: 15.5px;
+  font-size: var(--fs-lg);
 `
 
 const PrivacyPolicyPage = () => (

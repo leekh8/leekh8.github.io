@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 150px;
-  font-size: 24px;
+  font-size: var(--fs-2xl);
   font-weight: bold;
   color: ${props => props.theme.colors.tertiaryText};
 `

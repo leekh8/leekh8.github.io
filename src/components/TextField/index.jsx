@@ -11,7 +11,7 @@ const Icon = styled.span`
   position: absolute;
   top: 12px;
   left: 18px;
-  font-size: 20px;
+  font-size: var(--fs-2xl);
   color: ${props => props.theme.colors.textFieldBorder};
   text-shadow: 0 0 5px ${props => props.theme.colors.textFieldBorder};
   transition: all 0.2s;
@@ -23,7 +23,7 @@ const Input = styled.input.attrs({ type: "text" })`
   border: 1px solid ${props => props.theme.colors.textFieldBorder};
   border-radius: 1vh;
   background-color: transparent;
-  font-size: 16px;
+  font-size: var(--fs-lg);
   color: ${props => props.theme.colors.text};
   box-sizing: border-box;
   outline: none;

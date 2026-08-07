@@ -9,7 +9,7 @@ const FooterWrapper = styled.footer`
   padding: 40px 0 32px;
   border-top: 1px solid ${props => props.theme.colors.divider};
   color: ${props => props.theme.colors.secondaryText};
-  font-size: 13px;
+  font-size: var(--fs-base);
 `
 
 const FooterInner = styled.div`
@@ -32,7 +32,7 @@ const FooterLinks = styled.nav`
 const FooterLink = styled(Link)`
   color: ${props => props.theme.colors.tertiaryText};
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--fs-base);
   transition: color 0.2s;
 
   &:hover {
@@ -44,7 +44,7 @@ const FooterLink = styled(Link)`
 const FooterExternalLink = styled.a`
   color: ${props => props.theme.colors.tertiaryText};
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--fs-base);
   transition: color 0.2s;
 
   &:hover {
@@ -54,7 +54,7 @@ const FooterExternalLink = styled.a`
 `
 
 const FooterBottom = styled.div`
-  font-size: 12px;
+  font-size: var(--fs-sm);
   font-weight: lighter;
   color: ${props => props.theme.colors.tertiaryText};
   line-height: 1.6;

@@ -12,7 +12,7 @@ const Wrapper = styled.aside`
   left: calc(100% + 24px);
   top: 0px;
   width: 160px;
-  font-size: 13px;
+  font-size: var(--fs-base);
 
   @media (max-width: 1300px) {
     display: none;

@@ -68,7 +68,7 @@ const MobileTocToggle = styled.button`
   border-radius: 6px;
   background: ${props => props.theme.colors.tableBackground};
   color: ${props => props.theme.colors.secondaryText};
-  font-size: 13px;
+  font-size: var(--fs-base);
   cursor: pointer;
   text-align: left;
 `
@@ -84,7 +84,7 @@ const MobileTocList = styled.div`
 const ParagraphTitle = styled.div`
   margin-bottom: 8px;
   padding-left: ${props => (props.subtitle ? 19.2 : 0)}px;
-  font-size: 14.4px;
+  font-size: var(--fs-md);
   color: ${props => props.theme.colors.mutedText};
   line-height: 1.3;
   transition: all 0.2s;

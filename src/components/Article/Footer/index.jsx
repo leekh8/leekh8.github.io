@@ -47,7 +47,7 @@ const Arrow = styled.div`
   left: 0;
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: var(--fs-2xl);
   flex-basis: 24px;
   transition: left 0.3s;
 `
@@ -59,7 +59,7 @@ const ArticleButtonWrapper = styled.div`
   padding: 20.8px 16px;
   max-width: 250px;
   flex-basis: 250px;
-  font-size: 17.6px;
+  font-size: var(--fs-xl);
   border-radius: 5px;
   background-color: ${props => props.theme.colors.nextPostButtonBackground};
   color: ${props => props.theme.colors.text};
@@ -95,7 +95,7 @@ const ArticleButtonWrapper = styled.div`
 
 const ArticleButtonLabel = styled.div`
   margin-bottom: 9.6px;
-  font-size: 12.8px;
+  font-size: var(--fs-sm);
 `
 
 const ArticleButtonTitle = styled.div`
@@ -118,7 +118,7 @@ const ShareWrapper = styled.div`
 `
 
 const ShareLabel = styled.span`
-  font-size: 13px;
+  font-size: var(--fs-base);
   color: ${props => props.theme.colors.tertiaryText};
 `
 
@@ -128,7 +128,7 @@ const ShareButton = styled.a`
   gap: 6px;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   text-decoration: none;
   transition: opacity 0.2s;
@@ -156,7 +156,7 @@ const CopyButton = styled.button`
   gap: 6px;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   border: 1px solid ${props => props.theme.colors.divider};
   background: transparent;

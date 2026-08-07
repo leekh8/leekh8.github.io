@@ -17,12 +17,12 @@ const NotFound = styled.div`
   & > h2 {
     margin-bottom: 16px;
     font-weight: bold;
-    font-size: 48px;
+    font-size: var(--fs-4xl);
   }
 
   & > h3 {
     font-weight: lighter;
-    font-size: 30.4px;
+    font-size: var(--fs-3xl);
   }
 
   @media (max-width: 768px) {

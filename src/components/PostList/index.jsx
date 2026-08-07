@@ -26,14 +26,14 @@ const PostWrapper = styled.div`
 
 const Meta = styled.p`
   margin-bottom: 16px;
-  font-size: 13px;
+  font-size: var(--fs-base);
   color: ${props => props.theme.colors.tertiaryText};
 `
 
 const Excerpt = styled.p`
   margin-bottom: 20px;
   line-height: 1.65;
-  font-size: 14.5px;
+  font-size: var(--fs-md);
   color: ${props => props.theme.colors.secondaryText};
   word-break: break-all;
 `

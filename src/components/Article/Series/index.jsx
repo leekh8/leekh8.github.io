@@ -13,7 +13,7 @@ const SeriesWrapper = styled.div`
 
 const SeriesHeader = styled.h2`
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: var(--fs-lg);
   font-weight: bold;
   color: ${props => props.theme.colors.text};
 
@@ -36,7 +36,7 @@ const PostWrapper = styled.ul``
 
 const Post = styled.li`
   position: relative;
-  font-size: 12.8px;
+  font-size: var(--fs-sm);
   color: ${props =>
     props.currentPost
       ? props.theme.colors.text
@@ -64,7 +64,7 @@ const Post = styled.li`
 
 const ViewMore = styled.div`
   margin-top: 15px;
-  font-size: 14.4px;
+  font-size: var(--fs-md);
   text-align: center;
   color: ${props => props.theme.colors.tertiaryText};
   cursor: pointer;

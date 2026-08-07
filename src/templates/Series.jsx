@@ -19,7 +19,7 @@ const Header = styled.div`
 const Title = styled.h1`
   margin-bottom: 15px;
   line-height: 1.2;
-  font-size: 44.8px;
+  font-size: var(--fs-4xl);
   font-weight: bold;
   color: ${props => props.theme.colors.text};
   word-break: break-all;
@@ -30,7 +30,7 @@ const Subtitle = styled.h3`
   padding: 2px 3px;
   margin-top: 32px;
   margin-bottom: 8px;
-  font-size: 20px;
+  font-size: var(--fs-2xl);
   font-weight: bold;
   background-color: ${props => props.theme.colors.text};
   color: ${props => props.theme.colors.bodyBackground};
@@ -40,7 +40,7 @@ const Subtitle = styled.h3`
 const SeriesInform = styled.div`
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: var(--fs-lg);
   color: ${props => props.theme.colors.text};
 
   & > span {
