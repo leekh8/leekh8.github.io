@@ -8,11 +8,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const postTemplate = require.resolve(`./src/templates/Post.jsx`)
   const redirectTemplate = require.resolve(`./src/templates/Redirect.jsx`)
 
-  LEGACY_REDIRECTS.forEach(({ from, to }) => {
-    createRedirect({ fromPath: from, toPath: to, isPermanent: true, force: true })
-    createPage({ path: from, component: redirectTemplate, context: { to } })
-  })
-
   const seriesTemplate = require.resolve(`./src/templates/Series.jsx`)
 
   const result = await graphql(`
@@ -27,6 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug
           }
           frontmatter {
+            title
             series
           }
         }
@@ -48,6 +44,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.postsRemark.nodes
+
+  // 구 URL은 meta refresh 페이지다. 통합 전까지는 검색 결과에 그대로 노출되므로
+  // 제목을 대상 글 제목으로 채운다. "페이지 이동 중..."이 걸리면 순위가 높아도 눌리지 않는다.
+  const slugToTitle = {}
+  posts.forEach(post => {
+    slugToTitle[post.fields.slug] = post.frontmatter.title
+  })
+
+  LEGACY_REDIRECTS.forEach(({ from, to }) => {
+    createRedirect({ fromPath: from, toPath: to, isPermanent: true, force: true })
+    createPage({
+      path: from,
+      component: redirectTemplate,
+      context: { to, title: slugToTitle[to] || null },
+    })
+  })
+
   const series = _.reduce(
     posts,
     (acc, cur) => {

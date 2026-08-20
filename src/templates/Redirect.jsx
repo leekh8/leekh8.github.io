@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet"
  * gatsby-node.js에서 createPage로 생성됨
  */
 const RedirectTemplate = ({ pageContext }) => {
-  const { to } = pageContext
+  const { to, title } = pageContext
 
   useEffect(() => {
     navigate(to, { replace: true })
@@ -17,7 +17,7 @@ const RedirectTemplate = ({ pageContext }) => {
     <Helmet>
       <meta httpEquiv="refresh" content={`0; url=${to}`} />
       <link rel="canonical" href={`https://leekh8.github.io${to}`} />
-      <title>페이지 이동 중...</title>
+      <title>{title || "페이지 이동 중..."}</title>
     </Helmet>
   )
 }
