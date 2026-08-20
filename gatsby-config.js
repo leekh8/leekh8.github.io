@@ -1,4 +1,5 @@
 const blogConfig = require("./blog-config")
+const { legacyPaths } = require("./legacy-redirects")
 const { title, description, author, siteUrl } = blogConfig
 
 module.exports = {
@@ -158,7 +159,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-resolve-src`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // 구 URL(meta refresh 페이지)은 sitemap에서 뺀다.
+        // 실려 있으면 "색인해도 되는 페이지"로 읽혀, canonical이 새 URL을 가리켜도
+        // 구·신 URL이 함께 색인된 채 순위 신호가 갈라진다.
+        excludes: legacyPaths,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
