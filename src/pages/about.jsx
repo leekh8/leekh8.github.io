@@ -295,6 +295,56 @@ const AboutPage = () => (
             </ProjectDesc>
           </ProjectCard>
           <ProjectCard
+            href={links.seobooster}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>📈 SEO Booster</ProjectName>
+            <ProjectDesc>
+              글을 쓰는 동안 SEO 점수가 실시간으로 따라오는 에디터. React + Vite
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.gitggu}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>🪪 GitGGu</ProjectName>
+            <ProjectDesc>
+              GitHub 프로필 README 마크다운 에디터. 위젯 삽입과 실시간 미리보기
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.finimondo}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>🃏 finimondo</ProjectName>
+            <ProjectDesc>
+              카드 셰딩 게임. 규칙 엔진을 UI와 분리한 순수 함수로 구현. Flutter
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.finimondoWeb}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>⚔️ finimondo Web</ProjectName>
+            <ProjectDesc>
+              실시간 멀티플레이 카드 배틀. Node + React + WebSocket
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
+            href={links.flutterchat}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ProjectName>💬 flutter chat</ProjectName>
+            <ProjectDesc>
+              Firebase 실시간 채팅. Auth와 Firestore 구독, 보안 규칙 적용
+            </ProjectDesc>
+          </ProjectCard>
+          <ProjectCard
             href={links.github}
             target="_blank"
             rel="noreferrer"

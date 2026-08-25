@@ -26,6 +26,11 @@ import { siteUrl, description, author, links } from "../../../blog-config"
 import mg_logo from "../../assets/images/mg_logo.png"
 import tt_logo from "../../assets/images/tt_logo.png"
 import sm_logo from "../../assets/images/sm_logo.png"
+import sb_logo from "../../assets/images/sb_logo.png"
+import gg_logo from "../../assets/images/gg_logo.png"
+import fm_logo from "../../assets/images/fm_logo.png"
+import fw_logo from "../../assets/images/fw_logo.png"
+import fc_logo from "../../assets/images/fc_logo.png"
 
 const BioWrapper = styled.div`
   display: flex;
@@ -126,6 +131,11 @@ const Bio = () => {
     timetrack,
     sitemapper,
     mdggu,
+    seobooster,
+    gitggu,
+    finimondo,
+    finimondoWeb,
+    flutterchat,
     github,
     kaggle,
     instagram,
@@ -164,6 +174,21 @@ const Bio = () => {
           </Link>
           <Link link={mdggu} title="MD-GGU">
             <IconImage src={mg_logo} alt="MD-GGU logo" />
+          </Link>
+          <Link link={seobooster} title="SEO Booster">
+            <IconImage src={sb_logo} alt="SEO Booster logo" />
+          </Link>
+          <Link link={gitggu} title="GitGGu">
+            <IconImage src={gg_logo} alt="GitGGu logo" />
+          </Link>
+          <Link link={finimondo} title="finimondo">
+            <IconImage src={fm_logo} alt="finimondo logo" />
+          </Link>
+          <Link link={finimondoWeb} title="finimondo Web">
+            <IconImage src={fw_logo} alt="finimondo Web logo" />
+          </Link>
+          <Link link={flutterchat} title="flutter chat">
+            <IconImage src={fc_logo} alt="flutter chat logo" />
           </Link>
           <Link link={kaggle} title="Kaggle">
             <FaKaggle />
