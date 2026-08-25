@@ -838,7 +838,9 @@ SEO는 단기간에 효과가 나타나지 않는다. 설정을 완료한 후 �
 ---
 
 [^1]: https://junia3.github.io/blog/search
-[^2]: https://search.google.com/search-console/about
-[^3]: https://searchadvisor.naver.com/console/board
-[^4]: https://v3.gatsbyjs.com/docs/how-to/adding-common-features/seo/
-[^5]: https://salt.agency/blog/gatsby-seo-the-good-good-and-good-step-by-step-guide/
+## 참고문헌
+
+- https://search.google.com/search-console/about
+- https://searchadvisor.naver.com/console/board
+- https://v3.gatsbyjs.com/docs/how-to/adding-common-features/seo/
+- https://salt.agency/blog/gatsby-seo-the-good-good-and-good-step-by-step-guide/

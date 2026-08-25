@@ -855,19 +855,14 @@ OSI 7계층을 외울 필요는 없다. 하지만 **"이 문제는 몇 계층에
 
 ## 참고문헌
 
+- Forouzan, B. A. "Data Communications and Networking." McGraw-Hill Education, 5th Edition, 2012.
+- Tanenbaum, A. S., & Wetherall, D. J. "Computer Networks." Pearson, 5th Edition, 2010.
+- Cloudflare. "What is the OSI model?" Cloudflare Learning Center. https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/
+- OWASP. "OWASP Top Ten." https://owasp.org/www-project-top-ten/
+- RFC 793. "Transmission Control Protocol." IETF, 1981. https://www.rfc-editor.org/rfc/rfc793
+- PortSwigger. "HTTP request smuggling." Web Security Academy. https://portswigger.net/web-security/request-smuggling
+
 [^1]: ISO/IEC 7498-1. "Information technology — Open Systems Interconnection — Basic Reference Model." ISO, 1994. https://www.iso.org/standard/20269.html
-
-[^2]: Forouzan, B. A. "Data Communications and Networking." McGraw-Hill Education, 5th Edition, 2012.
-
-[^3]: Tanenbaum, A. S., & Wetherall, D. J. "Computer Networks." Pearson, 5th Edition, 2010.
-
-[^4]: Cloudflare. "What is the OSI model?" Cloudflare Learning Center. https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/
-
-[^5]: OWASP. "OWASP Top Ten." https://owasp.org/www-project-top-ten/
-
-[^6]: RFC 793. "Transmission Control Protocol." IETF, 1981. https://www.rfc-editor.org/rfc/rfc793
-
-[^7]: PortSwigger. "HTTP request smuggling." Web Security Academy. https://portswigger.net/web-security/request-smuggling
 
 ---
 

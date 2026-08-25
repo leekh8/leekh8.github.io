@@ -1149,4 +1149,6 @@ Render는 편리하고 무료로 배포할 수 있는 도구이지만 Java 프�
 [^4]: https://hub.docker.com/_/eclipse-temurin
 [^5]: https://docs.gradle.org/current/userguide/toolchains.html
 [^6]: https://jdbc.postgresql.org/
-[^7]: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+## 참고문헌
+
+- https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html

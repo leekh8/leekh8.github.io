@@ -280,4 +280,6 @@ schtasks /Create /TN advisory-watcher /SC DAILY /ST 09:00 `
 
 [^3]: Fortinet. "FortiGuard PSIRT Advisories." https://www.fortiguard.com/psirt
 
-[^4]: Python Software Foundation. "sqlite3 — DB-API 2.0 interface for SQLite databases." https://docs.python.org/3/library/sqlite3.html
+## 참고문헌
+
+- Python Software Foundation. "sqlite3 — DB-API 2.0 interface for SQLite databases." https://docs.python.org/3/library/sqlite3.html

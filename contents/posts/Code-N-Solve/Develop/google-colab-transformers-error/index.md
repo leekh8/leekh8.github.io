@@ -903,6 +903,8 @@ Google Colab에서 Transformers 모델을 학습하면서 발생하는 주요 �
 
 [^1]: https://wikidocs.net/book/8056
 [^2]: https://huggingface.co/learn/nlp-course/ko/chapter8/2
-[^3]: https://heekangpark.github.io/ml/shorts/scikit-learn-basics
+## 참고문헌
+
+- https://heekangpark.github.io/ml/shorts/scikit-learn-basics
 [^4]: https://wikidocs.net/226032
 [^5]: https://discuss.huggingface.co/t/how-to-turn-wandb-off-in-trainer/6237

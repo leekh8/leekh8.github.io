@@ -433,6 +433,9 @@ Wappalyzer 같은 기술 핑거프린팅 도구가 중요한 이유는 공격자
 
 ## 참고문헌
 
+- OWASP. "Information Exposure Through Error Messages." OWASP Testing Guide. https://owasp.org/www-project-web-security-testing-guide/
+- Mozilla Developer Network. "HTTP Headers." MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
 [^1]: Wappalyzer. "About Wappalyzer." https://www.wappalyzer.com/about
 
 [^2]: NVD (National Vulnerability Database). "CVE Search." NIST. https://nvd.nist.gov/vuln/search
@@ -440,7 +443,3 @@ Wappalyzer 같은 기술 핑거프린팅 도구가 중요한 이유는 공격자
 [^3]: Wappalyzer GitHub. "Technologies Database." https://github.com/enthec/webappanalyzer/tree/main/src/technologies
 
 [^4]: enthec. "webappanalyzer — Open-source Wappalyzer fork." GitHub. https://github.com/enthec/webappanalyzer
-
-[^5]: OWASP. "Information Exposure Through Error Messages." OWASP Testing Guide. https://owasp.org/www-project-web-security-testing-guide/
-
-[^6]: Mozilla Developer Network. "HTTP Headers." MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers

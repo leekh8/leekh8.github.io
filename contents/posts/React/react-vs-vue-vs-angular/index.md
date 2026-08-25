@@ -966,10 +966,12 @@ export class CounterService {}
 
 ---
 
-[^1]: https://legacy.reactjs.org/docs/getting-started.html
-[^2]: https://ko.vuejs.org/guide/introduction.html
-[^3]: https://angular.dev/overview
-[^4]: https://npmtrends.com/angular-vs-react-vs-vue
-[^5]: https://survey.stackoverflow.co/2024/technology
-[^6]: https://nextjs.org/docs
-[^7]: https://nuxt.com/docs
+## 참고문헌
+
+- https://legacy.reactjs.org/docs/getting-started.html
+- https://ko.vuejs.org/guide/introduction.html
+- https://angular.dev/overview
+- https://npmtrends.com/angular-vs-react-vs-vue
+- https://survey.stackoverflow.co/2024/technology
+- https://nextjs.org/docs
+- https://nuxt.com/docs

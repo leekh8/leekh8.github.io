@@ -986,11 +986,13 @@ Props와 State는 React의 핵심이다. 이 두 가지를 제대로 이해하�
 
 ---
 
-[^1]: https://legacy.reactjs.org/docs/components-and-props.html
-[^2]: https://www.geeksforgeeks.org/reactjs-setstate/
-[^3]: https://ko.legacy.reactjs.org/docs/state-and-lifecycle.html
-[^4]: https://react.dev/learn/updating-objects-in-state
-[^5]: https://immerjs.github.io/immer/
+## 참고문헌
+
+- https://legacy.reactjs.org/docs/components-and-props.html
+- https://www.geeksforgeeks.org/reactjs-setstate/
+- https://ko.legacy.reactjs.org/docs/state-and-lifecycle.html
+- https://react.dev/learn/updating-objects-in-state
+- https://immerjs.github.io/immer/
 
 ---
 

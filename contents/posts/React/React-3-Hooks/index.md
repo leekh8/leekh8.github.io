@@ -1005,11 +1005,13 @@ React Hooks는 함수형 컴포넌트를 강력하게 만들어주는 핵심 기
 
 ---
 
-[^1]: https://react.dev/reference/react/hooks
-[^2]: https://react.dev/learn/reusing-logic-with-custom-hooks
-[^3]: https://react.dev/learn/synchronizing-with-effects
-[^4]: https://react.dev/reference/react/useCallback
-[^5]: https://react.dev/reference/react/useMemo
+## 참고문헌
+
+- https://react.dev/reference/react/hooks
+- https://react.dev/learn/reusing-logic-with-custom-hooks
+- https://react.dev/learn/synchronizing-with-effects
+- https://react.dev/reference/react/useCallback
+- https://react.dev/reference/react/useMemo
 
 ---
 

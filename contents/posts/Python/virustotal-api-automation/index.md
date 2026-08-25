@@ -140,7 +140,6 @@ VT_API_KEY = os.getenv("VT_API_KEY")
 BASE_URL = "https://www.virustotal.com/api/v3"
 HEADERS = {"x-apikey": VT_API_KEY}
 
-
 def check_ip(ip: str) -> dict:
     """IP 주소 악성 여부 조회"""
     url = f"{BASE_URL}/ip_addresses/{ip}"
@@ -173,12 +172,10 @@ def check_domain(domain: str) -> dict:
     url = f"{BASE_URL}/domains/{domain}"
     return _parse_response(url, "domain", domain)
 
-
 def check_hash(file_hash: str) -> dict:
     """파일 해시 악성 여부 조회"""
     url = f"{BASE_URL}/files/{file_hash}"
     return _parse_response(url, "hash", file_hash)
-
 
 def _parse_response(url: str, indicator_type: str, indicator: str) -> dict:
     """공통 응답 파싱"""
@@ -253,7 +250,6 @@ VERDICT_COLOR = {
     "UNKNOWN":    "#7f8c8d",
 }
 
-
 def send_slack(result: dict, verdict: str) -> None:
     """Slack 웹훅으로 조회 결과 발송"""
     if not SLACK_WEBHOOK_URL:
@@ -324,7 +320,6 @@ def check_and_notify(indicator: str) -> None:
     print(f"[{verdict}] {indicator}")
     send_slack(result, verdict)
 
-
 def batch_check(indicators: list, delay: float = 15.0) -> None:
     """
     여러 지표 일괄 조회
@@ -335,7 +330,6 @@ def batch_check(indicators: list, delay: float = 15.0) -> None:
         check_and_notify(indicator)
         if i < len(indicators) - 1:
             time.sleep(delay)
-
 
 # ── 실행 ──────────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -525,6 +519,7 @@ GitHub에 API 키가 올라가면 자동으로 감지되어 키가 즉시 무효
 
 [^3]: VirusTotal. "API Rate Limiting." VirusTotal Developer Documentation. https://developers.virustotal.com/reference/public-vs-premium-api
 
-[^4]: CISA. "Malware Analysis Reports." Cybersecurity and Infrastructure Security Agency. https://www.cisa.gov/resources-tools/resources/malware-analysis-reports
+## 참고문헌
 
-[^5]: Python Software Foundation. "requests — HTTP for Humans." PyPI. https://pypi.org/project/requests/
+- CISA. "Malware Analysis Reports." Cybersecurity and Infrastructure Security Agency. https://www.cisa.gov/resources-tools/resources/malware-analysis-reports
+- Python Software Foundation. "requests — HTTP for Humans." PyPI. https://pypi.org/project/requests/

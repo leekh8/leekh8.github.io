@@ -706,7 +706,9 @@ Playwright는 강력한 E2E 테스트 도구이지만, CI/CD 환경에서 처음
 
 [^1]: https://github.com/microsoft/playwright/issues/13188
 [^2]: https://playwright.dev/
-[^3]: https://playwright.dev/docs/intro
+## 참고문헌
+
+- https://playwright.dev/docs/intro
 [^4]: https://docs.npmjs.com/cli/v7/commands/npm-ci
 [^5]: https://docs.npmjs.com/cli/v7/commands/npm-install
 
