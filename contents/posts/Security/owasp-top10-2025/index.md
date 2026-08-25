@@ -898,7 +898,7 @@ OWASP Top 10은 **최소한의 기준**이다.
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [OSI 7계층과 보안 위협](/osi-7-layers/) — 네트워크 계층별 공격 이해
 - [Spring Boot 인증 구현 가이드](/java-spring-authentication/) — JWT, OAuth2, Spring Security

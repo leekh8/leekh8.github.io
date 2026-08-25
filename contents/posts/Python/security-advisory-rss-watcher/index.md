@@ -266,7 +266,7 @@ schtasks /Create /TN advisory-watcher /SC DAILY /ST 09:00 `
 
 다음 글에서는 이렇게 수집한 권고문 데이터를 **JSON·CSV로 정제·표준화하고, 보유 자산 목록과 매칭해 "우리와 관련 있는 권고문"만 골라내는 방법**을 다뤄볼 예정이다.
 
-## 관련 글
+## 이어서 읽기
 
 - [🐍 Python으로 IP·도메인 평판 조회 자동화하기 — VirusTotal API 실전 활용](/virustotal-api-automation/) — 시리즈 1편: 위협 인텔리전스 API 자동화
 - [🛡️ SOAR란 무엇인가? 보안 자동화가 필요한 이유와 FortiSOAR 핵심 개념 정리](/what-is-soar/) — 수집한 권고문·IOC가 흘러가는 자동화 대응 체계

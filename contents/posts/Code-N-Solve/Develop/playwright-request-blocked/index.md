@@ -252,7 +252,14 @@ headless, headed 모두 동일. curl은 200 정상.
 
 다음 글에서는 디자인 시스템 없이 굴려 온 사이드 프로젝트 네 곳을 토큰 체계로 정리한 과정을 다룬다. 인라인 스타일 38개가 게으름이 아니라 동적 스타일 때문이었다는 것, 다크 모드 토큰 두 개가 선택자 20개를 부른 구조를 살펴본다.
 
-## 관련 글
+## 참고문헌
+
+- Playwright. "page.goto" (`wait_until` 옵션). https://playwright.dev/python/docs/api/class-page#page-goto
+- Playwright. "Navigations" (커밋과 로드 이벤트의 차이). https://playwright.dev/python/docs/navigations
+- MDN Web Docs. "Navigator: webdriver property." https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver
+- W3C. "WebDriver" (자동화 세션이 `navigator.webdriver`를 노출하도록 규정한 표준). https://www.w3.org/TR/webdriver/
+
+## 이어서 읽기
 
 - [Playwright로 Cloudflare 보호 사이트 스크래핑할 때 페이지네이션이 안 되는 이유](/playwright-cloudflare-pagination/)
 - [알라딘 자동 로그인과 주문 도서 수집 자동화: 실패 사례와 해결 방안](/Aladin-login-automation/)

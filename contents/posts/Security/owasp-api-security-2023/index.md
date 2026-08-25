@@ -875,7 +875,7 @@ API 보안은 "한 번 설정하면 끝"이 아니다.
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🔐 OWASP Top 10:2025 완전 가이드](/owasp-top10-2025/) — 웹 애플리케이션 보안의 기초
 - [🔑 Spring Boot 인증 구현 가이드](/java-spring-authentication/) — JWT, OAuth2 실전 구현

@@ -1107,7 +1107,7 @@ public class LoginAttemptService {
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🔐 OWASP Top 10:2025 완전 가이드](/owasp-top10-2025/) — 인증 실패(A07)를 포함한 웹 보안 취약점 전체 흐름 파악
 - [🌐 OSI 7계층, 외우지 말고 이해하자](/osi-7-layers/) — 네트워크 계층에서 인증 패킷이 어떻게 흐르는지 이해

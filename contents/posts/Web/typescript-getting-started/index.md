@@ -666,7 +666,7 @@ TypeScript는 처음엔 타입 오류와 씨름하는 것 같아서 번거롭게
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [⚡ JavaScript 비동기 처리 완전 가이드](/javascript-async/) — TypeScript와 함께 쓰는 async/await 패턴
 - [📘 React Props와 State 완전 정복](/react-2-props-state/) — TypeScript로 React 컴포넌트 타입 정의하기

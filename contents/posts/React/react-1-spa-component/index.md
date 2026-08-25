@@ -307,7 +307,7 @@ React 컴포넌트는 애플리케이션을 구성하는 데 있어 매우 중�
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [📘 React Props와 State 완전 정복](/react-2-props-state/) — React 기초 2편: 컴포넌트 간 데이터 전달 방법
 - [📘 React Hooks 완전 정복](/React-3-Hooks/) — React 기초 3편: useState, useEffect, 커스텀 훅

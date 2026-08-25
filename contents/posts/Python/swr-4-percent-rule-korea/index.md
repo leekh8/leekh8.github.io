@@ -384,7 +384,7 @@ flowchart TD
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🐍 보안 권고문 모니터링 자동화 — 의존성 0으로 만드는 RSS 수집기](/security-advisory-rss-watcher/) — 외부 데이터를 표준 라이브러리만으로 수집, 검증하는 파이프라인
 - [🐍 Python으로 IP, 도메인 평판 조회 자동화하기](/virustotal-api-automation/) — 남이 준 판정값을 그대로 믿지 않고 코드로 재확인하는 패턴

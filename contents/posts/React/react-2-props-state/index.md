@@ -996,7 +996,7 @@ Props와 State는 React의 핵심이다. 이 두 가지를 제대로 이해하�
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [📘 React 입문: SPA, 컴포넌트, JSX 핵심 개념](/react-1-spa-component/) — React 기초 1편: 처음 시작하는 React
 - [📘 React Hooks 완전 정복](/React-3-Hooks/) — React 기초 3편: useState, useEffect, 커스텀 훅

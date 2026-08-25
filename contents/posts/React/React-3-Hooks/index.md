@@ -1015,7 +1015,7 @@ React Hooks는 함수형 컴포넌트를 강력하게 만들어주는 핵심 기
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [📘 React 입문: SPA, 컴포넌트, JSX 핵심 개념](/react-1-spa-component/) — React 기초 1편
 - [📘 React Props와 State 완전 정복](/react-2-props-state/) — React 기초 2편

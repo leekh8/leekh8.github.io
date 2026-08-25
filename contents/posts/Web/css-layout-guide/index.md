@@ -722,7 +722,7 @@ Flexbox와 Grid를 모두 익혔다면 거의 모든 UI 레이아웃을 구현�
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🌐 웹 접근성의 중요성과 기본 원칙](/web-accessibility-fundamentals/) — 레이아웃을 접근성 있게 만드는 방법
 - [⚡ JavaScript 비동기 처리 완전 가이드](/javascript-async/) — CSS와 함께 배우는 프론트엔드 핵심

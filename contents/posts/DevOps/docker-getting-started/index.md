@@ -676,7 +676,7 @@ docker run -e DB_PASSWORD=$DB_PASSWORD my-app
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🚀 Spring Boot Render 배포 오류 완전 가이드](/spring-boot-render-error/) — Docker로 Java 백엔드를 배포할 때 만나는 오류 해결
 - [🚀 Playwright browserType.launch 오류 해결](/playwright-browsertype-launch-error/) — Docker 환경에서 Playwright 실행하는 방법

@@ -1337,7 +1337,7 @@ flowchart TD
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🎨 CSS Flexbox & Grid 완전 정복](/css-layout-guide/) — 접근성 있는 레이아웃 구현의 기초
 - [📘 React 입문: SPA, 컴포넌트, JSX 핵심 개념](/react-1-spa-component/) — React 컴포넌트에서 접근성 적용하기

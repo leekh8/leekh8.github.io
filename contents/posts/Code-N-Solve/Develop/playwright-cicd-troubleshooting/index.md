@@ -714,7 +714,7 @@ Playwright는 강력한 E2E 테스트 도구이지만, CI/CD 환경에서 처음
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🚀 Playwright browserType.launch 오류 해결](/playwright-browsertype-launch-error/) — Playwright 오류 2편: Chromium 버전 충돌 심화 가이드
 - [🚀 Gatsby 블로그 SEO 설정 가이드](/gatsby-seo-setup/) — GitHub Actions로 Gatsby 배포 자동화

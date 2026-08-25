@@ -1007,7 +1007,7 @@ npx playwright --version
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🚀 CI/CD 환경에서 Playwright 문제 해결하기](/playwright-cicd-troubleshooting/) — Playwright 설치 오류 1편: 기초 트러블슈팅
 - [🚀 Gatsby 블로그 SEO 설정 가이드](/gatsby-seo-setup/) — GitHub Actions CI/CD와 함께 Gatsby 배포 최적화

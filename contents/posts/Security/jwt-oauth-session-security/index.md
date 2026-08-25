@@ -633,7 +633,7 @@ def delete_user(user_id: str, current_user: dict = Depends(get_current_user)):
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [OWASP Top 10:2025 — A07 인증 실패, A01 접근 제어 취약점](/owasp-top10-2025/)
 - [OWASP API Security Top 10 — API2 Broken Authentication](/owasp-api-security-2023/)

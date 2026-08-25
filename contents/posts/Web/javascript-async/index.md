@@ -672,7 +672,7 @@ JavaScript 비동기 처리의 핵심은 **Event Loop의 동작 원리**를 이�
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [🔷 TypeScript 입문: JavaScript 개발자를 위한 타입 시스템](/typescript-getting-started/) — JavaScript를 더 안전하게 쓰는 방법
 - [📘 React Hooks 완전 정복](/React-3-Hooks/) — useEffect에서 비동기 처리 다루는 방법

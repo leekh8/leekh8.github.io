@@ -665,7 +665,7 @@ Linux 하드닝은 한 번 하고 끝나는 작업이 아닙니다. 시스템이
 
 ---
 
-## 관련 글
+## 이어서 읽기
 
 - [Linux 파일 권한 완전 정복 — chmod, chown, SUID/SGID/Sticky bit까지](/linux-file-permissions/)
 - [OWASP Top 10:2025 완전 가이드](/owasp-top10-2025/)
