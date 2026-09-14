@@ -34,6 +34,12 @@ const LEGACY_REDIRECTS = [
   // beefca8 (2026-04-20) — Props-State 자리에 Hooks 글이 들어감
   { from: "/React-3-Props-State/", to: "/React-3-Hooks/" },
 
+  // 2026-09-14 GSC 실적에서 발견. git rename 이력에 없는 URL이다.
+  // 원래 디렉토리명은 "Princilpes"(오타) 하나뿐인데, Google은 철자가 맞는 쪽도
+  // 색인해 두고 노출 45회를 태우고 있었다. 그쪽은 404였다.
+  // 이력이 기준이라는 원칙은 유지하되, 실적에만 잡히는 URL은 이렇게 따로 받는다.
+  { from: "/Importance-and-Fundamental-Principles-of-Web-Accessibility/", to: "/web-accessibility-fundamentals/" },
+
   // 454fffb (2026-04-03) — MD-GGU 문서형 글 삭제. 대상 글이 없어 홈으로 보낸다
   { from: "/1.2-기능-명세/", to: "/" },
   { from: "/1.3-비기능적-요구사항/", to: "/" },
