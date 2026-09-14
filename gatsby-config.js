@@ -166,6 +166,51 @@ module.exports = {
         // 실려 있으면 "색인해도 되는 페이지"로 읽혀, canonical이 새 URL을 가리켜도
         // 구·신 URL이 함께 색인된 채 순위 신호가 갈라진다.
         excludes: legacyPaths,
+
+        // lastmod를 직접 넣는다. 2026-09-14 GSC 진단 결과 반영.
+        // 기본 출력은 changefreq와 priority만 실었는데 Google은 그 둘을 무시한다고
+        // 명시하고 재크롤링 판단에는 lastmod만 쓴다. 74개 URL 전부 lastmod가 없어
+        // "언제 바뀌었는지 알 수 없는 사이트맵"이 됐고, 크롤링 목적 비율이
+        // 새로고침 98% 대 발견 2%로 굳었다.
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allMarkdownRemark {
+              nodes {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  date(formatString: "YYYY-MM-DD")
+                  update(formatString: "YYYY-MM-DD")
+                }
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({ allSitePage, allMarkdownRemark }) => {
+          const lastmodBySlug = {}
+          allMarkdownRemark.nodes.forEach(({ fields, frontmatter }) => {
+            if (!fields || !fields.slug) return
+            // update가 없는 글이 6편 있다. 그때는 발행일이 마지막 수정일이다.
+            lastmodBySlug[fields.slug] = frontmatter.update || frontmatter.date
+          })
+
+          // 홈, 태그, 시리즈 같은 목록 페이지는 새 글이 올라올 때 같이 바뀐다.
+          // 최신 글 날짜를 그대로 쓰는 것이 사실에 가장 가깝다.
+          const newest = Object.values(lastmodBySlug).sort().pop() || null
+
+          return allSitePage.nodes.map(({ path }) => ({
+            path,
+            lastmod: lastmodBySlug[path] || newest,
+          }))
+        },
+        serialize: ({ path, lastmod }) => ({ url: path, lastmod }),
       },
     },
     {
