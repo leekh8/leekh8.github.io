@@ -153,7 +153,7 @@ const AboutPage = () => (
       title="About"
       description={`${author}의 블로그 — 보안 자동화, 웹 보안, Python, 웹 개발을 다룹니다.`}
       author={author}
-      url={`${siteUrl}/about`}
+      url={`${siteUrl}/about/`}
     />
     <Content>
       <Intro>

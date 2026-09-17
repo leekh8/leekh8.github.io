@@ -98,6 +98,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: seriesTemplate,
         context: {
           series: singleSeries,
+          // 템플릿이 canonical을 자기 주소로 찍으려면 경로를 알아야 한다.
+          // 여기서 만든 값을 그대로 넘긴다. 템플릿이 다시 조립하면 규칙이 두 군데가 되고
+          // 한쪽만 바뀌는 순간 canonical이 존재하지 않는 주소를 가리키게 된다.
+          seriesPath: path,
         },
       })
     })

@@ -38,7 +38,11 @@ const SeriesPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
+      <SEO
+        title={`시리즈 - ${title}`}
+        description="여러 편으로 이어지는 글 묶음 목록입니다."
+        url={`${siteUrl}/series/`}
+      />
 
       <TagListWrapper>
         {series.length > 0 && (

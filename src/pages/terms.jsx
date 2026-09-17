@@ -18,7 +18,7 @@ const TermsPage = () => (
     <SEO
       title="Terms of Use"
       description={description}
-      url={`${siteUrl}/terms`}
+      url={`${siteUrl}/terms/`}
     />
     <Content>
       <h1>Terms of Use</h1>

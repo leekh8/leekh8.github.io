@@ -17,7 +17,21 @@ module.exports = {
       options: {
         host: siteUrl,
         sitemap: `${siteUrl}/sitemap-index.xml`,
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            // 태그와 검색 필터는 쿼리스트링으로만 동작하고 결과는 브라우저에서 그린다.
+            // 그래서 ?q= 가 붙은 URL은 전부 같은 HTML을 돌려준다. 실측(2026-09-17):
+            // /tags/, /tags/?q=CVE, /tags/?q=React 세 응답의 MD5가 전부 동일했고,
+            // 그 HTML 안에 글 링크는 0개였다. 그런 URL이 171개 크롤 가능하게 열려 있었다.
+            //
+            // 글이 50편인 사이트에서 내용 없는 중복 URL 171개를 같이 기어다니면
+            // 크롤 예산이 그쪽으로 새고 중복 비율이 77%로 잡힌다. 글로 가는 길은
+            // 홈과 /series/{이름}/ 이 이미 제공하므로 이걸 막아도 잃는 경로가 없다.
+            disallow: ["/*?q="],
+          },
+        ],
       },
     },
     {
@@ -201,13 +215,27 @@ module.exports = {
             lastmodBySlug[fields.slug] = frontmatter.update || frontmatter.date
           })
 
-          // 홈, 태그, 시리즈 같은 목록 페이지는 새 글이 올라올 때 같이 바뀐다.
-          // 최신 글 날짜를 그대로 쓰는 것이 사실에 가장 가깝다.
           const newest = Object.values(lastmodBySlug).sort().pop() || null
+
+          // 목록 페이지를 두 갈래로 나눈다.
+          //
+          // 홈과 시리즈 목록은 새 글이 올라오면 내용이 실제로 바뀌므로 최신 글 날짜를 쓴다.
+          // 반면 about, contact, 약관, 개인정보처럼 글과 무관한 페이지는 새 글이 올라와도
+          // 한 글자도 안 바뀐다. 그런데 전부 newest를 쓰면 글 하나 올릴 때마다 25개
+          // 페이지의 lastmod가 같이 밀려서, 바뀐 것이 없는 페이지를 다시 기어오게 만든다.
+          // 크롤 예산이 제한된 사이트에서는 그게 그대로 새 글 크롤링을 밀어낸다.
+          //
+          // 고정 문서는 저장소 기준으로 손이 간 적 없으므로 사이트 개설 시점을 쓴다.
+          const STATIC_PAGES = {
+            "/about/": "2023-03-01",
+            "/contact/": "2023-03-01",
+            "/privacy-policy/": "2023-03-01",
+            "/terms/": "2023-03-01",
+          }
 
           return allSitePage.nodes.map(({ path }) => ({
             path,
-            lastmod: lastmodBySlug[path] || newest,
+            lastmod: lastmodBySlug[path] || STATIC_PAGES[path] || newest,
           }))
         },
         serialize: ({ path, lastmod }) => ({ url: path, lastmod }),
@@ -262,7 +290,10 @@ module.exports = {
             `,
             output: `/rss.xml`,
             title: `RSS Feed of ${title}`,
-            match: "^/blog/",
+            // match를 두면 그 정규식에 걸리는 페이지에만 <link rel="alternate">가 붙는다.
+            // 이 블로그의 글 주소는 /글이름/ 형태라 "^/blog/"에 걸리는 페이지가 하나도 없고,
+            // 결과적으로 어느 페이지에도 RSS 자동 검색 링크가 안 붙어 있었다(실측 0건).
+            // rss.xml 자체는 정상 생성되므로, match를 빼서 전 페이지에 붙게 한다.
           },
         ],
       },

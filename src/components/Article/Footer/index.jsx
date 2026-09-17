@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { navigate } from "gatsby"
+import { Link } from "gatsby"
 import { useSelector } from "react-redux"
 import styled, { useTheme } from "styled-components"
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
@@ -52,10 +52,21 @@ const Arrow = styled.div`
   transition: left 0.3s;
 `
 
-const ArticleButtonWrapper = styled.div`
+// 이전 글, 다음 글은 링크여야 한다.
+//
+// 예전에는 styled.div + onClick={() => navigate(slug)} 였다. 사람이 쓰기엔 똑같이
+// 동작하지만 HTML에 <a href>가 없어서 크롤러에는 아무것도 없는 것과 같다.
+// gatsby-node가 발행일 순으로 50편 전부에 previous/next를 물려 완전한 체인을
+// 만들어 두는데, 그 체인이 HTML에서 통째로 사라지고 있었다.
+//
+// right는 $right 로 받는다. styled(Link)는 모르는 prop을 그대로 <a>에 넘기기 때문에
+// right={true} 가 DOM 속성으로 새어 React 경고가 난다. $ 접두사가 붙은 prop은
+// styled-components가 자기 선에서 소비하고 DOM으로 보내지 않는다.
+const ArticleButtonWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
-  align-items: ${props => (props.right ? "flex-end" : "flex-start")};
+  text-decoration: none;
+  align-items: ${props => (props.$right ? "flex-end" : "flex-start")};
   padding: 20.8px 16px;
   max-width: 250px;
   flex-basis: 250px;
@@ -72,19 +83,19 @@ const ArticleButtonWrapper = styled.div`
   }
 
   & ${ArrowFlexWrapper} {
-    flex-direction: ${props => (props.right ? "row-reverse" : "row")};
+    flex-direction: ${props => (props.$right ? "row-reverse" : "row")};
   }
 
   & ${ArticleButtonTextWrapper} {
-    align-items: ${props => (props.right ? "flex-end" : "flex-start")};
+    align-items: ${props => (props.$right ? "flex-end" : "flex-start")};
   }
 
   & ${Arrow} {
-    ${props => (props.right ? "margin-left: 16px" : "margin-right: 16px")};
+    ${props => (props.$right ? "margin-left: 16px" : "margin-right: 16px")};
   }
 
   &:hover ${Arrow} {
-    left: ${props => (props.right ? 2 : -2)}px;
+    left: ${props => (props.$right ? 2 : -2)}px;
   }
 
   @media (max-width: 768px) {
@@ -196,9 +207,9 @@ const HiddenWrapper = styled.div`
   overflow: ${props => (props.isHidden ? "hidden" : "auto")};
 `
 
-const ArticleButton = ({ right, children, onClick }) => {
+const ArticleButton = ({ right, children, to }) => {
   return (
-    <ArticleButtonWrapper right={right} onClick={onClick}>
+    <ArticleButtonWrapper to={to} $right={right}>
       <ArrowFlexWrapper>
         <Arrow>{right ? <BiRightArrowAlt /> : <BiLeftArrowAlt />}</Arrow>
         <ArticleButtonTextWrapper>
@@ -258,8 +269,12 @@ const Comment = () => {
 const Footer = ({ previous, next, title, slug }) => {
   const [copied, setCopied] = useState(false)
   const postUrl = `${siteUrl}${slug}`
-  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(postUrl)}`
-  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    title
+  )}&url=${encodeURIComponent(postUrl)}`
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    postUrl
+  )}`
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(postUrl).then(() => {
@@ -272,14 +287,14 @@ const Footer = ({ previous, next, title, slug }) => {
     <>
       <ArticleButtonContainer>
         {previous ? (
-          <ArticleButton onClick={() => navigate(previous?.fields?.slug)}>
+          <ArticleButton to={previous?.fields?.slug}>
             {previous?.frontmatter?.title}
           </ArticleButton>
         ) : (
           <div></div>
         )}
         {next && (
-          <ArticleButton right onClick={() => navigate(next?.fields?.slug)}>
+          <ArticleButton right to={next?.fields?.slug}>
             {next?.frontmatter?.title}
           </ArticleButton>
         )}
@@ -287,10 +302,18 @@ const Footer = ({ previous, next, title, slug }) => {
       {title && slug && (
         <ShareWrapper>
           <ShareLabel>공유하기</ShareLabel>
-          <TwitterButton href={twitterUrl} target="_blank" rel="noopener noreferrer">
+          <TwitterButton
+            href={twitterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             𝕏 Twitter
           </TwitterButton>
-          <LinkedInButton href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+          <LinkedInButton
+            href={linkedInUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             in LinkedIn
           </LinkedInButton>
           <CopyButton

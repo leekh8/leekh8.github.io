@@ -14,7 +14,11 @@ const Content = styled.div`
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Contact" description={description} url={`${siteUrl}/contact`} />
+    <SEO
+      title="Contact"
+      description={description}
+      url={`${siteUrl}/contact/`}
+    />
     <Content>
       <h1>Contact</h1>
       <p>

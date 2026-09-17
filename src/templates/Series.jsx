@@ -61,8 +61,8 @@ const Series = ({ pageContext, data }) => {
     <Layout>
       <SEO
         title={`SERIES: ${seriesName}`}
-        description={description}
-        url={siteUrl}
+        description={`${seriesName} 시리즈의 글 ${posts.length}편입니다.`}
+        url={`${siteUrl}${pageContext.seriesPath}/`}
       />
 
       <Header>

@@ -23,3 +23,38 @@ jobs:
 
       - name: Check prettier
         run: yarn check:prettier
+
+  # 빌드와 색인 검사는 check와 분리한다.
+  #
+  # 한 job에 이어 붙이면 앞 단계가 실패할 때 빌드가 아예 안 돈다. 실제로 prettier는
+  # 저장소 전체에서 오래 깨져 있었고(main 커밋 812개 중 PR 머지 1건뿐이라 이 검사가
+  # 거의 돌지 않았다), 그 뒤에 빌드를 두면 정작 중요한 검사가 영영 실행되지 않는다.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install Playwright Chromium (for Mermaid rendering)
+        run: npx playwright@1.58.2 install --with-deps chromium
+
+      - name: Build with Gatsby
+        run: |
+          CHROMIUM_DIR=$(ls -d $HOME/.cache/ms-playwright/chromium-* | sort -V | tail -n 1)
+          echo "CHROMIUM_DIR=$CHROMIUM_DIR" >> $GITHUB_ENV
+          yarn clean
+          yarn build
+
+      # 색인 계약 검사. 스크립트 본문에 왜 이렇게 하는지 적어 뒀다.
+      #
+      # 워크플로우 안에 셸로 짜지 않는 이유는 두 번 틀려서다. grep이 한글 섞인 HTML을
+      # 바이너리로 판단해 매치 내용을 안 주는 것과, HTML의 &amp; 가 파일 경로의 & 와
+      # 안 맞는 것. HTML을 줄 단위 텍스트 도구로 다루면 이런 식으로 샌다.
+      - name: Verify build SEO contracts
+        run: node scripts/verify-build-seo.js
