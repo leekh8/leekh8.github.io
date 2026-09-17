@@ -269,8 +269,12 @@ const Comment = () => {
 const Footer = ({ previous, next, title, slug }) => {
   const [copied, setCopied] = useState(false)
   const postUrl = `${siteUrl}${slug}`
-  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(postUrl)}`
-  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    title
+  )}&url=${encodeURIComponent(postUrl)}`
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    postUrl
+  )}`
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(postUrl).then(() => {
@@ -298,10 +302,18 @@ const Footer = ({ previous, next, title, slug }) => {
       {title && slug && (
         <ShareWrapper>
           <ShareLabel>공유하기</ShareLabel>
-          <TwitterButton href={twitterUrl} target="_blank" rel="noopener noreferrer">
+          <TwitterButton
+            href={twitterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             𝕏 Twitter
           </TwitterButton>
-          <LinkedInButton href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+          <LinkedInButton
+            href={linkedInUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             in LinkedIn
           </LinkedInButton>
           <CopyButton

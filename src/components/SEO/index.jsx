@@ -5,7 +5,16 @@ import { siteUrl, author as defaultAuthor } from "../../../blog-config"
 // date/update가 주어지면 글(BlogPosting)로, 없으면 일반 페이지(WebSite)로 처리한다.
 // 과거에는 datePublished/dateModified를 항상 오늘로 넣어 모든 글이 "오늘 발행"으로
 // 보였고, Post 템플릿의 JSON-LD와 중복 출력됐다. 이 컴포넌트로 일원화한다.
-const SEO = ({ title, description, url, author, date, update, image, noindex }) => {
+const SEO = ({
+  title,
+  description,
+  url,
+  author,
+  date,
+  update,
+  image,
+  noindex,
+}) => {
   const ogImage = image || `${siteUrl}/og-image.png`
   const isArticle = Boolean(date)
 
