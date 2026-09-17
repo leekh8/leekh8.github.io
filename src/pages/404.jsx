@@ -32,7 +32,12 @@ const NotFound = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title={title} description={description} url={siteUrl} />
+    <SEO
+      title={`페이지를 찾을 수 없습니다 - ${title}`}
+      description="요청한 주소에 해당하는 글이 없습니다."
+      url={`${siteUrl}/404/`}
+      noindex
+    />
     <NotFound>
       <h2>404 ERROR</h2>
       <h3>Page Not Found X(</h3>

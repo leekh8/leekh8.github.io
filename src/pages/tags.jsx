@@ -54,7 +54,11 @@ const TagsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
+      <SEO
+        title={`태그 - ${title}`}
+        description="글을 태그별로 모아 봅니다."
+        url={`${siteUrl}/tags/`}
+      />
 
       <TagListWrapper>
         {selected ? (

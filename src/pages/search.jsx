@@ -147,7 +147,11 @@ const Search = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
+      <SEO
+        title={`전체 글 - ${title}`}
+        description="블로그의 모든 글을 한 곳에서 찾아봅니다."
+        url={`${siteUrl}/search/`}
+      />
       <SearchWrapper>
         <Title size="sm">
           {query
