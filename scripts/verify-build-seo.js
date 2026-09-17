@@ -101,7 +101,16 @@ function checkSitemap() {
       problems.push(`sitemap에 다른 호스트가 있습니다: ${loc}`)
       continue
     }
-    const rel = loc.slice(siteUrl.length).replace(/^\//, "")
+    // sitemap은 경로를 퍼센트 인코딩해서 싣는다(XML 사이트맵 규약대로다).
+    // 파일 경로는 원본 UTF-8이라 그대로 비교하면 한글이 든 주소가 전부 "파일 없음"이
+    // 된다. 실제로 시리즈 12개와 한글 슬러그가 그렇게 잡혔다.
+    let rel
+    try {
+      rel = decodeURIComponent(loc.slice(siteUrl.length)).replace(/^\//, "")
+    } catch (e) {
+      problems.push(`sitemap URL을 해석할 수 없습니다: ${loc}`)
+      continue
+    }
     const file = path.join(PUBLIC_DIR, rel, "index.html")
     if (!fs.existsSync(file)) {
       problems.push(`sitemap에 있으나 파일이 없습니다: ${loc}`)
