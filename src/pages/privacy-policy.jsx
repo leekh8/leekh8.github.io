@@ -18,7 +18,7 @@ const PrivacyPolicyPage = () => (
     <SEO
       title="Privacy Policy"
       description={description}
-      url={`${siteUrl}/privacy-policy`}
+      url={`${siteUrl}/privacy-policy/`}
     />
     <Content>
       <h1>Privacy Policy</h1>
