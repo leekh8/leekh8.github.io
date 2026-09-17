@@ -51,63 +51,10 @@ jobs:
           yarn clean
           yarn build
 
-      # 페이지마다 canonical이 자기 주소를 가리키는지 빌드 산출물에서 확인한다.
+      # 색인 계약 검사. 스크립트 본문에 왜 이렇게 하는지 적어 뒀다.
       #
-      # 2026-09-17에 시리즈 페이지 18개와 /series/, /tags/, /search/ 가 전부 canonical을
-      # 홈으로 찍고 있었다. Google은 그걸 "이 페이지는 홈의 복제본"으로 읽고 색인에서 빼며,
-      # 그 페이지에 걸린 링크도 함께 힘을 잃는다. 홈 HTML에는 최신 10편만 들어가므로
-      # 나머지 40편으로 가는 길이 통째로 끊겨 있었다. 2026년 발행분 34편이 검색에
-      # 한 건도 안 잡힌 원인이다.
-      #
-      # 소스가 아니라 public/ 을 읽는 이유는, 실제로 배포되는 것이 그쪽이기 때문이다.
-      # 소스만 보면 helmet이나 gatsby-ssr가 끼어들어 바뀌는 부분을 못 본다.
-      - name: Verify canonical URLs
-        run: |
-          site="https://leekh8.github.io"
-          bad=0
-          checked=0
-          while IFS= read -r f; do
-            # meta refresh 리다이렉트 페이지는 일부러 옮겨갈 주소를 가리킨다
-            if grep -q 'http-equiv="refresh"' "$f"; then continue; fi
-            rel="${f#public}"
-            rel="${rel%index.html}"
-            if [ "$rel" = "/" ]; then want="$site"; else want="${site}${rel}"; fi
-            got=$(grep -o 'rel="canonical" href="[^"]*"' "$f" | head -1 | sed 's/.*href="//; s/"$//')
-            checked=$((checked + 1))
-            if [ -z "$got" ]; then
-              echo "::error file=$f::canonical 태그가 없습니다"
-              bad=$((bad + 1))
-            elif [ "$got" != "$want" ]; then
-              echo "::error file=$f::canonical=$got (기대: $want)"
-              bad=$((bad + 1))
-            fi
-          done < <(find public -name index.html)
-          echo "canonical 검사: ${checked}개 페이지, 불일치 ${bad}건"
-          if [ "$checked" -lt 50 ]; then
-            echo "::error::검사한 페이지가 ${checked}개뿐입니다. 빌드가 제대로 안 됐거나 경로가 바뀌었습니다"
-            exit 1
-          fi
-          if [ "$bad" -ne 0 ]; then exit 1; fi
-
-      # sitemap에 실린 URL이 실제로 만들어졌는지 본다.
-      # 없는 주소를 sitemap에 실으면 크롤 예산을 404에 쓰게 된다.
-      - name: Verify sitemap entries exist
-        run: |
-          site="https://leekh8.github.io"
-          missing=0
-          total=0
-          for loc in $(grep -o '<loc>[^<]*</loc>' public/sitemap-0.xml | sed 's|</\?loc>||g'); do
-            total=$((total + 1))
-            path="public${loc#$site}"
-            [ "${path%/}" = "public" ] && path="public/"
-            if [ ! -f "${path}index.html" ]; then
-              echo "::error::sitemap에 있으나 파일이 없습니다: $loc"
-              missing=$((missing + 1))
-            fi
-          done
-          echo "sitemap 검사: ${total}개 URL, 누락 ${missing}건"
-          if [ "$total" -lt 50 ]; then
-            echo "::error::sitemap URL이 ${total}개뿐입니다"
-            exit 1
-          fi
-          if [ "$missing" -ne 0 ]; then exit 1; fi
+      # 워크플로우 안에 셸로 짜지 않는 이유는 두 번 틀려서다. grep이 한글 섞인 HTML을
+      # 바이너리로 판단해 매치 내용을 안 주는 것과, HTML의 &amp; 가 파일 경로의 & 와
+      # 안 맞는 것. HTML을 줄 단위 텍스트 도구로 다루면 이런 식으로 샌다.
+      - name: Verify build SEO contracts
+        run: node scripts/verify-build-seo.js
