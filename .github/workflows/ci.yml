@@ -1,12 +1,22 @@
 name: CI
 
+# 트리거가 pull_request 전용이면 main 에 직접 push 할 때 아래 build job 이 아예 안 돈다.
+# 이 저장소는 브랜치 보호를 관리자 권한으로 우회해 직접 push 하는 운용이라, 정작
+# 색인 계약 검사가 필요한 커밋에서 검사가 빠져 있었다(2026-09-22 확인, 2026-09-29 조치).
 on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
 
 jobs:
+  # lint 와 prettier 는 PR 에서만 본다. 저장소 전체가 오래 깨져 있어 push 마다 돌리면
+  # main 이 상시 빨간불이 되고, 그러면 아래 build 의 실패를 아무도 못 알아본다.
+  # 빨간불이 기본값이 되는 순간 검사는 있으나 마나다.
   check:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
