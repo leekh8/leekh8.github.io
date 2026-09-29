@@ -160,14 +160,13 @@ const AboutPage = () => (
         <Role>Security Engineer · Developer</Role>
         <h1 style={{ marginBottom: "1.2rem" }}>About Me</h1>
         <p>
-          안녕하세요, <strong>{author}</strong>입니다.
-          IT 보안 분야에서 일하며 보안 자동화와 취약점 분석을 주로 다루고
-          있어요.
+          안녕하세요, <strong>{author}</strong>입니다. IT 보안 분야에서 일하며
+          보안 자동화와 취약점 분석을 주로 다루고 있어요.
         </p>
         <p>
-          보안 업무를 하다 보면 반복되는 작업이 생각보다 많습니다. 로그
-          분석, 취약점 티켓 처리, 알림 대응... 그 반복을 줄이려고 스크립트를
-          짜고 자동화 도구를 붙이다 보니 어느새 개발도 같이 하게 됐어요.
+          보안 업무를 하다 보면 반복되는 작업이 생각보다 많습니다. 로그 분석,
+          취약점 티켓 처리, 알림 대응... 그 반복을 줄이려고 스크립트를 짜고
+          자동화 도구를 붙이다 보니 어느새 개발도 같이 하게 됐어요.
         </p>
         <p>
           이 블로그는 그 과정에서 쌓인 기록들입니다. 공식 문서엔 잘 안 나오는
@@ -239,8 +238,8 @@ const AboutPage = () => (
           <TopicItem>
             <TopicIcon>⚙️</TopicIcon>
             <TopicText>
-              <strong>보안 자동화</strong> — SOAR 플레이북, 스크립트 기반 자동화,
-              반복 업무를 코드로 줄이는 방법들을 정리합니다.
+              <strong>보안 자동화</strong> — SOAR 플레이북, 스크립트 기반
+              자동화, 반복 업무를 코드로 줄이는 방법들을 정리합니다.
             </TopicText>
           </TopicItem>
           <TopicItem>
@@ -254,8 +253,9 @@ const AboutPage = () => (
           <TopicItem>
             <TopicIcon>🌐</TopicIcon>
             <TopicText>
-              <strong>네트워크 / 인프라</strong> — NAT, OSI 7계층, Linux 권한 관리
-              등 보안 업무에서 자주 마주치는 네트워크·시스템 개념들을 다룹니다.
+              <strong>네트워크 / 인프라</strong> — NAT, OSI 7계층, Linux 권한
+              관리 등 보안 업무에서 자주 마주치는 네트워크·시스템 개념들을
+              다룹니다.
             </TopicText>
           </TopicItem>
         </TopicList>
@@ -264,61 +264,37 @@ const AboutPage = () => (
       <Section>
         <SectionTitle>프로젝트</SectionTitle>
         <ProjectGrid>
-          <ProjectCard
-            href={links.sitemapper}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.sitemapper} target="_blank" rel="noreferrer">
             <ProjectName>🌐 Site Mapper</ProjectName>
             <ProjectDesc>
               사이트 구조 기반 sitemap 자동 생성기. Playwright + Node.js
             </ProjectDesc>
           </ProjectCard>
-          <ProjectCard
-            href={links.timetrack}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.timetrack} target="_blank" rel="noreferrer">
             <ProjectName>⏱ Time Track</ProjectName>
             <ProjectDesc>
               작업 시간 기록 및 통계 도구. React + Vercel 배포
             </ProjectDesc>
           </ProjectCard>
-          <ProjectCard
-            href={links.mdggu}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.mdggu} target="_blank" rel="noreferrer">
             <ProjectName>📝 MD-GGU</ProjectName>
             <ProjectDesc>
               마크다운 문서 최적화 및 변환 도구. Spring Boot + React
             </ProjectDesc>
           </ProjectCard>
-          <ProjectCard
-            href={links.seobooster}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.seobooster} target="_blank" rel="noreferrer">
             <ProjectName>📈 SEO Booster</ProjectName>
             <ProjectDesc>
               글을 쓰는 동안 SEO 점수가 실시간으로 따라오는 에디터. React + Vite
             </ProjectDesc>
           </ProjectCard>
-          <ProjectCard
-            href={links.gitggu}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.gitggu} target="_blank" rel="noreferrer">
             <ProjectName>🪪 GitGGu</ProjectName>
             <ProjectDesc>
               GitHub 프로필 README 마크다운 에디터. 위젯 삽입과 실시간 미리보기
             </ProjectDesc>
           </ProjectCard>
-          <ProjectCard
-            href={links.finimondo}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.finimondo} target="_blank" rel="noreferrer">
             <ProjectName>🃏 finimondo</ProjectName>
             <ProjectDesc>
               카드 셰딩 게임. 규칙 엔진을 UI와 분리한 순수 함수로 구현. Flutter
@@ -344,11 +320,7 @@ const AboutPage = () => (
               Firebase 실시간 채팅. Auth와 Firestore 구독, 보안 규칙 적용
             </ProjectDesc>
           </ProjectCard>
-          <ProjectCard
-            href={links.github}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ProjectCard href={links.github} target="_blank" rel="noreferrer">
             <ProjectName>🐙 GitHub</ProjectName>
             <ProjectDesc>
               그 외 모든 프로젝트는 GitHub에서 확인하세요
@@ -359,9 +331,7 @@ const AboutPage = () => (
 
       <Section>
         <SectionTitle>Contact</SectionTitle>
-        <p>
-          틀린 내용이 있거나 더 좋은 방법을 알고 계시면 편하게 연락주세요.
-        </p>
+        <p>틀린 내용이 있거나 더 좋은 방법을 알고 계시면 편하게 연락주세요.</p>
         <p>
           GitHub:{" "}
           <ContactLink href={links.github} target="_blank" rel="noreferrer">

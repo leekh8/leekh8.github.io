@@ -53,7 +53,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   LEGACY_REDIRECTS.forEach(({ from, to }) => {
-    createRedirect({ fromPath: from, toPath: to, isPermanent: true, force: true })
+    createRedirect({
+      fromPath: from,
+      toPath: to,
+      isPermanent: true,
+      force: true,
+    })
     createPage({
       path: from,
       component: redirectTemplate,

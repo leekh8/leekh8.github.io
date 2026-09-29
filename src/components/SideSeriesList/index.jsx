@@ -46,22 +46,22 @@ const SideSeriesList = ({ seriesList }) => {
 
   return (
     <RelativeWrapper>
-    <Wrapper>
-      <Title>SERIES</Title>
-      <ul>
-        {seriesList.map(series => (
-          <SeriesItem key={series.fieldValue}>
-            <Link to={`/series/${series.fieldValue.replace(/\s/g, "-")}`}>
-              {series.fieldValue}
-              <br />
-              <span style={{ fontSize: "11px", opacity: 0.7 }}>
-                {series.totalCount}편
-              </span>
-            </Link>
-          </SeriesItem>
-        ))}
-      </ul>
-    </Wrapper>
+      <Wrapper>
+        <Title>SERIES</Title>
+        <ul>
+          {seriesList.map(series => (
+            <SeriesItem key={series.fieldValue}>
+              <Link to={`/series/${series.fieldValue.replace(/\s/g, "-")}`}>
+                {series.fieldValue}
+                <br />
+                <span style={{ fontSize: "11px", opacity: 0.7 }}>
+                  {series.totalCount}편
+                </span>
+              </Link>
+            </SeriesItem>
+          ))}
+        </ul>
+      </Wrapper>
     </RelativeWrapper>
   )
 }

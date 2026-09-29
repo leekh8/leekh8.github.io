@@ -104,7 +104,12 @@ const highlight = (text, query) => {
 }
 
 const SearchResult = ({ post, query }) => {
-  const { title: postTitle, description: postDesc, date, tags } = post.frontmatter
+  const {
+    title: postTitle,
+    description: postDesc,
+    date,
+    tags,
+  } = post.frontmatter
   const { excerpt } = post
   const { slug, timeToRead } = post.fields
 
@@ -115,7 +120,10 @@ const SearchResult = ({ post, query }) => {
   return (
     <PostWrapper>
       <PostTitle>
-        <Link to={slug} dangerouslySetInnerHTML={{ __html: highlightedTitle }} />
+        <Link
+          to={slug}
+          dangerouslySetInnerHTML={{ __html: highlightedTitle }}
+        />
       </PostTitle>
       <PostMeta>
         {date}
@@ -179,9 +187,7 @@ const Search = ({ data }) => {
           filteredPosts.map((post, i) => (
             <React.Fragment key={post.fields.slug}>
               <SearchResult post={post} query={query} />
-              {i < filteredPosts.length - 1 && (
-                <Divider mt="16px" mb="12px" />
-              )}
+              {i < filteredPosts.length - 1 && <Divider mt="16px" mb="12px" />}
             </React.Fragment>
           ))
         )}
