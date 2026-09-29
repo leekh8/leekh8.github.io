@@ -22,8 +22,7 @@ const ReadingProgress = () => {
 
   useEffect(() => {
     const updateProgress = () => {
-      const { scrollTop, scrollHeight, clientHeight } =
-        document.documentElement
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement
       const total = scrollHeight - clientHeight
       if (total <= 0) return
       setProgress(Math.min((scrollTop / total) * 100, 100))

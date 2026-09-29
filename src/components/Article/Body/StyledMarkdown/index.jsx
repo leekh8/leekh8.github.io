@@ -189,7 +189,7 @@ const StyledMarkdown = styled.div`
     right: 60px;
     padding: 2px 8px;
     font-size: var(--fs-xs);
-    font-family: 'Source Code Pro', 'Consolas', monospace;
+    font-family: "Source Code Pro", "Consolas", monospace;
     color: rgba(200, 200, 200, 0.55);
     text-transform: uppercase;
     letter-spacing: 0.06em;

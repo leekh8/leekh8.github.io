@@ -80,7 +80,11 @@ const Footer = () => {
           <FooterLink to="/series">시리즈</FooterLink>
           <FooterLink to="/search">검색</FooterLink>
           <FooterLink to="/about">소개</FooterLink>
-          <FooterExternalLink href="/rss.xml" target="_blank" rel="noopener noreferrer">
+          <FooterExternalLink
+            href="/rss.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             RSS
           </FooterExternalLink>
         </FooterLinks>

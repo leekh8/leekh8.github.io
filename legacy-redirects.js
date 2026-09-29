@@ -17,12 +17,27 @@
 const LEGACY_REDIRECTS = [
   // e38afe4 (2026-04-20) — 슬러그 kebab-case 통일
   { from: "/Playwright-install/", to: "/playwright-cicd-troubleshooting/" },
-  { from: "/Playwright-browserType-launch-Error/", to: "/playwright-browsertype-launch-error/" },
+  {
+    from: "/Playwright-browserType-launch-Error/",
+    to: "/playwright-browsertype-launch-error/",
+  },
   { from: "/Vite-Develop-Error/", to: "/vite-deploy-error/" },
-  { from: "/Importance-and-Fundamental-Princilpes-of-Web-Accessibility/", to: "/web-accessibility-fundamentals/" },
-  { from: "/Context-API-VS-Redux-VS-Zustand/", to: "/react-state-management-comparison/" },
-  { from: "/Github-actions-trouble-shooting/", to: "/github-actions-troubleshooting/" },
-  { from: "/Google-Colab-Tranformers-Model-Train-Error/", to: "/google-colab-transformers-error/" },
+  {
+    from: "/Importance-and-Fundamental-Princilpes-of-Web-Accessibility/",
+    to: "/web-accessibility-fundamentals/",
+  },
+  {
+    from: "/Context-API-VS-Redux-VS-Zustand/",
+    to: "/react-state-management-comparison/",
+  },
+  {
+    from: "/Github-actions-trouble-shooting/",
+    to: "/github-actions-troubleshooting/",
+  },
+  {
+    from: "/Google-Colab-Tranformers-Model-Train-Error/",
+    to: "/google-colab-transformers-error/",
+  },
   { from: "/Java-Spring-Authentication/", to: "/java-spring-authentication/" },
   { from: "/Spring-Boot-Render-Error/", to: "/spring-boot-render-error/" },
   { from: "/Expose-Blog/", to: "/gatsby-seo-setup/" },
@@ -38,7 +53,10 @@ const LEGACY_REDIRECTS = [
   // 원래 디렉토리명은 "Princilpes"(오타) 하나뿐인데, Google은 철자가 맞는 쪽도
   // 색인해 두고 노출 45회를 태우고 있었다. 그쪽은 404였다.
   // 이력이 기준이라는 원칙은 유지하되, 실적에만 잡히는 URL은 이렇게 따로 받는다.
-  { from: "/Importance-and-Fundamental-Principles-of-Web-Accessibility/", to: "/web-accessibility-fundamentals/" },
+  {
+    from: "/Importance-and-Fundamental-Principles-of-Web-Accessibility/",
+    to: "/web-accessibility-fundamentals/",
+  },
 
   // 454fffb (2026-04-03) — MD-GGU 문서형 글 삭제. 대상 글이 없어 홈으로 보낸다
   { from: "/1.2-기능-명세/", to: "/" },

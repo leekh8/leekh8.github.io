@@ -5,3 +5,10 @@ package-lock.json
 public
 jekyll/
 static/
+
+# 발행 완료 글. 렌더 결과가 이미 검증돼 있고, 마크다운 형식은 CLAUDE.md 글쓰기 규약이
+# 따로 관리한다. prettier 가 같은 일을 다른 기준으로 한 번 더 할 이유가 없다.
+contents/
+
+# git 추적 대상이 아니다(.gitignore). CI 는 못 보는데 로컬 실행 때마다 고쳐 쓴다.
+CLAUDE.md

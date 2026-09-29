@@ -100,7 +100,9 @@ const BlogIndex = ({ data }) => {
   const tags = _.sortBy(data.allMarkdownRemark.group || [], [
     "totalCount",
   ]).reverse()
-  const series = _.sortBy(data.seriesGroup.group || [], ["totalCount"]).reverse()
+  const series = _.sortBy(data.seriesGroup.group || [], [
+    "totalCount",
+  ]).reverse()
 
   if (posts.length === 0) {
     return (
