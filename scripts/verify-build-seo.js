@@ -119,6 +119,33 @@ function checkSitemap() {
   return { checked: locs.length, problems }
 }
 
+// react-dom 18 서버 렌더러가 한글 앞에 NUL을 끼워 넣는다. gatsby-node.js 의 onPostBuild가
+// 지우는데, 그 단계가 빠지거나 바뀌면 다시 들어온다. 태그 링크 주소에 들어가면 링크가
+// 조용히 안 걸리므로 index.html 만이 아니라 모든 html을 본다.
+function* walkAllHtml(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      yield* walkAllHtml(full)
+    } else if (entry.name.endsWith(".html")) {
+      yield full
+    }
+  }
+}
+
+function checkNulBytes() {
+  const problems = []
+  let checked = 0
+  for (const file of walkAllHtml(PUBLIC_DIR)) {
+    checked += 1
+    const buf = fs.readFileSync(file)
+    let count = 0
+    for (let i = buf.indexOf(0); i !== -1; i = buf.indexOf(0, i + 1)) count += 1
+    if (count > 0) problems.push(`${file}: NUL 바이트 ${count}개`)
+  }
+  return { checked, problems }
+}
+
 function report(name, { checked, problems }, min) {
   console.log(`\n== ${name}: ${checked}건 검사, 문제 ${problems.length}건`)
   for (const p of problems) console.log(`::error::${p}`)
@@ -133,11 +160,13 @@ function report(name, { checked, problems }, min) {
 
 const canonical = checkCanonicals()
 const sitemap = checkSitemap()
+const nul = checkNulBytes()
 
 // 두 검사를 모두 돌린 뒤에 판정한다. && 로 묶으면 앞이 실패할 때 뒤가 실행되지 않아
 // 한 번에 하나씩만 보게 되고, 고치고 밀어 넣는 왕복이 그만큼 늘어난다.
 const canonicalOk = report("canonical 자기참조", canonical, MIN_PAGES)
 const sitemapOk = report("sitemap 실재 여부", sitemap, MIN_SITEMAP_URLS)
-const ok = canonicalOk && sitemapOk
+const nulOk = report("html NUL 바이트", nul, MIN_PAGES)
+const ok = canonicalOk && sitemapOk && nulOk
 
 process.exit(ok ? 0 : 1)
