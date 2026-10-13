@@ -21,6 +21,7 @@ description: "OWASP API Security Top 10:2023 기준으로 REST API의 10대 보�
 > - [2편] **OWASP API Security Top 10:2023** ← 현재 글
 > - [3편] [OWASP LLM Top 10:2025](/owasp-llm-top10-2025/)
 > - [4편] [JWT, OAuth, 세션 보안 완전 가이드](/jwt-oauth-session-security/)
+> - [5편] [HTTP 보안 헤더 점검](/http-security-headers/)
 
 ---
 

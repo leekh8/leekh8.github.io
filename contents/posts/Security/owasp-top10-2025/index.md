@@ -22,6 +22,7 @@ description: "OWASP Top 10:2025 기준으로 웹 애플리케이션 10대 보안
 > - [2편] [OWASP API Security Top 10:2023](/owasp-api-security-2023/)
 > - [3편] [OWASP LLM Top 10:2025](/owasp-llm-top10-2025/)
 > - [4편] [JWT, OAuth, 세션 보안 완전 가이드](/jwt-oauth-session-security/)
+> - [5편] [HTTP 보안 헤더 점검](/http-security-headers/)
 
 ---
 

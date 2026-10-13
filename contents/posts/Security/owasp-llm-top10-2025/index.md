@@ -20,6 +20,7 @@ featured: false
 > - [2편] [OWASP API Security Top 10:2023](/owasp-api-security-2023/)
 > - [3편] **OWASP LLM Top 10:2025** ← 현재 글
 > - [4편] [JWT, OAuth, 세션 보안 완전 가이드](/jwt-oauth-session-security/)
+> - [5편] [HTTP 보안 헤더 점검](/http-security-headers/)
 
 ---
 
