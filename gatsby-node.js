@@ -163,7 +163,9 @@ exports.createSchemaCustomization = ({ actions }) => {
 // 칸에 안 들어가면 버퍼를 비우는데, 채운 만큼(subarray(0, writtenBytes))이 아니라
 // 버퍼 전체를 내보낸다. 남은 칸이 0으로 찬 채 나가고, 한글은 다음 버퍼에 온전히
 // 들어간다(react-dom-server.node 의 writeStringChunk). development, production
-// 빌드 모두 같고, Gatsby 5는 React 18에 묶여 있으며 18.3.1이 18의 마지막 판이다.
+// 빌드 모두 같고 18.3.1이 18의 마지막 판이다. 수정(facebook/react#26228)은 19에만
+// 있다. Gatsby는 5.16.0부터 React 19를 받지만 react-redux 8, react-spring 9,
+// utterances-react-component 1.0이 18까지만 받아서 아직 못 올린다. 올리면 이 단계를 뺀다.
 //
 // 실측(2026-10-13): 배포본 html 99개 중 29개에 NUL 57개. 11개는 태그 링크 주소
 // 안에 있어서 `/tags/?q=<NUL>보안 헤더` 처럼 눌러도 태그가 안 걸렸다.
