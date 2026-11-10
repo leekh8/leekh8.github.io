@@ -44,11 +44,23 @@ jobs:
   # 대신 채워 줄 여지가 생긴다. 지목할 이름을 고유하게 둔다.
   build:
     name: build-seo
-    # Playwright 1.61 부터 Ubuntu 26.04 를 지원한다(릴리스 노트 "Playwright now
-    # supports Ubuntu 26.04.", 이슈 #40117 이 v1.61 로 닫혔다). 그래서 11-10 에
-    # 걸어 둔 ubuntu-24.04 고정을 풀었다. 1.58.2 로는 26.04 에서
-    # «does not support chromium on ubuntu26.04-x64» 로 멈췄다.
-    runs-on: ubuntu-latest
+    # 🛑 ubuntu-latest 를 쓰면 안 된다. 2026-11-10 에 26.04 로 밀렸다.
+    #
+    # 🛑 그리고 아래 playwright 판 번호를 혼자 올려도 안 된다. 기준은 Playwright
+    #    최신판이 아니라 `yarn.lock` 의 `playwright-core` 다. mermaid 를 그리는
+    #    mermaid-isomorphic 이 `playwright-core@^1.0.0` 을 끌어오고, 그 판이
+    #    기대하는 브라우저 리비전을 찾는다. 지금 yarn.lock 은 1.58.2 다.
+    #
+    #    11-10 에 1.65.0 으로 올려 봤다가 배포가 깨졌다. 설치는 통과하는데
+    #    빌드가 «browserType.launch: Executable doesn't exist at
+    #    .../chromium_headless_shell-1208/...» 로 죽는다. 1.65.0 이 깔아 둔
+    #    리비전과 1.58.2 가 찾는 리비전이 다르기 때문이다.
+    #
+    #    고정을 풀려면 순서가 있다. 먼저 `playwright-core` 를 1.61 이상으로
+    #    올리고(그 판이 26.04 를 지원한다 - 릴리스 노트 "Playwright now supports
+    #    Ubuntu 26.04."), 그 판 번호를 아래 npx 에도 맞추고, 그다음 이 줄을 푼다.
+    #    셋이 한 묶음이다.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
 
@@ -60,7 +72,8 @@ jobs:
         run: yarn install
 
       - name: Install Playwright Chromium (for Mermaid rendering)
-        run: npx playwright@1.65.0 install --with-deps chromium
+        # 이 판은 yarn.lock 의 playwright-core 와 같아야 한다 (위 주석 참고).
+        run: npx playwright@1.58.2 install --with-deps chromium
 
       - name: Build with Gatsby
         run: |

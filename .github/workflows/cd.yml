@@ -12,11 +12,10 @@ permissions:
 
 jobs:
   build:
-    # Playwright 1.61 부터 Ubuntu 26.04 를 지원한다(릴리스 노트 "Playwright now
-    # supports Ubuntu 26.04.", 이슈 #40117 이 v1.61 로 닫혔다). 그래서 11-10 에
-    # 걸어 둔 ubuntu-24.04 고정을 풀었다. 1.58.2 로는 26.04 에서
-    # «does not support chromium on ubuntu26.04-x64» 로 멈췄다.
-    runs-on: ubuntu-latest
+    # 🛑 ubuntu-latest 와 playwright 판은 ci.yml 의 build-seo 와 같이 움직인다.
+    #    푸는 순서와 까닭은 그쪽 주석에 적어 뒀다. 기준은 Playwright 최신판이
+    #    아니라 `yarn.lock` 의 `playwright-core`(지금 1.58.2) 다.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -36,7 +35,8 @@ jobs:
         run: yarn install
 
       - name: Install Playwright Chromium (for Mermaid rendering)
-        run: npx playwright@1.65.0 install --with-deps chromium
+        # 이 판은 yarn.lock 의 playwright-core 와 같아야 한다 (ci.yml 주석 참고).
+        run: npx playwright@1.58.2 install --with-deps chromium
 
       - name: Build with Gatsby
         env:
