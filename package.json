@@ -1,5 +1,8 @@
 {
   "name": "leekh8-blog",
+  "engines": {
+    "node": ">=22"
+  },
   "private": true,
   "description": "보안, 웹 개발, Python을 다루는 기술 블로그",
   "homepage": "https://leekh8.github.io",
