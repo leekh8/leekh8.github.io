@@ -12,11 +12,11 @@ permissions:
 
 jobs:
   build:
-    # 🛑 ubuntu-latest 를 쓰면 안 된다. 2026-11-10 에 26.04 로 밀렸고
-    #    `npx playwright@1.58.2 install` 이 «does not support chromium on
-    #    ubuntu26.04-x64» 로 멈춘다. 10-20 에 통과한 런의 이미지는
-    #    ubuntu-24.04 였다. Playwright 판을 올릴 때 이 고정을 푼다.
-    runs-on: ubuntu-24.04
+    # Playwright 1.61 부터 Ubuntu 26.04 를 지원한다(릴리스 노트 "Playwright now
+    # supports Ubuntu 26.04.", 이슈 #40117 이 v1.61 로 닫혔다). 그래서 11-10 에
+    # 걸어 둔 ubuntu-24.04 고정을 풀었다. 1.58.2 로는 26.04 에서
+    # «does not support chromium on ubuntu26.04-x64» 로 멈췄다.
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -36,7 +36,7 @@ jobs:
         run: yarn install
 
       - name: Install Playwright Chromium (for Mermaid rendering)
-        run: npx playwright@1.58.2 install --with-deps chromium
+        run: npx playwright@1.65.0 install --with-deps chromium
 
       - name: Build with Gatsby
         env:
