@@ -12,10 +12,10 @@ permissions:
 
 jobs:
   build:
-    # 🛑 ubuntu-latest 와 playwright 판은 ci.yml 의 build-seo 와 같이 움직인다.
-    #    푸는 순서와 까닭은 그쪽 주석에 적어 뒀다. 기준은 Playwright 최신판이
-    #    아니라 `yarn.lock` 의 `playwright-core`(지금 1.58.2) 다.
-    runs-on: ubuntu-24.04
+    # 🛑 러너와 playwright 판은 ci.yml 의 build-seo 와 **같이 움직인다.**
+    #    까닭과 11-10 에 깨뜨린 자취는 그쪽 주석에 적어 뒀다. 기준은 Playwright
+    #    최신판이 아니라 `yarn.lock` 의 `playwright-core`(지금 1.65.0) 다.
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -35,8 +35,15 @@ jobs:
         run: yarn install
 
       - name: Install Playwright Chromium (for Mermaid rendering)
-        # 이 판은 yarn.lock 의 playwright-core 와 같아야 한다 (ci.yml 주석 참고).
-        run: npx playwright@1.58.2 install --with-deps chromium
+        # 🛑 **판 번호를 박지 않고 yarn.lock 에서 읽는다** (까닭은 ci.yml 주석).
+        run: |
+          PW=$(awk '/^playwright-core@/{f=1} f && /^  version /{gsub(/"/,"",$2); print $2; exit}' yarn.lock | tr -d '\r')
+          echo "yarn.lock 의 playwright-core = ${PW}"
+          if [ -z "${PW}" ]; then
+            echo "::error::yarn.lock 에서 playwright-core 판을 못 읽었다. 의존성 모양이 바뀐 것이다"
+            exit 1
+          fi
+          npx playwright@"${PW}" install --with-deps chromium
 
       - name: Build with Gatsby
         env:
