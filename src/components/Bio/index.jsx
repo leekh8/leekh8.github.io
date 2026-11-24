@@ -108,7 +108,15 @@ const Link = ({ link, title, children }) => {
   if (!link) return null
 
   const isExternal = /^https?:\/\//.test(link)
-  const fixedLink = isExternal ? link : `/${link.replace(/^\/?/, "")}`
+  // mailto:, tel: 처럼 스킴이 붙은 주소는 그대로 둔다. 예전에는 앞에 / 를 붙여
+  // href="/mailto:..." 가 됐고, 사이트 안 주소로 해석돼 404 가 났다(2026-11-24 GSC).
+  const hasScheme = /^[a-z][a-z0-9+.-]*:/i.test(link)
+  // 사이트 안 주소는 끝에 / 를 붙인다. GitHub Pages 는 /about 을 /about/ 로
+  // 301 리디렉션하므로, 슬래시 없이 걸면 크롤러가 리디렉션을 한 번 더 거친다.
+  const fixedLink =
+    isExternal || hasScheme
+      ? link
+      : `/${link.replace(/^\/+/, "").replace(/\/?$/, "/")}`
 
   return (
     <a

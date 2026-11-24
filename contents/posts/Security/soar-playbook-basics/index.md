@@ -1,5 +1,6 @@
 ---
 date: "2026-04-15"
+update: "2026-11-24"
 title: "SOAR 플레이북 설계 기초 — 트리거, 액션, 조건으로 보안 자동화 만들기"
 category: "Security"
 series: "보안 자동화 입문"
@@ -13,7 +14,7 @@ thumbnail: ""
 description: "SOAR의 핵심인 플레이북(Playbook)이 어떻게 동작하는지, 트리거·액션·조건·반복문으로 실제 보안 시나리오를 자동화하는 방법을 설명합니다."
 ---
 
-> 이 글은 [SOAR란 무엇인가?](/soar-intro) 편에서 이어집니다.
+> 이 글은 [SOAR란 무엇인가?](/what-is-soar/) 편에서 이어집니다.
 
 ---
 

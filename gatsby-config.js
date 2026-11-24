@@ -201,6 +201,7 @@ module.exports = {
                 frontmatter {
                   date(formatString: "YYYY-MM-DD")
                   update(formatString: "YYYY-MM-DD")
+                  series
                 }
               }
             }
@@ -209,10 +210,27 @@ module.exports = {
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({ allSitePage, allMarkdownRemark }) => {
           const lastmodBySlug = {}
+          // 시리즈 페이지는 그 시리즈에 속한 글이 바뀔 때만 내용이 바뀐다.
+          // 2026-11-24 GSC 점검 전까지는 시리즈 17개 전부에 최신 글 날짜를 넣었다.
+          // 새 글이 없는 시리즈도 빌드마다 날짜가 올라갔고, Google 은 lastmod 가
+          // "consistently and verifiably accurate" 할 때만 쓴다고 적어 두었다.
+          // 틀린 날짜가 섞이면 사이트 전체의 lastmod 를 안 믿게 될 수 있다.
+          const bySeries = {}
+          let newestInAnySeries = null
+          const later = (a, b) => (!a || (b && b > a) ? b : a)
+
           allMarkdownRemark.nodes.forEach(({ fields, frontmatter }) => {
             if (!fields || !fields.slug) return
-            // update가 없는 글이 6편 있다. 그때는 발행일이 마지막 수정일이다.
-            lastmodBySlug[fields.slug] = frontmatter.update || frontmatter.date
+            // update가 없는 글이 있다. 그때는 발행일이 마지막 수정일이다.
+            const mod = frontmatter.update || frontmatter.date
+            lastmodBySlug[fields.slug] = mod
+            if (frontmatter.series) {
+              // gatsby-node.js 가 시리즈 경로를 만드는 규칙과 같아야 한다.
+              const name = frontmatter.series.replace(/\s/g, "-")
+              const seriesPath = `/series/${name}/`
+              bySeries[seriesPath] = later(bySeries[seriesPath], mod)
+              newestInAnySeries = later(newestInAnySeries, mod)
+            }
           })
 
           const newest = Object.values(lastmodBySlug).sort().pop() || null
@@ -230,12 +248,20 @@ module.exports = {
             "/about/": "2023-03-01",
             "/contact/": "2023-03-01",
             "/privacy-policy/": "2023-03-01",
-            "/terms/": "2023-03-01",
+            // 2026-11-24 본문의 Contact 링크를 /contact/ 로 고쳤다.
+            "/terms/": "2026-11-24",
           }
 
           return allSitePage.nodes.map(({ path }) => ({
             path,
-            lastmod: lastmodBySlug[path] || STATIC_PAGES[path] || newest,
+            lastmod:
+              lastmodBySlug[path] ||
+              STATIC_PAGES[path] ||
+              bySeries[path] ||
+              // /series/ 목록은 시리즈에 든 글이 바뀔 때 바뀐다.
+              (path === "/series/" && newestInAnySeries) ||
+              // 홈, /tags/, /search/ 는 모든 글을 보여 주므로 최신 글 날짜가 맞다.
+              newest,
           }))
         },
         serialize: ({ path, lastmod }) => ({ url: path, lastmod }),
