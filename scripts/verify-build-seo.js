@@ -146,6 +146,56 @@ function checkNulBytes() {
   return { checked, problems }
 }
 
+// 사이트 안 링크(href="/...")가 리디렉션이나 404 없이 바로 파일에 닿는지 본다.
+// 2026-11-24 GSC 에 "리디렉션이 포함된 페이지"와 "404"가 잡혀 열어 보니 셋이었다.
+//   href="/mailto:..."   스킴 앞에 / 가 붙어 사이트 안 주소가 됐다 -> 404
+//   href="/about"        GitHub Pages 가 /about/ 로 301 한다 -> 리디렉션
+//   (/soar-intro)        글 본문의 링크가 없는 슬러그를 가리켰다 -> 404
+// 쿼리(?q=)가 붙은 링크는 robots.txt 가 막고 있어 보지 않는다.
+const FILE_EXT = /\.[a-z0-9]{2,5}$/i
+
+function checkInternalLinks() {
+  const problems = []
+  let checked = 0
+  for (const file of walkHtml(PUBLIC_DIR)) {
+    const html = fs.readFileSync(file, "utf8")
+    if (/http-equiv=["']refresh["']/i.test(html)) continue
+    checked += 1
+    const seen = new Set()
+    for (const m of html.matchAll(/<a\b[^>]*?\shref="(\/[^"]*)"/g)) {
+      const raw = decodeEntities(m[1])
+      if (raw.startsWith("//") || /[?#]/.test(raw) || seen.has(raw)) continue
+      seen.add(raw)
+      let p
+      try {
+        p = decodeURIComponent(raw)
+      } catch (e) {
+        problems.push(`${file}: 해석할 수 없는 링크 ${raw}`)
+        continue
+      }
+      if (/^\/[a-z][a-z0-9+.-]*:/i.test(p)) {
+        problems.push(`${file}: 스킴 앞에 / 가 붙은 링크 ${raw}`)
+        continue
+      }
+      if (FILE_EXT.test(p)) {
+        if (!fs.existsSync(path.join(PUBLIC_DIR, p))) {
+          problems.push(`${file}: 없는 파일로 가는 링크 ${raw}`)
+        }
+        continue
+      }
+      if (!p.endsWith("/")) {
+        problems.push(`${file}: 끝에 / 가 없어 리디렉션되는 링크 ${raw}`)
+        continue
+      }
+      const target = path.join(PUBLIC_DIR, p, "index.html")
+      if (!fs.existsSync(target)) {
+        problems.push(`${file}: 없는 페이지로 가는 링크 ${raw}`)
+      }
+    }
+  }
+  return { checked, problems }
+}
+
 function report(name, { checked, problems }, min) {
   console.log(`\n== ${name}: ${checked}건 검사, 문제 ${problems.length}건`)
   for (const p of problems) console.log(`::error::${p}`)
@@ -161,12 +211,14 @@ function report(name, { checked, problems }, min) {
 const canonical = checkCanonicals()
 const sitemap = checkSitemap()
 const nul = checkNulBytes()
+const links = checkInternalLinks()
 
 // 두 검사를 모두 돌린 뒤에 판정한다. && 로 묶으면 앞이 실패할 때 뒤가 실행되지 않아
 // 한 번에 하나씩만 보게 되고, 고치고 밀어 넣는 왕복이 그만큼 늘어난다.
 const canonicalOk = report("canonical 자기참조", canonical, MIN_PAGES)
 const sitemapOk = report("sitemap 실재 여부", sitemap, MIN_SITEMAP_URLS)
 const nulOk = report("html NUL 바이트", nul, MIN_PAGES)
-const ok = canonicalOk && sitemapOk && nulOk
+const linksOk = report("사이트 안 링크", links, MIN_PAGES)
+const ok = canonicalOk && sitemapOk && nulOk && linksOk
 
 process.exit(ok ? 0 : 1)

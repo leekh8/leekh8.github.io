@@ -55,7 +55,7 @@ const TermsPage = () => (
 
       <h2>5. 문의</h2>
       <p>
-        약관 관련 문의는 <a href="/contact">Contact</a> 페이지를 통해 전달해
+        약관 관련 문의는 <a href="/contact/">Contact</a> 페이지를 통해 전달해
         주세요.
       </p>
     </Content>
